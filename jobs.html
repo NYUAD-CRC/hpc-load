@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           86%           10           63          352          147           16            3            4          66           3
- JUBAIL          66%           30           65          107           90           23            1            2          24           0
+ DALMA           86%           12           62          351          141           14            2            4          65           3
+ JUBAIL          73%           19           62          121          101           20            1            2          41           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=230	N-CPUs=48032	
+Pending Jobs:	 N-jobs=275	N-CPUs=53740	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -26,18 +26,18 @@ Pending Jobs:	 N-jobs=230	N-CPUs=48032
 access       || 4096 |   9 % |   1 % |   -   ||   384 |     1 ||    pv32 |   9 % ||   1152 |     3 ||  ||     - |     - ||     - |     - ||  1152 |     3 ||
 avengers     ||12800 |   2 % |   -   |   -   ||   256 |     2 ||    ziaw |   2 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cgsb         || 4096 |  11 % |   1 % |   -   ||   456 |     7 ||  jw5478 |   5 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-chemistry    ||10600 |  22 % |   8 % |   -   ||  2350 |    22 ||   ah166 |  13 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+chemistry    ||10600 |  22 % |   8 % |   -   ||  2348 |    21 ||   ah166 |  13 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 civil        || 3200 |   7 % |   -   |   -   ||   246 |     4 || mxf4167 |   7 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator || 1024 |  10 % |   -   |   -   ||   112 |     1 ||  hb2578 |  10 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 css          || 8192 |  76 % |  21 % |   3 % ||  6298 |    47 ||  ap6420 |  71 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 default      ||  128 |   3 % |   -   |   -   ||     4 |     4 ||  tb2613 |   3 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-ecomputer    || 2048 |  15 % |   -   |   1 % ||   309 |    20 ||  mok232 |   9 % ||     96 |     6 ||  ||     - |     - ||     - |     - ||    96 |     6 ||
+ecomputer    || 2048 |  99 % |   7 % |   -   ||  2045 |    32 ||  lm4344 |  87 % ||   6496 |    56 ||  ||     - |     - ||     - |     - ||  6496 |    56 ||
 mechanical   || 3072 |   1 % |   -   |   -   ||    52 |     6 ||  haa385 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 physics      ||11385 |  56 % |  21 % |   4 % ||  6393 |    41 ||    ng53 |  22 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-preempt      ||21760 |  45 % |   2 % |  76 % ||  9952 |    42 ||  wh1165 |  42 % ||  44588 |   202 ||  ||    12 |     3 || 21728 |    97 || 22624 |   101 ||
-psychology   || 6096 |  42 % |   9 % |   -   ||  2588 |    21 || as14864 |  41 % ||   2176 |    17 ||  ||     - |     - ||     - |     - ||  2176 |    17 ||
+preempt      ||21760 |  45 % |   2 % |  76 % ||  9952 |    42 ||  wh1165 |  42 % ||  43916 |   199 ||  ||    12 |     3 || 21280 |    95 || 22624 |   101 ||
+psychology   || 6096 |  41 % |   9 % |   -   ||  2560 |    20 || as14864 |  41 % ||   2176 |    17 ||  ||     - |     - ||     - |     - ||  2176 |    17 ||
 socialscience|| 2048 |   6 % |   -   |   -   ||   128 |     1 ||    rmk7 |   6 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-students     || 4096 |   1 % |   -   |   -   ||    80 |     8 ||  hl3372 |   1 % ||     20 |     2 ||  ||     - |     - ||     - |     - ||    20 |     2 ||
+students     || 4096 |   -   |   -   |   -   ||    30 |     3 ||  hl3372 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 xpress       ||27008 |   -   |   -   |   -   ||    10 |    10 ||  asp655 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 ============================================================================================================================================================
 gfg          || 1920 |  26 % |   1 % |   -   ||   512 |     1 ||  sw4445 |  26 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -63,14 +63,62 @@ as14864    769061    compute     psychology    128   PENDING   medium           
 as14864    769060    compute     psychology    128   PENDING   medium           QOSMaxJobsPerUserLimit                  
 as14864    769059    compute     psychology    128   PENDING   medium           QOSMaxJobsPerUserLimit                  
 as14864    769058    compute     psychology    128   PENDING   medium           QOSMaxJobsPerUserLimit                  
-mok232     792523    nvidia      ecomputer     16    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
+lm4344     796860    compute     ecomputer     128   PENDING   medium           AssocGrpCpuLimit                        
 mok232     792524    nvidia      ecomputer     16    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
+mok232     792523    nvidia      ecomputer     16    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
 mok232     792525    nvidia      ecomputer     16    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
 mok232     792526    nvidia      ecomputer     16    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
 mok232     792533    nvidia      ecomputer     16    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
 mok232     792535    nvidia      ecomputer     16    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
-hl3372     796351    nvidia      students      10    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
-hl3372     796350    nvidia      students      10    PENDING   nvidia           QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
