@@ -2,11 +2,11 @@
 
 # Cleaning old results
 rm Jubail_Results.csv
-#rm jubail_plot.html
+rm jubail_plot.html
 
 # Defining all Jubail nodes that has running jobs
 #echo "Running nodes are: "
-sinfo -h -N | grep dn | grep 'alloc\|mix'| awk '{print $1}'| sort -u > Jubail_nodes.txt
+sinfo -h -N | grep cn | grep 'alloc\|mix'| awk '{print $1}'| sort -u > Jubail_nodes.txt
 
 # Replacing new line by , in nodes names
 nodes=$(sed -z 's/\n/,/g;s/,$/\n/' Jubail_nodes.txt)
@@ -39,6 +39,6 @@ sort  -n -k 2 -r Counting_Jubail_Results >>Jubail_Results.csv
 # Removing intermediate files
 rm All_Jubail_Results
 rm Cleaned_All_Jubail_Results
-rm Counting_Jubail_Results.csv
+rm Counting_Jubail_Results
 rm Jubail_nodes.txt
 
