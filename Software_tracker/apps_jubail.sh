@@ -5,13 +5,13 @@ rm Jubail_Results.csv
 rm jubail_plot.html
 
 # Defining all Jubail nodes that has running jobs
-echo "Running nodes are: "
-sinfo -h -N | grep cn | grep 'alloc\|mix'| awk '{print $1}'| sort -u | tee Jubail_nodes.txt
+#echo "Running nodes are: "
+sinfo -h -N | grep cn | grep 'alloc\|mix'| awk '{print $1}'| sort -u > Jubail_nodes.txt
 
 # Replacing new line by , in nodes names
 nodes=$(sed -z 's/\n/,/g;s/,$/\n/' Jubail_nodes.txt)
 
-echo "Checking the Runing commands: "
+#echo "Checking the Runing commands: "
 clush -w ${nodes} ps -axo user,%cpu,command | awk '$3>50 {print $4}'>> All_Jubail_Results
 
 # Removal of aboslute path and change it to only application name
@@ -29,7 +29,7 @@ echo "Total number of processes per Apllication"
 for i in $(cat Cleaned_All_Jubail_Results  | sort -u)
 do
 	count=$(grep -c $i Cleaned_All_Jubail_Results)
-	echo $i $count | tee -a Counting_Jubail_Results
+	echo $i $count >> Counting_Jubail_Results
 done
 
 # Putting the header of the output file
