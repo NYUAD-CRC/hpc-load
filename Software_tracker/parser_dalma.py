@@ -8,4 +8,4 @@ fig = px.bar(df, x = 'Application', y = 'Cpus', title='Application utilization')
 #fig.show()
 #plotly.offline.plot(fig, filename='./Dalma_plot.html')
 
-pio.write_html(fig,'Dalma_plot.html')
+pio.write_html(fig,'dalma_plot.html')

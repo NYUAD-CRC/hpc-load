@@ -2,6 +2,7 @@
 
 # Cleaning old results
 rm Dalma_Results.csv
+rm Dalma_plot.html
 
 # Defining all Dalma nodes that has running jobs
 echo "Running nodes are: "
