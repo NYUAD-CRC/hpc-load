@@ -18,10 +18,10 @@ clush -w ${nodes} ps -axo user,%cpu,command | awk '$3>50 {print $4}'>> All_Jubai
 awk -F "/" '{print $NF }' All_Jubail_Results >> Cleaned_All_Jubail_Results
 
 # Removal of [] from application name
-sed -i -e 's/\[//g; s/\]//g' Cleaned_All_Jubail_Results
+sed -i 's/\[//g; s/\]//g' Cleaned_All_Jubail_Results
 
 # Appending : at the end of each line (comparison purpose)
-sed -i -e 's/$/,/' Cleaned_All_Jubail_Results
+sed -i 's/$/,/' Cleaned_All_Jubail_Results
 
 
 # Counting the total number of processes per Apllication
