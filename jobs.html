@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           64%          103          165          147          248            8           12            0         123           0
- JUBAIL          92%            0           43          154          220           19            6            3          51           0
+ DALMA           77%           47          191          177          307            8           12            0         184           0
+ JUBAIL          90%            0           44          153          203           20            6            3          49           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=202	N-CPUs=5535	
+Pending Jobs:	 N-jobs=167	N-CPUs=5347	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -24,21 +24,21 @@ Pending Jobs:	 N-jobs=202	N-CPUs=5535
              |       | usage | usage | usage ||       |       ||	 | prcnt ||        |       ||  ||       |       ||       |       ||       |       ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 access       || 4096 |   9 % |   1 % |   -   ||   402 |     3 ||    pv32 |   9 % ||    768 |     2 ||  ||     - |     - ||     - |     - ||   768 |     2 ||
-cgsb         || 4096 |   9 % |   -   |   3 % ||   407 |    44 || are6747 |   7 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+cgsb         || 4096 |  30 % |   -   |  10 % ||  1247 |    74 ||    drn2 |  21 % ||   4564 |   163 ||  ||     - |     - ||     - |     - ||     - |     - ||
 chemistry    ||10600 |  70 % |  22 % |  11 % ||  7437 |   120 ||  bt2354 |  48 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 civil        || 3200 |   -   |   -   |   -   ||     1 |     1 ||    btt1 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator || 1024 |  17 % |   -   |   -   ||   177 |     3 ||  hb2578 |  11 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cph          || 3072 |   -   |   -   |   -   ||     5 |     1 ||  im2493 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-css          || 8192 |  72 % |  21 % |   -   ||  5923 |     8 ||  ap6420 |  71 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+css          || 8192 |  72 % |  21 % |   -   ||  5931 |     9 ||  ap6420 |  71 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 ecomputer    || 2048 |  23 % |   1 % |   -   ||   488 |    22 ||  lm4344 |  12 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 electrical   || 2048 |  11 % |   -   |   -   ||   240 |     3 ||  yw3576 |  11 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-gencore      || 6144 |  81 % |  13 % |  10 % ||  4997 |   205 || gencore |  81 % ||   4767 |   200 ||  ||     - |     - ||     - |     - ||    15 |     2 ||
+gencore      || 6144 |  85 % |  11 % |  16 % ||  5261 |   216 || gencore |  85 % ||     15 |     2 ||  ||     - |     - ||     - |     - ||    15 |     2 ||
 mechanical   || 3072 |   5 % |   -   |   -   ||   180 |     1 ||  scm506 |   5 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 physics      ||11385 |  60 % |  17 % |  17 % ||  6941 |    22 ||   zj448 |  17 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 preempt      ||21760 |  11 % |   -   |  20 % ||  2464 |    11 ||  wh1165 |  11 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 psychology   || 6096 |  40 % |   8 % |   -   ||  2462 |    10 || as14864 |  37 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 scomputer    || 3120 |   -   |   -   |   -   ||     1 |     1 ||    ba63 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-socialscience|| 2048 |  12 % |   -   |   -   ||   264 |     8 ||    rmk7 |   7 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+socialscience|| 2048 |  11 % |   -   |   -   ||   232 |     7 ||    rmk7 |   7 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 students     || 4096 |   9 % |   1 % |   -   ||   393 |     5 ||  sy3125 |   8 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 ============================================================================================================================================================
 cap3         || 1280 |  80 % |   1 % |   4 % ||  1024 |     2 ||  sw4445 |  40 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -47,6 +47,169 @@ serdal       ||   80 |  50 % |   -   |   -   ||    40 |     1 ||  wh1165 |  50 %
 ============================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS               REASON
 ============================================================================================================================================================
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
+drn2       913505    compute     cgsb          28    PENDING   small            JobArrayTaskLimit                       
 </pre>
 </body>
 </html>
