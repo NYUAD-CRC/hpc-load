@@ -5,5 +5,5 @@ import plotly.express as px
 df = pd.read_csv('Dalma_Results.csv')
 
 fig = px.bar(df, x = 'Application', y = 'Cpus', title='Application utilization')
-fig.show()
+#fig.show()
 plotly.offline.plot(fig, filename='./Dalma_plot.html')
