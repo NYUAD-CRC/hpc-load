@@ -32,7 +32,7 @@ do
 done
 
 # Putting the header of the output file
-echo "Application,Cpus" >Dalma_Results.csv
+echo "Application,Processes" >Dalma_Results.csv
 sort  -n -k 2 -r Counting_Dalma_Results >>Dalma_Results.csv
 
 # Removing intermediate files
