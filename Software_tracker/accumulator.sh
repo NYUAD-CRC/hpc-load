@@ -30,3 +30,8 @@ if grep "$line" Dalma_Results.csv
     echo "$count" >>Applications_jubail
 
 done
+
+# Removal of spaces in files
+cat Applications_dalma | tr -d " \t\r" >dalma_apps_final
+cat Applications_jubail | tr -d " \t\r" >jubail_apps_final 
+ 
