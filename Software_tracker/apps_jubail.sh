@@ -2,7 +2,7 @@
 
 # Cleaning old results
 rm Jubail_Results.csv
-rm jubail_plot.html
+#rm jubail_plot.html
 
 # Defining all Jubail nodes that has running jobs
 #echo "Running nodes are: "
