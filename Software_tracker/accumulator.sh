@@ -14,13 +14,14 @@ file=$(cat Apps.csv)
 for line in $file
 do	
 #echo -e "$line"
-if grep "$line" Dalma_Results.csv
+    if grep "$line" Dalma_Results.csv
     then
             count=$(grep $line Dalma_Results.csv | cut -d "," -f 2)
     else
             count="0"
     fi
     echo "$count" >>Applications_dalma
+
     if grep "$line" Jubail_Results.csv
     then
             count=$(grep $line Jubail_Results.csv | cut -d "," -f 2)
