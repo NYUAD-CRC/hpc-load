@@ -33,7 +33,7 @@ do
 done
 
 # Putting the header of the output file
-echo "Application,Processes" >Jubail_Results.csv
+#echo "Application,Processes" >Jubail_Results.csv
 sort  -n -k 2 -r Counting_Jubail_Results >>Jubail_Results.csv
 
 # Removing intermediate files

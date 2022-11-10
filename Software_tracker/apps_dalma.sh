@@ -24,7 +24,7 @@ sed -i 's/\[//g; s/\]//g' Cleaned_All_Dalma_Results
 sed -i 's/$/,/' Cleaned_All_Dalma_Results
 
 # Counting the total number of processes per Apllication
-echo "Total number of processes per Apllication"
+#echo "Total number of processes per Apllication"
 for i in $(cat Cleaned_All_Dalma_Results  | sort -u)
 do
 	count=$(grep -c $i Cleaned_All_Dalma_Results)
