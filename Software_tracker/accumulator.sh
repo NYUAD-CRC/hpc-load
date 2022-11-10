@@ -12,11 +12,12 @@ file=$(cat Apps.csv)
 for line in $file
 do	
 echo -e "$line"
-if grep -Fxq "$line" Apps.csv
-    then;
+word="$line"+","
+echo $word
+if grep -Fxq "$line" Dalma_Results.csv
+    then
             count=$(grep $line Dalma_Results.csv | cut -d "," -f 2)
-    else;
-	    echo "no"
+    else
             count="0"
     fi
     echo "Count for $line is $count"
