@@ -1,9 +1,9 @@
 #! /bin/bash
 
-rm Application.csv
+# Removal of old results
 rm Apps.csv
-rm Applications_dalma
-rm Applications_jubail
+rm dalma_apps_final
+rm jubail_apps_final
 
 cat Dalma_Results.csv | cut -d "," -f 1 |tail -n+2 >Application.csv
 cat Jubail_Results.csv | cut -d "," -f 1 |tail -n+2 >>Application.csv
@@ -34,4 +34,8 @@ done
 # Removal of spaces in files
 cat Applications_dalma | tr -d " \t\r" >dalma_apps_final
 cat Applications_jubail | tr -d " \t\r" >jubail_apps_final 
- 
+
+# Removal of intermediate file
+rm Applications_dalma
+rm Applications_jubail
+rm Application.csv
