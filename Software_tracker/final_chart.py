@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-apps=np.loadtxt("Apps.csv",dtype="str")
+apps=np.loadtxt("Final_apps",dtype="str")
 print(apps)
 
 dalma=np.loadtxt("dalma_apps_final",dtype="int")
