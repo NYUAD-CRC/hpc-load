@@ -5,8 +5,8 @@ rm Apps.csv
 rm dalma_apps_final
 rm jubail_apps_final
 
-cat Dalma_Results.csv | cut -d "," -f 1 |tail -n+2 >Application.csv
-cat Jubail_Results.csv | cut -d "," -f 1 |tail -n+2 >>Application.csv
+cat Dalma_Results.csv | cut -d " " -f 1 |tail -n+2 >Application.csv
+cat Jubail_Results.csv | cut -d " " -f 1 |tail -n+2 >>Application.csv
 sort -u Application.csv > Apps.csv
 
 file=$(cat Apps.csv)
@@ -38,8 +38,9 @@ done <Apps.csv
 # Removal of spaces in files
 cat Applications_dalma | tr -d " \t\r" >dalma_apps_final
 cat Applications_jubail | tr -d " \t\r" >jubail_apps_final 
+cat Apps.csv | tr -d "," >Final_apps
 
 # Removal of intermediate file
-#rm Applications_dalma
-#rm Applications_jubail
+rm Applications_dalma
+rm Applications_jubail
 rm Application.csv
