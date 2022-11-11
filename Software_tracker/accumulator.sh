@@ -11,8 +11,9 @@ sort -u Application.csv > Apps.csv
 
 file=$(cat Apps.csv)
 
-for line in $file
-do	
+#for line in $file
+while read -r line; do
+	echo $line	
 #echo -e "$line"
     if grep "$line" Dalma_Results.csv
     then
@@ -30,7 +31,7 @@ do
     fi
     echo "$count" >>Applications_jubail
 
-done
+done <Apps.csv
 
 # Removal of spaces in files
 cat Applications_dalma | tr -d " \t\r" >dalma_apps_final
