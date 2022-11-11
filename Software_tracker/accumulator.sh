@@ -10,10 +10,10 @@ cat Jubail_Results.csv | cut -d "," -f 1 |tail -n+2 >>Application.csv
 sort -u Application.csv > Apps.csv
 
 file=$(cat Apps.csv)
-
+i=0
 #for line in $file
 while read -r line; do
-	echo $line	
+    echo $line	
 #echo -e "$line"
     if grep "$line" Dalma_Results.csv
     then
@@ -21,6 +21,7 @@ while read -r line; do
     else
             count="0"
     fi
+    echo "For dalma flag is $i"
     echo "$count" >>Applications_dalma
 
     if grep "$line" Jubail_Results.csv
@@ -29,8 +30,9 @@ while read -r line; do
     else
             count="0"
     fi
+    echo "For Jubail flag is $i"
     echo "$count" >>Applications_jubail
-
+    i=$((i+1))
 done <Apps.csv
 
 # Removal of spaces in files
