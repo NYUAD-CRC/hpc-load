@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#000" />
+
+    <title>Grafana</title>
+
+    <base href="/" />
+
+    <link
+      rel="preload"
+      href="public/fonts/roboto/RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2"
+      as="font"
+      crossorigin
+    />
+
+    <link rel="icon" type="image/png" href="public/img/fav32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="public/img/apple-touch-icon.png" />
+    <link rel="mask-icon" href="public/img/grafana_mask_icon.svg" color="#F05A28" />
+    <link rel="stylesheet" href="public/build/grafana.light.287cd4997284268b2f13.css" />
+
+    <script nonce="">
+      performance.mark('frontend_boot_css_time_seconds');
+    </script>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="msapplication-TileColor" content="#2b5797" />
+    <meta name="msapplication-config" content="public/img/browserconfig.xml" />
+  </head>
+
+  <body class="theme-light app-grafana">
+    <style>
+      .preloader {
+        height: 100%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .preloader__enter {
+        opacity: 0;
+        animation-name: preloader-fade-in;
+        animation-iteration-count: 1;
+        animation-duration: 0.9s;
+        animation-delay: 1.35s;
+        animation-fill-mode: forwards;
+      }
+
+      .preloader__bounce {
+        text-align: center;
+        animation-name: preloader-bounce;
+        animation-duration: 0.9s;
+        animation-iteration-count: infinite;
+      }
+
+      .preloader__logo {
+        display: inline-block;
+        animation-name: preloader-squash;
+        animation-duration: 0.9s;
+        animation-iteration-count: infinite;
+        width: 60px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("public/img/grafana_icon.svg");
+      }
+
+      .preloader__text {
+        margin-top: 16px;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: Sans-serif;
+        opacity: 0;
+        animation-name: preloader-fade-in;
+        animation-duration: 0.9s;
+        animation-delay: 1.8s;
+        animation-fill-mode: forwards;
+      }
+
+      .theme-light .preloader__text {
+        color: #52545c;
+      }
+
+      .theme-dark .preloader__text {
+        color: #d8d9da;
+      }
+
+      @keyframes preloader-fade-in {
+        0% {
+          opacity: 0;
+           
+          animation-timing-function: cubic-bezier(0, 0, 0.5, 1);
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes preloader-bounce {
+        from,
+        to {
+          transform: translateY(0px);
+          animation-timing-function: cubic-bezier(0.3, 0, 0.1, 1);
+        }
+        50% {
+          transform: translateY(-50px);
+          animation-timing-function: cubic-bezier(0.9, 0, 0.7, 1);
+        }
+      }
+
+      @keyframes preloader-squash {
+        0% {
+          transform: scaleX(1.3) scaleY(0.8);
+          animation-timing-function: cubic-bezier(0.3, 0, 0.1, 1);
+          transform-origin: bottom center;
+        }
+        15% {
+          transform: scaleX(0.75) scaleY(1.25);
+          animation-timing-function: cubic-bezier(0, 0, 0.7, 0.75);
+          transform-origin: bottom center;
+        }
+        55% {
+          transform: scaleX(1.05) scaleY(0.95);
+          animation-timing-function: cubic-bezier(0.9, 0, 1, 1);
+          transform-origin: top center;
+        }
+        95% {
+          transform: scaleX(0.75) scaleY(1.25);
+          animation-timing-function: cubic-bezier(0, 0, 0, 1);
+          transform-origin: bottom center;
+        }
+        100% {
+          transform: scaleX(1.3) scaleY(0.8);
+          transform-origin: bottom center;
+          animation-timing-function: cubic-bezier(0, 0, 0.7, 1);
+        }
+      }
+
+       
+      .preloader__text--fail {
+        display: none;
+      }
+
+       
+      .preloader--done .preloader__bounce,
+      .preloader--done .preloader__logo {
+        animation-name: none;
+        display: none;
+      }
+
+      .preloader--done .preloader__logo,
+      .preloader--done .preloader__text {
+        display: none;
+        color: #ff5705 !important;
+        font-size: 15px;
+      }
+
+      .preloader--done .preloader__text--fail {
+        display: block;
+      }
+
+      [ng\:cloak],
+      [ng-cloak],
+      .ng-cloak {
+        display: none !important;
+      }
+    </style>
+
+    <div class="preloader">
+      <div class="preloader__enter">
+        <div class="preloader__bounce">
+          <div class="preloader__logo"></div>
+        </div>
+      </div>
+      <div class="preloader__text">Loading Grafana</div>
+      <div class="preloader__text preloader__text--fail">
+        <p>
+          <strong>If you're seeing this Grafana has failed to load its application files</strong>
+          <br />
+          <br />
+        </p>
+        <p>
+          1. This could be caused by your reverse proxy settings.<br /><br />
+          2. If you host grafana under subpath make sure your grafana.ini root_url setting includes subpath. If not
+          using a reverse proxy make sure to set serve_from_sub_path to true.<br />
+          <br />
+          3. If you have a local dev build make sure you build frontend using: yarn start, yarn start:hot, or yarn
+          build<br />
+          <br />
+          4. Sometimes restarting grafana-server can help<br />
+          <br />
+          5. Check if you are using a non-supported browser. For more information, refer to the list of
+          <a href="https://grafana.com/docs/grafana/latest/installation/requirements/#supported-web-browsers">
+            supported browsers</a
+          >.
+        </p>
+      </div>
+      <script nonce="">
+        
+        
+        function checkBrowserCompatibility() {
+          var isIE = navigator.userAgent.indexOf('MSIE') > -1;
+          var isEdge = navigator.userAgent.indexOf('Edge/') > -1 || navigator.userAgent.indexOf('Edg/') > -1;
+          var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+          var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+          
+
+          var isEdgeVersion = /Edge\/([0-9.]+)/.exec(navigator.userAgent);
+
+          if (isIE && parseFloat(/Trident\/([0-9.]+)/.exec(navigator.userAgent)[1]) <= 7) {
+            return false;
+          } else if (
+            isEdge &&
+            ((isEdgeVersion && parseFloat(isEdgeVersion[1]) <= 16) ||
+              parseFloat(/Edg\/([0-9.]+)/.exec(navigator.userAgent)[1]) <= 16)
+          ) {
+            return false;
+          } else if (isFirefox && parseFloat(/Firefox\/([0-9.]+)/.exec(navigator.userAgent)[1]) <= 64) {
+            return false;
+          } else if (isChrome && parseFloat(/Chrome\/([0-9.]+)/.exec(navigator.userAgent)[1]) <= 54) {
+            return false;
+          }
+
+          return true;
+        }
+
+        if (!checkBrowserCompatibility()) {
+          alert('Your browser is not fully supported, please try newer version.');
+        }
+      </script>
+    </div>
+
+    <div id="reactRoot"></div>
+
+    <script nonce="">
+        window.grafanaBootData = {
+          user: {"isSignedIn":false,"id":0,"login":"","email":"","name":"","lightTheme":true,"orgCount":0,"orgId":1,"orgName":"Main Org.","orgRole":"Viewer","isGrafanaAdmin":false,"gravatarUrl":"","timezone":"browser","locale":"en-US","helpFlags1":0,"hasEditPermissionInFolders":false},
+          settings: {"alertingEnabled":true,"alertingErrorOrTimeout":"alerting","alertingMinInterval":1,"alertingNoDataOrNullValues":"no_data","allowOrgCreate":false,"appSubUrl":"","appUrl":"https://localhost:3000/","authProxyEnabled":false,"autoAssignOrg":true,"awsAllowedAuthProviders":["default","keys","credentials"],"awsAssumeRoleEnabled":true,"azure":{"cloud":"AzureCloud","managedIdentityEnabled":false},"buildInfo":{"buildstamp":1626335359,"commit":"68fe9e3431","edition":"Open Source","env":"production","hasUpdate":false,"hideVersion":false,"isEnterprise":false,"latestVersion":"","version":"8.0.6"},"caching":{"enabled":true},"datasources":{"-- Dashboard --":{"meta":{"type":"datasource","name":"-- Dashboard --","id":"dashboard","info":{"author":{"name":"","url":""},"description":"","links":null,"logos":{"small":"public/img/icn-datasource.svg","large":"public/img/icn-datasource.svg"},"build":{},"screenshots":null,"version":"","updated":""},"dependencies":{"grafanaVersion":"*","plugins":[]},"includes":null,"module":"app/plugins/datasource/dashboard/module","baseUrl":"public/app/plugins/datasource/dashboard","category":"","preload":false,"signature":"internal","Root":null,"annotations":false,"metrics":true,"alerting":false,"explore":false,"tables":false,"logs":false,"tracing":false,"builtIn":true,"routes":null,"streaming":false},"name":"-- Dashboard --","type":"datasource"},"-- Grafana --":{"meta":{"type":"datasource","name":"-- Grafana --","id":"grafana","info":{"author":{"name":"","url":""},"description":"","links":null,"logos":{"small":"public/img/icn-datasource.svg","large":"public/img/icn-datasource.svg"},"build":{},"screenshots":null,"version":"","updated":""},"dependencies":{"grafanaVersion":"*","plugins":[]},"includes":null,"module":"app/plugins/datasource/grafana/module","baseUrl":"public/app/plugins/datasource/grafana","category":"","preload":false,"signature":"internal","Root":null,"annotations":true,"metrics":true,"alerting":false,"explore":false,"tables":false,"logs":false,"tracing":false,"builtIn":true,"routes":null,"streaming":false},"name":"-- Grafana --","type":"datasource"},"-- Mixed --":{"meta":{"type":"datasource","name":"-- Mixed --","id":"mixed","info":{"author":{"name":"","url":""},"description":"","links":null,"logos":{"small":"public/img/icn-datasource.svg","large":"public/img/icn-datasource.svg"},"build":{},"screenshots":null,"version":"","updated":""},"dependencies":{"grafanaVersion":"*","plugins":[]},"includes":null,"module":"app/plugins/datasource/mixed/module","baseUrl":"public/app/plugins/datasource/mixed","category":"","preload":false,"signature":"internal","Root":null,"annotations":false,"metrics":true,"alerting":false,"explore":false,"tables":false,"logs":false,"tracing":false,"queryOptions":{"minInterval":true},"builtIn":true,"mixed":true,"routes":null,"streaming":false},"name":"-- Mixed --","type":"datasource"},"Prometheus":{"id":1,"isDefault":true,"jsonData":{"directUrl":"http://slurm-prom.sys-mgmt:9090","timeInterval":"1m","tlsSkipVerify":true},"meta":{"type":"datasource","name":"Prometheus","id":"prometheus","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Open source time series database \u0026 alerting","links":[{"name":"Learn more","url":"https://prometheus.io/"}],"logos":{"small":"public/app/plugins/datasource/prometheus/img/prometheus_logo.svg","large":"public/app/plugins/datasource/prometheus/img/prometheus_logo.svg"},"build":{},"screenshots":null,"version":"","updated":""},"dependencies":{"grafanaVersion":"*","plugins":[]},"includes":[{"name":"Prometheus Stats","path":"dashboards/prometheus_stats.json","type":"dashboard","component":"","role":"Viewer","addToNav":false,"defaultNav":false,"slug":"","icon":""},{"name":"Prometheus 2.0 Stats","path":"dashboards/prometheus_2_stats.json","type":"dashboard","component":"","role":"Viewer","addToNav":false,"defaultNav":false,"slug":"","icon":""},{"name":"Grafana Stats","path":"dashboards/grafana_stats.json","type":"dashboard","component":"","role":"Viewer","addToNav":false,"defaultNav":false,"slug":"","icon":""}],"module":"app/plugins/datasource/prometheus/module","baseUrl":"public/app/plugins/datasource/prometheus","category":"tsdb","preload":false,"signature":"internal","Root":null,"annotations":true,"metrics":true,"alerting":true,"explore":false,"tables":false,"logs":false,"tracing":false,"queryOptions":{"minInterval":true},"routes":[{"path":"api/v1/query","method":"POST","reqRole":"Viewer","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null},{"path":"api/v1/query_range","method":"POST","reqRole":"Viewer","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null},{"path":"api/v1/series","method":"POST","reqRole":"Viewer","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null},{"path":"api/v1/labels","method":"POST","reqRole":"Viewer","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null},{"path":"api/v1/query_exemplars","method":"POST","reqRole":"Viewer","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null},{"path":"/rules","method":"GET","reqRole":"Viewer","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null},{"path":"/rules","method":"POST","reqRole":"Editor","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null},{"path":"/rules","method":"DELETE","reqRole":"Editor","url":"","urlParams":null,"headers":null,"authType":"","tokenAuth":null,"jwtTokenAuth":null,"body":null}],"streaming":false},"name":"Prometheus","type":"prometheus","uid":"NYOIkjI7k","url":"/api/datasources/proxy/1"}},"dateFormats":{"fullDate":"YYYY-MM-DD HH:mm:ss","useBrowserLocale":false,"interval":{"second":"HH:mm:ss","minute":"HH:mm","hour":"MM/DD HH:mm","day":"MM/DD","month":"YYYY-MM","year":"YYYY"},"defaultTimezone":"browser"},"defaultDatasource":"Prometheus","disableLoginForm":false,"disableSanitizeHtml":false,"disableUserSignUp":true,"editorsCanAdmin":false,"exploreEnabled":true,"expressionsEnabled":true,"externalUserMngInfo":"","externalUserMngLinkName":"","externalUserMngLinkUrl":"","featureToggles":{},"googleAnalyticsId":"","http2Enabled":false,"ldapEnabled":false,"licenseInfo":{"edition":"Open Source","expiry":0,"hasLicense":false,"hasValidLicense":false,"licenseUrl":"https://grafana.com/products/enterprise/?utm_source=grafana_footer","stateInfo":""},"liveEnabled":true,"loginHint":"email or username","minRefreshInterval":"5s","panels":{"alertlist":{"baseUrl":"public/app/plugins/panel/alertlist","hideFromList":false,"id":"alertlist","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Shows list of alerts and their current status","links":null,"logos":{"small":"public/app/plugins/panel/alertlist/img/icn-singlestat-panel.svg","large":"public/app/plugins/panel/alertlist/img/icn-singlestat-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/alertlist/module","name":"Alert list","signature":"internal","skipDataQuery":true,"sort":15,"state":""},"barchart":{"baseUrl":"public/app/plugins/panel/barchart","hideFromList":false,"id":"barchart","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Categorical charts with group support","links":null,"logos":{"small":"public/app/plugins/panel/barchart/img/barchart.svg","large":"public/app/plugins/panel/barchart/img/barchart.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/barchart/module","name":"Bar chart","signature":"internal","skipDataQuery":false,"sort":2,"state":"beta"},"bargauge":{"baseUrl":"public/app/plugins/panel/bargauge","hideFromList":false,"id":"bargauge","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Horizontal and vertical gauges","links":null,"logos":{"small":"public/app/plugins/panel/bargauge/img/icon_bar_gauge.svg","large":"public/app/plugins/panel/bargauge/img/icon_bar_gauge.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/bargauge/module","name":"Bar gauge","signature":"internal","skipDataQuery":false,"sort":5,"state":""},"dashlist":{"baseUrl":"public/app/plugins/panel/dashlist","hideFromList":false,"id":"dashlist","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"List of dynamic links to other dashboards","links":null,"logos":{"small":"public/app/plugins/panel/dashlist/img/icn-dashlist-panel.svg","large":"public/app/plugins/panel/dashlist/img/icn-dashlist-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/dashlist/module","name":"Dashboard list","signature":"internal","skipDataQuery":true,"sort":16,"state":""},"gauge":{"baseUrl":"public/app/plugins/panel/gauge","hideFromList":false,"id":"gauge","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Standard gauge visualization","links":null,"logos":{"small":"public/app/plugins/panel/gauge/img/icon_gauge.svg","large":"public/app/plugins/panel/gauge/img/icon_gauge.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/gauge/module","name":"Gauge","signature":"internal","skipDataQuery":false,"sort":4,"state":""},"gettingstarted":{"baseUrl":"public/app/plugins/panel/gettingstarted","hideFromList":true,"id":"gettingstarted","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"","links":null,"logos":{"small":"public/app/plugins/panel/gettingstarted/img/icn-dashlist-panel.svg","large":"public/app/plugins/panel/gettingstarted/img/icn-dashlist-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/gettingstarted/module","name":"Getting Started","signature":"internal","skipDataQuery":true,"sort":100,"state":""},"graph":{"baseUrl":"public/app/plugins/panel/graph","hideFromList":false,"id":"graph","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"The old default graph panel","links":null,"logos":{"small":"public/app/plugins/panel/graph/img/icn-graph-panel.svg","large":"public/app/plugins/panel/graph/img/icn-graph-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/graph/module","name":"Graph (old)","signature":"internal","skipDataQuery":false,"sort":13,"state":""},"heatmap":{"baseUrl":"public/app/plugins/panel/heatmap","hideFromList":false,"id":"heatmap","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Like a histogram over time","links":[{"name":"Brendan Gregg - Heatmaps","url":"http://www.brendangregg.com/heatmaps.html"},{"name":"Brendan Gregg - Latency Heatmaps","url":" http://www.brendangregg.com/HeatMaps/latency.html"}],"logos":{"small":"public/app/plugins/panel/heatmap/img/icn-heatmap-panel.svg","large":"public/app/plugins/panel/heatmap/img/icn-heatmap-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/heatmap/module","name":"Heatmap","signature":"internal","skipDataQuery":false,"sort":10,"state":""},"histogram":{"baseUrl":"public/app/plugins/panel/histogram","hideFromList":false,"id":"histogram","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"","links":null,"logos":{"small":"public/app/plugins/panel/histogram/img/histogram.svg","large":"public/app/plugins/panel/histogram/img/histogram.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/histogram/module","name":"Histogram","signature":"internal","skipDataQuery":false,"sort":12,"state":"beta"},"logs":{"baseUrl":"public/app/plugins/panel/logs","hideFromList":false,"id":"logs","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"","links":null,"logos":{"small":"public/app/plugins/panel/logs/img/icn-logs-panel.svg","large":"public/app/plugins/panel/logs/img/icn-logs-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/logs/module","name":"Logs","signature":"internal","skipDataQuery":false,"sort":100,"state":""},"news":{"baseUrl":"public/app/plugins/panel/news","hideFromList":false,"id":"news","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"RSS feed reader","links":null,"logos":{"small":"public/app/plugins/panel/news/img/news.svg","large":"public/app/plugins/panel/news/img/news.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/news/module","name":"News","signature":"internal","skipDataQuery":true,"sort":17,"state":"beta"},"nodeGraph":{"baseUrl":"public/app/plugins/panel/nodeGraph","hideFromList":false,"id":"nodeGraph","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"","links":null,"logos":{"small":"public/app/plugins/panel/nodeGraph/img/icn-node-graph.svg","large":"public/app/plugins/panel/nodeGraph/img/icn-node-graph.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/nodeGraph/module","name":"Node Graph","signature":"internal","skipDataQuery":false,"sort":100,"state":"beta"},"piechart":{"baseUrl":"public/app/plugins/panel/piechart","hideFromList":false,"id":"piechart","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"The new core pie chart visualization","links":null,"logos":{"small":"public/app/plugins/panel/piechart/img/icon_piechart.svg","large":"public/app/plugins/panel/piechart/img/icon_piechart.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/piechart/module","name":"Pie chart","signature":"internal","skipDataQuery":false,"sort":8,"state":""},"pluginlist":{"baseUrl":"public/app/plugins/panel/pluginlist","hideFromList":false,"id":"pluginlist","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Plugin List for Grafana","links":null,"logos":{"small":"public/app/plugins/panel/pluginlist/img/icn-dashlist-panel.svg","large":"public/app/plugins/panel/pluginlist/img/icn-dashlist-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/pluginlist/module","name":"Plugin list","signature":"internal","skipDataQuery":true,"sort":100,"state":""},"stat":{"baseUrl":"public/app/plugins/panel/stat","hideFromList":false,"id":"stat","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Big stat values \u0026 sparklines","links":null,"logos":{"small":"public/app/plugins/panel/stat/img/icn-singlestat-panel.svg","large":"public/app/plugins/panel/stat/img/icn-singlestat-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/stat/module","name":"Stat","signature":"internal","skipDataQuery":false,"sort":3,"state":""},"state-timeline":{"baseUrl":"public/app/plugins/panel/state-timeline","hideFromList":false,"id":"state-timeline","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"State changes and durations","links":null,"logos":{"small":"public/app/plugins/panel/state-timeline/img/timeline.svg","large":"public/app/plugins/panel/state-timeline/img/timeline.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/state-timeline/module","name":"State timeline","signature":"internal","skipDataQuery":false,"sort":9,"state":"beta"},"status-history":{"baseUrl":"public/app/plugins/panel/status-history","hideFromList":false,"id":"status-history","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Periodic status history","links":null,"logos":{"small":"public/app/plugins/panel/status-history/img/status.svg","large":"public/app/plugins/panel/status-history/img/status.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/status-history/module","name":"Status history","signature":"internal","skipDataQuery":false,"sort":11,"state":"beta"},"table":{"baseUrl":"public/app/plugins/panel/table","hideFromList":false,"id":"table","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Supports many column styles","links":null,"logos":{"small":"public/app/plugins/panel/table/img/icn-table-panel.svg","large":"public/app/plugins/panel/table/img/icn-table-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/table/module","name":"Table","signature":"internal","skipDataQuery":false,"sort":6,"state":""},"table-old":{"baseUrl":"public/app/plugins/panel/table-old","hideFromList":false,"id":"table-old","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Table Panel for Grafana","links":null,"logos":{"small":"public/app/plugins/panel/table-old/img/icn-table-panel.svg","large":"public/app/plugins/panel/table-old/img/icn-table-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/table-old/module","name":"Table (old)","signature":"internal","skipDataQuery":false,"sort":100,"state":"deprecated"},"text":{"baseUrl":"public/app/plugins/panel/text","hideFromList":false,"id":"text","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Supports markdown and html content","links":null,"logos":{"small":"public/app/plugins/panel/text/img/icn-text-panel.svg","large":"public/app/plugins/panel/text/img/icn-text-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/text/module","name":"Text","signature":"internal","skipDataQuery":true,"sort":14,"state":""},"timeseries":{"baseUrl":"public/app/plugins/panel/timeseries","hideFromList":false,"id":"timeseries","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"Time based line, area and bar charts","links":null,"logos":{"small":"public/app/plugins/panel/timeseries/img/icn-timeseries-panel.svg","large":"public/app/plugins/panel/timeseries/img/icn-timeseries-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/timeseries/module","name":"Time series","signature":"internal","skipDataQuery":false,"sort":1,"state":""},"welcome":{"baseUrl":"public/app/plugins/panel/welcome","hideFromList":true,"id":"welcome","info":{"author":{"name":"Grafana Labs","url":"https://grafana.com"},"description":"","links":null,"logos":{"small":"public/app/plugins/panel/welcome/img/icn-dashlist-panel.svg","large":"public/app/plugins/panel/welcome/img/icn-dashlist-panel.svg"},"build":{},"screenshots":null,"version":"","updated":""},"module":"app/plugins/panel/welcome/module","name":"Welcome","signature":"internal","skipDataQuery":true,"sort":100,"state":""}},"passwordHint":"password","pluginAdminEnabled":false,"pluginAdminExternalManageEnabled":false,"pluginCatalogURL":"https://grafana.com/grafana/plugins/","pluginsToPreload":[],"rendererAvailable":false,"rendererVersion":"","sentry":{"enabled":false,"dsn":"","customEndpoint":"/log","sampleRate":1},"sigV4AuthEnabled":false,"verifyEmailEnabled":false,"viewersCanEdit":false},
+          navTree: [{"id":"dashboards","text":"Dashboards","subTitle":"Manage dashboards and folders","icon":"apps","url":"/","sortWeight":-1900,"children":[{"id":"home","text":"Home","icon":"home-alt","url":"/","hideFromTabs":true},{"id":"divider","text":"Divider","divider":true,"hideFromTabs":true},{"id":"manage-dashboards","text":"Manage","icon":"sitemap","url":"/dashboards"},{"id":"playlists","text":"Playlists","icon":"presentation-play","url":"/playlists"}]},{"id":"alerting","text":"Alerting","subTitle":"Alert rules and notifications","icon":"bell","url":"/alerting/list","sortWeight":-1600,"children":[{"id":"alert-list","text":"Alert rules","icon":"list-ul","url":"/alerting/list"}]},{"id":"help","text":"Help","subTitle":"Grafana v8.0.6 (68fe9e3431)","icon":"question-circle","url":"#","sortWeight":-1200,"hideFromMenu":true}],
+          themePaths: {
+            light: 'public/build/grafana.light.287cd4997284268b2f13.css',
+            dark: 'public/build/grafana.dark.287cd4997284268b2f13.css'
+          }
+        };
+
+      
+        window.onload = function() {
+          var preloader = document.getElementsByClassName("preloader");
+          if (preloader.length) {
+            preloader[0].className = "preloader preloader--done";
+          }
+        };
+        
+        
+    </script>
+
+      
+    <script
+      nonce=""
+      src="public/build/runtime.287cd4997284268b2f13.js"
+      type="text/javascript"
+    ></script>
+      
+    <script
+      nonce=""
+      src="public/build/angular~app.287cd4997284268b2f13.js"
+      type="text/javascript"
+    ></script>
+      
+    <script
+      nonce=""
+      src="public/build/app.287cd4997284268b2f13.js"
+      type="text/javascript"
+    ></script>
+      
+    <script
+      nonce=""
+      src="public/build/moment~app.287cd4997284268b2f13.js"
+      type="text/javascript"
+    ></script>
+      
+    <script
+      nonce=""
+      src="public/build/vendors~app.287cd4997284268b2f13.js"
+      type="text/javascript"
+    ></script>
+     
+
+    <script nonce="">
+      performance.mark('frontend_boot_js_done_time_seconds');
+    </script>
+  </body>
+</html>
