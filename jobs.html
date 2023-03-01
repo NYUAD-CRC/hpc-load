@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           33%          252           33          126           98            1           10           12           8          11
- JUBAIL          82%            0           60          162          119           18            2            1          14           0
+ DALMA           33%          252           33          126           91            1           10           12          10          11
+ JUBAIL          77%           13           60          149          127           18            2            1          28           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=71	N-CPUs=38240	
+Pending Jobs:	 N-jobs=11	N-CPUs=3328	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -24,10 +24,10 @@ Pending Jobs:	 N-jobs=71	N-CPUs=38240
              |       | usage | usage | usage ||       |       ||	  | prcnt ||        |       ||  ||       |       ||       |       ||       |       ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 access       || 4096 |  19 % |   2 % |   -   ||   796 |     2 ||     pv32 |  18 % ||   2304 |     3 ||  ||     - |     - ||     - |     - ||  2304 |     3 ||
-bio          || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   6144 |     4 ||  ||  4608 |     3 ||  1536 |     1 ||     - |     - ||
+bio          || 4096 | 150 % |  21 % |   -   ||  6144 |     4 ||  hka5519 | 150 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 ccs          || 2048 |   -   |   -   |   -   ||     4 |     1 ||   ma6996 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cgsb         || 4096 |   4 % |   -   |   -   ||   184 |     3 ||   aa5506 |   3 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-chemistry    ||11824 |  99 % |  39 % |   1 % || 11784 |    34 || ama10285 |  90 % ||  29664 |    63 ||  ||     - |     - ||     - |     - || 29664 |    63 ||
+chemistry    ||11824 |  32 % |  12 % |   1 % ||  3848 |    37 ||    ah166 |  28 % ||   1024 |     8 ||  ||     - |     - ||     - |     - ||  1024 |     8 ||
 civil        || 3200 |   -   |   -   |   -   ||     6 |     6 ||   da3205 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator || 3072 |   -   |   -   |   -   ||    30 |     3 ||   dl5133 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 css          || 8192 |  41 % |  11 % |   -   ||  3418 |     6 ||   ap6420 |  40 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -37,10 +37,10 @@ gencore      || 6144 |  28 % |   6 % |   -   ||  1728 |    36 ||  gencore |  28 
 mechanical   || 3072 |  25 % |   1 % |   -   ||   798 |     4 ||  sk10712 |  25 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 physics      ||11824 |  45 % |  18 % |   -   ||  5400 |    32 ||   cc6881 |  17 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 preempt      ||27000 |  14 % |   2 % |  10 % ||  3904 |     9 ||    ah166 |   8 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-psychology   || 6096 |   1 % |   -   |   -   ||    61 |    61 ||  as14864 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+psychology   || 6096 |   -   |   -   |   -   ||    54 |    54 ||  as14864 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 scomputer    || 3120 |   -   |   -   |   -   ||    14 |     2 ||  naa9497 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 socialscience|| 4096 |   -   |   -   |   -   ||    14 |     1 ||     ajr7 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-students     || 2048 |  26 % |   1 % |   -   ||   552 |    11 ||   sy3125 |  18 % ||    128 |     1 ||  ||   128 |     1 ||     - |     - ||     - |     - ||
+students     || 2048 |  33 % |   2 % |   -   ||   680 |    12 ||   sy3125 |  25 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 ============================================================================================================================================================
 cap3         || 1280 | 100 % |   4 % |   -   ||  1280 |     9 ||   jb5784 |  80 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 gfg          || 1920 |  93 % |   6 % |   -   ||  1792 |     4 ||   sw4445 |  80 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -49,69 +49,14 @@ tr72         ||  256 |   7 % |   -   |   -   ||    20 |     1 ||   mps565 |   7 
 ============================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS               REASON
 ============================================================================================================================================================
-ama10285   1137679   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1137679   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1137679   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ah166      1139726   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139727   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139728   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139729   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139730   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139731   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139732   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139733   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139734   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139735   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139736   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139738   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139739   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139741   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139743   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139744   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139745   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139746   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139747   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139748   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139749   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-ah166      1139750   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-nn34       1139838   compute     chemistry     224   PENDING   medium           AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ama10285   1142734   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-ah166      1143413   compute     chemistry     768   PENDING   large            AssocGrpCpuLimit                        
-lp1471     1143584   compute     chemistry     64    PENDING   small            AssocGrpCpuLimit                        
-lp1471     1143587   compute     chemistry     64    PENDING   small            AssocGrpCpuLimit                        
-lp1471     1143596   compute     chemistry     64    PENDING   small            AssocGrpCpuLimit                        
-lp1471     1143599   compute     chemistry     64    PENDING   small            AssocGrpCpuLimit                        
-sl7036     1143891   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
-sl7036     1143918   compute     chemistry     128   PENDING   medium           AssocGrpCpuLimit                        
+ah166      1139743   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
+ah166      1139744   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
+ah166      1139745   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
+ah166      1139746   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
+ah166      1139747   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
+ah166      1139748   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
+ah166      1139749   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
+ah166      1139750   compute     chemistry     128   PENDING   medium           QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
