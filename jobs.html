@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           49%          194           18          209          108            7            7            4          29           4
- JUBAIL          55%           93           26          105           83           21            4            0          12           0
+ DALMA           49%          194           18          209          107            7            7            4          28           4
+ JUBAIL          61%           78           44          102           86           22            4            0          31           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=3	N-CPUs=69	
+Pending Jobs:	 N-jobs=24	N-CPUs=2421	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -28,18 +28,18 @@ avengers     ||12800 |   1 % |   -   |   -   ||   128 |     1 ||   benoit |   1 
 bio          || 6144 |  25 % |   5 % |   -   ||  1592 |     4 ||  hka5519 |  25 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 biology      || 3072 |   1 % |   -   |   -   ||    56 |     3 ||   tb2613 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cgsb         || 4096 |  20 % |   2 % |   -   ||   824 |     8 ||   jw5478 |  18 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-chemistry    ||11824 |  83 % |  15 % |  44 % ||  9915 |    62 ||    ah166 |  52 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+chemistry    ||11824 |  90 % |  18 % |  44 % || 10683 |    63 ||    ah166 |  58 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 civil        || 3200 |   1 % |   -   |   -   ||    49 |    22 ||    sa183 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator || 3072 |  13 % |   1 % |   -   ||   415 |     7 ||   al8748 |   8 % ||      1 |     1 ||  ||     - |     - ||     1 |     1 ||     - |     - ||
 css          || 8192 |  29 % |   8 % |   -   ||  2382 |     7 ||   ap6420 |  28 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 ecomputer    || 2048 |  14 % |   -   |   -   ||   297 |    15 ||   mok232 |   6 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-electrical   || 4096 |   -   |   -   |   -   ||    28 |     1 ||   rkm352 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-mathematics  || 2048 |  62 % |   4 % |   -   ||  1280 |    20 ||  am10485 |  62 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+electrical   || 4096 |   -   |   -   |   -   ||    29 |     2 ||   rkm352 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+mathematics  || 2048 |   3 % |   -   |   -   ||    64 |     1 ||  am10485 |   3 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 physics      ||11824 |  31 % |  12 % |   -   ||  3711 |    11 ||   cc6881 |  25 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-psychology   || 6096 |   3 % |   -   |   1 % ||   228 |     9 ||     hj23 |   3 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+psychology   || 6096 |  40 % |   7 % |   1 % ||  2468 |    29 ||  kew6086 |  36 % ||   2352 |    21 ||  ||     - |     - ||     - |     - ||  2352 |    21 ||
 scomputer    || 3120 |   1 % |   -   |   -   ||    62 |     6 ||  naa9497 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 socialscience|| 4096 |   1 % |   -   |   -   ||    56 |     2 ||  ms13502 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-students     || 2048 |   8 % |   -   |   -   ||   168 |    17 ||   map934 |   2 % ||     68 |     2 ||  ||     - |     - ||     - |     - ||    68 |     2 ||
+students     || 2048 |   7 % |   -   |   -   ||   158 |    16 ||   map934 |   2 % ||     68 |     2 ||  ||     - |     - ||     - |     - ||    68 |     2 ||
 ============================================================================================================================================================
 c2           ||  384 |   -   |   -   |   -   ||     3 |     3 ||   cl5503 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cap3         || 1280 |  39 % |   1 % |   -   ||   511 |     4 ||   jb5784 |  39 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -48,6 +48,27 @@ tr72         ||  256 |   3 % |   -   |   -   ||     8 |     1 ||    mjw19 |   3 
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ============================================================================================================================================================
 baj321     1792792   bigmem      students      40    PENDING   bigmem           gpu:a100:1                         QOSMinMemory                            
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+kew6086    1796147   compute     psychology    112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mmh690     1783630   nvidia      students      28    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
 </pre>
 </body>
