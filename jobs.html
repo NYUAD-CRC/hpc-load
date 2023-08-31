@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           14%          323           35        10166           56           77           19            7            2          38           2
- JUBAIL          77%            4           46         6716          149          155           22            4            0          51           0
+ DALMA           13%          329           35        10334           50           71           19            7            2          35           2
+ JUBAIL          80%            4           26         5692          169          156           21            4            0          48           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=127	N-CPUs=17857	
+Pending Jobs:	 N-jobs=125	N-CPUs=16194	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -27,7 +27,7 @@ access       || 4096 |   -   |   -   |   -   ||     - |     - ||          |   - 
 biology      || 3072 |   -   |   -   |   -   ||    16 |     1 ||   tb2613 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cair         || 2048 |   -   |   -   |   -   ||    18 |     3 ||   msn307 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cgsb         || 4096 |   -   |   -   |   -   ||    30 |     2 ||     mv83 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-chemistry    ||12824 |  19 % |   7 % |   3 % ||  2563 |    19 ||   na2416 |  14 % ||     47 |    24 ||  ||     1 |     1 ||     2 |     1 ||    44 |    22 ||
+chemistry    ||12824 |  19 % |   7 % |   3 % ||  2564 |    20 ||   na2416 |  14 % ||     47 |    24 ||  ||     1 |     1 ||     2 |     1 ||    44 |    22 ||
 cities       || 4096 |   -   |   -   |   -   ||    20 |     1 ||   ag9454 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 civil        || 3200 |   -   |   -   |   -   ||     2 |     2 ||    sa183 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator ||25600 |   -   |   -   |   1 % ||   192 |     6 ||   dl5133 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -37,9 +37,9 @@ ecomputer    || 8192 |   5 % |   -   |   2 % ||   490 |    22 ||   mok232 |   2 
 electrical   || 4096 |   8 % |   -   |   3 % ||   364 |    13 ||  ab10917 |   8 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 mathematics  || 6144 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   5760 |     5 ||  ||     - |     - ||     - |     - ||  5760 |     5 ||
 mechanical   || 4096 |  33 % |   4 % |   -   ||  1392 |     4 ||   scm506 |  33 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-physics      ||11824 |  52 % |  20 % |   -   ||  6172 |    15 ||   cc6881 |  51 % ||   1536 |     2 ||  ||   512 |     1 ||     - |     - ||  1024 |     1 ||
-preempt      ||27000 |  47 % |  43 % |   -   || 12801 |   101 ||   lm4344 |  47 % ||  10240 |    80 ||  ||     - |     - ||     - |     - || 10240 |    80 ||
-psychology   || 6096 |   7 % |   -   |   3 % ||   476 |    17 ||   yz5725 |   7 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+physics      ||11824 |  60 % |  24 % |   -   ||  7196 |    17 ||   cc6881 |  56 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+preempt      ||27000 |  47 % |  43 % |   -   || 12801 |   101 ||   lm4344 |  47 % ||  10112 |    79 ||  ||     - |     - ||     - |     - || 10112 |    79 ||
+psychology   || 6096 |   5 % |   -   |   2 % ||   308 |    11 ||   yz5725 |   5 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 scomputer    || 3120 |   2 % |   -   |   -   ||    70 |     3 ||  sk10691 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 students     || 8192 |   3 % |   -   |   -   ||   280 |     7 ||   hl3372 |   3 % ||     17 |     2 ||  ||     1 |     1 ||    16 |     1 ||     - |     - ||
 ============================================================================================================================================================
@@ -50,7 +50,6 @@ serdal       ||   80 |  31 % |   -   |   -   ||    25 |     1 ||   wh1165 |  31 
 ============================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ============================================================================================================================================================
-cc6881     2084664   compute     physics       1024  PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
 mok232     2084481   nvidia      ecomputer     32    PENDING   nvidia-xxl       gpu:8                              QOSMaxGRESPerUser                       
 mok232     2084482   nvidia      ecomputer     32    PENDING   nvidia-xxl       gpu:8                              QOSMaxGRESPerUser                       
 mok232     2084483   nvidia      ecomputer     32    PENDING   nvidia-xxl       gpu:8                              QOSMaxGRESPerUser                       
@@ -136,12 +135,11 @@ lm4344     2084593   preempt     preempt       128   PENDING   preempt-big      
 lm4344     2084593   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     2084593   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     2084593   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-lm4344     2084593   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+lm4344     2084374   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+lm4344     2084373   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     2084377   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     2084376   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     2084375   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-lm4344     2084374   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-lm4344     2084373   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     2084372   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     2084371   preempt     preempt       128   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 </pre>
