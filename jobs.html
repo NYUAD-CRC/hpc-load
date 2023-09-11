@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           42%          142          119         6783          141          550           11            9            2          95           2
- JUBAIL          49%           41           92        10707           66          116           20           42            0          31           0
+ DALMA           46%          124          117         6275          160          601           12            9            2         114           2
+ JUBAIL          56%           26           92         8787           81          126           20           42            0          35           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=1131	N-CPUs=8998	
+Pending Jobs:	 N-jobs=1123	N-CPUs=7108	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -24,14 +24,16 @@ Pending Jobs:	 N-jobs=1131	N-CPUs=8998
              |       | usage | usage | usage ||       |       ||	  | prcnt ||        |       ||  ||       |       ||       |       ||       |       ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 access       || 4096 |   -   |   -   |   -   ||     2 |     2 ||     zl28 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-bio          || 6144 |  15 % |   2 % |   1 % ||   952 |     9 ||  hka5519 |  12 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-biology      || 3072 |   5 % |   -   |   1 % ||   184 |     8 ||   tb2613 |   5 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+bio          || 6144 |  15 % |   2 % |   1 % ||   936 |     8 ||  hka5519 |  12 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+biology      || 3072 |   5 % |   -   |   1 % ||   168 |     7 ||   tb2613 |   5 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cair         || 2048 |   1 % |   -   |   -   ||    40 |     8 ||   msn307 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-chemistry    ||12824 |  19 % |   6 % |   5 % ||  2536 |   218 ||    ah166 |  17 % ||   1330 |   665 ||  ||     - |     - ||     - |     - ||  1330 |   665 ||
+cgsb         || 4096 |   1 % |   -   |   -   ||    48 |    48 ||     mv83 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+chemistry    ||12824 |  38 % |  12 % |   8 % ||  4904 |   230 ||    ah166 |  17 % ||   1312 |   656 ||  ||     - |     - ||     - |     - ||  1312 |   656 ||
 collaborator ||25600 |   3 % |   3 % |   -   ||   958 |    12 ||   jw5478 |   3 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+cph          || 3072 |   -   |   -   |   -   ||    28 |     1 ||   im2493 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 css          || 8192 |  28 % |   1 % |  16 % ||  2320 |   204 ||     ob19 |  24 % ||   4600 |   460 ||  ||     - |     - ||     - |     - ||  4600 |   460 ||
-default      ||  128 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   3000 |     1 ||  ||     - |     - ||     - |     - ||  3000 |     1 ||
-ecomputer    || 8192 |   4 % |   -   |   -   ||   364 |     7 ||   yl9164 |   3 % ||     42 |     4 ||  ||     - |     - ||     - |     - ||    42 |     4 ||
+default      ||  128 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   1000 |     1 ||  ||     - |     - ||     - |     - ||  1000 |     1 ||
+ecomputer    || 8192 |   4 % |   -   |   1 % ||   404 |     8 ||   yl9164 |   3 % ||    170 |     5 ||  ||     - |     - ||   128 |     1 ||    42 |     4 ||
 electrical   || 4096 |  83 % |   9 % |   4 % ||  3430 |   106 ||   zw3464 |  83 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 mechanical   || 4096 |  35 % |   4 % |   -   ||  1461 |     3 ||   scm506 |  35 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 physics      ||11824 |  58 % |  19 % |   8 % ||  6912 |    15 ||   cc6881 |  51 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -48,7 +50,7 @@ chi          ||  256 |   7 % |   -   |   -   ||    20 |     1 ||   pb2276 |   7 
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ============================================================================================================================================================
 gk1656     2101254   bigmem      students      26    PENDING   bigmem           gpu:v100:0                         QOSMinMemory                            
-ibs257     2100343   compute     default       3000  PENDING   xlarge           N/A                                AssocGrpCpuLimit                        
+ibs257     2111710   compute     default       1000  PENDING   large            N/A                                AssocGrpCpuLimit                        
 ob19       2111025   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ob19       2111025   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ob19       2111025   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -509,15 +511,6 @@ ob19       2111026   compute     css           10    PENDING   small            
 ob19       2111026   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ob19       2111026   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ob19       2111026   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      2111515   compute     chemistry     2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
