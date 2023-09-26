@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           47%          169           83         6207          168          313            5            7            2          69           2
- JUBAIL          53%           58          101        13300           64           70           15            4            0          13           0
+ DALMA           46%          171           85         6291          164          310            5            7            2          68           2
+ JUBAIL          54%           58          101        12944           64          326           15            4            0          17           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=552	N-CPUs=5237	
+Pending Jobs:	 N-jobs=894	N-CPUs=5561	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -25,28 +25,370 @@ Pending Jobs:	 N-jobs=552	N-CPUs=5237
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 biology      || 3072 |   -   |   -   |   -   ||    24 |     1 ||   tb2613 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cgsb         || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      6 |     1 ||  ||     - |     - ||     - |     - ||     6 |     1 ||
-chemistry    ||12824 |  43 % |  10 % |  21 % ||  5559 |    78 ||   na2416 |  20 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+chemistry    ||12824 |  43 % |  10 % |  21 % ||  5557 |    77 ||   na2416 |  20 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator || 3072 |  12 % |   1 % |   -   ||   385 |     4 ||   jw5478 |  12 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-css          || 4096 |  50 % |   -   |  16 % ||  2056 |   202 ||     ob19 |  48 % ||   4070 |   407 ||  ||     - |     - ||     - |     - ||  4070 |   407 ||
+css          || 4096 |  53 % |   -   |  16 % ||  2176 |   203 ||     ob19 |  48 % ||   4050 |   405 ||  ||     - |     - ||     - |     - ||  4050 |   405 ||
 default      ||  128 |  50 % |   -   |   -   ||    64 |     1 ||   za2061 |  50 % ||      6 |     1 ||  ||     - |     - ||     - |     - ||     6 |     1 ||
 ecomputer    || 4096 |   6 % |   -   |   -   ||   273 |    12 ||   mok232 |   4 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-electrical   || 4096 |  29 % |   -   |   8 % ||  1224 |    40 ||  ab10917 |  25 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+electrical   || 4096 |  27 % |   -   |   8 % ||  1140 |    37 ||  ab10917 |  23 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 gencore      || 6144 |   8 % |   1 % |   -   ||   514 |    10 ||  gencore |   8 % ||   1155 |   143 ||  ||     - |     - ||     - |     - ||  1155 |   143 ||
 mechanical   || 4096 |  10 % |   1 % |   -   ||   450 |     1 ||   scm506 |  10 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 physics      ||13824 |  76 % |  37 % |   -   || 10624 |    20 ||   cc6881 |  59 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-preempt      ||27000 |   -   |   -   |   -   ||    20 |     1 ||   dz2449 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-scomputer    || 3120 |   1 % |   -   |   -   ||    32 |     2 ||  sk10691 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+scomputer    || 3120 |   9 % |   -   |   -   ||   288 |   258 ||    mjw19 |   8 % ||    344 |   344 ||  ||     - |     - ||     - |     - ||   344 |   344 ||
 students     || 3072 |  28 % |   2 % |   -   ||   869 |    12 ||   hl3372 |  15 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 ============================================================================================================================================================
 c2           ||  384 |   8 % |   -   |   -   ||    32 |     2 ||   cl5503 |   8 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cap3         || 1280 |  60 % |   2 % |   -   ||   768 |     1 ||   mn2960 |  60 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 chi          ||  256 |   7 % |   -   |   -   ||    20 |     1 ||   pb2276 |   7 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 gfg          || 1920 |  80 % |   5 % |   -   ||  1536 |     2 ||   mn2960 |  80 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+tr72         ||  256 | 100 % |   -   |   -   ||   256 |   256 ||    mjw19 | 100 % ||    344 |   344 ||  ||     - |     - ||     - |     - ||   344 |   344 ||
 ============================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ============================================================================================================================================================
-ob19       2200484   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ob19       2200484   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201080   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201097   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
+mjw19      2201098   compute     scomputer     1     PENDING   tr72             N/A                                QOSGrpCpuLimit                          
 ob19       2200484   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ob19       2200484   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ob19       2200484   compute     css           10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
