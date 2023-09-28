@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           29%          248           98         8319           76          356           12            8            3          55           3
- JUBAIL          76%           24           93         6610          106          148           18            5            0          31           0
+ DALMA           31%          248           71         8122          103          534           12            8            3          49           3
+ JUBAIL          83%           17           77         4635          129          148           19            5            0          38           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=556	N-CPUs=6628	
+Pending Jobs:	 N-jobs=640	N-CPUs=6712	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -25,17 +25,18 @@ Pending Jobs:	 N-jobs=556	N-CPUs=6628
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 biology      || 3072 |   4 % |   -   |   1 % ||   144 |     8 ||   tb2613 |   4 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cgsb         || 4096 |   5 % |   -   |   -   ||   232 |   101 ||  are6747 |   2 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-chemistry    ||12824 |  47 % |  17 % |   8 % ||  6062 |    75 ||   na2416 |  20 % ||      6 |     6 ||  ||     - |     - ||     - |     - ||     6 |     6 ||
+chemistry    ||12824 |  48 % |  17 % |   9 % ||  6239 |   252 ||   na2416 |  20 % ||    137 |   137 ||  ||     - |     - ||     - |     - ||   137 |   137 ||
+cities       || 4096 |   -   |   -   |   -   ||    18 |     1 ||   ag9454 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 civil        || 3200 |   1 % |   -   |   -   ||    63 |     5 ||   zl2307 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator || 3072 |  10 % |   -   |   2 % ||   311 |     4 ||   dl5133 |  10 % ||      1 |     1 ||  ||     - |     - ||     - |     - ||     1 |     1 ||
 css          || 4096 |  58 % |   2 % |  14 % ||  2398 |   175 ||     ob19 |  41 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-ecomputer    || 4096 |   1 % |   -   |   -   ||    69 |     7 || sas10092 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-electrical   || 4096 |  15 % |   1 % |   -   ||   620 |    11 ||   yw3576 |  11 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-gencore      || 6144 |  18 % |   4 % |   -   ||  1149 |    70 ||  gencore |  18 % ||   6621 |   549 ||  ||     - |     - ||     - |     - ||  6621 |   549 ||
+ecomputer    || 4096 |   2 % |   -   |   -   ||    89 |     8 || sas10092 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+electrical   || 4096 |  14 % |   1 % |   -   ||   592 |    10 ||   yw3576 |  11 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+gencore      || 6144 |  18 % |   3 % |   -   ||  1124 |    68 ||  gencore |  18 % ||   6574 |   502 ||  ||     - |     - ||     - |     - ||  6574 |   502 ||
 mathematics  || 3072 |  37 % |   4 % |   -   ||  1152 |     1 ||  ak11283 |  37 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 mechanical   || 4096 |  49 % |   6 % |   -   ||  2014 |     4 ||   ds7760 |  25 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 nyushanghai  || 1024 |   -   |   -   |   -   ||     4 |     1 ||   wr2172 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-physics      ||13824 |  83 % |  40 % |   -   || 11520 |    22 ||   cc6881 |  59 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+physics      ||13824 |  98 % |  47 % |   -   || 13548 |    24 ||   cc6881 |  59 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 psychology   || 6096 |   -   |   -   |   -   ||    12 |     3 ||   yz5725 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 scomputer    || 3120 |   2 % |   -   |   -   ||    88 |     4 ||   ia2280 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -51,6 +52,137 @@ mordor       ||  384 |   6 % |   -   |   -   ||    24 |     1 ||  as11798 |   6 
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ============================================================================================================================================================
 ma8437     2232378   bigmem      collaborator  1     PENDING   bigmem           N/A                                QOSMinMemory                            
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234251   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+ah166      2234285   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     2232609   nvidia      chemistry     1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 fz2113     2232608   nvidia      chemistry     1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 fz2113     2232607   nvidia      chemistry     1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
