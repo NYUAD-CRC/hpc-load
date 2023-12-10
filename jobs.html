@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           67%           62          140         3292          193          517            2           31            2          93           2
- JUBAIL          70%           31           65         7537          118          113           30            9            4           1           0
+ DALMA           64%           63          143         3603          189          480            3           31            2          93           2
+ JUBAIL          72%           25           63         6535          122          114           30           13            4           8           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=86	N-CPUs=2806	
+Pending Jobs:	 N-jobs=86	N-CPUs=2330	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -23,7 +23,7 @@ Pending Jobs:	 N-jobs=86	N-CPUs=2806
              | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs ||  || N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs ||       
              |       | usage | usage | usage ||       |       ||	  | prcnt ||        |       ||  ||       |       ||       |       ||       |       ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-bio          || 8192 |  16 % |   3 % |   2 % ||  1336 |    16 ||  hka5519 |  12 % ||    384 |    16 ||  ||    24 |     1 ||     - |     - ||   360 |    15 ||
+bio          || 8192 |  22 % |   5 % |   2 % ||  1848 |    17 ||  hka5519 |  18 % ||    384 |    16 ||  ||    24 |     1 ||     - |     - ||   360 |    15 ||
 biology      || 3072 |  10 % |   -   |   2 % ||   312 |    13 ||   tb2613 |  10 % ||    384 |    16 ||  ||    24 |     1 ||     - |     - ||   360 |    15 ||
 cair         || 2048 |   6 % |   -   |   -   ||   128 |     1 ||   mh7281 |   6 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cgsb         || 4096 |   -   |   -   |   -   ||    13 |     4 ||   sg5533 |   -   ||      3 |     3 ||  ||     3 |     3 ||     - |     - ||     - |     - ||
@@ -37,12 +37,13 @@ ecomputer    || 4096 |   9 % |   1 % |   -   ||   385 |     8 ||   dz2449 |   4 
 electrical   || 3072 |   4 % |   -   |   -   ||   128 |     2 ||   yw3576 |   4 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 gencore      || 4096 |   -   |   -   |   -   ||    20 |     5 ||  gencore |   -   ||    124 |     9 ||  ||     - |     - ||     - |     - ||   124 |     9 ||
 mathematics  || 3072 |   -   |   -   |   -   ||    28 |     1 ||   nb3854 |   -   ||      1 |     1 ||  ||     - |     - ||     - |     - ||     1 |     1 ||
-physics      ||11824 |  97 % |  40 % |   -   || 11499 |    26 ||   cc6881 |  47 % ||   1004 |     4 ||  ||     - |     - ||     - |     - ||  1004 |     4 ||
+mechanical   || 4096 |   -   |   -   |   -   ||     1 |     1 ||    wj634 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+physics      ||11824 |  97 % |  40 % |   -   || 11489 |    26 ||   cc6881 |  47 % ||    514 |     3 ||  ||     - |     - ||     - |     - ||   514 |     3 ||
 preempt      ||27000 |  10 % |   -   |  24 % ||  2912 |     4 ||   wh1165 |  10 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-psychology   || 6096 |  43 % |   -   |  22 % ||  2662 |   296 ||   cp3488 |  24 % ||      8 |     1 ||  ||     8 |     1 ||     - |     - ||     - |     - ||
+psychology   || 6096 |  38 % |   -   |  19 % ||  2366 |   259 ||   cp3488 |  24 % ||      8 |     1 ||  ||     8 |     1 ||     - |     - ||     - |     - ||
 scomputer    || 3120 |   4 % |   -   |   1 % ||   155 |     2 ||  sk10691 |   4 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 socialscience|| 4096 |   -   |   -   |   -   ||    17 |     8 ||   ke2211 |   -   ||     33 |    33 ||  ||     - |     - ||    33 |    33 ||     - |     - ||
-students     || 3072 |  55 % |   5 % |   -   ||  1709 |    89 ||   na2450 |  35 % ||     15 |     1 ||  ||    15 |     1 ||     - |     - ||     - |     - ||
+students     || 3072 |  55 % |   5 % |   -   ||  1694 |    88 ||   na2450 |  35 % ||     29 |     2 ||  ||    29 |     2 ||     - |     - ||     - |     - ||
 ============================================================================================================================================================
 c2           ||  384 |   3 % |   -   |   -   ||    15 |     1 ||  mm12191 |   3 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cap3         || 1280 |  90 % |   4 % |   -   ||  1152 |     6 ||   jb5784 |  50 % ||    512 |     1 ||  ||     - |     - ||     - |     - ||   512 |     1 ||
@@ -56,16 +57,15 @@ mc7787     4258837   compute     default       2     PENDING   small            
 mc7787     4258780   compute     default       2     PENDING   small            gpu:3                              QOSMaxWallDurationPerJobLimit           
 mc7787     4258778   compute     default       2     PENDING   small            gpu:3                              QOSMaxWallDurationPerJobLimit           
 mc7787     4258771   compute     default       2     PENDING   small            gpu:3                              QOSMaxWallDurationPerJobLimit           
-ng53       4297106   compute     physics       490   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+zg2470     4286509   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4286508   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4286507   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4286515   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4286514   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4286513   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4286512   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4286511   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4286510   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4286509   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4286508   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4286507   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4286515   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 dz2449     4289866   nvidia      ecomputer     64    PENDING   nvidia           gpu:a100:4                         QOSMaxGRESPerUser                       
 dz2449     4289867   nvidia      ecomputer     64    PENDING   nvidia           gpu:a100:4                         QOSMaxGRESPerUser                       
 dz2449     4289868   nvidia      ecomputer     64    PENDING   nvidia           gpu:a100:4                         QOSMaxGRESPerUser                       
