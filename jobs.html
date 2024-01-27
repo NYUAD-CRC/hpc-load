@@ -11,11 +11,11 @@
 ============================================================================================================================================================
              CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC        J-RUN        J-GPU      N-DRAIN       N-DOWN       N-U/L       N-O/L
 ============================================================================================================================================================
- DALMA           32%          231          165         7898           31          524           27            5            7          71          24
- JUBAIL          47%           93           41        14863           86          136           38            3            1           0           0
+ DALMA           31%          232          164         8074           31          506           27            5            7          70          31
+ JUBAIL          47%           93           41        14799           86          137           38            3            1           1           0
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Pending Jobs:	 N-jobs=161	N-CPUs=527	
+Pending Jobs:	 N-jobs=161	N-CPUs=554	
 
 ============================================================================================================================================================
  ACCOUNT                        USAGE               RUNNING           TOP USER           PENDING              PRIORITY        RESOURCES        OTHERS 
@@ -23,12 +23,11 @@ Pending Jobs:	 N-jobs=161	N-CPUs=527
              | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs ||  || N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs ||       
              |       | usage | usage | usage ||       |       ||	  | prcnt ||        |       ||  ||       |       ||       |       ||       |       ||
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
-access       || 4096 |   -   |   -   |   -   ||     1 |     1 ||     op13 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-bio          || 8192 |  72 % |  20 % |   -   ||  5937 |    15 ||  hka5519 |  71 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-biology      || 3072 |   1 % |   -   |   -   ||    49 |     3 ||   tb2613 |   1 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+bio          || 8192 |  72 % |  20 % |   -   ||  5913 |    14 ||  hka5519 |  71 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+biology      || 3072 |   -   |   -   |   -   ||    25 |     2 ||   tb2613 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cair         || 2048 |   -   |   -   |   -   ||     5 |     1 ||   msn307 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-cgsb         || 4096 |   1 % |   -   |   -   ||    45 |     4 ||     gb77 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-chemistry    ||10824 |  52 % |  11 % |  20 % ||  5702 |   282 ||   na2416 |  18 % ||    303 |   136 ||  ||     - |     - ||     - |     - ||   303 |   136 ||
+cgsb         || 4096 |   1 % |   -   |   -   ||    44 |     3 ||     gb77 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+chemistry    ||10824 |  51 % |  11 % |  19 % ||  5616 |   268 ||   na2416 |  18 % ||    302 |   135 ||  ||     - |     - ||     - |     - ||   302 |   135 ||
 civil        || 3200 |   -   |   -   |   -   ||     3 |     3 ||   da3205 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 collaborator || 3072 |  69 % |   6 % |   2 % ||  2130 |    10 ||   ap6420 |  58 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 css          || 4096 |   -   |   -   |   -   ||    12 |     1 ||   aj1566 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -40,7 +39,7 @@ physics      ||11824 |   4 % |   1 % |   -   ||   480 |     1 ||   mn2960 |   4 
 psychology   || 6096 |  14 % |   -   |   7 % ||   890 |    89 ||   cp3488 |  14 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 scomputer    || 3120 |   6 % |   -   |   1 % ||   204 |    30 ||  naa9497 |   3 % ||    136 |    17 ||  ||     - |     - ||     - |     - ||   136 |    17 ||
 socialscience|| 4096 |   -   |   -   |   -   ||     3 |     3 ||   ke2211 |   -   ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
-students     || 3072 |  70 % |   6 % |   1 % ||  2162 |   177 ||  avk3319 |  50 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
+students     || 3072 |  70 % |   6 % |   1 % ||  2162 |   177 ||  avk3319 |  50 % ||     28 |     1 ||  ||    28 |     1 ||     - |     - ||     - |     - ||
 ============================================================================================================================================================
 c2           ||  384 |  12 % |   -   |   -   ||    47 |     3 ||   nb3891 |   7 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
 cair         ||  128 |   3 % |   -   |   -   ||     4 |     1 ||   hh1811 |   3 % ||      - |     - ||  ||     - |     - ||     - |     - ||     - |     - ||
@@ -51,11 +50,6 @@ tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   - 
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ============================================================================================================================================================
 na2416     4603784   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-zg2470     4596156   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596155   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596154   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596153   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596152   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596151   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596150   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596149   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
@@ -78,11 +72,6 @@ zg2470     4596133   nvidia      chemistry     1     PENDING   nvidia           
 zg2470     4596132   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596131   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596130   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596129   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596184   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596183   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596182   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596181   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596180   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596179   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596178   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
@@ -107,11 +96,11 @@ zg2470     4596160   nvidia      chemistry     1     PENDING   nvidia           
 zg2470     4596159   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596158   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596157   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596213   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596212   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596211   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596210   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-zg2470     4596209   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596156   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596155   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596154   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596153   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596152   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596208   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596207   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596206   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
@@ -136,6 +125,10 @@ zg2470     4596188   nvidia      chemistry     1     PENDING   nvidia           
 zg2470     4596187   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596186   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596185   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596184   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596183   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596182   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596181   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596223   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596222   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596221   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
@@ -146,46 +139,51 @@ zg2470     4596217   nvidia      chemistry     1     PENDING   nvidia           
 zg2470     4596216   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596215   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 zg2470     4596214   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-yc4445     4596660   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+zg2470     4596213   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596212   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596211   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596210   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+zg2470     4596209   nvidia      chemistry     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 yc4445     4596659   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596658   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-yc4445     4596666   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596665   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596664   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596663   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596662   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596661   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-yc4445     4596672   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+yc4445     4596660   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596671   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596670   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596669   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596668   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596667   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-yc4445     4596677   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+yc4445     4596666   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596676   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596675   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596674   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596673   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-yc4445     4596683   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+yc4445     4596672   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596682   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596681   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596680   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596679   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596678   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-yc4445     4596689   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+yc4445     4596677   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596688   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596687   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596686   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596685   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596684   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-yc4445     4596695   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+yc4445     4596683   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596694   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596693   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596692   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596691   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596690   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+yc4445     4596689   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596697   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yc4445     4596696   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+yc4445     4596695   nvidia      chemistry     2     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jfg388     4616422   nvidia      scomputer     8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jfg388     4616422   nvidia      scomputer     8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jfg388     4616422   nvidia      scomputer     8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
