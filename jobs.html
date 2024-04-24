@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         13       26       33 %     || DALMA    ||          19%          300           47         9514           70          32           8      ||
-||   95         70       25       73 %     || JUBAIL   ||          44%           74           95        15701           51          11           0      ||
+||   39         13       26       33 %     || DALMA    ||          22%          287           47         9122           84          29           6      ||
+||   95         70       25       73 %     || JUBAIL   ||          43%           74           95        15757           51          23           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:20   GPU:10
@@ -28,12 +28,13 @@
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     1 |     1 ||   sg5533 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
 ||  1 |  - |  - ||chemistry    ||10824 |  25 % |   6 % |   6 % ||  2813 |    36 ||   na2416 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  - |  - ||cities       || 4096 |   7 % |   -   |   -   ||   324 |    18 ||   ag9454 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||civil        || 3200 |   3 % |   -   |   -   ||   118 |    72 ||    sa183 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||civil        || 3200 |   3 % |   -   |   -   ||    98 |    71 ||    sa183 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |  - |  - ||collaborator || 3072 |  26 % |   2 % |   -   ||   827 |    16 ||   ha3152 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   4 % |   -   |   -   ||    84 |     3 ||  mm12971 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||     8 |     1 ||  dbd7602 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  51 % |   -   |   3 % ||   399 |    14 ||  ak11326 |  25 % ||     56 |     1 ||    56 |     1 ||     - |     - ||
 || 10 |  8 |  - ||ecomputer    || 4096 |   3 % |   -   |   -   ||   136 |     4 ||    fs999 |   3 % ||    280 |     3 ||   280 |     3 ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |  16 % |   -   |   4 % ||   684 |    81 ||   zw3464 |  15 % ||    420 |    15 ||   420 |    15 ||     - |     - ||
+||  - |  - |  - ||electrical   || 4096 |  23 % |   -   |   7 % ||   964 |    91 ||   zw3464 |  21 % ||    392 |    14 ||   392 |    14 ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  50 % |   6 % |   1 % ||  2080 |    14 ||   ds7760 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 | 27 | 27 ||nyushanghai  || 1024 |   1 % |   -   |   -   ||    16 |     5 ||   fz2113 |   -   ||     54 |    27 ||     - |     - ||    54 |    27 ||
 ||  5 |  - |  - ||physics      ||11824 |  39 % |  16 % |   -   ||  4704 |    12 ||   cc6881 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -50,17 +51,12 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-yc4445     7088006   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-yc4445     7088005   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-yc4445     7088004   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088003   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088002   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7087995   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7087994   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7087993   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7087992   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-yc4445     7088021   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-yc4445     7088020   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088019   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088018   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088017   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -73,10 +69,15 @@ yc4445     7088010   nvidia      nyushanghai   2     PENDING   nvidia           
 yc4445     7088009   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088008   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088007   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+yc4445     7088006   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+yc4445     7088005   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+yc4445     7088004   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088025   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088024   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088023   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 yc4445     7088022   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+yc4445     7088021   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+yc4445     7088020   nvidia      nyushanghai   2     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 rmk7       7062376   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 rmk7       7062376   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 rmk7       7062376   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
