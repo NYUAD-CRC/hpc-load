@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         17       22       43 %     || DALMA    ||          80%           28          101         2081          282         228           8      ||
-||   95         70       25       73 %     || JUBAIL   ||          58%           46          100        11422           72          24           0      ||
+||   39         17       22       43 %     || DALMA    ||          80%           38           94         2136          279         229           8      ||
+||   95         73       22       76 %     || JUBAIL   ||          58%           46          100        11487           72          22           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:76   GPU:2
@@ -24,316 +24,32 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  12 % |   2 % |   -   ||   771 |     4 ||  ak11283 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |   4 % |   -   |   -   ||   142 |     4 ||   lb4489 |   3 % ||     16 |     1 ||    16 |     1 ||     - |     - ||
-||  4 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   160 |     4 ||   baj321 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |   5 % |   -   |   -   ||   158 |     5 ||   lb4489 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  5 |  - |  - ||ccs          || 6144 |   3 % |   -   |   -   ||   200 |     5 ||   baj321 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||cgsb         || 4096 |   3 % |   -   |   -   ||   136 |     7 ||     gb77 |   2 % ||    225 |     1 ||   225 |     1 ||     - |     - ||
-||  - |  - |  - ||chemistry    ||10824 |  77 % |  10 % |  45 % ||  8348 |   126 ||     nn34 |  31 % || 246624 |  1101 ||     - |     - ||246624 |  1101 ||
-||  5 |  - |  - ||cities       || 4096 |   2 % |   -   |   -   ||    90 |     5 ||   ag9454 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||chemistry    ||10824 |  77 % |  10 % |  45 % ||  8373 |   127 ||     nn34 |  31 % || 241920 |  1080 ||     - |     - ||241920 |  1080 ||
+||  3 |  - |  - ||cities       || 4096 |   1 % |   -   |   -   ||    54 |     3 ||   ag9454 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||civil        || 3200 |   6 % |   -   |   -   ||   207 |    74 ||   zl2307 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |956 |956 ||collaborator || 3072 |  64 % |   6 % |   -   ||  1978 |    23 ||   ap6420 |  33 % ||    975 |   956 ||     - |     - ||   975 |   956 ||
 ||  - |  - |  - ||cqts         || 2048 |  87 % |   -   |  14 % ||  1792 |    64 ||  mm12971 |  87 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  36 % |   -   |   2 % ||   277 |    11 ||  ak11326 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 27 |328 |328 ||ecomputer    || 4096 |   8 % |   -   |   1 % ||   352 |    20 ||  ljl5178 |   3 % ||   6560 |   328 ||     - |     - ||  6560 |   328 ||
-||  - |  - |  - ||electrical   || 4096 |  10 % |   -   |   3 % ||   411 |    81 ||   zw3464 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  35 % |   -   |   2 % ||   276 |    10 ||  ak11326 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 30 |326 |326 ||ecomputer    || 4096 |   9 % |   -   |   1 % ||   372 |    23 ||  ljl5178 |   3 % ||   6520 |   326 ||     - |     - ||  6520 |   326 ||
+||  - |  - |  - ||electrical   || 4096 |   7 % |   -   |   2 % ||   326 |    77 ||   zw3464 |   4 % ||     56 |     2 ||    56 |     2 ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  50 % |   7 % |   -   ||  2064 |     4 ||   ds7760 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||nyushanghai  || 1024 |   4 % |   -   |   -   ||    42 |     2 ||   wr2172 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||nyushanghai  || 1024 |   3 % |   -   |   -   ||    40 |     1 ||   wr2172 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  43 % |  17 % |   -   ||  5121 |    11 ||   cc6881 |  43 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   5 % |   5 % |   -   ||  1440 |    10 ||   ba2524 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |  34 % |   2 % |  12 % ||  2084 |   201 ||  as14864 |  33 % ||   2280 |   285 ||     - |     - ||  2280 |   285 ||
+||  - |  - |  - ||psychology   || 6096 |  33 % |   1 % |  12 % ||  2018 |   201 ||  as14864 |  32 % ||    936 |   117 ||     - |     - ||   936 |   117 ||
 ||  3 |  - |  - ||scomputer    || 3120 |   -   |   -   |   -   ||    30 |     3 ||  naa9497 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 18 | 44 | 44 ||students     || 6144 |  38 % |   7 % |   -   ||  2336 |    34 ||  avk3319 |  29 % ||    704 |    44 ||     - |     - ||   704 |    44 ||
+|| 20 | 44 | 44 ||students     || 6144 |  38 % |   7 % |   -   ||  2338 |    35 ||  avk3319 |  29 % ||    704 |    44 ||     - |     - ||   704 |    44 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |   -   |   -   |   -   ||     1 |     1 ||   nb3868 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cair         ||  128 |   6 % |   -   |   -   ||     8 |     2 ||   hh1811 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    20 |     1 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||serdal       ||   80 |  31 % |   -   |   -   ||    25 |     1 ||   wh1165 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7318792   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1012,27 +728,6 @@ nn34       7319280   compute     chemistry     224   PENDING   medium           
 nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7319280   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319316   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319316   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319316   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1435,6 +1130,123 @@ nn34       7319316   compute     chemistry     224   PENDING   medium           
 nn34       7319316   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319316   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7319316   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+as14864    7321926   compute     psychology    8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ad7091     7214051   nvidia      collaborator  1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     7214051   nvidia      collaborator  1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     7214051   nvidia      collaborator  1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -2717,16 +2529,14 @@ ljl5178    7300206   nvidia      ecomputer     20    PENDING   nvidia           
 ljl5178    7300206   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    7300206   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    7300206   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7300206   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7300206   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321446   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321448   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321451   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321462   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321465   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321468   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
-hwz208     7321471   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321469   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
+hwz208     7321471   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321476   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321475   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321480   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
@@ -2734,9 +2544,9 @@ hwz208     7321484   nvidia      students      16    PENDING   nvidia           
 hwz208     7321483   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321485   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321491   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
-hwz208     7321496   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321495   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321497   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
+hwz208     7321496   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321499   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321503   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321513   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
@@ -2744,8 +2554,8 @@ hwz208     7321510   nvidia      students      16    PENDING   nvidia           
 hwz208     7321514   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321515   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321519   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
-hwz208     7321521   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321525   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
+hwz208     7321521   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321526   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321527   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321534   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
@@ -2753,16 +2563,16 @@ hwz208     7321536   nvidia      students      16    PENDING   nvidia           
 hwz208     7321541   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321542   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321544   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
-hwz208     7321551   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321548   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321553   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
+hwz208     7321551   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321554   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321556   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321561   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321564   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
+hwz208     7321570   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321568   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 hwz208     7321572   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
-hwz208     7321570   nvidia      students      16    PENDING   nvidia           gpu:a100                           QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
