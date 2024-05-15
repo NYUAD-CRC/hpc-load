@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         33        6       84 %     || DALMA    ||          55%          169           21         5219          231         214           4      ||
-||   95         86        9       90 %     || JUBAIL   ||          40%           96           67        16353           51          15           0      ||
+||   39         33        6       84 %     || DALMA    ||          79%           63           22         2270          336         320           4      ||
+||   95         86        9       90 %     || JUBAIL   ||          41%           98           60        16041           56          12           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:23   GPU:5
+	OOD JOBS:  CPU:22   GPU:5
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -28,11 +28,11 @@
 ||  - |  - |  - ||biology      || 3072 |  11 % |   1 % |   -   ||   352 |     5 ||  cmm9990 |  11 % ||    609 |    10 ||     - |     - ||   609 |    10 ||
 ||  - |  - |  - ||cbs          || 2048 |   2 % |   -   |   -   ||    42 |     2 ||  azm9155 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |  6 |  - ||ccs          || 6144 |   3 % |   -   |   -   ||   244 |     7 ||   baj321 |   3 % ||    240 |     6 ||   240 |     6 ||     - |     - ||
-||  9 |  - |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||   109 |     6 ||     gb77 |   2 % ||    225 |     1 ||   225 |     1 ||     - |     - ||
-||  5 |  - |  - ||chemistry    ||10824 |  71 % |   7 % |  47 % ||  7746 |   234 ||   saa788 |  51 % ||   1876 |    67 ||     - |     - ||  1876 |    67 ||
-|| 15 |  - |  - ||cities       || 4096 |   8 % |   -   |   1 % ||   368 |    21 ||   ag9454 |   8 % ||     18 |     1 ||     - |     - ||    18 |     1 ||
+||  9 |  8 |  - ||cgsb         || 4096 |   3 % |   -   |   1 % ||   137 |     7 ||     gb77 |   2 % ||    313 |     5 ||   313 |     5 ||     - |     - ||
+||  5 |  - |  - ||chemistry    ||10824 |  98 % |   7 % |  71 % || 10663 |   248 ||   saa788 |  51 % ||  21364 |   154 ||     - |     - || 21364 |   154 ||
+|| 15 |  - |  - ||cities       || 4096 |   8 % |   -   |   1 % ||   368 |    21 ||   ag9454 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  1 |  - ||civil        || 3200 |   2 % |   -   |   -   ||    74 |    34 ||    sa183 |   1 % ||     40 |     1 ||    40 |     1 ||     - |     - ||
-||  2 |  - |  - ||collaborator || 3072 |  55 % |   4 % |   3 % ||  1705 |   115 ||   ha3152 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||collaborator || 3072 |  65 % |   5 % |   3 % ||  2027 |   119 ||   ha3152 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||    20 |     2 ||  mm12971 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  16 % |   1 % |   -   ||   512 |     2 ||   rp4207 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    38 |     1 ||   ch3246 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -54,7 +54,7 @@
 ||  - |  - |  - ||cap3         || 1280 |  80 % |   3 % |   -   ||  1024 |     2 ||   mn2960 |  80 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gfg          || 1920 |  53 % |   3 % |   -   ||  1024 |     2 ||   mn2960 |  53 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||marinemicro  ||  256 |  75 % |   -   |   -   ||   192 |     2 ||  cmm9990 |  75 % ||     97 |     2 ||     - |     - ||    97 |     2 ||
-||  6 |  1 |  1 ||shamout      ||  384 |  35 % |   -   |   -   ||   136 |     6 ||   ag9454 |  18 % ||     18 |     1 ||     - |     - ||    18 |     1 ||
+||  6 |  - |  - ||shamout      ||  384 |  35 % |   -   |   -   ||   136 |     6 ||   ag9454 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |  39 % |   -   |   -   ||   100 |   100 ||   mw5639 |  39 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
@@ -138,7 +138,93 @@ saa788     7550081   compute     chemistry     28    PENDING   small            
 saa788     7550081   compute     chemistry     28    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 saa788     7550081   compute     chemistry     28    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 saa788     7550081   compute     chemistry     28    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ag9454     7605066   condo       cities        18    PENDING   shamout          gpu                                QOSGrpGRES                              
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+nn34       7605143   compute     chemistry     224   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 atb8710    7600623   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 atb8710    7600623   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 atb8710    7600623   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
