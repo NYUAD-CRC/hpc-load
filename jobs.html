@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         24       15       61 %     || DALMA    ||          34%          255           30         7756          134         117           4      ||
-||   95         76       19       80 %     || JUBAIL   ||          68%           41           77         8895          103           3           0      ||
+||   39         31        8       79 %     || DALMA    ||          34%          255           30         7756          134         122           4      ||
+||   95         82       13       86 %     || JUBAIL   ||          68%           41           77         8895          103           3           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:21   GPU:7
@@ -35,19 +35,19 @@
 ||  - |  - |  - ||cqts         || 2048 |   3 % |   -   |   -   ||    80 |     8 ||  mm12971 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||css          || 4096 |   -   |   -   |   -   ||     2 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  99 % |   -   |   6 % ||   767 |   112 ||  mmm9886 |  85 % ||   1626 |   258 ||     - |     - ||  1542 |   257 ||
-|| 40 |  8 |  - ||ecomputer    || 4096 |  14 % |   1 % |   -   ||   598 |    41 || sas10092 |   7 % ||    128 |     2 ||   128 |     2 ||     - |     - ||
+|| 53 |  8 |  - ||ecomputer    || 4096 |  15 % |   1 % |   1 % ||   654 |    55 || sas10092 |   7 % ||    128 |     2 ||   128 |     2 ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    28 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  63 % |   9 % |   -   ||  2608 |    16 ||    wo345 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  84 % |  34 % |   -   || 10015 |    29 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   3 % |   3 % |   -   ||   896 |     2 ||    ah166 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   -   ||   198 |     4 ||   gs2750 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    39 |     6 ||   hm2801 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||scomputer    || 3120 |   -   |   -   |   -   ||    29 |     5 ||   rk3570 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 15 |  - |  - ||students     || 6144 |   5 % |   -   |   -   ||   337 |    20 ||   se1525 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   3 % |   -   |   -   ||     4 |     1 ||   oge208 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||c2           ||  384 |  24 % |   -   |   -   ||    93 |     4 ||   cl5503 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||cair         ||  128 |   3 % |   -   |   -   ||     4 |     1 ||   hh1811 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||cair         ||  128 |   6 % |   -   |   -   ||     8 |     2 ||   hh1811 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cap3         || 1280 | 100 % |   4 % |   -   ||  1280 |     4 ||   mn2960 | 100 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||marinemicro  ||  256 |  75 % |   -   |   -   ||   192 |     2 ||  cmm9990 |  75 % ||   1056 |    11 ||     - |     - ||  1056 |    11 ||
 ||  4 |  - |  - ||shamout      ||  384 |  33 % |   -   |   -   ||   128 |     4 || sas10092 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -56,17 +56,17 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 cmm9990    7623612   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
+cmm9990    7623808   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623807   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623806   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623805   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623804   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623814   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623813   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623812   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623811   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623810   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623809   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623808   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623807   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623806   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623805   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623804   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 mmm9886    7628113   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7628113   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7628113   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
