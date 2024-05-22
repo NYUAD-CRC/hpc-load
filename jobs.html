@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         24       15       61 %     || DALMA    ||          29%          278           25         8332          116         107           4      ||
-||   95         79       16       83 %     || JUBAIL   ||          70%           32           79         8334          110           6           0      ||
+||   39         25       14       64 %     || DALMA    ||          29%          278           27         8337          114         103           4      ||
+||   95         79       16       83 %     || JUBAIL   ||          70%           32           79         8334          110           5           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:19   GPU:5
+	OOD JOBS:  CPU:18   GPU:5
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -23,17 +23,17 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||     4 |     1 ||   ptr226 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||avengers     ||12800 |   -   |   -   |   -   ||    72 |     2 ||     ziaw |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   6 % |   -   |   -   ||   207 |     3 ||  cmm9990 |   6 % ||   1088 |    12 ||     - |     - ||  1088 |    12 ||
 || 12 |  - |  - ||ccs          || 6144 |   7 % |   1 % |   -   ||   480 |    12 ||   baj321 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-||  6 |  8 |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||   108 |     5 ||     gb77 |   2 % ||    255 |     3 ||    30 |     2 ||   225 |     1 ||
-||  4 |  - |  - ||chemistry    ||10824 |  54 % |  12 % |  18 % ||  5909 |   101 ||   na2416 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||civil        || 3200 |   -   |   -   |   -   ||    21 |    12 ||    sa183 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  2 |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||   108 |     5 ||     gb77 |   2 % ||    245 |     2 ||    20 |     1 ||   225 |     1 ||
+||  4 |  - |  - ||chemistry    ||10824 |  54 % |  12 % |  18 % ||  5915 |   102 ||   na2416 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||civil        || 3200 |   -   |   -   |   -   ||    20 |    11 ||    sa183 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||collaborator || 3072 |  95 % |   9 % |   2 % ||  2946 |   123 ||   ap6420 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   3 % |   -   |   -   ||    80 |     8 ||  mm12971 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   -   |   -   |   -   ||     1 |     1 ||   rp4207 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  99 % |   -   |   6 % ||   767 |   116 ||  mmm9886 |  88 % ||    600 |   100 ||     - |     - ||   600 |   100 ||
+||  1 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    30 |     1 ||   ch3246 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  99 % |   -   |   6 % ||   767 |   116 ||  mmm9886 |  88 % ||    546 |    91 ||     - |     - ||   546 |    91 ||
 || 44 |  9 |  1 ||ecomputer    || 4096 |  14 % |   1 % |   -   ||   580 |    44 || sas10092 |   7 % ||    132 |     3 ||   128 |     2 ||     4 |     1 ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    28 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  84 % |  12 % |   -   ||  3456 |    19 ||    wo345 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -54,26 +54,17 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 cmm9990    7623612   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
+cmm9990    7623808   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623807   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623806   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623805   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    7623804   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623814   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623813   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623812   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623811   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623810   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    7623809   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623808   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623807   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623806   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623805   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-cmm9990    7623804   compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7628303   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
