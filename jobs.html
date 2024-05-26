@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          1       38        2 %     || DALMA    ||          44%          195           47         6554          165          49           4      ||
-||   94         70       24       74 %     || JUBAIL   ||          75%           35           84         6852          102          43           0      ||
+||   39          1       38        2 %     || DALMA    ||          44%          195           47         6554          165          83           4      ||
+||   94         71       23       75 %     || JUBAIL   ||          75%           35           84         6852          102          44           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:14   GPU:3
@@ -26,18 +26,19 @@
 ||  - |  - |  - ||access       || 6144 |   8 % |   1 % |   -   ||   540 |     2 ||  ak11283 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||avengers     ||12800 |   -   |   -   |   -   ||    56 |     1 ||     ziaw |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||bio          || 8192 |  25 % |   7 % |   -   ||  2048 |     4 ||  hka5519 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||cair         || 2048 |   -   |   -   |   -   ||     8 |     1 ||   huu201 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  6 |  - ||cgsb         || 4096 |  71 % |  10 % |   -   ||  2930 |   103 ||     mv83 |  69 % ||    255 |     4 ||    30 |     3 ||   225 |     1 ||
-||  1 |  - |  - ||chemistry    ||10824 |  50 % |   5 % |  31 % ||  5483 |    50 ||     nn34 |  31 % ||  30464 |   136 ||     - |     - || 30464 |   136 ||
+||  1 |  - |  - ||chemistry    ||10824 |  50 % |   5 % |  31 % ||  5483 |    50 ||     nn34 |  31 % ||  27328 |   122 ||     - |     - || 27328 |   122 ||
 ||  - |  - |  - ||civil        || 3200 |   1 % |   -   |   -   ||    57 |    48 ||    sa183 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 | 102 % |  10 % |   -   ||  3157 |   119 ||   ap6420 |  54 % ||    128 |     1 ||     - |     - ||   128 |     1 ||
 ||  - |  - |  - ||default      ||  768 | 120 % |   -   |   6 % ||   923 |   131 ||  mmm9886 |  99 % ||   1038 |   151 ||     - |     - ||  1038 |   151 ||
-|| 21 |  4 |  - ||ecomputer    || 4096 |   9 % |   1 % |   -   ||   380 |    19 ||   hl3372 |   3 % ||     64 |     1 ||    64 |     1 ||     - |     - ||
+|| 21 |  6 |  2 ||ecomputer    || 4096 |   9 % |   1 % |   -   ||   380 |    19 ||   hl3372 |   3 % ||     76 |     2 ||    64 |     1 ||    12 |     1 ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    10 |     1 ||   sg7484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    29 |     2 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  50 % |   7 % |   -   ||  2048 |     3 ||   ds7760 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  68 % |  28 % |   -   ||  8148 |    23 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   2 % |   2 % |   -   ||   768 |     1 ||   ba2524 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   9 % |   -   |   4 % ||   600 |   200 ||  as14864 |   9 % ||    342 |   114 ||     - |     - ||   342 |   114 ||
+||  - |  - |  - ||psychology   || 6096 |   9 % |   -   |   4 % ||   600 |   200 ||  as14864 |   9 % ||    336 |   112 ||     - |     - ||   336 |   112 ||
 || 11 |  - |  - ||scomputer    || 3120 |  20 % |   2 % |   -   ||   655 |    15 ||  sk10691 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     1 |     1 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||students     || 6144 |   3 % |   -   |   -   ||   225 |    15 ||   se1525 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -49,8 +50,6 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-as14864    7655882   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7655882   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7655882   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7655882   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7655882   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -437,20 +436,7 @@ nn34       7697277   compute     chemistry     224   PENDING   medium           
 nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7697277   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+hl3372     7697774   nvidia      ecomputer     12    PENDING   nvidia           gpu:2                              QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
