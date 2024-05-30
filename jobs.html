@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         18       21       46 %     || DALMA    ||          73%            8          239         2962          174         287           4      ||
+||   39         18       21       46 %     || DALMA    ||          57%          133          114         4977          174         153           4      ||
 ||   98         70       28       71 %     || JUBAIL   ||          71%           55           31         8072          136          18           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -28,20 +28,20 @@
 ||  - |  - |  - ||bio          || 8192 |  18 % |   5 % |   -   ||  1536 |     3 ||  hka5519 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||ccs          || 6144 |   6 % |   1 % |   -   ||   418 |    11 ||   baj321 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 || 13 | 18 | 18 ||cgsb         || 4096 |   9 % |   1 % |   -   ||   385 |    18 ||     mv83 |   5 % ||    285 |     7 ||     - |     - ||   285 |     7 ||
-||  1 |  - |  - ||chemistry    ||10824 |  55 % |   8 % |  29 % ||  6052 |    59 ||     nn34 |  31 % || 170016 |   759 ||     - |     - ||170016 |   759 ||
+||  1 |  - |  - ||chemistry    ||10824 |  55 % |   8 % |  29 % ||  6052 |    59 ||     nn34 |  31 % || 166432 |   743 ||     - |     - ||166432 |   743 ||
 ||  2 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     2 |     2 ||   sr3987 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||civil        || 3200 |  12 % |   -   |   2 % ||   392 |    43 ||    sa183 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  89 % |   8 % |   3 % ||  2736 |    15 ||   ap6420 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  91 % |   2 % |   -   ||   706 |     8 ||  ak11326 |  57 % ||     84 |     1 ||     - |     - ||    84 |     1 ||
-|| 24 |449 |449 ||ecomputer    || 4096 |  12 % |   -   |   1 % ||   522 |    27 ||  ljl5178 |   5 % ||   8980 |   449 ||     - |     - ||  8980 |   449 ||
+|| 24 |431 |431 ||ecomputer    || 4096 |  12 % |   -   |   1 % ||   522 |    27 ||  ljl5178 |   5 % ||   8620 |   431 ||     - |     - ||  8620 |   431 ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  93 % |  13 % |   -   ||  3840 |    16 ||   ds7760 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  61 % |  25 % |   -   ||  7304 |    24 ||   cc6881 |  51 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   2 % |   2 % |   -   ||   768 |     1 ||    ah166 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |  19 % |   -   |   9 % ||  1200 |   400 ||   cp3488 |   9 % ||   5049 |  1683 ||     - |     - ||  5049 |  1683 ||
+||  - |  - |  - ||psychology   || 6096 |  19 % |   -   |   9 % ||  1201 |   401 ||   cp3488 |   9 % ||   5049 |  1683 ||     - |     - ||  5049 |  1683 ||
 ||  3 |  - |  - ||scomputer    || 3120 |  17 % |   1 % |   -   ||   561 |     7 ||  sk10691 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     3 |     3 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||students     || 6144 |  63 % |   2 % |  27 % ||  3892 |   237 ||  sas9891 |  52 % ||   2801 |   176 ||     - |     - ||  2801 |   176 ||
+|| 11 |  - |  - ||students     || 6144 |  30 % |   2 % |  10 % ||  1876 |   111 ||  sas9891 |  18 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ==========================================================================================================================================================
 ||  3 |  - |  - ||c2           ||  384 |  17 % |   -   |   -   ||    67 |     5 ||  ak11326 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  1 |  1 ||ebrainccs    ||   64 |   4 % |   -   |   -   ||     3 |     1 ||   ae2195 |   4 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
@@ -993,22 +993,6 @@ as14864    7710463   compute     psychology    3     PENDING   small            
 as14864    7710463   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7710463   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7710463   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7710955   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -2492,205 +2476,13 @@ cp3488     7713514   compute     psychology    3     PENDING   small            
 cp3488     7713514   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     7713514   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     7713514   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    7717679   compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ltl2113    7711700   condo       students      1     PENDING   ebrainccs        gpu:a100:1                         QOSGrpMemLimit                          
 ni2071     7712250   nvidia      cgsb          10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
 ni2071     7712800   nvidia      cgsb          10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
-drn2       7718000   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
-drn2       7718000   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
-drn2       7718000   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
-drn2       7718000   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
+drn2       7718219   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
+drn2       7718219   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
+drn2       7718219   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
+drn2       7718219   nvidia      cgsb          10    PENDING   nvidia           gpu:4                              QOSMaxGRESPerUser                       
 ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    7717137   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
