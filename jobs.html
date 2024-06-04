@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         38        1       97 %     || DALMA    ||          41%          229           54         6941          139          83           3      ||
-||   99         83       16       83 %     || JUBAIL   ||          72%           24           78         7803          120          36           0      ||
+||   39         37        2       94 %     || DALMA    ||          41%          229           55         6941          138          84           3      ||
+||   99         83       16       83 %     || JUBAIL   ||          72%           24           78         7832          120          35           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:14   GPU:7
@@ -28,7 +28,7 @@
 ||  - |  - |  - ||biology      || 3072 |   2 % |   -   |   -   ||    64 |     2 ||  cmm9990 |   2 % ||    416 |    13 ||     - |     - ||   416 |    13 ||
 || 12 |  1 |  1 ||ccs          || 6144 |   3 % |   -   |   -   ||   216 |    12 ||   baj321 |   3 % ||     18 |     1 ||     - |     - ||    18 |     1 ||
 || 11 |  6 |  - ||cgsb         || 4096 |   4 % |   -   |   -   ||   166 |    13 ||     drn2 |   2 % ||    285 |     7 ||     - |     - ||   225 |     1 ||
-||  9 |103 |  - ||chemistry    ||10824 |  58 % |  12 % |  22 % ||  6304 |    91 ||    ah166 |  18 % ||    515 |   103 ||   515 |   103 ||     - |     - ||
+|| 10 | 81 |  - ||chemistry    ||10824 |  58 % |  12 % |  22 % ||  6309 |    92 ||    ah166 |  18 % ||    405 |    81 ||   405 |    81 ||     - |     - ||
 ||  4 |  - |  - ||civil        || 3200 |  12 % |   -   |   2 % ||   399 |    34 ||    sa183 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  4 |  - ||collaborator || 3072 |  28 % |   1 % |   3 % ||   886 |    14 ||   ha3152 |  15 % ||     16 |     4 ||    16 |     4 ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||    10 |     1 ||  mm12971 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -37,11 +37,11 @@
 ||  - |  - |  - ||default      ||  768 |  99 % |   2 % |   -   ||   765 |     7 ||  ak11326 |  57 % ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  - |  - ||ecomputer    || 4096 |   8 % |   1 % |   -   ||   328 |    14 || sas10092 |   7 % ||      4 |     1 ||     - |     - ||     4 |     1 ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    10 |     1 ||   sg7484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |   6 % |   -   |   -   ||   255 |    97 ||  gencore |   6 % ||   6389 |   503 ||     - |     - ||  6389 |   503 ||
+||  - |  - |  - ||gencore      || 4096 |   5 % |   -   |   -   ||   226 |    95 ||  gencore |   5 % ||   6356 |   497 ||     - |     - ||  6327 |   495 ||
 ||  - |  - |  - ||mechanical   || 4096 |  84 % |  12 % |   -   ||  3456 |    11 ||   ds7760 |  68 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  91 % |  37 % |   1 % || 10849 |   178 ||   cc6881 |  51 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   1 % |   1 % |   -   ||   448 |    14 ||   wr2172 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  3 |  - ||psychology   || 6096 |  21 % |   -   |  10 % ||  1296 |   403 ||   cp3488 |   9 % ||   3438 |  1129 ||    60 |     3 ||  3378 |  1126 ||
+||  - |  5 |  - ||psychology   || 6096 |  20 % |   -   |   9 % ||  1256 |   401 ||   cp3488 |   9 % ||   3472 |  1129 ||   100 |     5 ||  3372 |  1124 ||
 || 24 |  8 |  8 ||scomputer    || 3120 |  22 % |   2 % |   -   ||   701 |    28 ||  sk10691 |  16 % ||     88 |    10 ||    56 |     2 ||    32 |     8 ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     8 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 21 | 12 |  5 ||students     || 6144 |   6 % |   -   |   2 % ||   390 |    80 ||   se1525 |   2 % ||    256 |     8 ||    56 |     4 ||   200 |     4 ||
@@ -55,9 +55,6 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-cmm9990    7822082   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
-cmm9990    7822081   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
-cmm9990    7822080   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822079   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822078   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822077   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
@@ -68,6 +65,9 @@ cmm9990    7822073   bigmem      biology       32    PENDING   bigmem           
 cmm9990    7822085   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822084   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822083   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+cmm9990    7822082   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+cmm9990    7822081   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+cmm9990    7822080   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     7713514   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     7713514   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     7713514   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -607,8 +607,6 @@ as14864    7798356   compute     psychology    3     PENDING   small            
 as14864    7798356   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7798356   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7798356   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7798356   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    7798356   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7798466   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7798466   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7798466   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -1194,14 +1192,15 @@ as14864    7798478   compute     psychology    3     PENDING   small            
 as14864    7798478   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7798478   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    7798478   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-gencore    7812680   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    7812962   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    7812857   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    7812912   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    7812455   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    7813433   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    7813654   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    7813401   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    7813317   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    7813812   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    7813376   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    7812957   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    7812880   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    7812790   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    7812449   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 hh1811     7833020   condo       ecomputer     4     PENDING   cair             gpu:1                              QOSGrpGRES                              
 drn2       7802306   nvidia      cgsb          10    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
 drn2       7802306   nvidia      cgsb          10    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
