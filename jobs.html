@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         16       23       41 %     || DALMA    ||          20%          284           74         9383           61          45           4      ||
-||   95         56       39       58 %     || JUBAIL   ||          35%           95           74        17650           49          18           0      ||
+||   39         16       23       41 %     || DALMA    ||          22%          276           74         9159           69          45           5      ||
+||   95         56       39       58 %     || JUBAIL   ||          35%           95           74        17650           49          14           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:10   GPU:8
@@ -27,19 +27,19 @@
 ||  - |  - |  - ||biology      || 3072 |   2 % |   -   |   -   ||    88 |     3 ||  cmm9990 |   2 % ||    352 |    11 ||     - |     - ||   352 |    11 ||
 ||  - |  - |  - ||ccs          || 6144 |   2 % |   -   |   1 % ||   144 |     9 ||   vk2599 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    42 |     3 ||     drn2 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  3 |  - |  - ||chemistry    ||10824 |  43 % |  13 % |   6 % ||  4726 |    59 ||  sme9918 |  21 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
+||  3 |  - |  - ||chemistry    ||10824 |  45 % |  13 % |   8 % ||  4950 |    60 ||  sme9918 |  21 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 ||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     1 |     1 ||   sr3987 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||civil        || 3200 |  15 % |   -   |   2 % ||   502 |    88 ||    sa183 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  24 % |   1 % |   2 % ||   752 |     5 ||   ha3152 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  99 % |   -   |   5 % ||   766 |   104 ||  mmm9886 |  78 % ||   4476 |   713 ||     - |     - ||  4476 |   713 ||
-||  8 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    64 |     7 ||   hl3372 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  99 % |   -   |   5 % ||   766 |   104 ||  mmm9886 |  78 % ||   4458 |   710 ||     - |     - ||  4458 |   710 ||
+||  9 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    76 |     8 ||   hl3372 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    10 |     1 ||   sg7484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    24 |     1 ||  gencore |   -   ||   1074 |   102 ||     - |     - ||  1074 |   102 ||
 ||  1 |  - |  - ||mechanical   || 4096 |  38 % |   5 % |   -   ||  1564 |     9 ||   ds7760 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  28 % |  11 % |   1 % ||  3337 |   162 ||   cc6881 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   1 % |   1 % |   -   ||   416 |    13 ||   wr2172 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   1 % |   -   |   -   ||   112 |     2 ||   gs2750 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 16 |  - |  - ||scomputer    || 3120 |  22 % |   2 % |   -   ||   692 |    19 ||  sk10691 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 15 |  - |  - ||scomputer    || 3120 |  21 % |   2 % |   -   ||   682 |    18 ||  sk10691 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    16 |     1 ||   hz3803 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  4 |  - ||students     || 6144 |   4 % |   -   |   1 % ||   283 |    96 ||   egw276 |   1 % ||      1 |     1 ||     1 |     1 ||     - |     - ||
 ==========================================================================================================================================================
@@ -49,8 +49,6 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-cmm9990    7822076   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
-cmm9990    7822075   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822085   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822084   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822083   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
@@ -60,6 +58,8 @@ cmm9990    7822080   bigmem      biology       32    PENDING   bigmem           
 cmm9990    7822079   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822078   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822077   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+cmm9990    7822076   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+cmm9990    7822075   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 saa788     7865119   bigmem      chemistry     512   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
@@ -162,9 +162,6 @@ mmm9886    7857466   compute     default       6     PENDING   small            
 mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7857466   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857469   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857469   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857469   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
@@ -565,15 +562,15 @@ mmm9886    7857468   compute     default       6     PENDING   small            
 mmm9886    7857468   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857468   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7857468   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+gys1       7859366   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
+gys1       7859365   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
+gys1       7859364   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
+gys1       7859363   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 gys1       7859362   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 gys1       7859361   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 gys1       7859360   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 gys1       7859359   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 gys1       7859358   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-gys1       7859366   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-gys1       7859365   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-gys1       7859364   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-gys1       7859363   compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7859980   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7859980   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7859980   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
