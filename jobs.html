@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          7       32       17 %     || DALMA    ||          69%           93           50         3475          272         159           3      ||
-||   95         65       30       68 %     || JUBAIL   ||          45%          111           28        14896           79          11           0      ||
+||   39          7       32       17 %     || DALMA    ||          70%           91           51         3416          273         162           3      ||
+||   95         66       29       69 %     || JUBAIL   ||          49%          102           28        13744           88          18           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:10   GPU:15
+	OOD JOBS:  CPU:12   GPU:15
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -26,16 +26,17 @@
 ||  - |  - |  - ||biology      || 3072 |   2 % |   -   |   -   ||    64 |     2 ||  cmm9990 |   2 % ||    320 |    10 ||     - |     - ||   320 |    10 ||
 ||  3 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    12 |     3 ||   ma6996 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||cgsb         || 4096 |   4 % |   1 % |   -   ||   169 |     7 ||   cf2290 |   2 % ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  5 |  - |  - ||chemistry    ||10824 |  77 % |  13 % |  38 % ||  8382 |    94 ||     nn34 |  31 % ||  55328 |   247 ||     - |     - || 55328 |   247 ||
-||  2 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     1 |     1 ||   sr3987 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  5 |  - |  - ||chemistry    ||10824 |  77 % |  13 % |  38 % ||  8409 |    95 ||     nn34 |  31 % ||  55328 |   247 ||     - |     - || 55328 |   247 ||
+||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    25 |     3 ||   ag9454 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |  - |  - ||civil        || 3200 |  16 % |   -   |   2 % ||   531 |    57 ||    sa183 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  70 % |   7 % |   -   ||  2156 |     6 ||   ap6420 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||csem         || 3072 |   -   |   -   |   -   ||    24 |     1 ||   rp4207 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    12 |     1 ||   aj1566 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  99 % |   -   |   5 % ||   767 |   100 ||  mmm9886 |  75 % ||   3760 |   627 ||     - |     - ||  3760 |   627 ||
+||  - |  - |  - ||default      ||  768 | 100 % |   -   |   5 % ||   768 |   101 ||  mmm9886 |  75 % ||   3760 |   627 ||     - |     - ||  3760 |   627 ||
 ||  9 |  - |  - ||ecomputer    || 4096 |   3 % |   -   |   -   ||   138 |     8 || sas10092 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    10 |     1 ||   sg7484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    24 |     1 ||  gencore |   -   ||   1075 |   103 ||     - |     - ||  1075 |   103 ||
-||  1 |  - |  - ||mechanical   || 4096 |  22 % |   3 % |   -   ||   924 |     5 ||   ds7760 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||mechanical   || 4096 |  50 % |   7 % |   -   ||  2076 |     7 ||   ds7760 |  43 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||nyushanghai  || 1024 |   -   |   -   |   -   ||    10 |     2 ||   fz2113 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  44 % |  18 % |   -   ||  5248 |    11 ||   cc6881 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |  42 % |   -   |  21 % ||  2616 |   271 ||   yz5725 |  32 % ||   1020 |   340 ||     - |     - ||  1020 |   340 ||
@@ -487,106 +488,6 @@ mmm9886    7871345   compute     default       6     PENDING   small            
 mmm9886    7871345   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7871345   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7871345   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7871346   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7871346   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7871346   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
@@ -687,6 +588,106 @@ mmm9886    7871346   compute     default       6     PENDING   small            
 mmm9886    7871346   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7871346   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 mmm9886    7871346   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
+mmm9886    7871347   compute     default       6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 cp3488     7871722   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     7871722   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     7871722   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
