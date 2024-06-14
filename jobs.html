@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         24       15       61 %     || DALMA    ||          61%          130           52         4541          231          70           3      ||
-||   95         51       44       53 %     || JUBAIL   ||          73%            9           65         5718           70          31           0      ||
+||   39         23       16       58 %     || DALMA    ||          60%          131           52         4564          230          72           3      ||
+||   95         50       45       52 %     || JUBAIL   ||          74%            9           65         5626           70          29           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:22   GPU:13
@@ -28,11 +28,11 @@
 ||  - |  - |  - ||biology      || 3072 |   2 % |   -   |   -   ||    88 |     3 ||  cmm9990 |   2 % ||    192 |     6 ||     - |     - ||   192 |     6 ||
 ||  1 |  - |  - ||cbs          || 2048 |   2 % |   -   |   -   ||    53 |     2 ||  azm9155 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  8 |  - ||cgsb         || 4096 |  10 % |   1 % |   -   ||   428 |    17 ||     mv83 |   5 % ||    245 |     3 ||   245 |     3 ||     - |     - ||
-||  5 |  - |  - ||chemistry    ||10824 |  98 % |  22 % |  34 % || 10715 |    92 ||     nn34 |  31 % ||  50624 |   226 ||     - |     - || 50624 |   226 ||
+||  5 |  - |  - ||chemistry    ||10824 |  99 % |  22 % |  34 % || 10720 |    97 ||     nn34 |  31 % ||  49728 |   222 ||     - |     - || 49728 |   222 ||
 ||  8 |  - |  - ||civil        || 3200 |  18 % |   -   |   2 % ||   597 |    81 ||    sa183 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  81 % |   8 % |   -   ||  2504 |     8 ||   ap6420 |  58 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||csem         || 3072 |  66 % |   7 % |   -   ||  2048 |    15 ||   rp4207 |  66 % ||   5120 |    40 ||     - |     - ||  5120 |    40 ||
-||  9 |  - |  - ||css          || 4096 |   2 % |   -   |   -   ||   114 |     9 ||  dbd7602 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||csem         || 3072 |  66 % |   7 % |   -   ||  2048 |    15 ||   rp4207 |  66 % ||   4480 |    35 ||     - |     - ||  4480 |    35 ||
+||  8 |  - |  - ||css          || 4096 |   2 % |   -   |   -   ||    84 |     8 ||  dbd7602 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  95 % |   -   |   5 % ||   737 |    87 ||  mmm9886 |  64 % ||    128 |     1 ||     - |     - ||   128 |     1 ||
 ||  5 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    52 |     7 ||   ll5484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   2 % |   -   |   -   ||    99 |     9 ||   zw3464 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -43,7 +43,7 @@
 ||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   1 % ||   296 |   121 ||   cp3488 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   162 |     4 ||   ia2280 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     4 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 22 |  4 |  - ||students     || 6144 |  29 % |   5 % |   1 % ||  1801 |   107 ||  avk3319 |  20 % ||      5 |     1 ||     5 |     1 ||     - |     - ||
+|| 21 |  4 |  - ||students     || 6144 |  30 % |   5 % |   1 % ||  1859 |   107 ||  avk3319 |  20 % ||      5 |     1 ||     5 |     1 ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||c2           ||  384 |  62 % |   -   |   -   ||   240 |     3 ||   ia2280 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cap3         || 1280 |  33 % |   1 % |   -   ||   426 |     1 ||   mn2960 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -60,47 +60,38 @@ cmm9990    7822083   bigmem      biology       32    PENDING   bigmem           
 cmm9990    7822082   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7822081   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cmm9990    7866636   bigmem      biology       32    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887223   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887225   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887228   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887227   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887235   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887237   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887255   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887259   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887256   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887261   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887263   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+rp4207     7887259   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887262   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887264   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+rp4207     7887263   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887267   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887266   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887270   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887358   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887359   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887362   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+rp4207     7887358   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887360   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+rp4207     7887362   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887365   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887363   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887367   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887370   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887368   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887372   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887389   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887425   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887430   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+rp4207     7887389   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887428   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887431   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+rp4207     7887430   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887434   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887432   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-rp4207     7887436   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887435   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rp4207     7887459   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+rp4207     7887436   compute     csem          128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ss18596    7883534   compute     default       128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       7887726   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7887726   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7887726   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       7887726   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7887726   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7887726   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       7887726   compute     chemistry     224   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
