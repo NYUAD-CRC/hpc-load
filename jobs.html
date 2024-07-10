@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         10       29       25 %     || DALMA    ||          30%          263           76         7978           74         138           5      ||
-||   99         79       20       79 %     || JUBAIL   ||          70%           55           28         8592          140          14           0      ||
+||   39         10       29       25 %     || DALMA    ||          30%          264           76         7984           73         138           5      ||
+||   99         81       18       81 %     || JUBAIL   ||          70%           55           28         8592          140          14           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:16   GPU:14
@@ -23,9 +23,9 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||biology      || 3072 |   5 % |   -   |   1 % ||   158 |     8 ||   tb2613 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |   5 % |   -   |   1 % ||   182 |     9 ||   tb2613 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||cgsb         || 4096 |   7 % |   -   |   2 % ||   303 |    15 ||     drn2 |   4 % ||    235 |     2 ||     - |     - ||   235 |     2 ||
-||  2 |  - |  - ||chemistry    ||10824 |  56 % |  20 % |   2 % ||  6136 |    96 ||  sme9918 |  24 % ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||chemistry    ||10824 |  56 % |  20 % |   2 % ||  6154 |    97 ||  sme9918 |  24 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||civil        || 3200 |  13 % |   1 % |   -   ||   418 |    52 ||   da3205 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||collaborator || 3072 |  94 % |   9 % |   1 % ||  2914 |    13 ||   ap6420 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   3 % |   -   |   -   ||   112 |     1 ||   im2493 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -38,10 +38,10 @@
 ||  - |  - |  - ||mechanical   || 4096 |  28 % |   3 % |   -   ||  1152 |     6 ||   ds7760 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  24 % |   9 % |   -   ||  2864 |     8 ||   cc6881 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||    28 |     1 ||   na2416 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |  39 % |   -   |  19 % ||  2386 |   400 ||   cp3488 |  32 % ||   5238 |   603 ||     - |     - ||  5238 |   603 ||
+||  - |  - |  - ||psychology   || 6096 |  39 % |   -   |  19 % ||  2386 |   400 ||   cp3488 |  32 % ||   5160 |   572 ||     - |     - ||  5160 |   572 ||
 || 15 |  - |  - ||scomputer    || 3120 |   6 % |   -   |   -   ||   194 |    21 ||   rk3570 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||socialscience|| 4096 |   3 % |   -   |   -   ||   148 |     7 ||   hz3803 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 24 | 12 |  1 ||students     || 6144 | 103 % |  20 % |   2 % ||  6354 |   140 ||  ian4134 |  41 % ||    934 |     6 ||    37 |     3 ||   769 |     2 ||
+|| 24 | 12 |  1 ||students     || 6144 | 102 % |  20 % |   2 % ||  6326 |   139 ||  ian4134 |  41 % ||    934 |     6 ||    37 |     3 ||   897 |     3 ||
 ==========================================================================================================================================================
 ||  1 |  1 |  - ||c2           ||  384 |  45 % |   -   |   1 % ||   176 |     4 ||  ss18596 |  43 % ||      1 |     1 ||     1 |     1 ||     - |     - ||
 ||  3 |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    21 |     2 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -51,6 +51,7 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 nb3608     8114296   bigmem      cgsb          10    PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
+mmm9886    8185787   bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxCpuPerJobLimit                    
 cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -553,37 +554,6 @@ cp3488     8175366   compute     psychology    10    PENDING   small            
 cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-cp3488     8175366   compute     psychology    10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    8183103   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
