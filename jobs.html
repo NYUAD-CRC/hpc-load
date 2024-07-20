@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         25       14       64 %     || DALMA    ||          31%          211           20         7968          125          91           7      ||
-||   95         74       21       77 %     || JUBAIL   ||          71%           56           28         8068          138          16           0      ||
+||   39         25       14       64 %     || DALMA    ||          30%          211           20         7980          125          91           7      ||
+||   95         75       20       78 %     || JUBAIL   ||          71%           56           28         8068          138          10           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:7
@@ -28,7 +28,7 @@
 ||  5 |  - |  - ||cgsb         || 4096 |   4 % |   1 % |   -   ||   190 |     8 ||     drn2 |   1 % ||    235 |     2 ||     - |     - ||   235 |     2 ||
 ||  6 |  - |  - ||chemistry    ||10824 |  76 % |  28 % |   -   ||  8243 |    32 ||   wh1165 |  28 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  2 |  - ||civil        || 3200 |  36 % |   -   |   8 % ||  1165 |    78 ||    sa183 |  30 % ||     32 |     2 ||    32 |     2 ||     - |     - ||
-||  - |  - |  - ||collaborator || 3072 |  99 % |   2 % |  18 % ||  3064 |     7 ||   dl5133 |  73 % ||   1024 |     1 ||     - |     - ||  1024 |     1 ||
+||  - |  - |  - ||collaborator || 3072 |  99 % |   2 % |  18 % ||  3064 |     7 ||   dl5133 |  73 % ||   1536 |     2 ||     - |     - ||  1536 |     2 ||
 ||  - |  - |  - ||csem         || 3072 |  41 % |   4 % |   -   ||  1280 |     4 ||   rp4207 |  41 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||     8 |     1 ||  dbd7602 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  14 % |   -   |   -   ||   112 |     3 ||  ss18596 |  10 % ||    562 |     2 ||    32 |     1 ||   530 |     1 ||
@@ -36,12 +36,12 @@
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    10 |     1 ||   sg7484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    16 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    10 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  7 | 13 |  - ||mechanical   || 4096 |  75 % |  10 % |   -   ||  3079 |    18 ||   ds7760 |  59 % ||     13 |    13 ||    13 |    13 ||     - |     - ||
+||  7 | 12 |  - ||mechanical   || 4096 |  75 % |  10 % |   -   ||  3079 |    18 ||   ds7760 |  59 % ||     12 |    12 ||    12 |    12 ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |   4 % |   1 % |   -   ||   560 |     2 ||   cc6881 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   2 % |   2 % |   -   ||   768 |     1 ||    ah166 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 || 28 | 26 | 24 ||scomputer    || 3120 |   7 % |   -   |   -   ||   231 |    30 ||   oge208 |   3 % ||    104 |    25 ||     2 |     1 ||   102 |    24 ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     4 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 24 |516 |511 ||students     || 6144 |  74 % |  14 % |   3 % ||  4584 |   122 ||   sa9185 |  62 % ||   4234 |   516 ||   153 |     5 ||  4081 |   511 ||
+|| 25 |490 |485 ||students     || 6144 |  74 % |  14 % |   3 % ||  4580 |   122 ||   sa9185 |  62 % ||   4026 |   490 ||   153 |     5 ||  3873 |   485 ||
 ==========================================================================================================================================================
 ||  - |  1 |  - ||c2           ||  384 |  14 % |   -   |   -   ||    56 |     1 ||  ss18596 |  14 % ||     32 |     1 ||    32 |     1 ||     - |     - ||
 ||  2 |  - |  - ||csm          ||  640 |  12 % |   -   |   -   ||    80 |     2 ||   da3205 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -53,6 +53,7 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 nb3608     8114296   bigmem      cgsb          10    PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
 ap6420     8252852   compute     collaborator  1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
+ap6420     8252873   compute     collaborator  512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 at4535     8148587   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
 oge208     8230595   nvidia      scomputer     10    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 zw2374     8251713   nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -78,33 +79,6 @@ zw2374     8251727   nvidia      scomputer     4     PENDING   nvidia           
 zw2374     8251727   nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 zw2374     8251727   nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 zw2374     8251727   nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mmm9886    8251642   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
