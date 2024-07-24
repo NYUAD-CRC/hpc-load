@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         15       24       38 %     || DALMA    ||          45%          195           29         6194          180         141           7      ||
-||   99         64       35       64 %     || JUBAIL   ||          88%            6           38         3298          178          19           0      ||
+||   39         21       18       53 %     || DALMA    ||          46%          195           17         6122          192         139           7      ||
+||   99         72       27       72 %     || JUBAIL   ||          88%            4           38         3042          180          20           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:23   GPU:12
@@ -23,45 +23,262 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  17 % |   3 % |   -   ||  1066 |     4 ||  ak11283 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  17 % |   3 % |   -   ||  1056 |     3 ||  ak11283 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||avengers     ||12800 |   6 % |   2 % |   -   ||   768 |     1 ||  ms13779 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |  19 % |   1 % |   -   ||   584 |     4 ||   tb2613 |  19 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    46 |     3 ||   tcc414 |   -   ||    235 |     2 ||     - |     - ||   235 |     2 ||
-||  6 |  - |  - ||chemistry    ||10824 |  91 % |  33 % |   2 % ||  9901 |   161 ||    ah166 |  42 % ||   2048 |     2 ||     - |     - ||  2048 |     2 ||
-||  - |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     8 |     1 ||   ag9454 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  - |  - ||chemistry    ||10824 |  96 % |  35 % |   3 % || 10494 |   237 ||    ah166 |  42 % ||    987 |   220 ||     - |     - ||   987 |   220 ||
+||  8 |  - |  - ||cities       || 4096 |   5 % |   -   |   -   ||   216 |    14 ||   ag9454 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||civil        || 3200 |  43 % |   1 % |   7 % ||  1387 |    48 ||    sa183 |  28 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  72 % |   7 % |   -   ||  2226 |     8 ||   ap6420 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||csem         || 3072 |  41 % |   4 % |   -   ||  1280 |    10 ||   rp4207 |  41 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||csem         || 3072 |  37 % |   4 % |   -   ||  1152 |     9 ||   rp4207 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    16 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  19 % |   -   |   -   ||   149 |     5 ||  ak11326 |  10 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  3 |  - |  - ||ecomputer    || 4096 |   2 % |   -   |   -   ||    98 |     7 || sas10092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    70 |     2 ||   vb1121 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||     2 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  9 |  9 ||mechanical   || 4096 |  66 % |   9 % |   -   ||  2742 |    27 ||   ds7760 |  44 % ||      9 |     9 ||     - |     - ||     9 |     9 ||
+|| 12 |  8 |  8 ||mechanical   || 4096 |  66 % |   9 % |   -   ||  2742 |    27 ||   ds7760 |  44 % ||      8 |     8 ||     - |     - ||     8 |     8 ||
 ||  4 |  - |  - ||physics      ||11824 |  13 % |   5 % |   -   ||  1608 |     5 ||   cc6881 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||     1 |     1 ||   tcc414 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||     4 |     1 ||   yz5725 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  1 |  1 ||scomputer    || 3120 |   5 % |   -   |   1 % ||   156 |    12 ||   ia2280 |   2 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |   5 % |   -   |   -   ||   229 |     7 ||     rmk7 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 20 |  1 |  1 ||students     || 6144 |  92 % |  18 % |   3 % ||  5676 |   125 ||   sa9185 |  75 % ||    769 |     2 ||     - |     - ||   769 |     2 ||
+|| 21 |  1 |  1 ||students     || 6144 |  90 % |  17 % |   3 % ||  5565 |   126 ||   sa9185 |  75 % ||    769 |     2 ||     - |     - ||   769 |     2 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3584 |     1 ||   dl5133 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  31 % |   -   |   -   ||   121 |     4 ||  ak11326 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    20 |     1 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||csm          ||  640 |  15 % |   -   |   -   ||    98 |     3 ||   da3205 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||ebrainccs    ||   64 |   1 % |   -   |   -   ||     1 |     1 ||   bc3194 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||shamout      ||  384 |   7 % |   -   |   -   ||    28 |     1 || sas10092 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  - |  - ||shamout      ||  384 |  28 % |   -   |   -   ||   108 |     6 ||   ag9454 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 nb3608     8321193   bigmem      cgsb          10    PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
 ah166      8321751   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-sme9918    8335973   compute     chemistry     1280  PENDING   large            N/A                                AssocGrpCpuLimit                        
 sa9185     8336624   compute     students      768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 oge208     8230595   nvidia      scomputer     10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
 at4535     8148587   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
-jz4301     8335915   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8335916   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8335931   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8335933   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
