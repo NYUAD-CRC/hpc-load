@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          9       30       23 %     || DALMA    ||          45%          201           22         6234          183         149           8      ||
-||   99         66       33       66 %     || JUBAIL   ||          73%           41           42         7462          139           4           0      ||
+||   39          9       30       23 %     || DALMA    ||          45%          201           22         6234          183         140           8      ||
+||   99         65       34       65 %     || JUBAIL   ||          73%           42           42         7590          138           3           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:17   GPU:11
@@ -28,18 +28,18 @@
 ||  - |  - |  - ||biology      || 3072 |  18 % |   1 % |   -   ||   560 |     3 ||   tb2613 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    20 |     1 ||   baj321 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    35 |     3 ||   tcc414 |   -   ||    235 |     2 ||     - |     - ||   235 |     2 ||
-||  5 |  - |  - ||chemistry    ||10824 |  91 % |  33 % |   2 % ||  9904 |   232 ||  sme9918 |  40 % ||   1411 |   132 ||     - |     - ||  1411 |   132 ||
+||  5 |  - |  - ||chemistry    ||10824 |  91 % |  33 % |   2 % ||  9904 |   232 ||  sme9918 |  40 % ||   1410 |   131 ||     - |     - ||  1410 |   131 ||
 || 10 |  - |  - ||civil        || 3200 |  38 % |   1 % |   7 % ||  1226 |    76 ||    sa183 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  5 |  5 ||collaborator || 3072 |  55 % |   5 % |   -   ||  1700 |     8 ||   ap6420 |  50 % ||     20 |     5 ||     - |     - ||    20 |     5 ||
 ||  - |  - |  - ||default      ||  768 |  30 % |   -   |   1 % ||   233 |     6 ||  ak11326 |  25 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  1 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    44 |     3 || sas10092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    20 |     2 ||  aa10539 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  7 |  7 ||mechanical   || 4096 |  70 % |   9 % |   -   ||  2884 |    26 ||   ds7760 |  44 % ||      7 |     7 ||     - |     - ||     7 |     7 ||
+|| 12 |  4 |  4 ||mechanical   || 4096 |  70 % |   9 % |   -   ||  2884 |    26 ||   ds7760 |  44 % ||      4 |     4 ||     - |     - ||     4 |     4 ||
 ||  4 |  - |  - ||physics      ||11824 |   4 % |   2 % |   -   ||   584 |     3 ||   cc6881 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   2 % |   2 % |   -   ||   641 |     6 ||   na2416 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  1 |  1 ||scomputer    || 3120 |   3 % |   -   |   -   ||   100 |    10 ||   ia2280 |   -   ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |   2 % |   -   |   -   ||    91 |     4 ||     rmk7 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 16 |  1 |  1 ||students     || 6144 |  61 % |  12 % |   1 % ||  3749 |   110 ||   sa9185 |  50 % ||      4 |     2 ||     - |     - ||     4 |     2 ||
+|| 15 |  1 |  1 ||students     || 6144 |  58 % |  11 % |   1 % ||  3620 |   108 ||   sa9185 |  50 % ||      4 |     2 ||     - |     - ||     4 |     2 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3584 |     1 ||   dl5133 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |  46 % |   -   |   1 % ||   177 |     4 ||  ak11326 |  43 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -181,23 +181,19 @@ na2416     8336687   compute     chemistry     1     PENDING   small            
 na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-na2416     8336687   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    8339729   compute     chemistry     1280  PENDING   large            N/A                                AssocGrpCpuLimit                        
 ltl2113    8339766   condo       students      3     PENDING   ebrainccs        gpu:a100:3                         QOSGrpMemLimit                          
 oge208     8230595   nvidia      scomputer     10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
 at4535     8148587   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
-jz4301     8338972   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-jz4301     8338973   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-jz4301     8338975   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8338977   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8338978   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8338979   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8338981   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+mw4355     8339608   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8339612   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8339611   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8339610   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8339609   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     8339608   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
