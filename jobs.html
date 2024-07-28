@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          6       33       15 %     || DALMA    ||          49%          193           25         5776          196         157           8      ||
-||   99         72       27       72 %     || JUBAIL   ||          52%           83           56        13671           83           6           0      ||
+||   39         19       20       48 %     || DALMA    ||          49%          193           25         5770          196         163           8      ||
+||   99         74       25       74 %     || JUBAIL   ||          52%           83           56        13671           83           6           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:12   GPU:2
@@ -29,17 +29,18 @@
 ||  - |  - |  - ||cbs          || 2048 |   1 % |   -   |   -   ||    28 |     1 ||  azm9155 |   1 % ||      6 |     1 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    14 |     2 ||   nb3608 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
 ||  2 |  - |  - ||chemistry    ||10824 |  23 % |   7 % |   2 % ||  2543 |   135 ||   na2416 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     8 |     1 ||   ag9454 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  - |  - ||civil        || 3200 |  94 % |   7 % |   7 % ||  3026 |    70 ||   zl2307 |  63 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||collaborator || 3072 |  71 % |   7 % |   -   ||  2198 |    17 ||   ap6420 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
+||  4 | 32 | 32 ||collaborator || 3072 |  71 % |   7 % |   -   ||  2202 |    19 ||   ap6420 |  66 % ||    128 |    32 ||     - |     - ||   128 |    32 ||
 ||  - |  - |  - ||default      ||  768 |  29 % |   -   |   1 % ||   224 |     4 ||  ak11326 |  25 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-||  6 |  - |  - ||ecomputer    || 4096 |   5 % |   -   |   -   ||   218 |     8 ||   hl3372 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    10 |     1 ||  aa10539 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+|| 15 |  - |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   254 |    17 ||   hl3372 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    12 |     3 ||  aa10539 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   1 % |   -   |   -   ||    64 |     1 ||  gencore |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||     4 |     2 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 | 21 | 21 ||mechanical   || 4096 |  67 % |   9 % |   -   ||  2776 |    26 ||   ds7760 |  44 % ||     21 |    21 ||     - |     - ||    21 |    21 ||
+|| 12 | 20 | 20 ||mechanical   || 4096 |  67 % |   9 % |   -   ||  2776 |    26 ||   ds7760 |  44 % ||     20 |    20 ||     - |     - ||    20 |    20 ||
 ||  4 |  - |  - ||physics      ||11824 |   6 % |   2 % |   -   ||   712 |     4 ||   cc6881 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||    52 |    52 ||   na2416 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   6 % |   -   |   3 % ||   400 |   200 ||  as14864 |   6 % ||    390 |   195 ||     - |     - ||   390 |   195 ||
+||  - |  - |  - ||psychology   || 6096 |   6 % |   -   |   3 % ||   398 |   199 ||  as14864 |   6 % ||    362 |   181 ||     - |     - ||   362 |   181 ||
 ||  7 |  1 |  1 ||scomputer    || 3120 |   9 % |   -   |   2 % ||   304 |    16 ||   dl5133 |   8 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |   2 % |   -   |   -   ||    87 |     3 ||     rmk7 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 || 14 | 49 | 49 ||students     || 6144 |  71 % |  14 % |   1 % ||  4398 |    28 ||   sa9185 |  62 % ||   1537 |    49 ||     - |     - ||  1537 |    49 ||
@@ -234,23 +235,8 @@ as14864    8346391   compute     psychology    2     PENDING   small            
 as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    8346391   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 oge208     8230595   nvidia      scomputer     10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
 at4535     8148587   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
-jz4301     8347395   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8347498   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8347499   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jz4301     8347500   nvidia      mechanical    1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -289,7 +275,6 @@ an3854     8347638   nvidia      students      32    PENDING   nvidia           
 an3854     8347637   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347636   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347635   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-an3854     8347654   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347653   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347652   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347651   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
@@ -299,16 +284,49 @@ an3854     8347648   nvidia      students      32    PENDING   nvidia           
 an3854     8347647   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347646   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347645   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+an3854     8347654   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347835   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347834   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347833   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347832   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347831   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347830   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347829   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347828   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347827   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347826   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347825   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347824   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347823   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347822   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347821   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347820   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347819   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347818   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347817   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347816   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347815   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347814   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347813   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347812   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347811   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347810   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347809   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347808   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347807   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347806   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+an3854     8347665   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+an3854     8347664   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+an3854     8347663   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+an3854     8347662   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347661   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347660   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347659   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347658   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347657   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347656   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-an3854     8347665   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-an3854     8347664   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-an3854     8347663   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-an3854     8347662   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347837   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     8347836   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347675   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347674   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8347673   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
