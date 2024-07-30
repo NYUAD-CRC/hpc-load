@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         11       28       28 %     || DALMA    ||          80%           45           31         2046          327         156         113      ||
-||   99         77       22       77 %     || JUBAIL   ||          66%           64           21         9731          138          13           0      ||
+||   39         11       28       28 %     || DALMA    ||          56%          145           41         5009          208         158          63      ||
+||   99         76       23       76 %     || JUBAIL   ||          65%           67           22         9927          134           8           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:25   GPU:6
+	OOD JOBS:  CPU:26   GPU:6
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -27,92 +27,150 @@
 ||  - |  - |  - ||avengers     ||12800 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     28 |     1 ||    28 |     1 ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   1 % |   -   |   -   ||    34 |     2 ||   tb2613 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  2 |  - ||cbs          || 2048 |  12 % |   -   |   2 % ||   266 |    18 ||  azm9155 |  12 % ||    225 |     1 ||   225 |     1 ||     - |     - ||
-||  6 |  2 |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   144 |     9 ||   baj321 |   1 % ||     36 |     2 ||    36 |     2 ||     - |     - ||
-||  2 |  - |  - ||cgsb         || 4096 |   1 % |   -   |   2 % ||    57 |     5 ||     drn2 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  3 |  - |  - ||chemistry    ||10824 |  35 % |  12 % |   1 % ||  3838 |   101 ||   na2416 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 |  1 |  - ||civil        || 3200 |  57 % |   2 % |   8 % ||  1835 |    80 ||    sa183 |  29 % ||     40 |     1 ||    40 |     1 ||     - |     - ||
+||  8 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   180 |    11 ||   baj321 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    53 |     4 ||     drn2 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
+||  3 |  - |  - ||chemistry    ||10824 |  35 % |  12 % |   1 % ||  3837 |   100 ||   na2416 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 14 |  - |  - ||civil        || 3200 |  61 % |   3 % |   8 % ||  1955 |    79 ||    sa183 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  73 % |   7 % |   -   ||  2250 |    10 ||   ap6420 |  70 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   3 % |   -   |   -   ||   112 |     1 ||   im2493 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||css          || 4096 |  99 % |   -   |  33 % ||  4074 |   148 ||   na2247 |  99 % ||   1540 |    55 ||     - |     - ||  1540 |    55 ||
-||  - |  - |  - ||default      ||  768 |  23 % |   -   |   -   ||   181 |     8 ||  ak11326 |  10 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
+||  - |  - |  - ||css          || 4096 |   7 % |   -   |   2 % ||   294 |    13 ||   na2247 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  27 % |   -   |   1 % ||   209 |     9 ||  ak11326 |  14 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  3 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    44 |     5 || sas10092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    10 |     1 ||  aa10539 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||     4 |     2 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||mechanical   || 4096 |  39 % |   5 % |   -   ||  1622 |    10 ||   ds7760 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||mechanical   || 4096 |  39 % |   5 % |   -   ||  1621 |     9 ||   ds7760 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |   1 % |   -   |   -   ||   200 |     3 ||  laa9597 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   4 % |   4 % |   -   ||  1311 |   544 ||     nn34 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |   4 % |   4 % |   -   ||  1298 |   531 ||     nn34 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    51 |    17 ||  as14864 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  1 |  1 ||scomputer    || 3120 |   3 % |   -   |   -   ||   106 |     7 ||   oge208 |   1 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
+||  4 |  1 |  1 ||scomputer    || 3120 |   2 % |   -   |   -   ||    78 |     6 ||   oge208 |   1 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |  12 % |   1 % |   -   ||   498 |     6 ||     rmk7 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 31 | 13 | 13 ||students     || 6144 | 111 % |  22 % |   1 % ||  6828 |    61 ||   sa9185 |  75 % ||    156 |    14 ||     - |     - ||   156 |    14 ||
+|| 31 | 12 | 12 ||students     || 6144 | 109 % |  21 % |   3 % ||  6717 |    84 ||   sa9185 |  75 % ||   1298 |   140 ||     - |     - ||  1002 |   111 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3584 |     1 ||   dl5133 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 |  23 % |   -   |   -   ||    89 |     6 ||  ak11326 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    20 |     1 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||csm          ||  640 |  12 % |   -   |   -   ||    80 |     2 ||   da3205 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||csm          ||  640 |   6 % |   -   |   -   ||    40 |     1 ||   da3205 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||shamout      ||  384 |   7 % |   -   |   -   ||    28 |     1 || sas10092 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-na2247     8430940   compute     css           28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-mmm9886    8430930   compute     students      128   PENDING   medium           N/A                                AssocGrpMemLimit                        
+se2422     8431384   compute     students      12    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431395   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431394   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431393   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431392   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431391   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431390   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431389   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431388   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431387   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431386   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431385   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431383   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431382   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431381   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431380   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431379   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431378   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431377   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431376   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431375   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431374   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431373   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431372   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431371   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431370   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431369   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431368   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431367   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431366   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431365   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431364   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431363   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431362   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431361   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431360   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431359   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431358   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431357   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431356   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431355   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431354   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431353   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431352   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431351   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431350   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431349   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431348   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431347   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431346   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431345   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431344   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431343   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431342   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431341   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431340   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431339   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431338   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431337   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431336   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431335   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431334   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431333   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431332   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431331   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431330   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431329   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431328   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431327   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431326   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431325   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431324   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431323   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431322   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431321   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431320   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431319   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431318   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431317   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431316   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431315   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431314   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431313   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431312   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431311   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431310   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431309   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431308   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431307   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431306   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431305   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431304   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431303   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431302   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431301   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431300   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431299   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431298   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431297   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431296   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431295   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431294   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431293   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431292   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431291   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431290   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431289   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431288   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431287   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431286   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431285   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431284   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431283   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431282   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
+sc11582    8431281   compute     students      10    PENDING   small            N/A                                AssocGrpMemLimit                        
 oge208     8230595   nvidia      scomputer     10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
-oe2015     8431091   nvidia      students      16    PENDING   nvidia-xxl       gpu:a100                           AssocGrpMemLimit                        
 jdg8833    8415233   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    8415233   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    8415233   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
