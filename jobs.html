@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         16       23       41 %     || DALMA    ||          56%          118           57         4843          229         187           7      ||
-||   99         41       58       41 %     || JUBAIL   ||          70%           44           55         8662          124          18           0      ||
+||   39         16       23       41 %     || DALMA    ||          57%          117           58         4820          229         183           7      ||
+||   99         39       60       39 %     || JUBAIL   ||          70%           44           55         8662          124          10           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:18   GPU:4
+	OOD JOBS:  CPU:17   GPU:4
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -23,19 +23,19 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  16 % |   3 % |   -   ||  1026 |     3 ||  ak11283 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  16 % |   3 % |   -   ||  1025 |     2 ||  ak11283 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||avengers     ||12800 |   5 % |   -   |   5 % ||   700 |    25 ||     wz22 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   8 % |   -   |   1 % ||   168 |    11 ||  azm9155 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    60 |     5 ||   vk2599 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cgsb         || 4096 |   3 % |   -   |   2 % ||   132 |     6 ||     drn2 |   2 % ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  2 |  - |  - ||chemistry    ||10824 |  77 % |  28 % |   1 % ||  8354 |    37 ||   wh1165 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||chemistry    ||10824 |  77 % |  28 % |   1 % ||  8378 |    38 ||   wh1165 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||cities       || 4096 |   7 % |   1 % |   -   ||   308 |     6 ||   ag9454 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  4 |  - ||civil        || 3200 |  77 % |   5 % |   7 % ||  2464 |    52 ||   zl2307 |  37 % ||    280 |     4 ||   280 |     4 ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  76 % |   8 % |   -   ||  2346 |     9 ||   ap6420 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   3 % |   -   |   -   ||   112 |     1 ||   im2493 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   rp4207 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  21 % |   -   |   1 % ||   168 |     4 ||  ak11326 |  14 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-|| 13 |848 |848 ||ecomputer    || 4096 |  14 % |   1 % |   2 % ||   586 |    18 ||  ljl5178 |   5 % ||  16960 |   848 ||     - |     - || 16960 |   848 ||
+|| 12 |844 |844 ||ecomputer    || 4096 |  12 % |   -   |   2 % ||   526 |    17 ||  ljl5178 |   5 % ||  16880 |   844 ||     - |     - || 16880 |   844 ||
 ||  1 |  - |  - ||electrical   || 4096 |   2 % |   -   |   -   ||    91 |    32 ||   vb1121 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  95 % |  13 % |   -   ||  3909 |    10 ||   ds7760 |  87 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |   1 % |   -   |   -   ||   128 |     1 ||  laa9597 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -55,14 +55,10 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 ==========================================================================================================================================================
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
 oge208     8230595   nvidia      scomputer     10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
+an3854     8447009   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8447008   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8447007   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 an3854     8447006   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-an3854     8447009   nvidia      students      32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
