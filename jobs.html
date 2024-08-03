@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         16       23       41 %     || DALMA    ||          60%          100           56         4378          248         180           7      ||
-||   99         30       69       30 %     || JUBAIL   ||          55%           75           52        13041           96           7           0      ||
+||   39         16       23       41 %     || DALMA    ||          60%          102           56         4435          246         177           8      ||
+||   99         30       69       30 %     || JUBAIL   ||          55%           75           52        13042           96          16           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:4
@@ -30,18 +30,18 @@
 ||  1 |  - |  - ||cgsb         || 4096 |   2 % |   -   |   2 % ||   104 |     5 ||     drn2 |   2 % ||    225 |     1 ||     - |     - ||   225 |     1 ||
 ||  3 |  - |  - ||chemistry    ||10824 |  58 % |  21 % |   -   ||  6385 |    34 ||   wh1165 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||cities       || 4096 |   7 % |   1 % |   -   ||   308 |     6 ||   ag9454 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |  - |  - ||civil        || 3200 |  79 % |   5 % |   7 % ||  2540 |    51 ||   zl2307 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
+||  7 |  - |  - ||civil        || 3200 |  79 % |   5 % |   7 % ||  2539 |    50 ||   zl2307 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  68 % |   7 % |   -   ||  2090 |     8 ||   ap6420 |  58 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   3 % |   -   |   -   ||   112 |     1 ||   im2493 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   rp4207 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    32 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  21 % |   -   |   1 % ||   168 |     4 ||  ak11326 |  14 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-|| 12 |685 |685 ||ecomputer    || 4096 |   5 % |   -   |   1 % ||   240 |    12 ||  ljl5178 |   5 % ||  13700 |   685 ||     - |     - || 13700 |   685 ||
+|| 12 |668 |668 ||ecomputer    || 4096 |   5 % |   -   |   1 % ||   240 |    12 ||  ljl5178 |   5 % ||  13360 |   668 ||     - |     - || 13360 |   668 ||
 ||  1 |  - |  - ||electrical   || 4096 |   2 % |   -   |   -   ||    91 |    32 ||   vb1121 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  95 % |  13 % |   -   ||  3909 |    10 ||   ds7760 |  87 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 ||  - |  - |  - ||physics      ||11824 |   1 % |   -   |   -   ||   128 |     1 ||  laa9597 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   5 % |   -   |   9 % ||  1382 |   263 ||   wh1165 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   2 % ||   292 |    14 ||   yz5725 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |   5 % |   -   |   9 % ||  1381 |   262 ||   wh1165 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   236 |    12 ||   yz5725 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  1 |  1 ||scomputer    || 3120 |   6 % |   -   |   -   ||   217 |    36 ||   oge208 |   1 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     4 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||students     || 6144 |  18 % |   3 % |   -   ||  1152 |    15 ||   hh2784 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -56,23 +56,6 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
 ds7760     8453690   compute     mechanical    512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 oge208     8230595   nvidia      scomputer     10    PENDING   nvidia           gpu:1                              QOSMaxWallDurationPerJobLimit           
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
-ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
 ljl5178    8448601   nvidia      ecomputer     20    PENDING   nvidia           gpu:v100                           QOSMaxJobsPerUserLimit                  
