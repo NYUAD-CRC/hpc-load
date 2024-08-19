@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         11       28       28 %     || DALMA    ||          22%          259           56         9001           85          11          12      ||
-||   99         56       43       56 %     || JUBAIL   ||          35%          118           51        18777           54           0           0      ||
+||   39          5       34       12 %     || DALMA    ||          21%          269           48         9132           83          10          12      ||
+||   99         56       43       56 %     || JUBAIL   ||          35%          118           52        18841           53           0           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:2   GPU:9
@@ -26,20 +26,20 @@
 ||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||    29 |     2 ||  bak8122 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    32 |     8 ||   ma6996 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  7 |  - ||cgsb         || 4096 |   -   |   -   |   1 % ||    20 |     1 ||     drn2 |   -   ||    365 |     8 ||     - |     - ||   225 |     1 ||
-||  3 |  - |  - ||chemistry    ||10824 |  62 % |  16 % |  17 % ||  6815 |   107 ||  sme9918 |  23 % ||  20048 |   179 ||     - |     - || 20048 |   179 ||
+||  3 |  - |  - ||chemistry    ||10824 |  61 % |  16 % |  16 % ||  6651 |    81 ||  sme9918 |  23 % ||  19600 |   175 ||     - |     - || 19600 |   175 ||
 ||  4 |  - |  - ||civil        || 3200 |  14 % |   1 % |   -   ||   458 |     7 ||   da3205 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||collaborator || 3072 |   6 % |   -   |   -   ||   195 |     9 ||   ha3152 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    32 |     2 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |   3 % |   -   |   -   ||    30 |     3 ||  ss18596 |   3 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-|| 10 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    40 |    10 ||   hh1811 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |   7 % |   -   |   2 % ||   289 |    39 ||   zw3464 |   7 % ||     28 |     1 ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    16 |     4 ||   hh1811 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||electrical   || 4096 |   6 % |   -   |   2 % ||   258 |    35 ||   zw3464 |   6 % ||     28 |     1 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  75 % |  10 % |   -   ||  3072 |     8 ||  sk10712 |  60 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |   5 % |   2 % |   -   ||   640 |     2 ||   cc6881 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||    71 |    71 ||   na2416 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   2 % |   -   |   1 % ||   140 |     5 ||   yz5725 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||scomputer    || 3120 |   6 % |   -   |   -   ||   195 |     5 ||  mm12191 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   3 % |   -   |   -   ||   128 |     1 ||     rmk7 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 24 |419 |419 ||students     || 6144 |  26 % |   5 % |   -   ||  1612 |    28 ||   hh2784 |  25 % ||   1052 |   419 ||     - |     - ||  1052 |   419 ||
+|| 24 |418 |418 ||students     || 6144 |  26 % |   5 % |   -   ||  1612 |    28 ||   hh2784 |  25 % ||   1048 |   418 ||     - |     - ||  1048 |   418 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  33 % |   -   |   -   ||   130 |     3 ||  mm12191 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    16 |     1 ||  mmm9912 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -223,10 +223,6 @@ nn34       8593252   compute     chemistry     112   PENDING   medium           
 nn34       8593252   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8593252   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8593252   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8593252   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8593252   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8593252   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8593252   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 drn2       8582753   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
 drn2       8582753   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
 drn2       8582753   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
@@ -234,7 +230,6 @@ drn2       8582753   nvidia      cgsb          20    PENDING   nvidia           
 drn2       8582753   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
 drn2       8582753   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
 drn2       8582753   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
-sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
