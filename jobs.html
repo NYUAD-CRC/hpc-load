@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         10       28       26 %     || DALMA    ||          20%          272           70         9210           58          19           8      ||
-||   99         79       20       79 %     || JUBAIL   ||          92%            0           52         2058          168          29           0      ||
+||   38          6       32       15 %     || DALMA    ||          21%          271           70         9182           59          20           9      ||
+||   99         80       19       80 %     || JUBAIL   ||          92%            0           52         2058          168          27           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:4   GPU:11
@@ -28,18 +28,18 @@
 ||  - |  - |  - ||biology      || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   tb2613 |   4 % ||     28 |     1 ||    28 |     1 ||     - |     - ||
 || 11 |  - |  - ||ccs          || 6144 |   6 % |   -   |   2 % ||   380 |    23 ||  ab10917 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   4 % |   -   |   1 % ||   200 |   200 ||     hhg3 |   4 % ||    225 |     1 ||     - |     - ||   225 |     1 ||
-|| 11 |  - |  - ||chemistry    ||10824 |  95 % |  33 % |   6 % || 10373 |   185 ||  sme9918 |  47 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  1 |  - ||civil        || 3200 |   -   |   -   |   -   ||    31 |     3 ||   cc6307 |   -   ||    120 |     1 ||   120 |     1 ||     - |     - ||
-||  4 |  5 |  5 ||collaborator || 3072 |  71 % |   6 % |   2 % ||  2194 |    21 ||   ap6420 |  50 % ||     20 |     5 ||     - |     - ||    20 |     5 ||
+||  7 |  - |  - ||chemistry    ||10824 |  95 % |  33 % |   6 % || 10353 |   181 ||  sme9918 |  47 % ||      - |     - ||     - |     - ||     - |     - ||
+||  3 |  1 |  - ||civil        || 3200 |   1 % |   -   |   -   ||    47 |     4 ||   cc6307 |   -   ||    120 |     1 ||   120 |     1 ||     - |     - ||
+||  4 |  4 |  4 ||collaborator || 3072 |  71 % |   6 % |   2 % ||  2194 |    21 ||   ap6420 |  50 % ||     16 |     4 ||     - |     - ||    16 |     4 ||
 ||  2 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    16 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  11 % |   -   |   -   ||    92 |     2 ||  sm12837 |   8 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 || 12 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    48 |    12 ||   hh1811 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  - |  - ||electrical   || 4096 |   9 % |   1 % |   -   ||   404 |    28 ||   vb1121 |   7 % ||      7 |     7 ||     7 |     7 ||     - |     - ||
+||  5 |  - |  - ||electrical   || 4096 |  10 % |   1 % |   -   ||   432 |    29 ||   vb1121 |   7 % ||      7 |     7 ||     7 |     7 ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   1 % |   -   |   -   ||    64 |     1 ||   tb2613 |   1 % ||     64 |     1 ||    64 |     1 ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  73 % |  10 % |   -   ||  3024 |    15 ||  sk10712 |  43 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  78 % |   -   |   6 % ||   800 |   200 ||   fz2113 |  78 % ||    956 |   239 ||     - |     - ||   956 |   239 ||
 ||  4 |  - |  - ||physics      ||11824 |  27 % |  11 % |   -   ||  3272 |     9 ||   cc6881 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  14 % | 596 % |   -   ||  4025 |    78 ||    ah166 |  14 % || 168832 |  1319 ||     - |     - ||168832 |  1319 ||
+||  - |  - |  - ||preempt      ||27000 |  14 % | 595 % |   -   ||  4025 |    78 ||    ah166 |  14 % || 168576 |  1317 ||     - |     - ||168576 |  1317 ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    28 |     1 ||   yz5725 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   158 |     4 ||  mm12191 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  15 % |   2 % |   -   ||   648 |     7 ||     rmk7 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -51,9 +51,6 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-fz2113     8682562   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682561   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682560   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682559   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682558   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682557   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -63,9 +60,6 @@ fz2113     8682554   compute     nyushanghai   4     PENDING   small            
 fz2113     8682553   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682552   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682551   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682581   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682580   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682579   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682578   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682577   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682576   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -82,10 +76,9 @@ fz2113     8682566   compute     nyushanghai   4     PENDING   small            
 fz2113     8682565   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682564   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682563   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682601   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682600   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682599   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682598   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682562   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682561   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682560   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682597   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682596   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682595   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -102,9 +95,9 @@ fz2113     8682585   compute     nyushanghai   4     PENDING   small            
 fz2113     8682584   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682583   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682582   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682620   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682619   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682618   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682581   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682580   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682579   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682617   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682616   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682615   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -121,6 +114,10 @@ fz2113     8682605   compute     nyushanghai   4     PENDING   small            
 fz2113     8682604   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682603   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682602   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682601   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682600   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682599   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682598   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682636   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682635   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682634   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -137,10 +134,9 @@ fz2113     8682624   compute     nyushanghai   4     PENDING   small            
 fz2113     8682623   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682622   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682621   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682650   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682649   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682648   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682647   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682620   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682619   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682618   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682646   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682645   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682644   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -151,9 +147,6 @@ fz2113     8682640   compute     nyushanghai   4     PENDING   small            
 fz2113     8682639   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682638   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682637   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682669   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682668   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682667   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682666   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682665   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682664   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -170,9 +163,10 @@ fz2113     8682654   compute     nyushanghai   4     PENDING   small            
 fz2113     8682653   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682652   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682651   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682688   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682687   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682686   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682650   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682649   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682648   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682647   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682685   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682684   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682683   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -189,9 +183,9 @@ fz2113     8682673   compute     nyushanghai   4     PENDING   small            
 fz2113     8682672   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682671   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682670   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682708   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682707   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682706   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682669   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682668   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682667   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682705   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682704   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682703   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -208,12 +202,9 @@ fz2113     8682693   compute     nyushanghai   4     PENDING   small            
 fz2113     8682691   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682690   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682689   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682731   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682730   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682729   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682728   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682727   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682726   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682688   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682687   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682686   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682725   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682724   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682723   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -231,12 +222,9 @@ fz2113     8682712   compute     nyushanghai   4     PENDING   small            
 fz2113     8682711   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682710   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682709   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682744   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682743   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682742   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682741   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682740   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682739   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682708   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682707   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682706   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682738   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682737   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682736   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -244,13 +232,12 @@ fz2113     8682735   compute     nyushanghai   4     PENDING   small            
 fz2113     8682734   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682733   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682732   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682764   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682763   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682762   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682761   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682760   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682759   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682758   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682731   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682730   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682729   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682728   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682727   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682726   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682757   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682756   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682755   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -264,16 +251,25 @@ fz2113     8682748   compute     nyushanghai   4     PENDING   small            
 fz2113     8682747   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682746   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682745   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682744   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682743   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682742   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682741   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682740   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682739   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682770   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682769   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682768   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682767   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682766   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682765   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682910   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682909   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682908   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8682907   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682764   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682763   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682762   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682761   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682760   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682759   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682758   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682906   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682904   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682903   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -290,6 +286,10 @@ fz2113     8682914   compute     nyushanghai   4     PENDING   small            
 fz2113     8682913   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682912   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8682911   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682910   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682909   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682908   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8682907   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -488,7 +488,6 @@ mw4355     8681263   nvidia      collaborator  4     PENDING   nvidias          
 mw4355     8681262   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8681261   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8681260   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     8681259   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
