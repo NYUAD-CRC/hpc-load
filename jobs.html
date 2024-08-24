@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         12       26       31 %     || DALMA    ||          29%          248           36         8102          112          42          12      ||
-||   99         55       44       55 %     || JUBAIL   ||          89%            1           72         2737          147           9           0      ||
+||   38          9       29       23 %     || DALMA    ||          29%          246           38         8097          112          33          13      ||
+||   99         55       44       55 %     || JUBAIL   ||          90%            0           72         2609          148           6           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:5   GPU:0
@@ -26,18 +26,18 @@
 ||  - |  - |  - ||biology      || 3072 |  20 % |   2 % |   -   ||   640 |     5 ||   tb2613 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   3 % |   -   |   1 % ||   224 |     8 ||  ab10917 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     3 |     3 ||     hhg3 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  9 |  1 |  1 ||chemistry    ||10824 | 100 % |  29 % |  18 % || 10824 |    84 ||  sme9918 |  59 % || 115749 |   977 ||     - |     - ||115749 |   977 ||
+||  6 |  - |  - ||chemistry    ||10824 |  99 % |  29 % |  17 % || 10813 |   136 ||  sme9918 |  59 % || 115048 |   925 ||     - |     - ||115048 |   925 ||
 ||  2 |  - |  - ||civil        || 3200 |   3 % |   -   |   -   ||   123 |     3 ||   da3205 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  95 % |   9 % |   2 % ||  2946 |    20 ||   ap6420 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    16 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |   8 % |   -   |   -   ||    64 |     1 ||  sm12837 |   8 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    20 |     3 ||   hha243 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  6 |  2 |  2 ||electrical   || 4096 |  11 % |   1 % |   1 % ||   456 |    34 ||   vb1121 |   8 % ||    120 |     2 ||     - |     - ||   120 |     2 ||
+||  6 |  2 |  2 ||electrical   || 4096 |  11 % |   1 % |   1 % ||   457 |    35 ||   vb1121 |   8 % ||    120 |     2 ||     - |     - ||   120 |     2 ||
 ||  - |  - |  - ||gencore      || 4096 |   1 % |   -   |   -   ||    65 |     2 ||   tb2613 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  90 % |  12 % |   -   ||  3696 |    14 ||  sk10712 |  76 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||nyushanghai  || 1024 |  78 % |   -   |   6 % ||   800 |   200 ||   fz2113 |  78 % ||    176 |    44 ||     - |     - ||   176 |    44 ||
-||  4 |  2 |  2 ||physics      ||11824 |  29 % |  12 % |   -   ||  3528 |     9 ||   cc6881 |  21 % ||     24 |     1 ||     - |     - ||    24 |     1 ||
-||  - |  - |  - ||preempt      ||27000 |  13 % | 658 % |   -   ||  3511 |    71 ||    ah166 |  12 % || 187616 |  1457 ||   128 |     1 ||187488 |  1456 ||
+||  - |  - |  - ||nyushanghai  || 1024 |  78 % |   -   |   6 % ||   800 |   200 ||   fz2113 |  78 % ||    172 |    43 ||     - |     - ||   172 |    43 ||
+||  4 |  - |  - ||physics      ||11824 |  29 % |  12 % |   -   ||  3528 |     9 ||   cc6881 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |  13 % | 658 % |   -   ||  3511 |    71 ||    ah166 |  12 % || 187488 |  1456 ||   128 |     1 ||187360 |  1455 ||
 ||  - |  - |  - ||scomputer    || 3120 |   4 % |   -   |   -   ||   137 |     3 ||  mm12191 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  34 % |   4 % |   -   ||  1416 |    13 ||     rmk7 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
 || 24 |134 |134 ||students     || 6144 |  35 % |   7 % |   -   ||  2157 |    34 ||   hh2784 |  33 % ||    323 |   134 ||     - |     - ||   323 |   134 ||
@@ -948,42 +948,32 @@ nn34       8686537   compute     chemistry     112   PENDING   medium           
 nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8686537   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 na2416     8690616   compute     chemistry     128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693668   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693670   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693669   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693673   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693672   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693671   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693675   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693674   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693673   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693678   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693677   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693681   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693680   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693679   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693684   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693683   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693682   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693686   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693685   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693684   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693688   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693687   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693691   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693690   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693689   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693693   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693692   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-fz2113     8696275   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696274   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696290   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696289   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696288   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+wh1165     8693691   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 fz2113     8696287   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696286   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696285   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -996,9 +986,7 @@ fz2113     8696279   compute     nyushanghai   4     PENDING   small            
 fz2113     8696278   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696277   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696276   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696305   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696304   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696303   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8696275   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696302   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696301   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696300   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -1010,7 +998,9 @@ fz2113     8696295   compute     nyushanghai   4     PENDING   small            
 fz2113     8696293   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696292   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696291   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-fz2113     8696318   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8696290   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8696289   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8696288   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696317   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696316   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696315   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -1023,54 +1013,12 @@ fz2113     8696309   compute     nyushanghai   4     PENDING   small            
 fz2113     8696308   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696307   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 fz2113     8696306   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-yx2892     8696402   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696401   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696400   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696399   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696398   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696397   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696396   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696395   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696394   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696393   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696392   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696391   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696390   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696389   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696388   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696387   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696386   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696385   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696384   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696383   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696382   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696381   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696380   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696379   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696378   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696377   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696376   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696375   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696374   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696373   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696372   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696371   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696370   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696369   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696368   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696367   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696366   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696365   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696364   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696363   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696362   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696361   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696360   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696359   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696358   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696357   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696356   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-yx2892     8696355   compute     chemistry     4     PENDING   small            N/A                                AssocGrpCpuLimit                        
+fz2113     8696305   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8696304   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8696303   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+fz2113     8696318   compute     nyushanghai   4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+saa788     8696432   compute     chemistry     28    PENDING   small            N/A                                AssocGrpCpuLimit                        
+saa788     8696430   compute     chemistry     28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -1205,10 +1153,8 @@ jdg8833    8582992   nvidia      students      1     PENDING   nvidia           
 jdg8833    8582992   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    8582992   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    8582992   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-fmk5060    8686580   nvidia      physics       24    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 vb1121     8694741   nvidia      electrical    60    PENDING   nvidia           gpu:1                              QOSMaxGRESPerUser                       
 vb1121     8694742   nvidia      electrical    60    PENDING   nvidia           gpu:1                              QOSMaxGRESPerUser                       
-ah166      8696403   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 </pre>
 </body>
 </html>
