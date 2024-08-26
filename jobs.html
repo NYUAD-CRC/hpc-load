@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          9       29       23 %     || DALMA    ||          82%           18           41         1613          337          89          12      ||
-||   95         67       28       70 %     || JUBAIL   ||          94%            0           56         1508          165           5           0      ||
+||   38          8       30       21 %     || DALMA    ||          81%           23           40         1730          333         108          12      ||
+||   95         65       30       68 %     || JUBAIL   ||          94%            0           56         1460          165           5           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:1
@@ -28,18 +28,18 @@
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    14 |     1 ||  asa8168 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   2 % |   -   |   1 % ||   140 |     5 ||  ab10917 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    36 |    33 ||     hhg3 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  6 |  - |  - ||chemistry    ||10824 |  99 % |  27 % |  22 % || 10817 |   135 ||  sme9918 |  71 % ||  78044 |   642 ||     - |     - || 78044 |   642 ||
+||  5 |  - |  - ||chemistry    ||10824 |  99 % |  27 % |  22 % || 10808 |   133 ||  sme9918 |  71 % ||  78108 |   643 ||     - |     - || 78108 |   643 ||
 ||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     1 |     1 ||   sr3987 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  - |  - ||civil        || 3200 |  16 % |   1 % |   -   ||   527 |     9 ||   da3205 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||collaborator || 3072 |  21 % |   1 % |   1 % ||   646 |    15 ||   ha3152 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   3 % |   -   |   -   ||   112 |     1 ||   im2493 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  - |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    16 |     2 ||   hha243 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |  - |  - ||electrical   || 4096 |  10 % |   1 % |   -   ||   432 |    12 ||   vb1121 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  - |  - ||electrical   || 4096 |   9 % |   1 % |   -   ||   371 |    10 ||   vb1121 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||mechanical   || 4096 |  90 % |  12 % |   -   ||  3714 |    17 ||  sk10712 |  60 % ||   1648 |     3 ||     - |     - ||  1648 |     3 ||
+||  - |  - |  - ||mechanical   || 4096 |  89 % |  12 % |   -   ||  3650 |    16 ||  sk10712 |  60 % ||   1648 |     3 ||     - |     - ||  1648 |     3 ||
 ||  4 |  - |  - ||physics      ||11824 |  64 % |  26 % |   -   ||  7630 |    23 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  38 % |  12 % |  56 % || 10373 |   145 ||     nn34 |  37 % || 119808 |   981 ||     - |     - ||119808 |   981 ||
+||  - |  - |  - ||preempt      ||27000 |  38 % |  12 % |  56 % || 10373 |   145 ||     nn34 |  37 % || 116768 |   954 || 20992 |   164 || 95776 |   790 ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    28 |     1 ||   yz5725 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   158 |     4 ||  mm12191 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  28 % |   3 % |   -   ||  1160 |    11 ||     rmk7 |  28 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -53,26 +53,25 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-dk4919     4649036   compute     cgsb          225   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693674   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693677   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693675   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693680   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693679   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693678   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693682   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693681   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693685   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693680   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693684   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693683   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693687   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693686   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693690   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693685   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693689   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693688   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693692   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693691   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693690   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693693   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693692   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8710223   compute     chemistry     24    PENDING   serdal           N/A                                QOSGrpCpuLimit                          
 wh1165     8710225   compute     chemistry     24    PENDING   serdal           N/A                                QOSGrpCpuLimit                          
 mma9216    8708253   compute     chemistry     28    PENDING   small            N/A                                AssocGrpCpuLimit                        
@@ -699,6 +698,7 @@ lp1471     8713776   compute     chemistry     64    PENDING   small            
 lp1471     8713786   compute     chemistry     64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 lp1471     8713799   compute     chemistry     64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 lp1471     8713800   compute     chemistry     64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+lp1471     8713823   compute     chemistry     64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 hh2784     8713783   compute     students      512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8582977   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -713,96 +713,6 @@ jdg8833    8582992   nvidia      students      1     PENDING   nvidia           
 jdg8833    8582992   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    8582992   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    8582992   nvidia      students      1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ah166      8710438   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710439   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710440   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710441   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710442   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710443   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710444   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710436   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710437   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710424   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710425   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710426   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710427   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710428   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710429   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710430   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710431   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710432   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710433   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710434   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710435   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710416   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710417   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710418   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710419   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710420   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710421   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710422   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710423   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710415   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710414   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710413   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710412   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710411   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710410   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710409   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710408   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710407   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710406   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710402   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710403   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710404   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710405   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710401   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710492   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710493   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710494   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710495   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710496   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710497   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710498   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710499   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710500   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710501   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710502   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710503   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710504   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710505   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710506   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710507   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710508   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710509   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710510   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710511   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710512   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710514   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710515   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710516   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710517   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710518   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710519   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710520   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710521   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710522   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710523   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710524   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710525   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710526   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710527   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710528   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710529   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710530   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710531   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710532   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710533   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710534   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710535   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710536   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710537   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710538   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
@@ -834,110 +744,6 @@ nn34       8710539   preempt     preempt       112   PENDING   preempt-big      
 nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8710539   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710586   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710587   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710588   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710589   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710590   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710591   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710592   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710593   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710594   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710595   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710596   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710597   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710598   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710599   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710600   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710601   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710602   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710603   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710604   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710605   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710606   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710607   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710608   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710609   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710610   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710611   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710612   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710613   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710614   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710615   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710616   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710617   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710618   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710619   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710620   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710621   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710622   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710623   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710624   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710625   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710626   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710627   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710628   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710629   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710630   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710631   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710678   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710679   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710680   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710681   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710682   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710683   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710684   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710685   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710686   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710687   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710688   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710689   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710690   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710691   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710692   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710693   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710694   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710695   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710696   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710697   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710698   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710699   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710700   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710701   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710702   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710703   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710704   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710705   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710706   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710707   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710708   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710723   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710722   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710721   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
@@ -953,6 +759,9 @@ ah166      8710712   preempt     preempt       128   PENDING   preempt-big      
 ah166      8710711   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710710   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710709   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
+ah166      8710708   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
+ah166      8710707   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
+ah166      8710770   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710815   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710814   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710813   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
@@ -998,7 +807,6 @@ ah166      8710774   preempt     preempt       128   PENDING   preempt-big      
 ah166      8710773   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710772   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710771   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8710770   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710907   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710906   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8710905   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
@@ -1182,7 +990,6 @@ ah166      8711168   preempt     preempt       128   PENDING   preempt-big      
 ah166      8711167   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711166   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711165   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711282   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711281   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711280   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711279   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
@@ -1227,6 +1034,7 @@ ah166      8711286   preempt     preempt       128   PENDING   preempt-big      
 ah166      8711285   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711284   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711283   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
+ah166      8711282   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711440   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711439   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711438   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
