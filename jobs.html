@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         13       25       34 %     || DALMA    ||          81%           12           44         1749          340          81          12      ||
-||   95         51       44       53 %     || JUBAIL   ||          89%            0           49         2980          172           4           0      ||
+||   38          6       32       15 %     || DALMA    ||          64%           87           44         3849          265          81          12      ||
+||   95         50       45       52 %     || JUBAIL   ||          88%            0           50         3092          171           3           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:6   GPU:1
@@ -27,19 +27,19 @@
 ||  - |  - |  - ||biology      || 3072 |  12 % |   1 % |   -   ||   384 |     3 ||   tb2613 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    28 |     1 ||  ab10917 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    35 |    32 ||     hhg3 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
-|| 12 |  - |  - ||chemistry    ||10824 |  99 % |  24 % |  30 % || 10810 |   113 ||  sme9918 |  71 % ||  71328 |   569 ||     - |     - || 71328 |   569 ||
+||  5 |  - |  - ||chemistry    ||10824 |  99 % |  24 % |  30 % || 10775 |   106 ||  sme9918 |  71 % ||  69984 |   557 ||     - |     - || 69984 |   557 ||
 || 12 |  - |  - ||civil        || 3200 |  16 % |   1 % |   -   ||   517 |     8 ||   da3205 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  20 % |   1 % |   1 % ||   618 |    14 ||   ha3152 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    16 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |   3 % |   -   |   -   ||    28 |     1 ||  ak11326 |   3 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-||  2 |  - |  - ||electrical   || 4096 |   4 % |   -   |   -   ||   196 |    17 ||   vb1121 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||electrical   || 4096 |   5 % |   -   |   -   ||   224 |    18 ||   vb1121 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  98 % |  13 % |   -   ||  4034 |    14 ||  sk10712 |  60 % ||   1456 |     6 ||     - |     - ||  1456 |     6 ||
 ||  4 |  - |  - ||physics      ||11824 |  64 % |  26 % |   -   ||  7625 |    18 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  31 % |   8 % |  48 % ||  8452 |   125 ||     nn34 |  24 % ||  43056 |   353 || 19584 |   153 || 23216 |   198 ||
+||  - |  - |  - ||preempt      ||27000 |  23 % |   8 % |  31 % ||  6212 |   105 ||     nn34 |  16 % ||  42160 |   346 || 20096 |   157 || 21552 |   185 ||
 ||  - |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   158 |     4 ||  mm12191 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  18 % |   2 % |   -   ||   776 |     8 ||     rmk7 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 20 |  1 |  1 ||students     || 6144 |   9 % |   1 % |   -   ||   567 |    23 ||   hh2784 |   8 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
+|| 19 |  1 |  1 ||students     || 6144 |   9 % |   1 % |   -   ||   563 |    22 ||   hh2784 |   8 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |  33 % |   -   |   -   ||   129 |     2 ||  mm12191 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cap3         || 1280 |  30 % |   1 % |   -   ||   384 |     1 ||     avm4 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -52,35 +52,23 @@ rb5760     8238494   compute     default       530   PENDING   large            
 wh1165     8693674   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693677   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693675   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693680   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693679   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693678   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693682   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693681   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693685   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693680   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693684   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693683   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693687   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693686   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693690   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693685   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693689   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693688   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693692   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693691   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693690   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693693   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693692   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 sk10712    8708442   compute     mechanical    624   PENDING   large            N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 nn34       8708923   compute     chemistry     112   PENDING   medium           N/A                                AssocGrpCpuLimit                        
@@ -647,19 +635,6 @@ ah166      8711634   preempt     preempt       128   PENDING   preempt-big      
 ah166      8711633   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711632   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711631   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711630   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711629   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711628   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711627   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711626   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711625   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711624   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711623   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711622   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711621   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711620   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711619   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-ah166      8711618   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711746   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711745   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8711744   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
