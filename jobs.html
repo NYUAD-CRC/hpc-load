@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         23       16       58 %     || DALMA    ||          86%            1           40         1151          358          32          12      ||
-||   95         34       61       35 %     || JUBAIL   ||          94%            0           60         1599          161           6           0      ||
+||   39         23       16       58 %     || DALMA    ||          86%            0           40         1124          359          34          12      ||
+||   95         34       61       35 %     || JUBAIL   ||          92%            3           61         1951          157           6           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:4   GPU:1
@@ -26,7 +26,7 @@
 ||  - |  - |  - ||access       || 6144 |  25 % |   5 % |   -   ||  1537 |     2 ||  bak8122 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   tb2613 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     3 |     3 ||     hhg3 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
-|| 10 | 56 | 56 ||chemistry    ||10824 |  99 % |  28 % |  20 % || 10820 |    77 ||  sme9918 |  71 % ||  36332 |   316 ||     - |     - || 36332 |   316 ||
+|| 10 | 62 | 62 ||chemistry    ||10824 |  99 % |  28 % |  20 % || 10820 |    77 ||  sme9918 |  71 % ||  36362 |   322 ||     - |     - || 36362 |   322 ||
 ||  2 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     2 |     2 ||   sr3987 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  - |  - ||civil        || 3200 |  13 % |   1 % |   -   ||   439 |    10 ||   da3205 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  10 % |   -   |   1 % ||   318 |    13 ||   ha3152 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -34,11 +34,11 @@
 ||  2 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||    16 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  14 % |   -   |   -   ||   112 |     2 ||  ak11326 |  10 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 || 12 |  6 |  6 ||ecomputer    || 4096 |   1 % |   -   |   -   ||    48 |    12 ||   hh1811 |   1 % ||     24 |     6 ||     - |     - ||    24 |     6 ||
-||  - |  - |  - ||electrical   || 4096 |   4 % |   -   |   -   ||   193 |    24 ||   zw3464 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||electrical   || 4096 |   2 % |   -   |   -   ||   108 |    20 ||   zw3464 |   2 % ||     28 |     1 ||    28 |     1 ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||mechanical   || 4096 |  45 % |   6 % |   -   ||  1862 |     7 ||  sk10712 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||mechanical   || 4096 |  57 % |   8 % |   -   ||  2374 |     8 ||  sk10712 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  51 % |  20 % |   -   ||  6093 |    19 ||   cc6881 |  43 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  55 % |  79 % |  64 % || 14850 |   162 ||     nn34 |  40 % ||  40676 |   301 || 21408 |   187 || 19268 |   114 ||
+||  - |  - |  - ||preempt      ||27000 |  52 % |  71 % |  64 % || 14098 |   156 ||     nn34 |  40 % ||  38580 |   284 || 20848 |   182 || 17732 |   102 ||
 ||  - |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   158 |     4 ||  mm12191 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  18 % |   2 % |   -   ||   776 |     8 ||     rmk7 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||students     || 6144 |  17 % |   3 % |   -   ||  1052 |     6 ||   hh2784 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -51,24 +51,24 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-wh1165     8693675   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693678   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693677   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693675   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693681   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693680   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693679   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693684   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693683   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693682   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693686   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693685   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693684   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693688   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693687   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-wh1165     8693691   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693690   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693689   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693693   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 wh1165     8693692   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
+wh1165     8693691   compute     chemistry     512   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 ah166      8727499   compute     chemistry     256   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 ah166      8727513   compute     chemistry     256   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 na2416     8727512   compute     chemistry     128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
@@ -311,23 +311,12 @@ lp1471     8734326   compute     chemistry     64    PENDING   small            
 lp1471     8734328   compute     chemistry     64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 lp1471     8734330   compute     chemistry     64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 lp1471     8734331   compute     chemistry     64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+hh1811     8733224   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+hh1811     8733222   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     8733228   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     8733227   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     8733226   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     8733225   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     8733224   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     8733222   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-ah166      8734534   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734535   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734536   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734537   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734542   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734543   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734544   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734546   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734547   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734551   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734553   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 ah166      8734554   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 ah166      8734557   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 ah166      8734559   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
@@ -370,9 +359,26 @@ ah166      8734629   nvidia      chemistry     5     PENDING   nvidia           
 ah166      8734630   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 ah166      8734631   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 ah166      8734635   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734638   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
-ah166      8734637   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 ah166      8734636   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734637   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734638   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734641   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734645   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734651   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734650   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734649   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734652   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734654   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734660   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734661   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734662   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734663   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734664   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734665   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734668   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734670   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734673   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
+ah166      8734672   nvidia      chemistry     5     PENDING   nvidia           gpu:v100:1                         AssocGrpCpuLimit                        
 wh1165     8732406   preempt     preempt       1120  PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8733585   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 ah166      8733584   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
