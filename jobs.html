@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         16       23       41 %     || DALMA    ||          35%          231           32         7591          143          19           5      ||
-||   95         63       32       66 %     || JUBAIL   ||          95%            0           62         1369          158          39           0      ||
+||   39         16       23       41 %     || DALMA    ||          56%          139           32         5015          235         115           5      ||
+||   95         63       32       66 %     || JUBAIL   ||          94%            0           62         1481          158          39           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:4   GPU:3
@@ -23,7 +23,7 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |   5 % |   1 % |   -   ||   340 |    11 ||  tag9888 |   4 % ||   1740 |    11 ||  1440 |     1 ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |   5 % |   1 % |   -   ||   340 |    11 ||  tag9888 |   4 % ||   1710 |    10 ||  1440 |     1 ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   tb2613 |   8 % ||    256 |     2 ||   256 |     2 ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     7 |     4 ||   aa5506 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
 ||  6 |  - |  - ||chemistry    ||12824 |  99 % |  34 % |  22 % || 12742 |    71 ||  sme9918 |  30 % ||  10256 |    61 ||     - |     - || 10256 |    61 ||
@@ -33,13 +33,13 @@
 ||  - |  - |  - ||default      ||  768 |  44 % |   -   |   -   ||   340 |     6 ||  sm12837 |  33 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  6 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    24 |     6 ||   hh1811 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   3 % |   -   |   -   ||   132 |    17 ||   zw3464 |   3 % ||     28 |     1 ||    28 |     1 ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  43 % |   6 % |   -   ||  1792 |    14 ||  gencore |  40 % ||  77056 |   602 || 77056 |   602 ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  43 % |   6 % |   -   ||  1792 |    14 ||  gencore |  43 % ||  76288 |   596 || 76288 |   596 ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  64 % |   9 % |   -   ||  2656 |     9 ||  sk10712 |  45 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||physics      ||11824 |  65 % |  26 % |   -   ||  7752 |    20 ||   cc6881 |  51 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  12 % | 244 % |  10 % ||  3267 |    39 ||     nn34 |   7 % ||  76160 |   583 ||  2352 |    21 || 73808 |   562 ||
+||  - |  - |  - ||preempt      ||27000 |  21 % | 244 % |  31 % ||  5731 |    61 ||     nn34 |  17 % ||  70448 |   532 ||   224 |     2 || 70224 |   530 ||
 ||  7 |  2 |  2 ||scomputer    || 3120 |   5 % |   -   |   -   ||   159 |     5 ||  mm12191 |   4 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |  40 % |   5 % |   -   ||  1672 |    15 ||     rmk7 |  40 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 24 | 70 | 70 ||students     || 7168 |  11 % |   2 % |   -   ||   829 |    26 ||   sa9185 |  10 % ||    169 |    70 ||     - |     - ||   169 |    70 ||
+|| 24 | 69 | 69 ||students     || 7168 |  11 % |   2 % |   -   ||   829 |    26 ||   sa9185 |  10 % ||    165 |    69 ||     - |     - ||   165 |    69 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||ace          ||  768 |   8 % |   -   |   -   ||    64 |     2 ||   dr3416 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||c2           ||  384 |  47 % |   -   |   -   ||   184 |     2 ||  mm12191 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -109,7 +109,6 @@ ah166      8741184   compute     chemistry     768   PENDING   large            
 na2416     8742055   compute     chemistry     128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 sme9918    8744186   compute     chemistry     128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 na2416     8749607   compute     chemistry     128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-tag9888    8749855   compute     access        30    PENDING   small            N/A                                JobArrayTaskLimit                       
 tag9888    8749855   compute     access        30    PENDING   small            N/A                                JobArrayTaskLimit                       
 tag9888    8749855   compute     access        30    PENDING   small            N/A                                JobArrayTaskLimit                       
 tag9888    8749855   compute     access        30    PENDING   small            N/A                                JobArrayTaskLimit                       
@@ -190,43 +189,9 @@ sjb8193    8743405   nvidia      students      4     PENDING   nvidia           
 sjb8193    8743405   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8743405   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    8743405   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-sjb8193    8743405   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 mw4355     8744167   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8744166   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 jl9356     8755398   nvidia      scomputer     10    PENDING   nvidia           gpu:a100:2                         PartitionNodeLimit                      
-ah166      8747031   preempt     preempt       128   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8745243   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8745242   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8745240   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8745255   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8745252   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8741210   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753347   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753346   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752559   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752554   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753348   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753345   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753344   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752560   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752553   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752552   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752547   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752551   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753512   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753511   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752556   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752555   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752550   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753516   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753515   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752558   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752557   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8752548   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753777   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753778   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753776   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
-nn34       8753774   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8753514   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8753517   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
 nn34       8753513   preempt     preempt       112   PENDING   preempt-big      N/A                                AssocGrpCpuLimit                        
