@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         10       29       25 %     || DALMA    ||          70%           37          121         3292          249          26           5      ||
-||   95         45       50       47 %     || JUBAIL   ||          93%            0           78         1773          142           4           0      ||
+||   39         10       29       25 %     || DALMA    ||          69%           41          121         3405          245          21           5      ||
+||   95         45       50       47 %     || JUBAIL   ||          91%            1           83         2173          136           4           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:7   GPU:2
@@ -24,9 +24,9 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||bio          || 8192 |  12 % |   -   |   8 % ||  1024 |    64 ||   xl4333 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  12 % |   1 % |   -   ||   390 |     4 ||   tb2613 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |  12 % |   1 % |   -   ||   384 |     3 ||   tb2613 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    70 |    34 ||     drn2 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  4 |  - |  - ||chemistry    ||12824 |  80 % |  30 % |  13 % || 10350 |    53 ||    ah166 |  31 % ||   1408 |     6 ||     - |     - ||  1408 |     6 ||
+||  4 |  - |  - ||chemistry    ||12824 |  74 % |  27 % |  13 % ||  9582 |    51 ||  sme9918 |  30 % ||   1408 |     6 ||     - |     - ||  1408 |     6 ||
 ||  7 |  - |  - ||civil        || 3200 |  12 % |   1 % |   -   ||   392 |     6 ||   da3205 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||collaborator || 3072 |   9 % |   -   |   1 % ||   298 |    13 ||   ha3152 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  28 % |   -   |   -   ||   216 |     5 ||  ak11326 |  10 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
@@ -35,10 +35,10 @@
 ||  - |  - |  - ||gencore      || 4096 |   3 % |   -   |   -   ||   129 |     2 ||  gencore |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  38 % |   5 % |   -   ||  1594 |    10 ||    wo345 |  21 % ||     98 |     1 ||     - |     - ||    98 |     1 ||
 ||  4 |  - |  - ||physics      ||11824 |  74 % |  28 % |   4 % ||  8752 |    21 ||   cc6881 |  43 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
-||  - |  - |  - ||preempt      ||27000 |  41 % |  21 % |  41 % || 11247 |   147 ||     nn34 |  41 % ||  18512 |   164 ||   256 |     1 || 18256 |   163 ||
+||  - |  - |  - ||preempt      ||27000 |  42 % |  22 % |  40 % || 11503 |   148 ||     nn34 |  41 % ||  17808 |   159 ||     - |     - || 17808 |   159 ||
 ||  9 |  2 |  2 ||scomputer    || 3120 |   5 % |   -   |   -   ||   172 |     7 ||  mm12191 |   4 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |  12 % |   1 % |   -   ||   520 |     6 ||     rmk7 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 |  - |  - ||students     || 7168 |  15 % |   3 % |   -   ||  1076 |    21 ||   hh2784 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 17 |  - |  - ||students     || 7168 |  14 % |   3 % |   -   ||  1075 |    20 ||   hh2784 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||ace          ||  768 |   4 % |   -   |   -   ||    32 |     1 ||   dr3416 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||c2           ||  384 |  55 % |   -   |   -   ||   212 |     3 ||  mm12191 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -84,10 +84,6 @@ nn34       8763510   preempt     preempt       112   PENDING   preempt-big      
 nn34       8763510   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763510   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763510   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8763510   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8763510   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8763510   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8763510   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763511   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763511   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763511   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
@@ -188,8 +184,8 @@ nn34       8763511   preempt     preempt       112   PENDING   preempt-big      
 nn34       8763511   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763511   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763511   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8763378   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763376   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8763378   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763377   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763831   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8763832   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
