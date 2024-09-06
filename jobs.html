@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          5       34       12 %     || DALMA    ||          76%           33           63         2559          308          71           9      ||
-||   99         41       58       41 %     || JUBAIL   ||          93%            0           38         1490          181          40           0      ||
+||   39          5       34       12 %     || DALMA    ||          79%           20           63         2199          321          62           8      ||
+||   99         43       56       43 %     || JUBAIL   ||          93%            0           36         1472          183          43           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:3
@@ -27,42 +27,337 @@
 ||  - |  - |  - ||avengers     ||12800 |  10 % |   5 % |   -   ||  1358 |    97 ||     wz22 |  10 % ||    256 |     1 ||     - |     - ||   256 |     1 ||
 ||  - |  - |  - ||biology      || 3072 |   4 % |   -   |   -   ||   133 |     2 ||   tb2613 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cgsb         || 4096 |   3 % |   1 % |   -   ||   148 |    30 ||   cf2290 |   1 % ||    225 |     1 ||     - |     - ||   225 |     1 ||
-||  4 |  - |  - ||chemistry    ||12824 |  76 % |  24 % |  23 % ||  9760 |    59 ||   wh1165 |  30 % ||  10496 |    28 ||   128 |     1 || 10368 |    27 ||
-||  6 |  - |  - ||civil        || 3200 |  12 % |   1 % |   -   ||   403 |     7 ||   da3205 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||chemistry    ||12824 |  76 % |  24 % |  23 % ||  9808 |    61 ||   wh1165 |  31 % ||  10496 |    28 ||   128 |     1 || 10368 |    27 ||
+||  6 |  - |  - ||civil        || 3200 |  16 % |   1 % |   -   ||   529 |     8 ||   da3205 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  12 % |   -   |   2 % ||   388 |    15 ||   ha3152 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||     4 |     1 ||   im2493 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   1 % |   -   |   -   ||    30 |     1 ||   mk9430 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||css          || 4096 |   -   |   -   |   -   ||     8 |     1 ||  dbd7602 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  24 % |   -   |   -   ||   186 |     4 ||   dr2930 |  16 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||     8 |     1 ||   sy2366 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    44 |    28 ||   zw3464 |   -   ||    112 |     4 ||   112 |     4 ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  76 % |  10 % |   -   ||  3115 |    52 ||  gencore |  76 % ||  38923 |   356 || 38016 |   297 ||   907 |    59 ||
+||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    14 |     2 ||   sy2366 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||electrical   || 4096 |   5 % |   -   |   1 % ||   240 |    35 ||   zw3464 |   4 % ||    112 |     4 ||   112 |     4 ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  76 % |  10 % |   -   ||  3125 |    50 ||  gencore |  76 % ||  38453 |   348 ||     - |     - || 38453 |   348 ||
 ||  1 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||     2 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  32 % |   4 % |   -   ||  1322 |     8 ||   ds7760 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  - |  - ||physics      ||11824 |  54 % |  22 % |   -   ||  6448 |    17 ||   cc6881 |  30 % ||   4608 |     9 ||  2048 |     4 ||  2560 |     5 ||
-||  - |  - |  - ||preempt      ||27000 |  41 % |  25 % |  41 % || 11219 |   119 ||     nn34 |  41 % ||  27376 |   236 ||     - |     - || 27376 |   236 ||
-||  - |  - |  - ||psychology   || 6096 |  18 % |   -   |   9 % ||  1120 |    40 ||   yz5725 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||physics      ||11824 |  58 % |  24 % |   -   ||  6960 |    18 ||   cc6881 |  30 % ||   4608 |     9 ||  1536 |     3 ||  3072 |     6 ||
+||  - |  - |  - ||preempt      ||27000 |  41 % |  23 % |  46 % || 11219 |   119 ||     nn34 |  41 % ||  27040 |   233 ||     - |     - || 26928 |   232 ||
+||  - |  - |  - ||psychology   || 6096 |  12 % |   -   |   6 % ||   784 |    28 ||   yz5725 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    42 |     6 ||   jl9356 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     5 |     2 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |845 |845 ||students     || 7168 |  20 % |   4 % |   -   ||  1439 |    19 ||   sa9185 |  10 % ||   6760 |   845 ||     - |     - ||  6760 |   845 ||
+||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     4 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+|| 12 |813 |813 ||students     || 7168 |  20 % |   4 % |   -   ||  1439 |    19 ||   sa9185 |  10 % ||   6504 |   813 ||     - |     - ||  6504 |   813 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||ace          ||  768 |   8 % |   -   |   -   ||    64 |     2 ||   dr3416 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  14 % |   -   |   -   ||    56 |     1 ||  ak11326 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cap3         || 1280 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    640 |     1 ||   640 |     1 ||     - |     - ||
 ||  - |  - |  - ||chi          ||  768 |   3 % |   -   |   -   ||    24 |     1 ||  mmm9912 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gfg          || 1920 |  73 % |   4 % |   -   ||  1408 |     5 ||  laa9597 |  73 % ||   1024 |     2 ||  1024 |     2 ||     - |     - ||
+||  1 |  - |  - ||csm          ||  640 |  19 % |   -   |   -   ||   126 |     1 ||   da3205 |  19 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||gfg          || 1920 | 100 % |   6 % |   -   ||  1920 |     6 ||  laa9597 | 100 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 ||  2 |  - |  - ||serdal       ||   80 |  80 % |   -   |   -   ||    64 |     3 ||   wh1165 |  80 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
+laa9597    8864924   compute     physics       512   PENDING   gfg              N/A                                QOSGrpCpuLimit                          
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
 ah166      8799870   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799869   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799872   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799871   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      8799874   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799873   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      8799874   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808116   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808118   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808118   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808118   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
+gencore    8808118   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 cc6881     8817013   compute     physics       512   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 na2416     8823888   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 na2416     8835332   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -71,18 +366,18 @@ cc6881     8835832   compute     physics       512   PENDING   medium           
 cc6881     8835851   compute     physics       512   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 cc6881     8835878   compute     physics       512   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 na2416     8836824   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-wh1165     8844412   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844414   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844413   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     8844420   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     8844412   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844418   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844416   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     8844426   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844423   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     8844428   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     8844420   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844427   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     8844426   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844430   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844429   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     8844428   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844433   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844432   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844436   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
@@ -907,48 +1202,6 @@ mmm9886    8864305   nvidia      students      8     PENDING   nvidia           
 mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mmm9886    8864305   nvidia      students      8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-nn34       8851401   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8851222   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8851261   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8851397   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8859038   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8859042   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8859040   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8853107   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8854566   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8854779   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8854845   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8856541   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8857957   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
@@ -1172,6 +1425,12 @@ nn34       8845634   preempt     preempt       112   PENDING   preempt-big      
 nn34       8844930   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8843384   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8843392   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8843330   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8843350   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8843339   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8843338   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8863263   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8863132   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
