@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          5       34       12 %     || DALMA    ||          53%          110           81         5386          213          26          12      ||
-||   99         28       71       28 %     || JUBAIL   ||          80%            0           95         5425          124          46           0      ||
+||   39          5       34       12 %     || DALMA    ||          48%          132           80         5975          192          27          11      ||
+||   99         28       71       28 %     || JUBAIL   ||          79%            0           97         5565          122          44           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:6   GPU:3
@@ -35,11 +35,11 @@
 ||  - |  - |  - ||csem         || 3072 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   2304 |    18 ||  2304 |    18 ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  24 % |   -   |   -   ||   187 |     5 ||   dr2930 |  17 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||     8 |     1 ||   sy2366 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |  14 % |   -   |   4 % ||   591 |    69 ||   zw3464 |  13 % ||     84 |     3 ||    84 |     3 ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  75 % |  10 % |   -   ||  3075 |    27 ||  gencore |  75 % ||  22227 |   183 ||     - |     - || 22227 |   183 ||
+||  - |  - |  - ||electrical   || 4096 |  10 % |   -   |   3 % ||   422 |    62 ||   zw3464 |  10 % ||    140 |     5 ||   140 |     5 ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  75 % |  10 % |   -   ||  3075 |    27 ||  gencore |  75 % ||  21843 |   180 ||     - |     - || 21843 |   180 ||
 ||  - |  - |  - ||mechanical   || 4096 |  27 % |   3 % |   -   ||  1138 |     7 ||   ds7760 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  51 % |  20 % |   -   ||  6048 |    21 ||   cc6881 |  30 % ||   2560 |     5 ||     - |     - ||  2560 |     5 ||
-||  - |  - |  - ||preempt      ||27000 |  13 % |  11 % |  13 % ||  3715 |    52 ||     nn34 |  13 % ||   1280 |     3 ||     - |     - ||  1280 |     3 ||
+||  - |  - |  - ||preempt      ||27000 |  11 % |  11 % |   9 % ||  3155 |    47 ||     nn34 |  11 % ||   1392 |     4 ||     - |     - ||  1280 |     3 ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    28 |     2 ||      mri |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    46 |     6 ||   jl9356 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     4 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -54,15 +54,12 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-ah166      8799870   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799869   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      8799872   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799871   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      8799870   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799873   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      8799872   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799874   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
-gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
-gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
@@ -242,14 +239,14 @@ cc6881     8835878   compute     physics       512   PENDING   medium           
 na2416     8836824   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 wh1165     8844423   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844426   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     8844429   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844428   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844427   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844432   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844430   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     8844436   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     8844429   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844435   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     8844433   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     8844436   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 na2416     8863564   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 cc6881     8864371   compute     physics       512   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 tag9888    8866183   compute     access        30    PENDING   small            N/A                                JobArrayTaskLimit                       
