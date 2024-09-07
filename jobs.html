@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          4       35       10 %     || DALMA    ||          70%           46           72         3297          284          26          12      ||
-||   99         26       73       26 %     || JUBAIL   ||          89%            6          108         2768          106          56           0      ||
+||   39          4       35       10 %     || DALMA    ||          68%           54           70         3521          278          26          16      ||
+||   99         26       73       26 %     || JUBAIL   ||          90%            1          113         2656          106          62           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:6   GPU:3
@@ -26,18 +26,18 @@
 ||  - |  - |  - ||access       || 6144 |   5 % |   1 % |   -   ||   328 |    11 ||  tag9888 |   4 % ||    210 |     7 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||avengers     ||12800 |  24 % |  11 % |   -   ||  3143 |   424 ||     wz22 |  24 % ||    256 |     1 ||     - |     - ||   256 |     1 ||
 ||  - |  - |  - ||biology      || 3072 |   8 % |   -   |   -   ||   261 |     3 ||   tb2613 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    10 |     1 ||   ni2071 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
+||  2 |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    11 |     2 ||   ni2071 |   -   ||    225 |     1 ||     - |     - ||   225 |     1 ||
 ||  1 |  - |  - ||chemistry    ||12824 |  62 % |  21 % |  15 % ||  8032 |    55 ||  sme9918 |  20 % ||   2048 |    10 ||     - |     - ||  2048 |    10 ||
 ||  6 |  - |  - ||civil        || 3200 |   1 % |   -   |   -   ||    48 |     6 ||   zl2307 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||collaborator || 3072 |  13 % |   -   |   2 % ||   400 |    18 ||   ha3152 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   7 % |   -   |   -   ||   224 |     2 ||   im2493 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |   -   |   -   |   -   ||     1 |     1 ||   dr2930 |   -   ||    530 |     1 ||     - |     - ||   530 |     1 ||
-||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||     8 |     1 ||   sy2366 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |  12 % |   -   |   4 % ||   511 |    52 ||   zw3464 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||electrical   || 4096 |   8 % |   -   |   2 % ||   343 |    46 ||   zw3464 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |  75 % |  10 % |   -   ||  3072 |    24 ||  gencore |  75 % ||  10393 |    87 ||     - |     - || 10393 |    87 ||
 ||  - |  - |  - ||mechanical   || 4096 |   5 % |   -   |   -   ||   218 |     3 ||    wo345 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  47 % |  19 % |   -   ||  5657 |    13 ||   cc6881 |  30 % ||   1536 |     3 ||     - |     - ||  1536 |     3 ||
-||  - |  - |  - ||preempt      ||27000 |  41 % |  18 % |  49 % || 11217 |   117 ||     nn34 |  41 % ||  84336 |   753 ||     - |     - || 84336 |   753 ||
+||  - |  - |  - ||preempt      ||27000 |  41 % |  18 % |  48 % || 11217 |   117 ||     nn34 |  41 % ||  81200 |   725 ||     - |     - || 81200 |   725 ||
 ||  - |  - |  - ||psychology   || 6096 |   2 % |   -   |   1 % ||   140 |     5 ||   yz5725 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    48 |     8 ||   jl9356 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     4 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -158,38 +158,6 @@ gencore    8837884   gencore     gencore       24    PENDING   normal           
 gencore    8837893   gencore     gencore       24    PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    8837908   gencore     gencore       24    PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    8837915   gencore     gencore       24    PENDING   normal           N/A                                AssocGrpMemLimit                        
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8885583   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
@@ -909,8 +877,12 @@ nn34       8885460   preempt     preempt       112   PENDING   preempt-big      
 nn34       8885482   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8885481   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8885474   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-nn34       8885469   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 nn34       8885470   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8885469   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8885464   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8885459   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8885458   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+nn34       8885457   preempt     preempt       112   PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
