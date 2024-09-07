@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          4       35       10 %     || DALMA    ||          80%            2           74         2094          329         170          12      ||
-||   99         22       77       22 %     || JUBAIL   ||          92%            0          103         1839          116          73           0      ||
+||   39          4       35       10 %     || DALMA    ||          80%            0           74         2039          330          89          12      ||
+||   99         22       77       22 %     || JUBAIL   ||          92%            0          103         1839          116          71           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:5   GPU:3
@@ -32,12 +32,12 @@
 ||  4 |  4 |  4 ||collaborator || 3072 |  13 % |   -   |   2 % ||   404 |    19 ||   ha3152 |  12 % ||     16 |     4 ||     - |     - ||    16 |     4 ||
 ||  - |  - |  - ||default      ||  768 |   7 % |   -   |   -   ||    58 |     3 ||  ak11326 |   7 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||     8 |     1 ||   sy2366 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |   9 % |   -   |   3 % ||   404 |    53 ||   zw3464 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  75 % |  10 % |   -   ||  3073 |    25 ||  gencore |  75 % ||  11929 |    99 ||     - |     - || 11929 |    99 ||
+||  - |  - |  - ||electrical   || 4096 |   7 % |   -   |   2 % ||   319 |    49 ||   zw3464 |   7 % ||     84 |     3 ||    84 |     3 ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  75 % |  10 % |   -   ||  3072 |    24 ||  gencore |  75 % ||  11929 |    99 ||     - |     - || 11929 |    99 ||
 ||  - |  - |  - ||mechanical   || 4096 |   5 % |   -   |   -   ||   218 |     3 ||    wo345 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  47 % |  19 % |   -   ||  5657 |    13 ||   cc6881 |  30 % ||   1536 |     3 ||     - |     - ||  1536 |     3 ||
-||  - |  - |  - ||preempt      ||27000 |  37 % |  16 % |  42 % || 10098 |   108 ||     nn34 |  37 % ||  21392 |   191 || 21280 |   190 ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |  38 % |   -   |  19 % ||  2352 |    84 ||   yz5725 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |  39 % |  16 % |  48 % || 10770 |   114 ||     nn34 |  39 % ||  29904 |   267 || 29904 |   267 ||     - |     - ||
+||  - |  - |  - ||psychology   || 6096 |  29 % |   -   |  14 % ||  1792 |    64 ||   yz5725 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    48 |     8 ||   jl9356 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     4 |     1 ||   ke2211 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||students     || 7168 |  21 % |   5 % |   -   ||  1545 |     6 ||   sa9185 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -52,11 +52,11 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-ah166      8799870   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799869   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      8799872   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799871   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      8799870   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799873   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      8799872   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      8799874   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    8808117   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
@@ -176,7 +176,6 @@ gencore    8837915   gencore     gencore       24    PENDING   normal           
 mw4355     8878191   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8878190   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     8878189   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     8878188   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
