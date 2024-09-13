@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          8       31       20 %     || DALMA    ||          81%            2           75         2000          328          32           8      ||
-||   99         33       66       33 %     || JUBAIL   ||          78%            0          122         5797           96          58           0      ||
+||   39          8       31       20 %     || DALMA    ||          79%            6           75         2196          322          33           8      ||
+||   99         31       68       31 %     || JUBAIL   ||          78%            0          122         5797           96          57           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:13
@@ -29,8 +29,8 @@
 ||  4 |  - |  - ||cass         || 8192 |   -   |   -   |   -   ||    16 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    16 |     4 ||   ma6996 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    225 |     1 ||   225 |     1 ||     - |     - ||
-||  4 |  - |  - ||chemistry    ||12824 |  94 % |  12 % |  70 % || 12061 |   210 ||     nn34 |  62 % ||   4144 |    18 ||   560 |    10 ||  3584 |     8 ||
-||  5 |  - |  - ||civil        || 3200 |  33 % |   1 % |   5 % ||  1084 |    31 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||chemistry    ||12824 |  92 % |  12 % |  69 % || 11893 |   207 ||     nn34 |  61 % ||   3808 |    12 ||   224 |     4 ||  3584 |     8 ||
+||  3 |  - |  - ||civil        || 3200 |  33 % |   1 % |   5 % ||  1068 |    29 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||collaborator || 3072 |  88 % |   8 % |   2 % ||  2726 |    24 ||   ap6420 |  75 % ||     64 |     1 ||     - |     - ||    64 |     1 ||
 ||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||    24 |     1 ||   gb2379 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||    20 |     2 ||  mm12971 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -38,11 +38,10 @@
 ||  - |  - |  - ||default      ||  768 |  31 % |   -   |   -   ||   240 |     5 ||  sm12837 |  16 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  3 |  - |  - ||ecomputer    || 4096 |   2 % |   -   |   -   ||   122 |     7 || sas10092 |   1 % ||     28 |     1 ||    28 |     1 ||     - |     - ||
 ||  2 |  - |  - ||electrical   || 4096 |   2 % |   -   |   -   ||   100 |    35 || sms10215 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  55 % |   7 % |   -   ||  2290 |    55 ||  gencore |  55 % || 120572 |  1292 || 99712 |   779 || 20860 |   513 ||
+||  - |  - |  - ||gencore      || 4096 |  55 % |   7 % |   -   ||  2290 |    55 ||  gencore |  55 % || 120444 |  1291 || 99584 |   778 || 20860 |   513 ||
 ||  - |  - |  - ||mechanical   || 4096 |  60 % |   8 % |   -   ||  2498 |    10 ||   ds7760 |  32 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  50 % |  20 % |   -   ||  6017 |    13 ||   cc6881 |  30 % ||   3584 |     7 ||     - |     - ||  3584 |     7 ||
 ||  - |  - |  - ||preempt      ||27000 |   1 % |   3 % |   -   ||   396 |    32 ||     nn34 |   1 % ||    768 |     1 ||     - |     - ||   768 |     1 ||
-||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    28 |     1 ||   yz5725 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    51 |     4 ||   ia2280 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  21 % |   3 % |   -   ||   896 |     7 ||     rmk7 |  21 % ||    384 |     3 ||     - |     - ||   384 |     3 ||
 ||  3 |  - |  - ||students     || 7168 |  19 % |   4 % |   -   ||  1424 |    13 ||   sa9185 |  10 % ||    128 |     1 ||   128 |     1 ||     - |     - ||
@@ -66,6 +65,148 @@ cc6881     9012451   compute     physics       512   PENDING   medium           
 cc6881     9012452   compute     physics       512   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 na2416     9013211   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 na2416     9013478   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028022   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028022   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028022   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -266,148 +407,6 @@ gencore    9028022   compute     gencore       48    PENDING   gencore-small    
 gencore    9028022   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028022   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028022   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028023   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028023   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028023   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
