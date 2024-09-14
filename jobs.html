@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         19       20       48 %     || DALMA    ||          44%          158          122         6413          125         105           8      ||
+||   39         19       20       48 %     || DALMA    ||          45%          159          119         6357          127         103          10      ||
 ||   99         31       68       31 %     || JUBAIL   ||          81%            0          124         5069           94          69           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -36,15 +36,16 @@
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||    20 |     2 ||  mm12971 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  31 % |   -   |   -   ||   240 |     5 ||  sm12837 |  16 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-|| 14 | 16 | 16 ||ecomputer    || 4096 |   3 % |   -   |   -   ||   142 |    17 ||   lm4344 |   1 % ||     64 |    16 ||     - |     - ||    64 |    16 ||
+|| 14 |  9 |  9 ||ecomputer    || 4096 |   3 % |   -   |   -   ||   142 |    17 ||   lm4344 |   1 % ||     36 |     9 ||     - |     - ||    36 |     9 ||
 ||  2 |  - |  - ||electrical   || 4096 |   2 % |   -   |   -   ||   100 |    35 || sms10215 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  79 % |  11 % |   -   ||  3242 |    57 ||  gencore |  79 % || 101207 |  1106 || 82048 |   641 || 19159 |   465 ||
+||  - |  - |  - ||gencore      || 4096 |  79 % |  11 % |   -   ||  3242 |    57 ||  gencore |  79 % || 100007 |  1096 || 80896 |   632 || 19111 |   464 ||
 ||  - |  - |  - ||mechanical   || 4096 |  60 % |   8 % |   -   ||  2498 |    10 ||   ds7760 |  32 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  50 % |  20 % |   -   ||  6017 |    13 ||   cc6881 |  30 % ||   3584 |     7 ||     - |     - ||  3584 |     7 ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   2 % |   -   ||    60 |    29 ||    tz878 |   -   ||    768 |     1 ||     - |     - ||   768 |     1 ||
+||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    56 |     2 ||   yz5725 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    50 |     3 ||   ia2280 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  21 % |   3 % |   -   ||   896 |     7 ||     rmk7 |  21 % ||    384 |     3 ||     - |     - ||   384 |     3 ||
-||  1 |  - |  - ||students     || 7168 |  41 % |   4 % |  13 % ||  2994 |   209 ||  sas9891 |  22 % ||    984 |   108 ||   128 |     1 ||   856 |   107 ||
+||  1 |  - |  - ||students     || 7168 |  41 % |   4 % |  13 % ||  2986 |   208 ||  sas9891 |  22 % ||    704 |    73 ||   128 |     1 ||   576 |    72 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||c2           ||  384 |  21 % |   -   |   -   ||    84 |     2 ||  ak11326 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||chi          ||  768 |   4 % |   -   |   -   ||    36 |     2 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -374,7 +375,6 @@ gencore    9028021   compute     gencore       48    PENDING   gencore-small    
 gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9028021   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028023   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028023   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9028023   compute     gencore       48    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -569,41 +569,6 @@ sas9891    9041181   compute     students      8     PENDING   small            
 sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    9041181   compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9031818   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
@@ -678,12 +643,6 @@ gencore    9033580   gencore     gencore       8     PENDING   normal           
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
-mw4355     9041799   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9041798   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9041797   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9041796   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9041795   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9041794   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9041793   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9041792   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9041791   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
@@ -710,6 +669,12 @@ mw4355     9041803   nvidia      collaborator  4     PENDING   nvidias          
 mw4355     9041802   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9041801   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9041800   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9041799   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9041798   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9041797   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9041796   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9041795   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9041794   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     9042078   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     9042077   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     9042076   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
@@ -719,13 +684,6 @@ hh1811     9042073   nvidia      ecomputer     4     PENDING   nvidia           
 hh1811     9042072   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     9042071   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 hh1811     9042070   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     9042069   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     9042068   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     9042067   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     9042066   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     9042065   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     9042064   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-hh1811     9042063   nvidia      ecomputer     4     PENDING   nvidia           gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
