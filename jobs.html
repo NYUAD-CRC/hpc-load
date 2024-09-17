@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         15       24       38 %     || DALMA    ||          87%            0           39         1177          366          33           8      ||
+||   39         13       26       33 %     || DALMA    ||          87%            3           39         1268          363          31           8      ||
 ||   99         58       41       58 %     || JUBAIL   ||          77%            0          123         6044           94          69           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -28,18 +28,18 @@
 ||  - |  - |  - ||biology      || 3072 |   4 % |   -   |   -   ||   152 |     2 ||   tb2613 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||cass         || 8192 |   -   |   -   |   -   ||    32 |     2 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    225 |     1 ||   225 |     1 ||     - |     - ||
-||  6 |  - |  - ||chemistry    ||12824 |  90 % |   6 % |  79 % || 11580 |   201 ||     nn34 |  62 % ||   9184 |   164 ||  9184 |   164 ||     - |     - ||
+||  4 |  - |  - ||chemistry    ||12824 |  89 % |   6 % |  78 % || 11514 |   198 ||     nn34 |  62 % ||   5824 |   104 ||  5824 |   104 ||     - |     - ||
 ||  4 |  - |  - ||civil        || 3200 |  44 % |   2 % |   5 % ||  1438 |    31 ||   da3205 |  23 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 | 24 | 24 ||collaborator || 3072 |  26 % |   2 % |   -   ||   828 |    11 ||   ap6420 |  25 % ||     96 |    24 ||     - |     - ||    96 |    24 ||
 ||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||    20 |     1 ||   gb2379 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  26 % |   -   |   -   ||   204 |     5 ||  sm12837 |   8 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-||  8 |  - |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   254 |    13 || sas10092 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    77 |    16 ||   zw3464 |   1 % ||    112 |     4 ||   112 |     4 ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  26 % |   -   |   -   ||   205 |     6 ||  sm12837 |   8 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
+||  8 |  - |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   246 |    12 || sas10092 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    49 |    15 ||   sn3397 |   -   ||    168 |     6 ||   168 |     6 ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |  99 % |  14 % |   -   ||  4064 |    63 ||  gencore |  99 % ||  91061 |  2232 ||     - |     - || 91061 |  2232 ||
 ||  - |  - |  - ||mechanical   || 4096 |  55 % |   7 % |   -   ||  2288 |     9 ||   ds7760 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  52 % |  21 % |   -   ||  6192 |    15 ||   cc6881 |  30 % ||   2048 |     4 ||     - |     - ||  2048 |     4 ||
-||  - |  - |  - ||preempt      ||27000 |   4 % | 146 % |   -   ||  1177 |    19 ||    ah166 |   3 % ||  60608 |   495 || 19264 |   172 || 41344 |   323 ||
+||  - |  - |  - ||preempt      ||27000 |   4 % | 145 % |   -   ||  1177 |    19 ||    ah166 |   3 % ||  60352 |   493 || 19264 |   172 || 41088 |   321 ||
 ||  8 |  - |  - ||scomputer    || 3120 |   3 % |   -   |   -   ||   113 |     5 ||   hsj276 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |  10 % |   1 % |   -   ||   412 |     4 ||     rmk7 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||students     || 7168 |  41 % |  10 % |   -   ||  3004 |    13 ||   sa9185 |  32 % ||    768 |     1 ||     - |     - ||   768 |     1 ||
@@ -1282,78 +1282,6 @@ gencore    9073993   compute     gencore       128   PENDING   gencore-medium   
 gencore    9073993   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 gencore    9073993   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 gencore    9073993   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
@@ -1554,6 +1482,78 @@ gencore    9073994   compute     gencore       128   PENDING   gencore-medium   
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
+gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                AssocGrpCpuLimit                        
 sa9185     9073306   compute     students      768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
@@ -1628,9 +1628,6 @@ gencore    9033580   gencore     gencore       8     PENDING   normal           
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9033580   gencore     gencore       8     PENDING   normal           N/A                                AssocGrpMemLimit                        
-mw4355     9074242   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9074241   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9074240   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074239   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074238   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074237   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
@@ -1638,7 +1635,6 @@ mw4355     9074236   nvidia      collaborator  4     PENDING   nvidias          
 mw4355     9074235   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074234   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074233   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9074256   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074255   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074254   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074253   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
@@ -1652,6 +1648,10 @@ mw4355     9074246   nvidia      collaborator  4     PENDING   nvidias          
 mw4355     9074245   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074244   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9074243   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9074242   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9074241   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9074240   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9074256   nvidia      collaborator  4     PENDING   nvidias          gpu:v100:1                         QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
