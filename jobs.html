@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         31        8       79 %     || DALMA    ||          74%           63           95         2804          245         152           7      ||
-||   99         74       25       74 %     || JUBAIL   ||          76%            3           90         5886          122          80           0      ||
+||   39         23       16       58 %     || DALMA    ||          74%           63           95         2803          245         130           7      ||
+||   99         66       33       66 %     || JUBAIL   ||          76%            3           90         5886          122          80           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:9   GPU:11
@@ -30,11 +30,11 @@
 ||  5 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    20 |     5 ||   ma6996 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||cgsb         || 4096 |   4 % |   -   |   -   ||   172 |    11 ||   aa5506 |   1 % ||    768 |     6 ||   768 |     6 ||     - |     - ||
 ||  6 |  - |  - ||chemistry    ||12824 |  52 % |  12 % |  26 % ||  6691 |   111 ||     nn34 |  21 % ||  12968 |    62 ||   768 |     1 ||  3240 |    54 ||
-|| 21 |  - |  - ||civil        || 3200 |  43 % |   2 % |   6 % ||  1392 |    58 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 15 |  - |  - ||civil        || 3200 |  43 % |   2 % |   6 % ||  1389 |    57 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||collaborator || 3072 |  64 % |   5 % |   3 % ||  1994 |    28 ||   xy2949 |  31 % ||   1088 |     2 ||  1088 |     2 ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  36 % |   -   |   -   ||   282 |     8 ||  sm12837 |  25 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-|| 12 |  - |  - ||ecomputer    || 4096 |   2 % |   -   |   -   ||    85 |    13 ||   ll5484 |   1 % ||      6 |     1 ||     - |     - ||     - |     - ||
+||  8 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    53 |     9 ||   ll5484 |   -   ||      6 |     1 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |  91 % |  12 % |   -   ||  3744 |    48 ||  gencore |  91 % ||  41760 |   947 ||     - |     - || 41760 |   947 ||
 ||  2 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    20 |     2 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  20 % |   2 % |   -   ||   832 |     4 ||   ds7760 |  18 % ||   1680 |     5 ||  1680 |     5 ||     - |     - ||
@@ -43,7 +43,7 @@
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   200 |   100 ||  as14864 |   3 % ||    936 |   468 ||     - |     - ||   936 |   468 ||
 ||  1 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    56 |     3 ||  sk10691 |   -   ||    100 |     1 ||   100 |     1 ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 | 48 | 48 ||students     || 7168 |  43 % |   3 % |  18 % ||  3106 |    25 ||   jkl499 |  27 % ||   3268 |    13 ||  3220 |     7 ||    48 |     6 ||
+|| 11 | 48 | 48 ||students     || 7168 |  42 % |   3 % |  17 % ||  3058 |    19 ||   jkl499 |  27 % ||   3268 |    13 ||  3220 |     7 ||    48 |     6 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||ace          ||  768 |   8 % |   -   |   -   ||    64 |     2 ||   dr3416 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||c2           ||  384 |  18 % |   -   |   -   ||    72 |     3 ||   rb5953 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -1000,12 +1000,12 @@ nn34       9128079   compute     chemistry     56    PENDING   small            
 gencore    9120379   gencore     gencore       36    PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9126007   gencore     gencore       28    PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9126339   gencore     gencore       28    PENDING   normal           N/A                                AssocGrpMemLimit                        
-yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxJobsPerUserLimit                  
-yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxJobsPerUserLimit                  
-yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxJobsPerUserLimit                  
-yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxJobsPerUserLimit                  
-yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxJobsPerUserLimit                  
-yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxJobsPerUserLimit                  
+yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
+yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
+yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
+yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
+yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
+yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
 ag9141     9127238   visual      ecomputer     6     PENDING   normal           gpu:1                              PartitionTimeLimit                      
 </pre>
 </body>
