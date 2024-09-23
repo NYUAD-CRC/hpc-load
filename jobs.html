@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         23       16       58 %     || DALMA    ||          74%           64           95         2833          244         163           7      ||
-||   99         62       37       62 %     || JUBAIL   ||          77%            2           90         5758          123          80           0      ||
+||   39         29       10       74 %     || DALMA    ||          74%           64           95         2833          244         134           7      ||
+||   99         62       37       62 %     || JUBAIL   ||          77%            2           90         5758          123          86           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:9   GPU:11
+	OOD JOBS:  CPU:9   GPU:12
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -34,8 +34,8 @@
 ||  1 |  - |  - ||collaborator || 3072 |  98 % |   9 % |   3 % ||  3018 |    29 ||   ap6420 |  58 % ||     64 |     1 ||    64 |     1 ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  33 % |   -   |   -   ||   254 |     7 ||  sm12837 |  25 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-||  8 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    53 |     9 ||   ll5484 |   -   ||      6 |     1 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  91 % |  12 % |   -   ||  3744 |    48 ||  gencore |  91 % ||  40964 |   940 ||     - |     - || 40964 |   940 ||
+||  7 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    45 |     8 ||   ll5484 |   -   ||      6 |     1 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  91 % |  12 % |   -   ||  3744 |    48 ||  gencore |  91 % ||  40836 |   939 ||     - |     - || 40836 |   939 ||
 ||  2 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    20 |     2 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  20 % |   2 % |   -   ||   832 |     4 ||   ds7760 |  18 % ||   1680 |     5 ||  1680 |     5 ||     - |     - ||
 ||  6 |  - |  - ||physics      ||11824 |  51 % |  19 % |   3 % ||  6103 |    30 ||   cc6881 |  30 % ||   1536 |     3 ||     - |     - ||  1536 |     3 ||
@@ -43,7 +43,7 @@
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   200 |   100 ||  as14864 |   3 % ||    936 |   468 ||     - |     - ||   936 |   468 ||
 ||  1 |  - |  - ||scomputer    || 3120 |   2 % |   -   |   -   ||    66 |     4 ||  sk10691 |   -   ||    100 |     1 ||   100 |     1 ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 10 | 48 | 48 ||students     || 7168 |  43 % |   3 % |  17 % ||  3150 |    18 ||   jkl499 |  27 % ||   3140 |    12 ||  3092 |     6 ||    48 |     6 ||
+|| 17 | 40 | 40 ||students     || 7168 |  43 % |   3 % |  17 % ||  3150 |    18 ||   jkl499 |  27 % ||   3132 |    11 ||  3092 |     6 ||    40 |     5 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||ace          ||  768 |   8 % |   -   |   -   ||    64 |     2 ||   dr3416 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||c2           ||  384 |  13 % |   -   |   -   ||    52 |     3 ||   rb5953 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -65,7 +65,6 @@ gencore    9118394   bigmem      gencore       36    PENDING   bigmem           
 gencore    9118394   bigmem      gencore       36    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
 gencore    9118394   bigmem      gencore       36    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    9073994   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
@@ -993,7 +992,6 @@ nn34       9128079   compute     chemistry     56    PENDING   small            
 gencore    9120379   gencore     gencore       36    PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9126007   gencore     gencore       28    PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9126339   gencore     gencore       28    PENDING   normal           N/A                                AssocGrpMemLimit                        
-yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
 yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
 yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
 yd2247     9127914   nvidia      students      8     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
