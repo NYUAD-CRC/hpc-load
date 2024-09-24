@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         31        8       79 %     || DALMA    ||          86%            9          133         1336          264         225           7      ||
-||   99         83       16       83 %     || JUBAIL   ||          85%            0           82         3166          129          95           0      ||
+||   39         30        9       76 %     || DALMA    ||          90%            6           44          824          356         189           7      ||
+||   99         83       16       83 %     || JUBAIL   ||          85%            0           82         3135          129          93           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:12
@@ -35,15 +35,15 @@
 ||  1 |  - |  - ||collaborator || 3072 |  95 % |   9 % |   2 % ||  2946 |    26 ||   ap6420 |  58 % ||     64 |     1 ||    64 |     1 ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  15 % |   -   |   -   ||   118 |     4 ||  sm12837 |   8 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
-|| 18 | 13 |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   246 |    26 ||   ll5484 |   1 % ||    104 |    13 ||   104 |    13 ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  88 % |  12 % |   -   ||  3612 |    57 ||  gencore |  88 % ||  26172 |   397 ||     - |     - || 26172 |   397 ||
+|| 17 | 13 |  - ||ecomputer    || 4096 |   5 % |   -   |   -   ||   238 |    25 ||   ll5484 |   1 % ||    104 |    13 ||   104 |    13 ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  88 % |  12 % |   -   ||  3612 |    57 ||  gencore |  88 % ||  26170 |   395 ||     - |     - || 26170 |   395 ||
 ||  4 |  - |  - ||mathematics  || 3072 |   1 % |   -   |   -   ||    40 |     4 ||   nb3854 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  69 % |   8 % |   2 % ||  2840 |    10 ||   ds7760 |  54 % ||   1792 |     2 ||     - |     - ||  1792 |     2 ||
 ||  6 |  - |  - ||physics      ||11824 |  51 % |  21 % |   3 % ||  6089 |    16 ||   cc6881 |  30 % ||   1536 |     3 ||     - |     - ||  1536 |     3 ||
-||  - |  - |  - ||preempt      ||27000 |   -   | 183 % |   -   ||    76 |    26 ||    tz878 |   -   ||  53152 |   422 ||     - |     - || 53152 |   422 ||
-||  - |  - |  - ||psychology   || 6096 |  29 % |   4 % |   4 % ||  1812 |   241 ||   pw1246 |  21 % ||   3966 |   884 ||  1952 |    61 ||  2014 |   823 ||
+||  - |  - |  - ||preempt      ||27000 |   -   | 183 % |   -   ||    75 |    25 ||    tz878 |   -   ||  53153 |   423 ||     - |     - || 53153 |   423 ||
+||  - |  - |  - ||psychology   || 6096 |  30 % |   4 % |   4 % ||  1844 |   242 ||   pw1246 |  22 % ||   2974 |   853 ||   960 |    30 ||  2014 |   823 ||
 || 11 |  4 |  4 ||scomputer    || 3120 |   5 % |   -   |   1 % ||   173 |    10 ||   ia2280 |   2 % ||     12 |     1 ||     - |     - ||    12 |     1 ||
-|| 15 | 10 |  8 ||students     || 7168 |  70 % |   1 % |  37 % ||  5037 |    24 ||   jkl499 |  55 % ||   4067 |    20 ||  4003 |    12 ||    64 |     8 ||
+|| 15 |  9 |  7 ||students     || 7168 |  77 % |   1 % |  42 % ||  5549 |    25 ||   jkl499 |  55 % ||   4059 |    19 ||  4003 |    12 ||    56 |     7 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |  11 % |   -   |   -   ||    44 |     2 ||   rb5953 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cair         ||  128 |  43 % |   -   |   -   ||    56 |     2 ||   sy2366 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -1111,10 +1111,8 @@ gencore    9130138   compute     gencore       16    PENDING   gencore-small    
 gencore    9130138   compute     gencore       16    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9130138   compute     gencore       16    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125629   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125618   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125831   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125890   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125958   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125890   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125773   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125929   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125937   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -1137,9 +1135,9 @@ gencore    9125842   compute     gencore       1     PENDING   gencore-small    
 gencore    9125894   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125635   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125866   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125874   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125686   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125762   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125874   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125965   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125885   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125950   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -1152,21 +1150,21 @@ gencore    9125798   compute     gencore       1     PENDING   gencore-small    
 gencore    9125957   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125726   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125940   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125676   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125918   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125884   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125676   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125968   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125900   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125884   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125769   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125917   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125692   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125910   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125917   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125650   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125833   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125919   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125969   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125725   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125786   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125969   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125656   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125710   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125751   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -1179,15 +1177,15 @@ gencore    9125787   compute     gencore       1     PENDING   gencore-small    
 gencore    9125835   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125860   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125753   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125796   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125661   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125719   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125796   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125951   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125772   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125912   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125907   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125666   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125891   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125907   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125702   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125781   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125844   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -1196,16 +1194,16 @@ gencore    9125768   compute     gencore       1     PENDING   gencore-small    
 gencore    9125808   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125625   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125727   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125788   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125864   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125788   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125682   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125959   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125653   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125941   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125653   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125970   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
+gencore    9125859   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125674   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125862   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9125859   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125640   compute     gencore       28    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125818   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9125934   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -1215,7 +1213,6 @@ gencore    9120379   gencore     gencore       36    PENDING   normal           
 gencore    9126007   gencore     gencore       28    PENDING   normal           N/A                                AssocGrpMemLimit                        
 gencore    9126339   gencore     gencore       28    PENDING   normal           N/A                                AssocGrpMemLimit                        
 jl9356     9128969   nvidia      scomputer     12    PENDING   nvidia           gpu:a100:4                         QOSMaxGRESPerUser                       
-yd2247     9130300   nvidia      students      8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yd2247     9130300   nvidia      students      8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yd2247     9130328   nvidia      students      8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 yd2247     9130328   nvidia      students      8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
