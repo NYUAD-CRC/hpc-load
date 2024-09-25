@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         14       25       35 %     || DALMA    ||          89%            0          126          951          279         230           7      ||
-||   99         67       32       67 %     || JUBAIL   ||          79%            0           81         4718          130          82           0      ||
+||   39         14       25       35 %     || DALMA    ||          89%            0          127          952          278         224           7      ||
+||   99         67       32       67 %     || JUBAIL   ||          79%            0           81         4718          130          78           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:6   GPU:8
@@ -30,7 +30,7 @@
 ||  - |  - |  - ||cass         || 8192 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     28 |     1 ||    28 |     1 ||     - |     - ||
 ||  2 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||     8 |     2 ||   ma6996 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    20 |     4 ||   ni2071 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||chemistry    ||12824 |  43 % |   7 % |  27 % ||  5558 |    97 ||   wh1165 |  10 % ||  28496 |   125 || 20816 |   119 ||     - |     - ||
+||  3 |  - |  - ||chemistry    ||12824 |  43 % |   7 % |  27 % ||  5558 |    96 ||   wh1165 |  10 % ||  28450 |   125 || 20770 |   119 ||     - |     - ||
 ||  5 |  4 |  - ||cities       || 4096 |   -   |   -   |   -   ||     3 |     3 ||   sr3987 |   -   ||      1 |     1 ||     1 |     1 ||     - |     - ||
 || 16 |  4 |  4 ||civil        || 3200 |  44 % |   2 % |   5 % ||  1422 |    52 ||    sa183 |  21 % ||     32 |     4 ||     - |     - ||    32 |     4 ||
 ||  - |  - |  - ||collaborator || 3072 |  77 % |   7 % |   1 % ||  2372 |    22 ||   ap6420 |  41 % ||    512 |     1 ||   512 |     1 ||     - |     - ||
@@ -38,12 +38,12 @@
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  38 % |   1 % |   -   ||   292 |     7 ||  sm12837 |  25 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 || 11 |  - |  - ||ecomputer    || 4096 |   5 % |   -   |   -   ||   218 |    17 ||   ag9141 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  84 % |  12 % |   -   ||  3480 |    48 ||  gencore |  84 % ||  17174 |   300 ||   128 |     1 || 17046 |   299 ||
-||  - |  - |  - ||general      || 3072 |   1 % |   -   |   -   ||    51 |    51 ||   ak7550 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  84 % |  12 % |   -   ||  3480 |    48 ||  gencore |  84 % ||  17158 |   299 ||   128 |     1 || 17030 |   298 ||
+||  - |  - |  - ||general      || 3072 |   1 % |   -   |   -   ||    50 |    50 ||   ak7550 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  49 % |   6 % |   -   ||  2016 |     7 ||   ds7760 |  31 % ||   1280 |     2 ||  1280 |     2 ||     - |     - ||
 ||  6 |  - |  - ||physics      ||11824 |  48 % |  21 % |   4 % ||  5704 |    14 ||   cc6881 |  30 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 ||  - |  - |  - ||preempt      ||27000 |   1 % | 183 % |   -   ||   346 |    33 ||    tz878 |   1 % ||  52864 |   413 ||     - |     - || 52864 |   413 ||
-||  - |  - |  - ||psychology   || 6096 |  23 % |   -   |  11 % ||  1408 |   201 ||   pw1246 |  19 % ||   1688 |   504 ||   560 |    20 ||  1128 |   484 ||
+||  - |  - |  - ||psychology   || 6096 |  23 % |   -   |  11 % ||  1408 |   201 ||   pw1246 |  19 % ||   1544 |   492 ||   560 |    20 ||   984 |   472 ||
 || 10 |  - |  - ||scomputer    || 3120 |   3 % |   -   |   -   ||   117 |     7 ||   ia2280 |   1 % ||      3 |     3 ||     3 |     3 ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |     1 ||  ms13502 |   -   ||     28 |     1 ||    28 |     1 ||     - |     - ||
 ||  2 |  - |  - ||students     || 7168 |  63 % |   6 % |  21 % ||  4553 |    15 ||   jkl499 |  27 % ||   3841 |     8 ||  3841 |     8 ||     - |     - ||
@@ -209,7 +209,6 @@ gencore    9130138   compute     gencore       16    PENDING   gencore-small    
 gencore    9130138   compute     gencore       16    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9130138   compute     gencore       16    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9130138   compute     gencore       16    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-gencore    9130138   compute     gencore       16    PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9132243   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9132243   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9132243   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
@@ -261,18 +260,6 @@ gencore    9132243   compute     gencore       1     PENDING   gencore-small    
 gencore    9132243   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9132243   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
 gencore    9132380   compute     gencore       1     PENDING   gencore-small    N/A                                QOSGrpMemLimit                          
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 pw1246     9133139   compute     psychology    12    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
