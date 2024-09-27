@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         11       28       28 %     || DALMA    ||          89%            0           85          945          317         141          13      ||
-||   99         83       16       83 %     || JUBAIL   ||          88%            3           46         2141          162          69           0      ||
+||   39         11       28       28 %     || DALMA    ||          89%            1           85          983          316         141          13      ||
+||   99         83       16       83 %     || JUBAIL   ||          88%            3           46         2141          162          71           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:4   GPU:12
@@ -28,15 +28,15 @@
 ||  - |  - |  - ||biology      || 3072 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    512 |     4 ||   512 |     4 ||     - |     - ||
 ||  1 |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    10 |     1 ||     oa22 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  1 |  1 ||ccs          || 6144 |   -   |   -   |   -   ||    44 |     8 ||   hj2836 |   -   ||      4 |     1 ||     - |     - ||     4 |     1 ||
-||  4 |  - |  - ||chemistry    ||12824 |  78 % |  20 % |  33 % || 10094 |   155 ||     nn34 |  21 % ||  42192 |   178 ||     - |     - || 42192 |   178 ||
+||  4 |  - |  - ||chemistry    ||12824 |  78 % |  20 % |  33 % || 10084 |   154 ||     nn34 |  21 % ||  42024 |   175 ||     - |     - || 42024 |   175 ||
 ||  4 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     2 |     2 ||   sr3987 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||civil        || 3200 |  37 % |   1 % |   5 % ||  1191 |    30 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||collaborator || 3072 |  21 % |   1 % |   2 % ||   666 |    20 ||   xy2949 |  12 % ||   1536 |     2 ||   512 |     1 ||  1024 |     1 ||
+||  - |  - |  - ||collaborator || 3072 |  21 % |   1 % |   2 % ||   666 |    20 ||   xy2949 |  12 % ||   1536 |     2 ||  1536 |     2 ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||    12 |     2 ||  mm12971 |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  52 % |   1 % |   -   ||   406 |    12 ||  sm12837 |  25 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
+||  - |  - |  - ||default      ||  768 |  49 % |   1 % |   -   ||   378 |    11 ||  sm12837 |  25 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 || 23 | 16 | 14 ||ecomputer    || 4096 |   4 % |   -   |   -   ||   188 |    25 ||   ll5484 |   1 % ||     72 |    16 ||    16 |     2 ||    56 |    14 ||
-||  - |  - |  - ||gencore      || 4096 |  75 % |  11 % |   -   ||  3072 |    24 ||  gencore |  75 % ||   3524 |    47 ||     - |     - ||  3524 |    47 ||
+||  - |  - |  - ||gencore      || 4096 |  75 % |  11 % |   -   ||  3072 |    24 ||  gencore |  75 % ||   3396 |    46 ||     - |     - ||  3396 |    46 ||
 ||  - |  - |  - ||mechanical   || 4096 |  62 % |   7 % |   2 % ||  2544 |    11 ||   ds7760 |  50 % ||    640 |     2 ||   640 |     2 ||     - |     - ||
 ||  6 |  - |  - ||physics      ||11824 |  68 % |  28 % |   7 % ||  8136 |    19 ||   cc6881 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   1 % | 182 % |   1 % ||   341 |    31 ||    tz878 |   1 % ||  52864 |   413 ||     - |     - || 52864 |   413 ||
@@ -62,7 +62,6 @@ gencore    9138966   bigmem      gencore       36    PENDING   bigmem           
 gencore    9138966   bigmem      gencore       36    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
 gencore    9138966   bigmem      gencore       36    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
 gencore    9073995   compute     gencore       128   PENDING   gencore-medium   N/A                                QOSGrpMemLimit                          
@@ -548,13 +547,9 @@ as14864    9134299   compute     psychology    2     PENDING   small            
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ap6420     9135860   compute     collaborator  1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 na2416     9136576   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 na2416     9136589   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 jkl499     9136665   compute     students      2000  PENDING   large            N/A                                AssocGrpCpuLimit                        
-nn34       9137697   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-nn34       9137697   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-nn34       9137697   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9137697   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9137697   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9137721   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
