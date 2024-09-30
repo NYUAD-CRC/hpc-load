@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          6       33       15 %     || DALMA    ||          67%          107           53         3706          244         142           7      ||
-||   95         61       34       64 %     || JUBAIL   ||          91%            0           48         1213          165          81           0      ||
+||   39          6       33       15 %     || DALMA    ||          67%          107           53         3706          244         144           7      ||
+||   95         61       34       64 %     || JUBAIL   ||          91%            0           48         1243          165          84           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:17   GPU:13
@@ -23,20 +23,20 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |   4 % |   1 % |   -   ||   276 |     7 ||  tag9888 |   3 % ||   9928 |    72 ||  9892 |    71 ||    36 |     1 ||
-||  - |  - |  - ||avengers     ||12800 |  71 % |  24 % |  16 % ||  9097 |  2599 ||     wz22 |  58 % ||   1088 |    68 ||     - |     - ||  1088 |    68 ||
+||  - |  - |  - ||access       || 6144 |   4 % |   -   |   -   ||   246 |     6 ||  tag9888 |   2 % ||   9892 |    71 ||  9856 |    70 ||    36 |     1 ||
+||  - |  - |  - ||avengers     ||12800 |  71 % |  24 % |  16 % ||  9097 |  2599 ||     wz22 |  58 % ||    896 |    56 ||     - |     - ||   896 |    56 ||
 ||  - |  - |  - ||biology      || 3072 |  10 % |   -   |   -   ||   322 |     7 ||   tb2613 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 8192 |   -   |   -   |   -   ||     8 |     1 ||     pk97 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 16 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   176 |    16 ||   baj321 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  4 |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    31 |     3 ||   ni2071 |   -   ||     20 |     1 ||    20 |     1 ||     - |     - ||
-||  4 |  - |  - ||chemistry    ||12824 |  65 % |  24 % |  10 % ||  8366 |   101 ||  sme9918 |  29 % ||  18176 |    32 ||  3072 |     4 || 15104 |    28 ||
+||  4 |  - |  - ||chemistry    ||12824 |  65 % |  24 % |  10 % ||  8364 |   100 ||  sme9918 |  29 % ||  17664 |    31 ||  3072 |     4 || 14592 |    27 ||
 ||  1 |  - |  - ||civil        || 3200 |  29 % |   -   |   5 % ||   939 |    28 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  68 % |   6 % |   1 % ||  2110 |    15 ||   ap6420 |  58 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||    12 |     2 ||  mm12971 |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  35 % |   -   |   -   ||   270 |     9 ||   db5394 |  21 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  3 |  6 |  6 ||ecomputer    || 4096 |   2 % |   -   |   -   ||   118 |    10 ||   ag9141 |   -   ||    180 |    10 ||    60 |     4 ||   120 |     6 ||
-||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||   106 |     6 ||  gencore |   2 % ||    318 |    16 ||     - |     - ||   318 |    16 ||
+||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||   106 |     6 ||  gencore |   2 % ||    302 |    15 ||    36 |     1 ||   266 |    14 ||
 ||  1 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    10 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 4096 |  54 % |   7 % |   -   ||  2228 |     7 ||  sk10712 |  31 % ||    512 |     1 ||   512 |     1 ||     - |     - ||
 ||  6 |  - |  - ||physics      ||11824 |  60 % |  21 % |  11 % ||  7112 |    17 ||   cc6881 |  34 % ||   1024 |     2 ||  1024 |     2 ||     - |     - ||
@@ -410,45 +410,32 @@ as14864    9134299   compute     psychology    2     PENDING   small            
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-wh1165     9138631   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138632   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138666   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138668   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138667   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138669   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     9138672   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138671   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138670   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     9138675   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138674   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138673   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     9138678   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     9138672   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138677   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138676   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     9138675   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138680   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138679   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     9138682   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     9138678   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138681   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138684   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138683   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-wh1165     9138687   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     9138682   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138686   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138685   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138689   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138688   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
+wh1165     9138687   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
 wh1165     9138690   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxCpuPerJobLimit                    
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 jn63       9141422   compute     avengers      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
