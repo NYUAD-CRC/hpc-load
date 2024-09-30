@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         11       28       28 %     || DALMA    ||          90%            0           39          820          363         154           8      ||
+||   39         11       28       28 %     || DALMA    ||          90%            0           39          820          363         165           8      ||
 ||   95         69       26       72 %     || JUBAIL   ||          89%            0           48         1643          163          67           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -29,9 +29,9 @@
 ||  3 |  - |  - ||cass         || 8192 |   -   |   -   |   -   ||    16 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 16 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   176 |    16 ||   baj321 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  4 |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    21 |     3 ||   ni2071 |   -   ||     20 |     1 ||    20 |     1 ||     - |     - ||
-||  4 |  - |  - ||chemistry    ||12824 |  76 % |  26 % |  18 % ||  9799 |    95 ||  sme9918 |  29 % ||  17920 |    35 ||   128 |     1 || 17792 |    34 ||
+||  4 |  - |  - ||chemistry    ||12824 |  76 % |  26 % |  18 % ||  9799 |    95 ||  sme9918 |  29 % ||  16640 |    34 ||   128 |     1 || 16512 |    33 ||
 ||  6 |  - |  - ||civil        || 3200 |  30 % |   1 % |   5 % ||   986 |    33 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  4 |  4 ||collaborator || 3072 |  76 % |   7 % |   2 % ||  2340 |    24 ||   ap6420 |  58 % ||     16 |     4 ||     - |     - ||    16 |     4 ||
+||  4 |  3 |  3 ||collaborator || 3072 |  76 % |   7 % |   2 % ||  2340 |    24 ||   ap6420 |  58 % ||     12 |     3 ||     - |     - ||    12 |     3 ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  26 % |   -   |   -   ||   206 |     8 ||   db5394 |  21 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
@@ -40,7 +40,7 @@
 ||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||   104 |     4 ||  gencore |   2 % ||  80708 |   817 || 80436 |   805 ||   272 |    12 ||
 ||  - |  - |  - ||mechanical   || 4096 |  73 % |  10 % |   -   ||  2996 |     8 ||   ds7760 |  41 % ||    512 |     1 ||   512 |     1 ||     - |     - ||
 ||  6 |  - |  - ||physics      ||11824 |  60 % |  23 % |  11 % ||  7112 |    17 ||   cc6881 |  30 % ||    512 |     1 ||   512 |     1 ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   1 % | 143 % |   1 % ||   310 |    31 ||    tz878 |   1 % ||  41344 |   323 ||     - |     - || 41344 |   323 ||
+||  - |  - |  - ||preempt      ||27000 |   1 % | 143 % |   1 % ||   278 |    30 ||    tz878 |   -   ||  41344 |   323 ||     - |     - || 41344 |   323 ||
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   228 |   101 ||  as14864 |   3 % ||    696 |   348 ||     - |     - ||   696 |   348 ||
 ||  8 |  - |  - ||scomputer    || 3120 |   -   |   -   |   -   ||    26 |     4 ||   jl9356 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   9 % |   1 % |   -   ||   384 |     3 ||     rmk7 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -61,7 +61,6 @@ gencore    9138966   bigmem      gencore       36    PENDING   bigmem           
 gencore    9138966   bigmem      gencore       36    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9138966   bigmem      gencore       36    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-sme9918    9132374   compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9134299   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -446,10 +445,9 @@ wh1165     9138690   compute     chemistry     512   PENDING   medium           
 jkl499     9141055   compute     students      1000  PENDING   large            N/A                                AssocGrpCpuLimit                        
 jkl499     9141059   compute     students      1000  PENDING   large            N/A                                AssocGrpCpuLimit                        
 jkl499     9141060   compute     students      1000  PENDING   large            N/A                                AssocGrpCpuLimit                        
-mw4355     9141035   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-mw4355     9141034   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9141037   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mw4355     9141036   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+mw4355     9141035   nvidia      collaborator  4     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
