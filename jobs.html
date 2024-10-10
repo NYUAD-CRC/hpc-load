@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         17       22       43 %     || DALMA    ||          40%          158          157         6879           93         102           7      ||
-||   99         45       54       45 %     || JUBAIL   ||          84%            0           74         3585          139          57           0      ||
+||   39         14       25       35 %     || DALMA    ||          40%          158          158         6879           93          98           7      ||
+||   99         45       54       45 %     || JUBAIL   ||          87%            0           53         2689          160          72           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:5   GPU:5
@@ -28,8 +28,8 @@
 ||  - |  - |  - ||biology      || 3072 |  10 % |   1 % |   -   ||   326 |     6 ||   tb2613 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||cass         || 8192 |   -   |   -   |   -   ||    64 |     2 ||  bld5865 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||    89 |     4 ||  tdh9750 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  8 |  - |  - ||chemistry    ||12824 |  45 % |  18 % |   4 % ||  5797 |   172 ||  sme9918 |  19 % ||  25547 |  1020 || 23424 |   176 ||  2123 |   844 ||
-||  9 |  - |  - ||civil        || 3200 |  24 % |   -   |   4 % ||   786 |    29 ||    sa183 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  - |  - ||chemistry    ||12824 |  45 % |  18 % |   4 % ||  5787 |   170 ||  sme9918 |  19 % ||  25461 |   934 || 23424 |   176 ||  2037 |   758 ||
+||  8 |  - |  - ||civil        || 3200 |  24 % |   -   |   4 % ||   778 |    28 ||    sa183 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  18 % |   1 % |   -   ||   573 |    14 ||   ha3152 |  18 % ||   1280 |     2 ||  1280 |     2 ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -37,10 +37,10 @@
 ||  3 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    65 |     4 ||   sy2366 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    37 |    37 ||   zw3464 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||    82 |    12 ||  gencore |   2 % ||  11726 |  1603 ||   324 |     9 || 11402 |  1594 ||
-||  - |  - |  - ||mechanical   || 4096 |  25 % |   3 % |   -   ||  1024 |     2 ||  sk10712 |  25 % ||    512 |     1 ||   512 |     1 ||     - |     - ||
+||  - |  - |  - ||mechanical   || 4096 |  46 % |   6 % |   -   ||  1920 |     3 ||  sk10712 |  25 % ||    512 |     1 ||   512 |     1 ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  42 % |  13 % |   8 % ||  5040 |    12 ||   cc6881 |  25 % ||   2176 |     3 ||     - |     - ||  2176 |     3 ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |  76 % |   -   ||    32 |     1 ||    tz878 |   -   ||  21888 |   171 ||     - |     - || 21888 |   171 ||
-||  - |  - |  - ||psychology   || 6096 |   8 % |   1 % |   -   ||   488 |   106 ||   rje257 |   4 % ||    416 |   208 ||     - |     - ||   416 |   208 ||
+||  - |  - |  - ||psychology   || 6096 |   8 % |   1 % |   -   ||   488 |   106 ||   rje257 |   4 % ||    414 |   207 ||     - |     - ||   414 |   207 ||
 ||  2 |  - |  - ||scomputer    || 3120 |  25 % |   2 % |   1 % ||   797 |     7 ||   hl3937 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     2 |     1 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||students     || 7168 |  71 % |  16 % |   4 % ||  5154 |    15 ||   snb463 |  50 % ||   4736 |    11 ||  1664 |     3 ||  3072 |     8 ||
@@ -57,7 +57,6 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 cc6881     9222475   compute     physics       512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9216947   compute     students      512   PENDING   gfg              N/A                                QOSGrpCpuLimit                          
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -441,92 +440,6 @@ gencore    9218200   compute     gencore       28    PENDING   gencore-medium   
 gencore    9218200   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218200   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218200   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     9224556   compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
