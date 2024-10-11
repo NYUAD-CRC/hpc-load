@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         26       13       66 %     || DALMA    ||          58%          101          181         4672          134         111          11      ||
-||   99         47       52       47 %     || JUBAIL   ||          84%            1            0          512           12          66           0      ||
+||   39         24       15       61 %     || DALMA    ||          61%           88          195         4324          133         131          11      ||
+||   99         48       51       48 %     || JUBAIL   ||          86%            1            0          512           19          60           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:12   GPU:13
@@ -23,13 +23,13 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  27 % |   3 % |   4 % ||  1705 |     5 ||  skp7753 |  16 % ||   3840 |     3 ||  2816 |     2 ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  27 % |   3 % |   4 % ||  1705 |     5 ||  skp7753 |  16 % ||   3840 |     3 ||  3840 |     3 ||     - |     - ||
 ||  - |  - |  - ||avengers     ||12800 |  56 % |  18 % |  16 % ||  7254 |  2418 ||     wz22 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||     1 |     1 ||   tb2613 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||    17 |     2 ||   tb2613 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||biology      || 3072 |   8 % |   -   |   -   ||   266 |     6 ||   tb2613 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    16 |     2 ||   hj2836 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||   101 |     5 ||  tdh9750 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  8 |  - |  - ||chemistry    ||12824 |  40 % |  13 % |  11 % ||  5204 |   149 ||  sme9918 |  10 % ||  77840 |  1155 ||  1792 |     4 || 75152 |  1145 ||
+||  6 |  - |  - ||chemistry    ||12824 |  43 % |  14 % |  11 % ||  5578 |   149 ||  sme9918 |  10 % ||  76992 |  1145 ||  1536 |     2 || 75456 |  1143 ||
 ||  6 |  - |  - ||civil        || 3200 |  27 % |   1 % |   4 % ||   874 |    24 ||    sa183 |  14 % ||    168 |     1 ||     - |     - ||   168 |     1 ||
 ||  - |  - |  - ||collaborator || 3072 |  74 % |   7 % |   -   ||  2295 |    18 ||   ap6420 |  58 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
@@ -37,11 +37,10 @@
 ||  - |  - |  - ||default      ||  768 |  19 % |   -   |   -   ||   148 |     9 ||   mt5383 |   9 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 || 11 |  - |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   265 |    13 ||   hha243 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     1 |     1 ||   zw3464 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||   110 |    13 ||  gencore |   6 % ||  57286 |  2059 ||   140 |     5 || 57146 |  2054 ||
-||  - |  - |  - ||general      || 3072 |  13 % |   -   |   3 % ||   420 |    15 ||   ak7550 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||mechanical   || 4096 |  50 % |   7 % |   -   ||  2056 |     5 ||  sk10712 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||    82 |    12 ||  gencore |   5 % ||  58587 |  2135 ||   140 |     5 || 58447 |  2130 ||
+||  - |  - |  - ||mechanical   || 4096 |  68 % |   7 % |   6 % ||  2824 |     6 ||  sk10712 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  37 % |  12 % |   8 % ||  4480 |     9 ||   cc6881 |  21 % ||   3200 |     5 ||     - |     - ||  3200 |     5 ||
-||  - |  - |  - ||preempt      ||27000 |   -   |  61 % |   1 % ||   192 |    11 ||  gencore |   -   ||  17696 |   504 ||     - |     - || 17696 |   504 ||
+||  - |  - |  - ||preempt      ||27000 |   1 % |  60 % |   1 % ||   416 |    11 ||    ah166 |   -   ||  17168 |   499 ||     - |     - || 17168 |   499 ||
 ||  - |  - |  - ||psychology   || 6096 |   8 % |   1 % |   -   ||   488 |   106 ||   rje257 |   4 % ||    228 |   114 ||     - |     - ||   228 |   114 ||
 ||  9 |  - |  - ||scomputer    || 3120 |  16 % |   -   |   3 % ||   515 |    11 ||  sk10691 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     1 |     1 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -814,6 +813,7 @@ gencore    9229460   compute     gencore       100   PENDING   gencore-medium   
 gencore    9229460   compute     gencore       100   PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9229460   compute     gencore       100   PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 cc6881     9229680   compute     physics       512   PENDING   medium           N/A                                QOSMaxCpuPerUserLimit                   
+sa9185     9229664   compute     students      768   PENDING   large            N/A                                AssocGrpMemLimit                        
 ah166      9241074   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241073   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241072   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -844,15 +844,6 @@ ah166      9241048   compute     chemistry     128   PENDING   medium           
 ah166      9241047   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241046   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241045   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241044   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241043   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241042   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241041   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241034   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241033   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241032   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241030   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241085   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241084   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241083   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241082   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -863,6 +854,7 @@ ah166      9241078   compute     chemistry     128   PENDING   medium           
 ah166      9241077   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241076   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241075   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241085   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241086   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241187   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241238   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -943,11 +935,11 @@ ah166      9241264   compute     chemistry     128   PENDING   medium           
 ah166      9241263   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241266   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241265   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241270   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241269   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241268   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241271   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241270   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241272   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241271   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241273   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241274   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241275   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1041,24 +1033,24 @@ ah166      9241426   compute     chemistry     128   PENDING   medium           
 ah166      9241425   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241424   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241468   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241471   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241470   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241469   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241472   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241471   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241474   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241473   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241475   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241478   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241477   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241476   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241478   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241480   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241479   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241482   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241481   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241484   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241483   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241486   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241487   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241486   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241488   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241489   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241626   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1098,6 +1090,7 @@ ah166      9241593   compute     chemistry     128   PENDING   medium           
 ah166      9241592   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241591   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241590   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241661   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241660   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241659   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241658   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1132,7 +1125,6 @@ ah166      9241630   compute     chemistry     128   PENDING   medium           
 ah166      9241629   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241628   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241627   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241661   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241663   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241662   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241667   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1143,9 +1135,9 @@ cc6881     9241927   compute     physics       512   PENDING   medium           
 ah166      9241669   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241668   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241670   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241673   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241672   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241671   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241673   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241675   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241674   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 cc6881     9241934   compute     physics       512   PENDING   medium           N/A                                QOSMaxCpuPerUserLimit                   
@@ -1154,11 +1146,11 @@ ah166      9241676   compute     chemistry     128   PENDING   medium           
 ah166      9241678   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241680   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241679   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241681   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241683   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241682   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241685   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241681   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241684   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241685   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241686   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241688   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241691   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1203,7 +1195,6 @@ ah166      9241798   compute     chemistry     128   PENDING   medium           
 ah166      9241797   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241796   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241795   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241873   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241872   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241871   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241870   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1242,23 +1233,24 @@ ah166      9241838   compute     chemistry     128   PENDING   medium           
 ah166      9241837   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241836   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241835   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241875   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241874   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241876   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241873   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241875   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241878   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241877   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241876   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241880   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241879   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241881   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241883   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241882   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241884   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241883   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241886   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241891   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241889   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241888   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ah166      9241892   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241893   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241892   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241894   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241895   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9241896   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -1337,11 +1329,6 @@ nn34       9242018   compute     chemistry     16    PENDING   small            
 nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-nn34       9242018   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9242019   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9242019   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9242019   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -1959,6 +1946,39 @@ nn34       9242042   compute     chemistry     16    PENDING   small            
 nn34       9242042   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9242042   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9242042   compute     chemistry     16    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9242178   compute     gencore       28    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241030   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241034   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241033   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241032   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241035   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241040   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241041   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ah166      9241043   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
