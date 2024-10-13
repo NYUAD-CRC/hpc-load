@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         10       29       25 %     || DALMA    ||          76%           21          167         2676          223         105          10      ||
-||   95         49       46       51 %     || JUBAIL   ||          62%            0           18         1568           62          50           0      ||
+||   39         10       29       25 %     || DALMA    ||          76%           21          167         2675          223         104          10      ||
+||   95         57       38       60 %     || JUBAIL   ||          62%            0           18         1566           62          46           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:5   GPU:4
@@ -28,9 +28,9 @@
 ||  - |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||     1 |     1 ||   sh7873 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||biology      || 3072 |   1 % |   -   |   -   ||    40 |     1 ||   sh7873 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cass         || 8192 |   -   |   -   |   -   ||    48 |     1 ||  bld5865 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    25 |     2 ||     mv83 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||chemistry    ||12824 |  21 % |   8 % |   2 % ||  2755 |    59 ||  sme9918 |  10 % ||   4608 |     6 ||     - |     - ||  4608 |     6 ||
-||  8 |  - |  - ||civil        || 3200 |  42 % |   1 % |   8 % ||  1348 |    52 ||    sa183 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    27 |     3 ||     mv83 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  3 |  - |  - ||chemistry    ||12824 |  21 % |   8 % |   2 % ||  2723 |    58 ||  sme9918 |  10 % ||   4608 |     6 ||     - |     - ||  4608 |     6 ||
+||  8 |  - |  - ||civil        || 3200 |  42 % |   1 % |   8 % ||  1349 |    53 ||    sa183 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  79 % |   7 % |   1 % ||  2449 |    17 ||   ap6420 |  58 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  94 % |   -   |   4 % ||   723 |    10 ||   tl4501 |  66 % ||    922 |     8 ||     - |     - ||   922 |     8 ||
@@ -40,9 +40,9 @@
 ||  - |  - |  - ||mechanical   || 4096 |   6 % |   -   |   2 % ||   256 |     1 ||   ds7760 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  30 % |   5 % |  16 % ||  3584 |     7 ||   cc6881 |  25 % ||   2688 |     4 ||     - |     - ||  2688 |     4 ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |  20 % |   -   ||   160 |     9 ||  gencore |   -   ||   7536 |   373 ||  1648 |   103 ||  5888 |   270 ||
-||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   -   ||   248 |   101 ||  as14864 |   3 % ||    214 |   107 ||     - |     - ||   214 |   107 ||
+||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   -   ||   246 |   100 ||  as14864 |   3 % ||    212 |   106 ||     - |     - ||   212 |   106 ||
 ||  4 |  - |  - ||scomputer    || 3120 |  16 % |   1 % |   1 % ||   505 |     9 ||   hl3937 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 14 |  - |  - ||students     || 7168 |  82 % |  13 % |  17 % ||  5892 |    27 ||   snb463 |  35 % ||   1792 |     5 ||     - |     - ||  1792 |     5 ||
+|| 18 |  3 |  3 ||students     || 7168 |  82 % |  13 % |  17 % ||  5907 |    30 ||   snb463 |  35 % ||   1807 |     8 ||     - |     - ||  1807 |     8 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |  47 % |   -   |   -   ||   184 |     3 ||  mm12191 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   1 % |  12 % ||  2048 |     4 ||   cc6881 |  75 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
@@ -58,8 +58,6 @@ gencore    9228825   bigmem      gencore       36    PENDING   bigmem           
 gencore    9228825   bigmem      gencore       36    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 cc6881     9245044   compute     physics       512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 rb5760     8238494   compute     default       530   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9202386   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -823,6 +821,9 @@ dr2930     9245383   compute     default       56    PENDING   medium           
 dr2930     9245384   compute     default       56    PENDING   medium           N/A                                AssocGrpCpuLimit                        
 dr2930     9245385   compute     default       56    PENDING   medium           N/A                                AssocGrpCpuLimit                        
 sa9185     9245414   compute     students      768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+afz225     9245471   nvidia      students      5     PENDING   nvidia           gpu:1                              QOSMaxGRESPerUser                       
+afz225     9245470   nvidia      students      5     PENDING   nvidia           gpu:1                              QOSMaxGRESPerUser                       
+afz225     9245469   nvidia      students      5     PENDING   nvidia           gpu:1                              QOSMaxGRESPerUser                       
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
