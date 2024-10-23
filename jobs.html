@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         16       23       41 %     || DALMA    ||          34%          207           85         7496          118          54           3      ||
-||   99         58       41       58 %     || JUBAIL   ||          86%            0           72         3939          152          22           0      ||
+||   39         10       29       25 %     || DALMA    ||          34%          208           84         7459          118          54           3      ||
+||   99         58       41       58 %     || JUBAIL   ||          89%            0           71         2949          153          46           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:10
@@ -30,18 +30,18 @@
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    672 |     1 ||     - |     - ||   672 |     1 ||
 ||  - |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    32 |     2 ||   ma6996 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cgsb         || 4096 |   3 % |   -   |   -   ||   156 |     6 ||     gb77 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |  - |  - ||chemistry    ||12824 |  51 % |  18 % |  11 % ||  6610 |    99 ||  sme9918 |  20 % ||  36640 |    63 ||     - |     - || 16160 |    47 ||
+||  1 |  - |  - ||chemistry    ||12824 |  51 % |  18 % |  10 % ||  6580 |    93 ||  sme9918 |  20 % ||  36544 |    59 ||     - |     - || 16064 |    43 ||
 ||  1 |  - |  - ||civil        || 3200 |  39 % |   -   |   9 % ||  1255 |    43 ||    sa183 |  35 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||collaborator || 3072 |  24 % |   2 % |   -   ||   767 |    18 ||   ha3152 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||collaborator || 3072 |  25 % |   2 % |   -   ||   771 |    19 ||   ha3152 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  97 % |   2 % |   -   ||   750 |    19 ||   dr2930 |  40 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
+||  - |  - |  - ||default      ||  768 |  93 % |   2 % |   -   ||   716 |    18 ||   dr2930 |  40 % ||    530 |     1 ||     - |     - ||   530 |     1 ||
 ||  6 |  - |  - ||ecomputer    || 4096 |   3 % |   -   |   -   ||   151 |    10 ||   ll5484 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   1 % ||     3 |     3 ||   zw3464 |   -   ||    168 |     1 ||     - |     - ||   168 |     1 ||
-||  - |  - |  - ||gencore      || 4096 |   5 % |   -   |   1 % ||   211 |    61 ||  gencore |   5 % ||   3206 |   569 ||     - |     - ||  3206 |   569 ||
-||  - |  - |  - ||mechanical   || 4096 |  25 % |   3 % |   -   ||  1032 |     2 ||   ds7760 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |   5 % |   -   |   2 % ||   244 |    61 ||  gencore |   5 % ||   3134 |   563 ||     - |     - ||  3134 |   563 ||
+||  - |  - |  - ||mechanical   || 4096 |  50 % |   7 % |   -   ||  2056 |     4 ||   ds7760 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  35 % |  14 % |   -   ||  4144 |     9 ||  laa9597 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   9 % |   8 % |   -   ||  2560 |    20 ||    ah166 |   9 % ||   9088 |    71 ||  9088 |    71 ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |   9 % |   8 % |   -   ||  2560 |    20 ||    ah166 |   9 % ||   7168 |    56 ||  7168 |    56 ||     - |     - ||
 ||  - |  - |  - ||root         ||38912 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     51 |    51 ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||scomputer    || 3120 |  10 % |   -   |   2 % ||   323 |    12 ||   ia2280 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||socialscience|| 4096 |   1 % |   -   |   -   ||    58 |     3 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -184,13 +184,7 @@ gencore    9219335   compute     gencore       1     PENDING   gencore-medium   
 gencore    9219274   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9219139   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9219202   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9218247   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9219148   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9218772   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9218896   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9218230   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218737   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9219246   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218445   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218660   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9219194   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
@@ -204,10 +198,12 @@ gencore    9219317   compute     gencore       1     PENDING   gencore-small    
 gencore    9218448   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218245   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218830   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-wh1165     9312520   nvidia      chemistry     24    PENDING   nvidia           N/A                                QOSMaxJobsPerUserLimit                  
-wh1165     9312522   nvidia      chemistry     24    PENDING   nvidia           N/A                                QOSMaxJobsPerUserLimit                  
-wh1165     9312538   nvidia      chemistry     24    PENDING   nvidia           N/A                                QOSMaxJobsPerUserLimit                  
-wh1165     9312539   nvidia      chemistry     24    PENDING   nvidia           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9218705   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9218451   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9218314   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9218978   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9218755   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9219400   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 wh1165     9312541   nvidia      chemistry     24    PENDING   nvidia           N/A                                QOSMaxJobsPerUserLimit                  
 wh1165     9312543   nvidia      chemistry     24    PENDING   nvidia           N/A                                QOSMaxJobsPerUserLimit                  
 wh1165     9312545   nvidia      chemistry     24    PENDING   nvidia           N/A                                QOSMaxJobsPerUserLimit                  
