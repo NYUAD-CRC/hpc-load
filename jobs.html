@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         21       18       53 %     || DALMA    ||          30%          233           70         8002          101          21           4      ||
-||   99         68       31       68 %     || JUBAIL   ||          94%            0           50         1542          174          20           0      ||
+||   39         24       15       61 %     || DALMA    ||          30%          233           70         8002          101          19           4      ||
+||   99         68       31       68 %     || JUBAIL   ||          94%            0           50         1562          174          19           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:10   GPU:9
@@ -29,8 +29,8 @@
 ||  - |  - |  - ||biology      || 3072 |   8 % |   -   |   -   ||   256 |     4 ||   tb2613 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||cass         || 8192 |  32 % |   9 % |   -   ||  2699 |     9 ||   snb463 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||     8 |     1 ||  asa8168 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |   6 % |   -   |   -   ||   250 |     8 ||   nb3608 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  6 |  - |  - ||chemistry    ||12824 |  47 % |  16 % |   9 % ||  6100 |    97 ||  sme9918 |  20 % ||  39728 |   102 ||     - |     - || 21808 |    88 ||
+||  - |  - |  - ||cgsb         || 4096 |   6 % |   -   |   -   ||   249 |     7 ||   nb3608 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  9 |  - |  - ||chemistry    ||12824 |  47 % |  16 % |  10 % ||  6115 |   100 ||  sme9918 |  20 % ||  39616 |   101 ||     - |     - || 21696 |    87 ||
 ||  2 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    34 |     2 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||civil        || 3200 |  50 % |   -   |  11 % ||  1616 |    52 ||    sa183 |  42 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  94 % |   9 % |   -   ||  2900 |    42 ||   ap6420 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -42,12 +42,12 @@
 ||  - |  - |  - ||gencore      || 4096 |   1 % |   -   |   -   ||    46 |    11 ||  gencore |   1 % ||   1255 |   268 ||     - |     - ||  1255 |   268 ||
 ||  - |  - |  - ||mechanical   || 4096 |  62 % |   8 % |   -   ||  2568 |     5 ||  sk10712 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  35 % |  14 % |   -   ||  4144 |     9 ||  laa9597 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  16 % |  22 % |   -   ||  4536 |    42 ||     nn34 |  11 % ||   6276 |    58 ||  4228 |    42 ||  2048 |    16 ||
+||  - |  - |  - ||preempt      ||27000 |  16 % |  16 % |   -   ||  4536 |    42 ||     nn34 |  11 % ||   4256 |    42 ||  4128 |    41 ||   128 |     1 ||
 ||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   2 % ||   288 |    96 ||  as14864 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||root         ||38912 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     51 |    51 ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||scomputer    || 3120 |   6 % |   -   |   1 % ||   205 |    10 ||   ia2280 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    30 |     2 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 21 |  - |  - ||students     || 7168 |  36 % |   8 % |   -   ||  2605 |    28 ||   sa9185 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 21 |  - |  - ||students     || 7168 |  36 % |   8 % |   -   ||  2585 |    27 ||   sa9185 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  33 % |   -   |   -   ||   129 |     2 ||   db5394 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cair         ||  128 |  25 % |   -   |   -   ||    32 |     1 ||   sy2366 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -272,7 +272,6 @@ nn34       9315786   compute     chemistry     112   PENDING   medium           
 nn34       9315786   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       9315786   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       9315786   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-nn34       9315786   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218339   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218386   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218220   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
@@ -280,12 +279,6 @@ gencore    9219006   compute     gencore       1     PENDING   gencore-medium   
 gencore    9218539   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9218810   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9219463   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9317865   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9317864   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9317863   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9317862   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9317861   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9317860   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9317859   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9317858   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9317857   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
@@ -305,6 +298,12 @@ gencore    9317869   compute     gencore       1     PENDING   gencore-medium   
 gencore    9317868   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9317867   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9317866   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9317865   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9317864   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9317863   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9317862   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9317861   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9317860   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9219325   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9219228   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9219041   compute     gencore       1     PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
