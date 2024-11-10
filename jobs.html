@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          6       33       15 %     || DALMA    ||          38%          218          137         7096           58          72           7      ||
+||   39         14       25       35 %     || DALMA    ||          38%          218          137         7096           58          71           7      ||
 ||   99         68       31       68 %     || JUBAIL   ||          88%            0           84         3287          138          41           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:10   GPU:10
+	OOD JOBS:  CPU:10   GPU:11
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -39,12 +39,12 @@
 ||  - |  - |  - ||default      ||  768 |  68 % |   1 % |   1 % ||   524 |    11 ||  as20733 |  40 % ||      - |     - ||     - |     - ||     - |     - ||
 || 33 |  3 |  3 ||ecomputer    || 4096 |  18 % |   2 % |   -   ||   770 |    31 ||   sy2366 |  14 % ||    192 |     3 ||     - |     - ||   192 |     3 ||
 ||  - |  - |  - ||electrical   || 4096 |   2 % |   -   |   -   ||   111 |     8 ||   zw3464 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  43 % |   1 % |  10 % ||  1788 |    68 ||  gencore |  53 % ||   3648 |   152 ||     - |     - ||  3648 |   152 ||
+||  - |  - |  - ||gencore      || 4096 |  43 % |   1 % |  10 % ||  1788 |    68 ||  gencore |  53 % ||   3600 |   150 ||     - |     - ||  3600 |   150 ||
 ||  - |  - |  - ||mechanical   || 6144 |  85 % |  18 % |   -   ||  5264 |     8 ||  sk10712 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||physics      ||11824 |  30 % |   9 % |   8 % ||  3632 |    10 ||   cc6881 |  21 % ||   1536 |     3 ||     - |     - ||  1536 |     3 ||
-||  - |  - |  - ||preempt      ||27000 |  15 % |  13 % |   2 % ||  4120 |   121 ||    tz878 |  11 % || 111776 |  3493 ||     - |     - ||111776 |  3493 ||
+||  - |  - |  - ||preempt      ||27000 |  15 % |  13 % |   2 % ||  4120 |   121 ||    tz878 |  11 % || 111456 |  3483 ||     - |     - ||111456 |  3483 ||
 ||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   2 % ||   300 |   100 ||  as14864 |   4 % ||    204 |    68 ||     - |     - ||   204 |    68 ||
-||  2 |  4 |  - ||scomputer    || 3120 |  13 % |   -   |   3 % ||   433 |    12 ||   ia2280 |   7 % ||     12 |     1 ||    12 |     1 ||     - |     - ||
+|| 10 |  4 |  - ||scomputer    || 3120 |  14 % |   -   |   3 % ||   445 |    13 ||   ia2280 |   7 % ||     12 |     1 ||    12 |     1 ||     - |     - ||
 ||  1 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    15 |     1 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||students     || 7168 |  49 % |  12 % |   -   ||  3549 |    20 ||   sa9185 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -112,8 +112,6 @@ tag9888    9393111   compute     access        128   PENDING   medium           
 ah166      9400719   compute     chemistry     384   PENDING   medium           N/A                                QOSMaxCpuPerUserLimit                   
 ah166      9400719   compute     chemistry     384   PENDING   medium           N/A                                QOSMaxCpuPerUserLimit                   
 ah166      9400722   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxCpuPerUserLimit                   
-gencore    9401698   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9401698   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9401698   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9401698   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9401698   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -336,19 +334,9 @@ na2416     9393208   nvidia      chemistry     256   PENDING   nvidia           
 sy2366     9400594   nvidia      ecomputer     64    PENDING   nvidia           gpu:1                              QOSMaxCpuPerUserLimit                   
 sy2366     9400595   nvidia      ecomputer     64    PENDING   nvidia           gpu:1                              QOSMaxCpuPerUserLimit                   
 sy2366     9400596   nvidia      ecomputer     64    PENDING   nvidia           gpu:1                              QOSMaxCpuPerUserLimit                   
-tz878      9399107   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9395518   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9397067   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9398410   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9397477   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9398970   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9396110   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9397678   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9397991   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9395911   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9396249   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9398578   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9398896   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9398578   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9398103   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9396728   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9396165   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
@@ -451,9 +439,19 @@ tz878      9394480   preempt     preempt       32    PENDING   preempt-big      
 tz878      9399047   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9396435   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9396956   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9398340   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9395861   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9394404   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9395861   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9398340   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9398024   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9397030   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9396306   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9398584   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9397134   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9397803   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9394281   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9394927   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9394540   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9394196   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
