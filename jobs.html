@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          0       38        0 %     || DALMA    ||           0%          400            3        11798            1           2           5      ||
-||   99         19       80       19 %     || JUBAIL   ||          24%          164           13        21631           45          18           0      ||
+||   38          0       38        0 %     || DALMA    ||           0%          400            3        11798            1           0           5      ||
+||   99         19       80       19 %     || JUBAIL   ||          24%          163           13        21631           46           3           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:3   GPU:3
@@ -26,12 +26,12 @@
 ||  - |  - |  - ||access       || 6144 |  10 % |   2 % |   -   ||   640 |     5 ||  tag9888 |  10 % ||   2432 |    19 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||chemistry    ||12824 |   -   |   -   |   -   ||     2 |     1 ||  sme9918 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||civil        || 3200 |   8 % |   -   |   -   ||   256 |     2 ||   da3205 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||collaborator || 3072 |  37 % |   4 % |   -   ||  1164 |     8 ||   ap6420 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||collaborator || 3072 |  37 % |   4 % |   -   ||  1164 |     8 ||   ap6420 |  37 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |   3 % |   -   |   -   ||    28 |     1 ||  ak11326 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |  3 |  3 ||ecomputer    || 4096 |   2 % |   -   |   -   ||   108 |     7 ||   ll5484 |   1 % ||     16 |     1 ||     - |     - ||    16 |     1 ||
+|| 13 |  - |  - ||ecomputer    || 4096 |   2 % |   -   |   -   ||   108 |     7 ||   ll5484 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   || 6144 |  33 % |   7 % |   -   ||  2064 |     4 ||   ds7760 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  11 % |  11 % |   -   ||  3200 |   100 ||    tz878 |  11 % ||  62752 |  1961 ||     - |     - || 62752 |  1961 ||
+||  - |  - |  - ||preempt      ||27000 |  11 % |  11 % |   -   ||  3200 |   100 ||    tz878 |  11 % ||  62432 |  1951 ||     - |     - || 62432 |  1951 ||
 ||  4 |  - |  - ||scomputer    || 3120 |   -   |   -   |   -   ||    12 |     1 ||   jl9356 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||students     || 7168 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -40,6 +40,7 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
+ap6420     9406877   compute     collaborator  512   PENDING   medium           N/A                                QOSMaxCpuPerUserLimit                   
 tag9888    9393111   compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    9393111   compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    9393111   compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
@@ -59,17 +60,6 @@ tag9888    9393111   compute     access        128   PENDING   medium           
 tag9888    9393111   compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    9393111   compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    9393111   compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-ll5484     9406871   nvidia      ecomputer     16    PENDING   nvidia           gpu:3                              QOSMaxGRESPerUser                       
-tz878      9396676   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9397696   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9397850   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9398956   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9399155   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9398143   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9394923   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9396816   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9398691   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9394919   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9398887   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9399059   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9395037   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
@@ -82,11 +72,20 @@ tz878      9397898   preempt     preempt       32    PENDING   preempt-big      
 tz878      9396706   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9398817   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9397505   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9399061   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9397295   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9395019   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9399061   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9396744   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 tz878      9395321   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
-tz878      9395019   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9394292   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9396133   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9395167   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9398198   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9395149   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9395052   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9398274   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9395829   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
+tz878      9395195   preempt     preempt       32    PENDING   preempt-big      N/A                                QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
