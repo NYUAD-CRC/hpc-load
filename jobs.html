@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         37        1       97 %     || DALMA    ||          39%          211          101         6996          102          58           4      ||
-||   99         81       18       81 %     || JUBAIL   ||          92%            0           49         1892          173          23           0      ||
+||   38         36        2       94 %     || DALMA    ||          39%          211          101         6996          102          58           4      ||
+||   99         81       18       81 %     || JUBAIL   ||          92%            0           50         2024          172          25           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:18
@@ -36,13 +36,13 @@
 ||  - |  - |  - ||default      ||  768 |  39 % |   1 % |   -   ||   300 |     7 ||  as20733 |  19 % ||      - |     - ||     - |     - ||     - |     - ||
 || 24 | 12 | 11 ||ecomputer    || 4096 |  18 % |   2 % |   -   ||   757 |    35 || sas10092 |  13 % ||    356 |    12 ||     4 |     1 ||   352 |    11 ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    21 |     2 ||   zw3464 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  41 % |   1 % |  10 % ||  1716 |    66 ||  gencore |  41 % ||   6105 |   670 ||     - |     - ||  6105 |   670 ||
+||  - |  - |  - ||gencore      || 4096 |  41 % |   1 % |  10 % ||  1680 |    65 ||  gencore |  41 % ||   6033 |   667 ||     - |     - ||  6033 |   667 ||
 ||  - |  - |  - ||mechanical   ||12288 |  33 % |  14 % |   -   ||  4144 |    10 ||   ds7760 |  16 % ||    768 |     1 ||     - |     - ||   768 |     1 ||
 ||  4 |  - |  - ||physics      ||11824 |  39 % |  16 % |   -   ||  4680 |    11 ||   cc6881 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  13 % |  15 % |   -   ||  3744 |    54 ||     nn34 |  11 % ||  27014 |   646 ||  7584 |    84 || 19430 |   562 ||
+||  - |  - |  - ||preempt      ||27000 |  13 % |  15 % |   -   ||  3648 |    51 ||     nn34 |  11 % ||  27014 |   646 ||  7680 |    87 || 19334 |   559 ||
 || 11 |  - |  - ||scomputer    || 3120 |  26 % |   -   |   6 % ||   818 |    42 ||  jl10897 |   9 % ||      1 |     1 ||     1 |     1 ||     - |     - ||
-|| 31 |  1 |  - ||students     || 6144 |  57 % |   9 % |   7 % ||  3513 |    43 ||   sa9185 |  25 % ||   1168 |     5 ||   656 |     3 ||   512 |     2 ||
-||  - |  - |  - ||xpress       ||27008 |   5 % |   5 % |   -   ||  1536 |    12 ||     jn63 |   5 % || 106752 |   834 ||106752 |   834 ||     - |     - ||
+|| 30 |  1 |  - ||students     || 6144 |  57 % |   9 % |   6 % ||  3507 |    42 ||   sa9185 |  25 % ||   1168 |     5 ||   656 |     3 ||   512 |     2 ||
+||  - |  - |  - ||xpress       ||27008 |   5 % |   5 % |   -   ||  1536 |    12 ||     jn63 |   5 % || 105856 |   827 ||105856 |   827 ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||c2           ||  384 |  17 % |   -   |   -   ||    66 |     3 ||   ia2280 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cair         ||  128 |  12 % |   -   |   -   ||    16 |     1 ||   sy2366 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -55,6 +55,7 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
+snb463     9415831   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9415833   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 nn34       9410340   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       9410340   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -139,9 +140,6 @@ sme9918    9417162   compute     chemistry     1280  PENDING   large            
 ian4134    9419592   compute     students      256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ian4134    9419595   compute     students      256   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9420641   compute     chemistry     768   PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
-gencore    9420816   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9420816   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9420816   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9420816   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9420816   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9420816   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -396,17 +394,20 @@ gencore    9421108   compute     gencore       12    PENDING   gencore-small    
 gencore    9421413   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9421345   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9420941   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9421041   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9421064   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9421097   compute     gencore       12    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 sas10092   9420159   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-sas10092   9420163   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420162   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420161   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-sas10092   9420167   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420166   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420165   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420164   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+sas10092   9420163   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420170   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420169   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420168   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+sas10092   9420167   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
