@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         15       23       39 %     || DALMA    ||          36%          242           22         7333          147          32           4      ||
-||   99         76       23       76 %     || JUBAIL   ||          91%            3           45         2361          174          22           0      ||
+||   38         15       23       39 %     || DALMA    ||          36%          242           22         7333          147          29           4      ||
+||   99         76       23       76 %     || JUBAIL   ||          91%            2           46         2292          174          19           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:15   GPU:10
@@ -37,12 +37,12 @@
 ||  - |  - |  - ||gencore      || 4096 |   4 % |   -   |   -   ||   180 |     5 ||  gencore |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  18 % |   8 % |   -   ||  2320 |     6 ||   ds7760 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  42 % |  17 % |   -   ||  5064 |    12 ||   cc6881 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  16 % |  25 % |   -   ||  4364 |    58 ||     nn34 |  13 % ||  15676 |   361 ||   768 |     1 || 14908 |   360 ||
-|| 10 |177 |  - ||scomputer    || 3120 |  20 % |   1 % |   2 % ||   654 |    19 ||   ia2280 |  15 % ||   1750 |   175 ||  1742 |   174 ||     8 |     1 ||
+||  - |  - |  - ||preempt      ||27000 |  16 % |  25 % |   -   ||  4340 |    57 ||     nn34 |  13 % ||  15676 |   361 ||   768 |     1 || 14908 |   360 ||
+|| 10 |134 |  - ||scomputer    || 3120 |  25 % |   1 % |   2 % ||   782 |    20 ||   ia2280 |  19 % ||   1312 |   131 ||  1312 |   131 ||     - |     - ||
 ||  3 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    33 |     2 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||students     || 6144 |  45 % |   9 % |   1 % ||  2776 |    28 ||  ian4134 |  16 % ||   1024 |     1 ||     - |     - ||  1024 |     1 ||
+|| 11 |  - |  - ||students     || 6144 |  44 % |   9 % |   1 % ||  2741 |    25 ||  ian4134 |  16 % ||   1104 |     5 ||     - |     - ||  1104 |     5 ||
 ==========================================================================================================================================================
-||  - |  - |  - ||c2           ||  384 |  75 % |   1 % |   -   ||   291 |     5 ||   ia2280 |  66 % ||      8 |     1 ||     - |     - ||     8 |     1 ||
+||  - |  - |  - ||c2           ||  384 | 100 % |   1 % |   -   ||   384 |     3 ||   ia2280 | 100 % ||     80 |     4 ||     - |     - ||    80 |     4 ||
 ||  2 |  - |  - ||cair         ||  128 |  12 % |   -   |   -   ||    16 |     1 ||   sy2366 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||chi          ||  768 |   6 % |   -   |   -   ||    48 |     2 ||  mmm9912 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -121,7 +121,9 @@ nn34       9410340   compute     chemistry     112   PENDING   medium           
 nn34       9410340   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       9410340   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 nn34       9410340   compute     chemistry     112   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ia2280     9437165   compute     scomputer     8     PENDING   c2               N/A                                QOSGrpCpuLimit                          
+mr6179     9439661   compute     students      20    PENDING   c2               N/A                                QOSGrpCpuLimit                          
+mr6179     9439660   compute     students      20    PENDING   c2               N/A                                QOSGrpCpuLimit                          
+mr6179     9439657   compute     students      20    PENDING   c2               N/A                                QOSGrpCpuLimit                          
 sme9918    9417162   compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 sme9918    9417162   compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 sme9918    9417162   compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
@@ -131,8 +133,8 @@ ah166      9420796   compute     chemistry     128   PENDING   medium           
 ah166      9420798   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 hh2784     9425791   compute     students      1024  PENDING   large            N/A                                QOSMaxWallDurationPerJobLimit           
 ah166      9426601   compute     chemistry     280   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sas10092   9420169   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9420170   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+sas10092   9420169   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
