@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         27       12       69 %     || DALMA    ||          50%          168           86         5810          163          93           4      ||
-||   99         65       34       65 %     || JUBAIL   ||          84%            1          104         4418          117          57           0      ||
+||   39         27       12       69 %     || DALMA    ||          49%          172           84         5921          161          89           4      ||
+||   99         64       35       64 %     || JUBAIL   ||          84%            1          104         4418          117          60           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:18   GPU:11
@@ -23,7 +23,7 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||     4 |     3 ||   sh7868 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||     3 |     2 ||   sh7868 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   5 % |   -   |   -   ||   184 |     3 ||   rp4185 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  - |  - ||cass         || 4096 |  76 % |  10 % |   -   ||  3150 |    11 ||   snb463 |  75 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 ||  1 |  - |  - ||ccs          || 6144 |  27 % |   -   |  14 % ||  1700 |    61 ||  ab10917 |  27 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -33,23 +33,22 @@
 ||  - |  - |  - ||civil        || 3200 |  25 % |   -   |   5 % ||   818 |    27 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  61 % |   6 % |   -   ||  1891 |    27 ||   ap6420 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  53 % |   1 % |   -   ||   411 |    11 ||  as20733 |  31 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
-|| 12 |  - |  - ||ecomputer    || 4096 |  38 % |   5 % |   -   ||  1574 |    39 ||   lm4344 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  53 % |   1 % |   -   ||   411 |    11 ||  as20733 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 12 |  - |  - ||ecomputer    || 4096 |  38 % |   5 % |   -   ||  1590 |    40 ||   lm4344 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    15 |     3 ||   zw3464 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  46 % |   2 % |   9 % ||  1897 |    84 ||  gencore |  46 % ||   2911 |    90 ||   160 |    10 ||  2751 |    80 ||
+||  - |  - |  - ||gencore      || 4096 |  46 % |   2 % |   9 % ||  1897 |    84 ||  gencore |  46 % ||   2839 |    88 ||   160 |    10 ||  2679 |    78 ||
 ||  2 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    18 |     2 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  25 % |  10 % |   -   ||  3080 |     5 ||   ds7760 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  2 |  2 ||physics      ||11824 |  55 % |  22 % |   -   ||  6576 |    14 ||   cc6881 |  51 % ||     48 |     1 ||     - |     - ||    48 |     1 ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||    28 |     1 ||   wr2172 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   5 % |   -   |   2 % ||   319 |   105 ||  as14864 |   4 % ||     84 |    28 ||     - |     - ||    84 |    28 ||
-||  6 |  5 |  - ||scomputer    || 3120 |  14 % |   -   |   3 % ||   463 |    19 ||   ia2280 |  11 % ||     11 |     8 ||     4 |     1 ||     7 |     7 ||
+||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   219 |    71 ||  as14864 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  5 |  - ||scomputer    || 3120 |  14 % |   -   |   3 % ||   453 |    18 ||   ia2280 |  11 % ||     12 |     9 ||     4 |     1 ||     8 |     8 ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     2 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 16 |  1 |  1 ||students     || 6144 |  42 % |   8 % |   -   ||  2594 |    33 ||   hh2784 |  25 % ||    769 |     2 ||   768 |     1 ||     1 |     1 ||
+|| 16 |  1 |  1 ||students     || 6144 |  42 % |   8 % |   -   ||  2584 |    32 ||   hh2784 |  25 % ||    769 |     2 ||   768 |     1 ||     1 |     1 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||bedoor       ||  128 |   1 % |   -   |   -   ||     2 |     1 ||  ms13502 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   rk3570 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  16 % |   -   |   -   ||    64 |     1 ||   mr6179 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||cair         ||  128 |  25 % |   -   |   -   ||    32 |     1 ||   sy2366 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||cair         ||  128 |  37 % |   -   |   -   ||    48 |     2 ||   sy2366 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbh          ||  256 |   6 % |   -   |   -   ||    16 |     1 ||      mri |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    20 |     1 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -57,7 +56,7 @@
 ||  1 |  - |  - ||ebrainccs    ||   64 |  14 % |   -   |   -   ||     9 |     2 ||   nsa325 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gfg          || 1920 |  53 % |   3 % |   -   ||  1024 |     2 ||   cc6881 |  53 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |  31 % |   -   |   -   ||   120 |     3 ||   aa5506 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
-||  6 |  7 |  7 ||nlp          ||  208 |   2 % |   -   |   -   ||     6 |     6 ||    gi372 |   2 % ||      7 |     7 ||     - |     - ||     7 |     7 ||
+||  6 |  8 |  8 ||nlp          ||  208 |   2 % |   -   |   -   ||     6 |     6 ||    gi372 |   2 % ||      8 |     8 ||     - |     - ||     8 |     8 ||
 ||  1 |  - |  - ||shamout      ||  192 |  14 % |   -   |   -   ||    28 |     1 || sas10092 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -134,17 +133,10 @@ gencore    9479324   compute     gencore       36    PENDING   gencore-medium   
 gencore    9479324   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9479324   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9479324   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9479324   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9479324   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-saa788     9488690   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     9488689   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     9488688   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488687   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488686   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488685   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488684   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     9488710   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     9488709   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488708   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488707   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488706   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -163,11 +155,15 @@ saa788     9488694   compute     chemistry     56    PENDING   small            
 saa788     9488693   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488692   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488691   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     9488690   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     9488689   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     9488688   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     9488711   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     9488710   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     9488709   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nb3608     9510091   compute     cgsb          10    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     9510172   compute     cgsb          64    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     9510172   compute     cgsb          64    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ml8071     9514487   compute     default       1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9511303   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9511303   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9511303   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -177,34 +173,6 @@ gencore    9511303   compute     gencore       24    PENDING   gencore-small    
 na2416     9511272   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9489949   compute     gencore       14    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 na2416     9511746   compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9512827   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 wh1165     9512772   compute     chemistry     256   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 gi372      9514601   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9514602   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -213,6 +181,7 @@ gi372      9514604   condo       scomputer     1     PENDING   nlp              
 gi372      9514611   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9514613   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9514616   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+ba63       9516201   condo       scomputer     1     PENDING   nlp              gpu:1                              QOSGrpMemLimit                          
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
 fmk5060    9508415   nvidia      physics       48    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 na2416     9511774   nvidia      chemistry     128   PENDING   nvidia           N/A                                QOSMaxCpuPerUserLimit                   
