@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         20       19       51 %     || DALMA    ||          58%          116          107         4799          191          43           4      ||
-||   99         53       46       53 %     || JUBAIL   ||          83%            5          106         4728          111          51           0      ||
+||   39         20       19       51 %     || DALMA    ||          58%          116          108         4787          190          35           4      ||
+||   99         49       50       49 %     || JUBAIL   ||          83%            5          106         4600          111          57           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:14   GPU:10
@@ -37,14 +37,14 @@
 ||  - |  - |  - ||default      ||  768 |  60 % |   1 % |   -   ||   462 |     6 ||  as20733 |  46 % ||      - |     - ||     - |     - ||     - |     - ||
 || 15 |  - |  - ||ecomputer    || 4096 |  36 % |   5 % |   -   ||  1498 |    33 ||   lm4344 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     1 |     1 ||   ag8771 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  46 % |   2 % |   9 % ||  1906 |    78 ||  gencore |  46 % ||   4800 |   135 ||    48 |     3 ||  4752 |   132 ||
+||  - |  - |  - ||gencore      || 4096 |  46 % |   2 % |   9 % ||  1905 |    77 ||  gencore |  46 % ||   4764 |   134 ||    48 |     3 ||  4716 |   131 ||
 ||  - |  - |  - ||mechanical   ||12288 |  18 % |   8 % |   -   ||  2320 |     5 ||   ds7760 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  68 % |  28 % |   -   ||  8112 |    17 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   1 % ||   252 |     2 ||   wh1165 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   7 % |   -   |   3 % ||   476 |   112 ||  as14864 |   4 % ||   2406 |   802 ||     - |     - ||  2406 |   802 ||
-||  3 |  - |  - ||scomputer    || 3120 |  11 % |   -   |   2 % ||   348 |    13 ||   ia2280 |   9 % ||    316 |   316 ||     - |     - ||   316 |   316 ||
+||  - |  - |  - ||psychology   || 6096 |   8 % |   -   |   4 % ||   489 |   112 ||  as14864 |   4 % ||   2280 |   760 ||     - |     - ||  2280 |   760 ||
+||  3 |  - |  - ||scomputer    || 3120 |  11 % |   -   |   2 % ||   348 |    13 ||   ia2280 |   9 % ||    168 |   168 ||     - |     - ||   168 |   168 ||
 ||  - |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||     2 |     1 ||  ms13502 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
-|| 10 |  1 |  1 ||students     || 6144 |  69 % |  11 % |   8 % ||  4278 |    38 ||   sa9185 |  25 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
+||  6 |  1 |  1 ||students     || 6144 |  71 % |  11 % |   8 % ||  4401 |    38 ||   sa9185 |  25 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||bedoor       ||  128 |   1 % |   -   |   -   ||     2 |     1 ||  ms13502 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  16 % |   -   |   -   ||    64 |     1 ||   mr6179 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -54,7 +54,7 @@
 ||  - |  - |  - ||ebrainccs    ||   64 |  12 % |   -   |   -   ||     8 |     1 ||   nsa325 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gfg          || 1920 |  80 % |   5 % |   -   ||  1536 |     3 ||   cc6881 |  80 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |   7 % |   -   |   -   ||    28 |     1 ||   aa5506 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-||  6 |316 |316 ||nlp          ||  208 |   2 % |   -   |   -   ||     6 |     6 ||    gi372 |   2 % ||    316 |   316 ||     - |     - ||   316 |   316 ||
+||  6 |168 |168 ||nlp          ||  208 |   2 % |   -   |   -   ||     6 |     6 ||    gi372 |   2 % ||    168 |   168 ||     - |     - ||   168 |   168 ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
@@ -821,48 +821,6 @@ as14864    9524562   compute     psychology    3     PENDING   small            
 as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9524562   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
@@ -994,149 +952,6 @@ gencore    9525725   compute     gencore       36    PENDING   gencore-medium   
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gi372      9527035   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527034   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527033   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527032   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527031   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527030   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527029   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527028   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527027   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527026   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527062   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527061   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527060   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527059   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527058   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527057   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527056   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527055   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527054   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527053   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527052   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527051   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527050   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527049   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527048   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527047   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527046   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527045   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527044   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527043   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527042   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527041   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527040   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527039   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527038   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527037   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527036   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527071   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527070   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527069   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527068   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527067   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527066   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527065   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527064   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527063   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527087   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527086   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527085   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527084   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527083   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527082   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527081   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527080   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527079   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527078   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527077   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527076   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527075   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527074   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527073   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527072   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527114   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527113   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527112   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527111   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527110   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527109   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527108   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527107   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527106   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527105   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527104   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527103   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527102   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527101   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527100   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527099   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527098   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527097   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527096   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527095   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527094   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527093   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527092   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527091   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527090   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527089   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527088   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527141   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527140   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527139   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527138   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527137   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527136   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527135   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527134   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527133   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527132   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527131   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527130   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527129   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527128   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527127   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527126   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527125   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527124   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527123   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527122   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527121   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527120   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527119   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527118   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527117   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527116   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527115   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527161   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527160   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527159   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527158   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527157   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527156   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527155   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527154   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527153   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527152   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527151   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527150   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527149   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527148   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527147   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527146   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527145   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527144   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527143   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527142   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527167   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527166   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527194   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527193   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527192   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527191   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527190   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527189   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527188   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -1150,20 +965,6 @@ gi372      9527181   condo       scomputer     1     PENDING   nlp              
 gi372      9527180   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527179   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527178   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527177   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527176   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527175   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527174   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527173   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527172   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527171   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527170   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527169   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527168   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527221   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527220   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527219   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527218   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527217   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527216   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527215   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -1187,10 +988,10 @@ gi372      9527198   condo       scomputer     1     PENDING   nlp              
 gi372      9527197   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527196   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527195   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527246   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527245   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527244   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527243   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527194   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527193   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527192   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527191   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527242   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527241   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527240   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -1212,10 +1013,10 @@ gi372      9527225   condo       scomputer     1     PENDING   nlp              
 gi372      9527224   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527223   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527222   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527267   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527266   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527265   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527264   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527221   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527220   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527219   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527218   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527263   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527262   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527261   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -1233,10 +1034,10 @@ gi372      9527250   condo       scomputer     1     PENDING   nlp              
 gi372      9527249   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527248   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527247   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527293   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527292   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527291   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527290   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527246   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527245   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527244   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527243   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527289   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527288   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527287   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -1259,6 +1060,10 @@ gi372      9527271   condo       scomputer     1     PENDING   nlp              
 gi372      9527270   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527269   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527268   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527267   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527266   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527265   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527264   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527315   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527314   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527313   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -1281,11 +1086,10 @@ gi372      9527297   condo       scomputer     1     PENDING   nlp              
 gi372      9527296   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527295   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527294   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527338   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527337   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527336   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527335   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9527334   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527293   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527292   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527291   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527290   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527333   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527332   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527331   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -1311,6 +1115,11 @@ gi372      9527342   condo       scomputer     1     PENDING   nlp              
 gi372      9527341   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527340   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9527339   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527338   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527337   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527336   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527335   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9527334   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
 na2416     9511818   nvidia      chemistry     128   PENDING   nvidia           N/A                                QOSMaxCpuPerUserLimit                   
 akm477     9516964   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxWallDurationPerJobLimit           
