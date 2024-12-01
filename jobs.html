@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          6       33       15 %     || DALMA    ||          43%          167          119         6616          126          81           4      ||
-||   99         73       26       73 %     || JUBAIL   ||          80%            2          131         5386           89          46           0      ||
+||   39          6       33       15 %     || DALMA    ||          43%          167          119         6616          126          86           4      ||
+||   99         73       26       73 %     || JUBAIL   ||          80%            2          131         5386           89          50           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:5   GPU:5
@@ -33,16 +33,16 @@
 ||  - |  - |  - ||cph          || 3072 |   1 % |   -   |   -   ||    56 |     1 ||   im2493 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  31 % |   -   |   -   ||   241 |     3 ||  as20733 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  3 |  - ||ecomputer    || 4096 |  36 % |   5 % |   -   ||  1500 |    34 ||   lm4344 |  31 % ||     72 |     2 ||    72 |     2 ||     - |     - ||
+|| 11 |  1 |  - ||ecomputer    || 4096 |  36 % |   5 % |   -   ||  1500 |    34 ||   lm4344 |  31 % ||     48 |     1 ||    48 |     1 ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    33 |     2 ||   zw3464 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |  52 % |   2 % |  11 % ||  2133 |    81 ||  gencore |  52 % ||   5544 |   212 ||    32 |     2 ||  5512 |   210 ||
+||  - |  - |  - ||gencore      || 4096 |  52 % |   2 % |  11 % ||  2133 |    81 ||  gencore |  52 % ||   5472 |   210 ||    32 |     2 ||  5440 |   208 ||
 ||  - |  - |  - ||mechanical   ||12288 |  10 % |   4 % |   -   ||  1288 |     2 ||   ds7760 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  65 % |  26 % |   -   ||  7728 |    16 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |  13 % |   1 % ||   252 |     2 ||   wh1165 |   -   ||   3840 |    10 ||     - |     - ||  3840 |    10 ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||     3 |     2 ||  as14864 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  - |  - ||scomputer    || 3120 |   8 % |   -   |   1 % ||   260 |    10 ||   ia2280 |   7 % ||      9 |     9 ||     - |     - ||     9 |     9 ||
 ||  - |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
-|| 13 | 20 | 20 ||students     || 6144 |  47 % |   6 % |   8 % ||  2891 |    49 ||   hh2784 |  25 % ||   1613 |    22 ||  1536 |     2 ||    77 |    20 ||
+|| 13 | 18 | 18 ||students     || 6144 |  47 % |   6 % |   8 % ||  2891 |    49 ||   hh2784 |  25 % ||   1605 |    20 ||  1536 |     2 ||    69 |    18 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||c2           ||  384 |   7 % |   -   |   -   ||    30 |     3 ||   mr6179 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cair         ||  128 |  25 % |   -   |   -   ||    32 |     1 ||   sy2366 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -83,8 +83,6 @@ snb463     9535223   compute     cass          512   PENDING   cass             
 snb463     9535225   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9535226   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9535227   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
-gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9525725   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
@@ -295,20 +293,18 @@ gencore    9534690   compute     gencore       24    PENDING   gencore-small    
 gencore    9534690   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9534690   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9534690   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gi372      9535190   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9535189   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9535188   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9535194   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9535193   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9535192   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9535190   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9535189   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9535197   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9535196   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9535195   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
 akm477     9516964   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxWallDurationPerJobLimit           
 akm477     9516965   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxWallDurationPerJobLimit           
-jdg8833    9535308   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-jdg8833    9535308   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    9535308   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    9535308   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    9535308   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
