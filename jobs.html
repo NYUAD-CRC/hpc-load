@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          3       36        7 %     || DALMA    ||          70%           66           68         3318          278          98           4      ||
-||   99         53       46       53 %     || JUBAIL   ||          81%            1          118         5093          103          46           0      ||
+||   39          3       36        7 %     || DALMA    ||          66%           81           69         3792          262          81           4      ||
+||   99         51       48       51 %     || JUBAIL   ||          81%            1          118         5341          103          45           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:7
@@ -23,25 +23,26 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||     1 |     1 ||     zl28 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   5 % |   -   |   -   ||   162 |     4 ||   tb2613 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cass         || 4096 |  63 % |   9 % |   -   ||  2608 |     6 ||   snb463 |  62 % ||  11264 |    22 ||     - |     - || 11264 |    22 ||
-||  - |  - |  - ||ccs          || 6144 |  33 % |   -   |  16 % ||  2044 |    73 ||  ab10917 |  33 % ||   1120 |    40 ||     - |     - ||  1120 |    40 ||
+||  - |  - |  - ||ccs          || 6144 |  25 % |   -   |  12 % ||  1568 |    56 ||  ab10917 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||    98 |     6 ||   ni2071 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  - |  - ||chemistry    ||12824 |  84 % |  25 % |  28 % || 10817 |   118 ||  sme9918 |  19 % ||  23120 |   134 ||   384 |     3 || 11216 |   122 ||
+||  5 |  - |  - ||chemistry    ||12824 |  85 % |  26 % |  28 % || 10945 |   119 ||  sme9918 |  19 % ||  23120 |   134 ||   384 |     3 || 11216 |   122 ||
 ||  2 |  - |  - ||cities       || 4096 |   1 % |   -   |   -   ||    48 |     2 ||   pc3377 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  - |  - ||civil        || 3200 |  48 % |   2 % |   6 % ||  1562 |    35 ||   da3205 |  24 % ||      - |     - ||     - |     - ||     - |     - ||
+||  3 |  1 |  - ||civil        || 3200 |  44 % |   2 % |   6 % ||  1434 |    34 ||    sa183 |  21 % ||    128 |     1 ||   128 |     1 ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  20 % |   1 % |   -   ||   642 |    51 ||   xy2949 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   1 % |   -   |   -   ||    56 |     1 ||   im2493 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  31 % |   -   |   -   ||   240 |     2 ||  as20733 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||ecomputer    || 4096 |  38 % |   5 % |   -   ||  1560 |    33 ||   lm4344 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||electrical   || 4096 |   3 % |   -   |   -   ||   148 |     3 ||   yw3576 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     8 |     1 ||   zw3464 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||    93 |     6 ||  gencore |   2 % ||     48 |     3 ||    16 |     1 ||    32 |     2 ||
 ||  - |  - |  - ||humanities   || 1024 |   2 % |   -   |   -   ||    30 |     1 ||   sl9712 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  15 % |   6 % |   -   ||  1936 |     5 ||   ds7760 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  65 % |  26 % |   -   ||  7752 |    17 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   4 % |  15 % |   1 % ||  1196 |    23 ||   wr2172 |   2 % ||   3456 |     9 ||     - |     - ||  3456 |     9 ||
-||  - |  - |  - ||psychology   || 6096 |  10 % |   -   |   5 % ||   610 |    97 ||  as14864 |  10 % ||    372 |   124 ||     - |     - ||   372 |   124 ||
+||  - |  - |  - ||preempt      ||27000 |   3 % |  14 % |   1 % ||  1028 |    17 ||   wr2172 |   1 % ||   3456 |     9 ||     - |     - ||  3456 |     9 ||
+||  - |  - |  - ||psychology   || 6096 |  10 % |   -   |   5 % ||   611 |    99 ||  as14864 |  10 % ||    255 |    85 ||     - |     - ||   255 |    85 ||
 ||  1 |  - |  - ||scomputer    || 3120 |   7 % |   -   |   1 % ||   240 |     8 ||   ia2280 |   7 % ||      7 |     7 ||     - |     - ||     7 |     7 ||
 ||  - |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
 ||  2 |  1 |  1 ||students     || 6144 |  31 % |   3 % |   8 % ||  1966 |    29 ||  ian4134 |  15 % ||    769 |     2 ||   768 |     1 ||     1 |     1 ||
@@ -179,85 +180,6 @@ as14864    9538852   compute     psychology    3     PENDING   small            
 as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    9538852   compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9539146   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9539102   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9539102   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 nn34       9539102   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
