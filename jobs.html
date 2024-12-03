@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          9       30       23 %     || DALMA    ||          27%          257           49         8504           98          31           4      ||
-||   99         68       31       68 %     || JUBAIL   ||          89%            0           61         2935          161          44           0      ||
+||   39          9       30       23 %     || DALMA    ||          27%          257           49         8504           98          29           4      ||
+||   99         72       27       72 %     || JUBAIL   ||          88%            0           64         3067          158          47           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:8
@@ -26,7 +26,7 @@
 ||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||     4 |     3 ||   sh7868 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   -   |   -   |   -   ||    28 |     1 ||   bn2351 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cass         || 4096 |  63 % |   9 % |   -   ||  2608 |     6 ||   snb463 |  62 % ||  10240 |    20 ||     - |     - || 10240 |    20 ||
-||  1 |  - |  - ||cbs          || 2048 |   3 % |   -   |   -   ||    80 |     2 ||  asa8168 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cbs          || 2048 |   3 % |   -   |   -   ||    72 |     2 ||  asa8168 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    68 |     3 ||   ni2071 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  1 |  1 ||chemistry    ||12824 |  70 % |  26 % |  11 % ||  9043 |    80 ||  sme9918 |  19 % ||  18905 |    52 ||  5376 |    10 ||  3289 |    34 ||
 ||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    24 |     1 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -40,11 +40,11 @@
 ||  - |  - |  - ||gencore      || 4096 |   9 % |   -   |   2 % ||   380 |    17 ||  gencore |   9 % ||     16 |     1 ||     - |     - ||    16 |     1 ||
 ||  - |  - |  - ||mechanical   ||12288 |  15 % |   6 % |   -   ||  1936 |     5 ||   ds7760 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  65 % |  26 % |   -   ||  7752 |    17 ||   cc6881 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   3 % |   1 % |   2 % ||   812 |    22 ||   wr2172 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |   2 % |   1 % |   1 % ||   616 |    15 ||   wr2172 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   218 |   101 ||  as14864 |   3 % ||    938 |   469 ||     - |     - ||   938 |   469 ||
 ||  4 |  - |  - ||scomputer    || 3120 |   1 % |   -   |   -   ||    47 |    10 ||   nsa325 |   1 % ||     14 |    14 ||     - |     - ||    14 |    14 ||
 ||  - |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||   hz3803 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
-||  6 |  1 |  1 ||students     || 6144 |  52 % |  10 % |   -   ||  3215 |    17 ||   sa9185 |  25 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
+|| 11 |  1 |  1 ||students     || 6144 |  52 % |  10 % |   -   ||  3235 |    22 ||   sa9185 |  25 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |   -   |   -   |   -   ||     1 |     1 ||   cl5503 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 | 100 % ||  10240 |    20 ||     - |     - || 10240 |    20 ||
@@ -557,7 +557,6 @@ as14864    9541641   compute     psychology    2     PENDING   small            
 as14864    9541641   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 saa788     9542099   compute     chemistry     56    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 gi372      9540251   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
-gi372      9541058   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541057   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541056   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541055   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -566,6 +565,7 @@ gi372      9541062   condo       scomputer     1     PENDING   nlp              
 gi372      9541061   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541060   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541059   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
+gi372      9541058   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541066   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541065   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
 gi372      9541064   condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpMemLimit                          
@@ -577,24 +577,24 @@ na2416     9539443   nvidia      chemistry     128   PENDING   nvidia           
 na2416     9539638   nvidia      chemistry     128   PENDING   nvidia           N/A                                QOSMaxCpuPerUserLimit                   
 na2416     9541762   nvidia      chemistry     1     PENDING   nvidia           gpu:v100:1                         QOSMaxCpuPerUserLimit                   
 na2416     9541856   nvidia      chemistry     128   PENDING   nvidia           N/A                                QOSMaxCpuPerUserLimit                   
-sas10092   9542430   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542429   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-sas10092   9542435   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542434   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542433   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542432   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542431   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+sas10092   9542430   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542436   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-sas10092   9542439   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+sas10092   9542435   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542438   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542437   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-sas10092   9542444   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542443   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542442   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542441   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542440   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+sas10092   9542439   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542446   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 sas10092   9542445   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+sas10092   9542444   nvidia      ecomputer     32    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
