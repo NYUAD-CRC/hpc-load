@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         23       16       58 %     || DALMA    ||          40%          213           58         6963          143          83           4      ||
-||   99         77       22       77 %     || JUBAIL   ||          77%           14           97         6346          111          27           0      ||
+||   39         23       16       58 %     || DALMA    ||          40%          214           57         6983          143          76           4      ||
+||   99         77       22       77 %     || JUBAIL   ||          80%            7           97         5450          118          31           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:7   GPU:5
@@ -28,8 +28,8 @@
 ||  2 |  2 |  2 ||cass         || 4096 |  63 % |   8 % |   -   ||  2584 |     6 ||   snb463 |  62 % ||   4656 |    10 ||     - |     - ||  4656 |    10 ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||     8 |     1 ||  asa8168 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||ccs          || 6144 |  33 % |   -   |  16 % ||  2062 |    74 ||  ab10917 |  33 % ||   6020 |   215 ||     - |     - ||  6020 |   215 ||
-||  8 | 26 | 26 ||cgsb         || 4096 |  12 % |   1 % |   1 % ||   529 |    19 ||     drn2 |   3 % ||    520 |    26 ||     - |     - ||   520 |    26 ||
-||  3 |  - |  - ||chemistry    ||12824 |  41 % |  16 % |   3 % ||  5282 |   109 ||    ah166 |  12 % ||    384 |     1 ||     - |     - ||   384 |     1 ||
+||  8 | 18 | 18 ||cgsb         || 4096 |  12 % |   1 % |   1 % ||   529 |    19 ||     drn2 |   3 % ||    360 |    18 ||     - |     - ||   360 |    18 ||
+||  3 |  - |  - ||chemistry    ||12824 |  41 % |  16 % |   3 % ||  5262 |   108 ||    ah166 |  12 % ||    384 |     1 ||     - |     - ||   384 |     1 ||
 ||  1 |  1 |  - ||civil        || 3200 |  40 % |   1 % |   7 % ||  1280 |    35 ||    sa183 |  28 % ||    120 |     1 ||   120 |     1 ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  35 % |   3 % |   -   ||  1100 |    19 ||   ap6420 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
@@ -41,10 +41,10 @@
 ||  - |  - |  - ||mechanical   ||12288 |  12 % |   5 % |   -   ||  1560 |     6 ||   ds7760 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  2 |  2 ||physics      ||11824 |  52 % |  21 % |   -   ||  6168 |    13 ||   cc6881 |  43 % ||     48 |     1 ||     - |     - ||    48 |     1 ||
 ||  - |  - |  - ||preempt      ||27000 |  13 % |  11 % |   1 % ||  3560 |    23 ||     nn34 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   200 |   100 ||  as14864 |   3 % ||    826 |   413 ||     - |     - ||   826 |   413 ||
+||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   200 |   100 ||  as14864 |   3 % ||    824 |   412 ||     - |     - ||   824 |   412 ||
 || 20 |  6 |  6 ||scomputer    || 3120 |  13 % |   -   |   2 % ||   421 |    18 ||   ia2280 |   8 % ||     20 |     2 ||     - |     - ||    20 |     2 ||
 ||  - |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
-|| 36 |111 |111 ||students     || 6144 |  25 % |   5 % |   -   ||  1566 |    40 ||   sa9185 |  12 % ||    441 |   111 ||     - |     - ||   441 |   111 ||
+|| 36 |111 |111 ||students     || 6144 |  40 % |   8 % |   -   ||  2462 |    47 ||  ian4134 |  14 % ||    441 |   111 ||     - |     - ||   441 |   111 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||    dd115 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 | 100 % ||   4608 |     9 ||     - |     - ||  4608 |     9 ||
@@ -68,7 +68,6 @@ snb463     9558780   compute     cass          512   PENDING   cass             
 snb463     9558781   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9558783   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9558784   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
-as14864    9541641   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9541641   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9541641   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    9541641   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -932,14 +931,6 @@ sn3006     9558944   nvidia      students      4     PENDING   nvidia           
 sn3006     9558944   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sn3006     9558944   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 dd115      9559005   nvidia      scomputer     10    PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
-drn2       9559140   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-drn2       9559140   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-drn2       9559140   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-drn2       9559140   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-drn2       9559140   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-drn2       9559140   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-drn2       9559154   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-drn2       9559154   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 drn2       9559154   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 drn2       9559154   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 drn2       9559154   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
