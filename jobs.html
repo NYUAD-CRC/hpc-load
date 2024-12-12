@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         23       16       58 %     || DALMA    ||          17%          333           24         9714           63          50           4      ||
-||   99         69       30       69 %     || JUBAIL   ||          80%            6           80         5521          136          17           0      ||
+||   39         21       18       53 %     || DALMA    ||          17%          333           24         9715           63          49           4      ||
+||   99         71       28       71 %     || JUBAIL   ||          80%            6           80         5457          136          19           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:13   GPU:12
+	OOD JOBS:  CPU:13   GPU:10
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -26,10 +26,10 @@
 ||  - |  - |  - ||access       || 6144 |  18 % |   3 % |   -   ||  1150 |     3 ||  ak11283 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cass         || 4096 |  66 % |   9 % |   -   ||  2712 |     7 ||   snb463 |  65 % ||   5120 |    10 ||     - |     - ||  5120 |    10 ||
 ||  1 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    18 |     1 ||   baj321 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||cgsb         || 4096 |   8 % |   -   |   1 % ||   333 |    12 ||     gb77 |   3 % ||     72 |     2 ||    12 |     1 ||     - |     - ||
+||  2 |  - |  - ||cgsb         || 4096 |   8 % |   -   |   1 % ||   333 |    12 ||     gb77 |   3 % ||     72 |     2 ||    12 |     1 ||    60 |     1 ||
 || 12 |867 |867 ||chemistry    ||12824 |  38 % |  16 % |   3 % ||  4975 |    64 ||    ah166 |  12 % ||  12899 |   878 ||     - |     - ||  2659 |   870 ||
-||  4 |  - |  - ||cities       || 4096 |   2 % |   -   |   -   ||    96 |     4 ||   pc3377 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  8 |  - |  - ||civil        || 3200 |  17 % |   -   |   4 % ||   574 |    27 ||    sa183 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||cities       || 4096 |   1 % |   -   |   -   ||    48 |     2 ||   pc3377 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  7 |  - |  - ||civil        || 3200 |  21 % |   -   |   4 % ||   700 |    26 ||    sa183 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  35 % |   3 % |   -   ||  1096 |     6 ||   ap6420 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  12 % |   1 % |   -   ||   384 |     3 ||   rp4207 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -38,17 +38,18 @@
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    29 |     2 ||   sg7484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   9 % |   -   |   2 % ||   380 |    15 ||  gencore |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    15 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||mechanical   ||12288 |  11 % |   4 % |   -   ||  1424 |     4 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||mechanical   ||12288 |  12 % |   5 % |   -   ||  1488 |     6 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  48 % |  19 % |   -   ||  5680 |    12 ||   cc6881 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  20 % |  29 % |   -   ||  5449 |    80 ||    ah166 |  19 % ||   5376 |     7 ||  2304 |     3 ||  3072 |     4 ||
-||  6 |  - |  - ||psychology   || 6096 |   4 % |   -   |   1 % ||   280 |   103 ||  as14864 |   3 % ||    534 |   267 ||     - |     - ||   534 |   267 ||
-||  - |  - |  - ||scomputer    || 3120 |  21 % |   -   |   3 % ||   657 |    12 ||   ia2280 |  14 % ||    100 |     4 ||    36 |     2 ||    64 |     2 ||
+||  8 | 28 | 28 ||psychology   || 6096 |   5 % |   -   |   1 % ||   312 |   104 ||  as14864 |   3 % ||    982 |   281 ||     - |     - ||   982 |   281 ||
+||  - |  - |  - ||scomputer    || 3120 |  20 % |   -   |   3 % ||   649 |    11 ||   ia2280 |  14 % ||    100 |     4 ||    36 |     2 ||    64 |     2 ||
 ||  2 |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||    15 |     1 ||   mb7099 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
 || 23 | 83 | 83 ||students     || 6144 |  16 % |   3 % |   1 % ||  1022 |    31 ||   sa9185 |  12 % ||    311 |    77 ||     - |     - ||   311 |    77 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 | 100 % ||   5120 |    10 ||     - |     - ||  5120 |    10 ||
 ||  1 |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    20 |     1 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||ebrainccs    ||   64 |  25 % |   -   |   -   ||    16 |     2 ||   nsa325 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||csm          ||  640 |  20 % |   -   |   -   ||   128 |     1 ||   da3205 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||ebrainccs    ||   64 |  12 % |   -   |   -   ||     8 |     1 ||   nsa325 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gfg          || 1920 |  80 % |   5 % |   -   ||  1536 |     3 ||   cc6881 |  53 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |   5 % |   -   |   -   ||    20 |     1 ||   aa5506 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  2 |  2 ||nlp          ||  208 |  92 % |   -   |   -   ||   192 |     6 ||    gi372 |  92 % ||     64 |     2 ||     - |     - ||    64 |     2 ||
@@ -58,6 +59,7 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
+mv83       9574706   bigmem      cgsb          60    PENDING   bigmem           N/A                                QOSMaxCpuPerJobLimit                    
 snb463     9558774   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9558775   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9558776   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
@@ -1291,6 +1293,20 @@ sjb8193    9573961   nvidia      students      4     PENDING   nvidia           
 sjb8193    9573961   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    9573961   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    9573961   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+mri        9582745   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582747   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582746   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582748   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582749   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582750   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582751   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582752   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582753   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582761   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582759   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582757   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582756   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582755   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
