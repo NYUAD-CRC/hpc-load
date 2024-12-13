@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         17       22       43 %     || DALMA    ||          16%          337           22         9806           61          45           4      ||
-||   99         82       17       82 %     || JUBAIL   ||          80%            6           80         5389          136          20           0      ||
+||   39         17       22       43 %     || DALMA    ||          16%          337           22         9805           61          48           4      ||
+||   99         80       19       80 %     || JUBAIL   ||          80%            6           80         5389          136          19           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:9
@@ -26,10 +26,10 @@
 ||  - |  - |  - ||access       || 6144 |  16 % |   3 % |   -   ||  1024 |     1 ||  ak11283 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cass         || 4096 |  66 % |   9 % |   -   ||  2712 |     7 ||   snb463 |  65 % ||   5120 |    10 ||     - |     - ||  5120 |    10 ||
 ||  8 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   144 |     8 ||   baj321 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||cgsb         || 4096 |   8 % |   -   |   1 % ||   349 |    13 ||     gb77 |   3 % ||     72 |     2 ||    12 |     1 ||    60 |     1 ||
+||  2 |  - |  - ||cgsb         || 4096 |   8 % |   -   |   1 % ||   349 |    13 ||     gb77 |   3 % ||     72 |     2 ||    12 |     1 ||     - |     - ||
 || 12 |862 |862 ||chemistry    ||12824 |  32 % |  13 % |   3 % ||  4115 |    84 ||  sme9918 |  10 % ||  11358 |   871 ||     - |     - ||  1118 |   863 ||
 ||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    24 |     1 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  9 |  - |  - ||civil        || 3200 |  28 % |   1 % |   4 % ||   927 |    26 ||    sa183 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
+||  9 |  - |  - ||civil        || 3200 |  29 % |   1 % |   4 % ||   928 |    27 ||    sa183 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  35 % |   3 % |   -   ||  1096 |     6 ||   ap6420 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  12 % |   1 % |   -   ||   384 |     3 ||   rp4207 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,9 +41,9 @@
 ||  - |  - |  - ||mechanical   ||12288 |  13 % |   5 % |   -   ||  1680 |    12 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  48 % |  19 % |   -   ||  5680 |    12 ||   cc6881 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  23 % |  32 % |   -   ||  6217 |    81 ||    ah166 |  22 % ||   4608 |     6 ||  1536 |     2 ||  3072 |     4 ||
-||  8 |110 |110 ||psychology   || 6096 |   5 % |   -   |   1 % ||   328 |   104 ||  as14864 |   3 % ||   2294 |   322 ||     - |     - ||  2294 |   322 ||
+||  8 |112 |112 ||psychology   || 6096 |   5 % |   -   |   1 % ||   328 |   104 ||  as14864 |   3 % ||   2326 |   323 ||     - |     - ||  2326 |   323 ||
 ||  - |  - |  - ||scomputer    || 3120 |  20 % |   -   |   3 % ||   641 |    10 ||   ia2280 |  14 % ||    100 |     4 ||    36 |     2 ||    64 |     2 ||
-||  2 |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||    15 |     1 ||   mb7099 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
+||  - |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
 || 22 | 82 | 82 ||students     || 6144 |  15 % |   3 % |   -   ||   976 |    27 ||   sa9185 |  12 % ||    307 |    76 ||     - |     - ||   307 |    76 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 | 100 % ||   5120 |    10 ||     - |     - ||  5120 |    10 ||
@@ -57,7 +57,6 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-mv83       9574706   bigmem      cgsb          60    PENDING   bigmem           N/A                                QOSMaxCpuPerJobLimit                    
 snb463     9558774   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9558775   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9558776   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
@@ -1290,37 +1289,37 @@ mri        9582856   nvidia      psychology    32    PENDING   nvidia           
 mri        9582858   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582859   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582861   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582863   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582864   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582863   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582866   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582867   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582868   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582870   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582867   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582871   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582870   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582872   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582877   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582878   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582879   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582880   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582881   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582882   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582883   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582881   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582884   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582885   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582886   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582883   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582887   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582886   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582885   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582889   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582890   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582891   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582892   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582891   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582893   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582894   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582895   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582894   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582900   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582901   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582902   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
-mri        9582903   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582904   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582903   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582905   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582906   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582907   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
@@ -1339,6 +1338,7 @@ mri        9582972   nvidia      psychology    32    PENDING   nvidia           
 ll5484     9582949   nvidia      ecomputer     16    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582973   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582974   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+mri        9582975   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
