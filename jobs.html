@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         37        2       94 %     || DALMA    ||          19%          325           25         9492           70          43           4      ||
-||   99         84       15       84 %     || JUBAIL   ||          87%            0           85         3440          137          18           0      ||
+||   39         31        8       79 %     || DALMA    ||          32%          231          119         7917           70         140           4      ||
+||   99         86       13       86 %     || JUBAIL   ||          87%            0           84         3344          138          19           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:20   GPU:16
+	OOD JOBS:  CPU:20   GPU:17
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -29,9 +29,9 @@
 ||  3 |  3 |  3 ||cass         || 4096 |  66 % |   9 % |   -   ||  2736 |     9 ||   snb463 |  65 % ||   5136 |    11 ||     - |     - ||  5136 |    11 ||
 ||  8 |  2 |  2 ||ccs          || 6144 |   2 % |   -   |   -   ||   144 |     8 ||   baj321 |   2 % ||     36 |     2 ||     - |     - ||    36 |     2 ||
 ||  8 |  1 |  1 ||cgsb         || 4096 |  13 % |   1 % |   1 % ||   547 |    20 ||     mv83 |   5 % ||    710 |    24 ||     - |     - ||   710 |    24 ||
-|| 12 |652 |652 ||chemistry    ||12824 |  39 % |  17 % |   3 % ||  5119 |    87 ||    ah166 |  12 % ||  18828 |   671 ||     - |     - ||  8588 |   663 ||
+|| 12 |652 |652 ||chemistry    ||12824 |  52 % |  17 % |  16 % ||  6790 |   193 ||    ah166 |  12 % ||  18860 |   673 ||     - |     - ||  8620 |   665 ||
 ||  4 |  - |  - ||cities       || 4096 |   2 % |   -   |   -   ||    96 |     4 ||   pc3377 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||civil        || 3200 |  40 % |   2 % |   6 % ||  1310 |    39 ||    sa183 |  22 % ||      - |     - ||     - |     - ||     - |     - ||
+||  7 |  - |  - ||civil        || 3200 |  40 % |   2 % |   6 % ||  1308 |    38 ||    sa183 |  22 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  34 % |   3 % |   -   ||  1056 |     5 ||   ap6420 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  12 % |   1 % |   -   ||   384 |     3 ||   rp4207 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -44,9 +44,9 @@
 ||  2 |  - |  - ||physics      ||11824 |  48 % |  19 % |   -   ||  5680 |    12 ||   cc6881 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  20 % |  53 % |   -   ||  5581 |    99 ||    ah166 |  14 % ||  12908 |    89 ||  3072 |     4 ||  9836 |    85 ||
 ||  8 |108 |108 ||psychology   || 6096 |   5 % |   -   |   1 % ||   328 |   104 ||  as14864 |   3 % ||   2262 |   321 ||     - |     - ||  2262 |   321 ||
-||  4 |  - |  - ||scomputer    || 3120 |  28 % |   1 % |   3 % ||   903 |    18 ||   ia2280 |  22 % ||    100 |     4 ||    36 |     2 ||    64 |     2 ||
+||  3 |  - |  - ||scomputer    || 3120 |  28 % |   1 % |   3 % ||   902 |    17 ||   ia2280 |  22 % ||    100 |     4 ||    36 |     2 ||    64 |     2 ||
 ||  1 |  - |  - ||site         || 4096 |   -   |   -   |   -   ||    10 |     1 ||   sc8101 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||    16 |     2 ||   mb7099 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
+||  3 |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     3 ||   mb7099 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
 || 22 | 76 | 72 ||students     || 6144 |  16 % |   3 % |   1 % ||  1006 |    30 ||   sa9185 |  12 % ||    283 |    70 ||     6 |     1 ||   277 |    69 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||c2           ||  384 |  66 % |   -   |   -   ||   256 |     2 ||   ia2280 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -357,29 +357,30 @@ ah166      9582995   compute     chemistry     768   PENDING   large            
 ah166      9582995   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9582995   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9583001   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584110   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584111   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584112   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584113   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584114   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584116   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584115   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584118   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584117   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584121   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584120   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584119   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584122   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584132   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584131   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584130   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584129   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584128   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584127   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584126   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584125   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584124   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9584123   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584383   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584385   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584384   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584387   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584388   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584389   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584390   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584493   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584492   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584498   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584497   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584496   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584495   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584515   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584511   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584510   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584509   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584508   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584506   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584505   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584503   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+mv83       9584501   compute     cgsb          30    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+nn34       9584392   compute     chemistry     16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+nn34       9584392   compute     chemistry     16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 gi372      9574026   condo       scomputer     32    PENDING   nlp              gpu:a100:1                         QOSGrpCpuLimit                          
 gi372      9574033   condo       scomputer     32    PENDING   nlp              gpu:a100:1                         QOSGrpCpuLimit                          
 akm477     9516965   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxWallDurationPerJobLimit           
