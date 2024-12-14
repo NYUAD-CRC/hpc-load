@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         24       15       61 %     || DALMA    ||          22%          278           74         9086           68          99           4      ||
+||   39         22       17       56 %     || DALMA    ||          22%          278           74         9086           68         103           4      ||
 ||   99         83       16       83 %     || JUBAIL   ||          91%            1           59         2248          162          26           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -26,8 +26,8 @@
 ||  - |  - |  - ||access       || 6144 |  35 % |   7 % |   -   ||  2172 |     3 ||  ak11283 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||cass         || 4096 |  54 % |   7 % |   -   ||  2216 |     7 ||   snb463 |  53 % ||   3072 |     6 ||     - |     - ||  3072 |     6 ||
 ||  8 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   144 |     8 ||   baj321 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  8 |  1 |  1 ||cgsb         || 4096 |  29 % |   2 % |   4 % ||  1191 |    74 ||     mv83 |  24 % ||   2210 |    74 ||    60 |     2 ||  2090 |    70 ||
-|| 10 |553 |553 ||chemistry    ||12824 |  46 % |  19 % |   5 % ||  5942 |   103 ||   saa788 |  13 % ||  17961 |   571 ||     - |     - ||  7721 |   563 ||
+||  8 |  1 |  1 ||cgsb         || 4096 |  29 % |   2 % |   4 % ||  1191 |    74 ||     mv83 |  24 % ||   2240 |    75 ||     - |     - ||  2240 |    75 ||
+|| 10 |552 |552 ||chemistry    ||12824 |  46 % |  19 % |   5 % ||  5942 |   103 ||   saa788 |  13 % ||  17960 |   570 ||     - |     - ||  7720 |   562 ||
 ||  6 |  - |  - ||cities       || 4096 |   3 % |   -   |   -   ||   144 |     6 ||   pc3377 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||civil        || 3200 |  38 % |   1 % |   5 % ||  1233 |    32 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  33 % |   3 % |   -   ||  1024 |    10 ||   ap6420 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,11 +41,11 @@
 ||  - |  - |  - ||mechanical   ||12288 |  11 % |   4 % |   -   ||  1424 |     4 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  48 % |  19 % |   -   ||  5680 |    12 ||   cc6881 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  25 % |  48 % |   -   ||  6949 |    95 ||    ah166 |  19 % ||   8068 |    74 ||   768 |     1 ||  7300 |    73 ||
-||  8 | 54 | 54 ||psychology   || 6096 |   5 % |   -   |   1 % ||   328 |   104 ||  as14864 |   3 % ||   1398 |   294 ||     - |     - ||  1398 |   294 ||
+||  8 | 52 | 52 ||psychology   || 6096 |   5 % |   -   |   1 % ||   328 |   104 ||  as14864 |   3 % ||   1366 |   293 ||     - |     - ||  1366 |   293 ||
 ||  - |  - |  - ||scomputer    || 3120 |  19 % |   -   |   3 % ||   609 |     9 ||   ia2280 |  14 % ||     36 |     2 ||    36 |     2 ||     - |     - ||
 ||  1 |  - |  - ||site         || 4096 |   -   |   -   |   -   ||    10 |     1 ||   sc8101 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 | 20 | 20 ||socialscience|| 4096 |   -   |   -   |   -   ||    12 |     1 ||   mb7099 |   -   ||     10 |    10 ||     - |     - ||    10 |    10 ||
-|| 25 | 76 | 68 ||students     || 6144 |  16 % |   2 % |   1 % ||  1004 |    29 ||   sa9185 |  12 % ||    279 |    67 ||    18 |     2 ||   261 |    65 ||
+|| 23 | 76 | 68 ||students     || 6144 |  16 % |   2 % |   1 % ||   994 |    28 ||   sa9185 |  12 % ||    279 |    67 ||    18 |     2 ||   261 |    65 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 | 100 % ||   3072 |     6 ||     - |     - ||  3072 |     6 ||
 ||  1 |  - |  - ||chi          ||  768 |   2 % |   -   |   -   ||    20 |     1 ||   pb2276 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -348,75 +348,80 @@ ah166      9582995   compute     chemistry     768   PENDING   large            
 ah166      9582995   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9582995   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9583001   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-mv83       9591917   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591919   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591918   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591922   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591921   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591920   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591926   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591925   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591924   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591923   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591930   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591929   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591928   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591927   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591936   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591935   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591934   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591933   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591932   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591931   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591944   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591943   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591942   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591941   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591940   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591939   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591938   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591986   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591985   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591984   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591983   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591982   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591981   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591980   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591979   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591978   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591977   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591976   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591975   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591974   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591973   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591972   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591971   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591970   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591969   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591968   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591967   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591966   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591965   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591964   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591963   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591962   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591961   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591960   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591959   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591958   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591957   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591956   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591955   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591954   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591953   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591952   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591951   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591950   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591949   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591948   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591947   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591946   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
-mv83       9591945   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592184   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592183   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592182   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592181   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592180   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592192   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592191   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592190   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592189   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592188   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592187   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592186   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592185   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592196   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592195   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592194   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592193   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592202   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592201   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592200   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592199   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592198   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592197   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592254   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592253   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592252   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592251   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592250   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592249   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592248   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592247   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592246   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592245   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592244   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592243   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592242   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592241   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592240   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592239   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592238   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592237   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592236   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592235   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592234   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592233   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592232   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592231   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592230   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592229   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592228   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592227   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592226   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592225   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592224   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592223   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592222   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592221   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592220   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592219   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592218   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592216   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592215   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592214   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592213   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592212   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592211   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592210   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592209   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592208   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592207   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592206   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592205   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592204   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9592203   compute     cgsb          30    PENDING   small            N/A                                AssocGrpMemLimit                        
 akm477     9516965   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxWallDurationPerJobLimit           
 akm477     9516964   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxWallDurationPerJobLimit           
 sn3006     9558944   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -497,7 +502,6 @@ ad7091     9570593   nvidia      chemistry     1     PENDING   nvidia           
 ad7091     9570593   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570593   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570593   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570593   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570598   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570598   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570598   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -1036,7 +1040,6 @@ sjb8193    9573961   nvidia      students      4     PENDING   nvidia           
 sjb8193    9573961   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    9573961   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sjb8193    9573961   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-mri        9582937   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582939   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582946   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mri        9582972   nvidia      psychology    32    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
