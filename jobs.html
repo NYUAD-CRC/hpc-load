@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         17       22       43 %     || DALMA    ||          22%          283           75         9136           62          52           4      ||
-||   99         74       25       74 %     || JUBAIL   ||          57%           63           68        12206           91          21           0      ||
+||   39         17       22       43 %     || DALMA    ||          22%          283           75         9138           62          53           4      ||
+||   99         76       23       76 %     || JUBAIL   ||          56%           64           69        12430           89          21           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:9   GPU:11
@@ -24,10 +24,10 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  16 % |   3 % |   -   ||  1024 |     1 ||  skp7753 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  - |  - ||cass         || 4096 |  54 % |   7 % |   -   ||  2216 |     7 ||   snb463 |  53 % ||   5120 |    10 ||     - |     - ||  5120 |    10 ||
+||  6 |  3 |  - ||cass         || 4096 |  54 % |   7 % |   -   ||  2218 |     8 ||   snb463 |  53 % ||   5136 |    11 ||    16 |     1 ||  5120 |    10 ||
 ||  4 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||    72 |     4 ||   baj321 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  1 |  1 ||cgsb         || 4096 |  15 % |   -   |   4 % ||   647 |    53 ||     mv83 |  11 % ||     20 |     1 ||     - |     - ||    20 |     1 ||
-|| 10 |253 |253 ||chemistry    ||12824 |  43 % |  18 % |   5 % ||  5605 |    85 ||   saa788 |  13 % ||  14845 |   268 ||     - |     - ||  5885 |   261 ||
+|| 10 |238 |238 ||chemistry    ||12824 |  43 % |  18 % |   5 % ||  5603 |    83 ||   saa788 |  13 % ||  14830 |   253 ||     - |     - ||  5870 |   246 ||
 ||  5 |  - |  - ||cities       || 4096 |   2 % |   -   |   -   ||   120 |     5 ||   pc3377 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||civil        || 3200 |  37 % |   1 % |   5 % ||  1184 |    28 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |   1 % |   -   |   -   ||    40 |     3 ||   ha3152 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -40,9 +40,9 @@
 ||  1 |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    15 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  11 % |   4 % |   -   ||  1424 |     4 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  43 % |  17 % |   -   ||  5168 |    11 ||   cc6881 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   4 % |   3 % |   -   ||  1081 |   109 ||   wr2172 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |   3 % |   2 % |   -   ||   857 |   101 ||   wr2172 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   1 % ||   264 |   101 ||  as14864 |   3 % ||    534 |   267 ||     - |     - ||   534 |   267 ||
-||  - |  - |  - ||scomputer    || 3120 |  17 % |   -   |   3 % ||   553 |     8 ||   ia2280 |  14 % ||     36 |     2 ||    36 |     2 ||     - |     - ||
+||  1 |  - |  - ||scomputer    || 3120 |  17 % |   -   |   3 % ||   554 |     9 ||   ia2280 |  14 % ||     36 |     2 ||    36 |     2 ||     - |     - ||
 ||  3 | 20 | 20 ||socialscience|| 4096 |   -   |   -   |   -   ||    27 |     2 ||   mb7099 |   -   ||     10 |    10 ||     - |     - ||    10 |    10 ||
 || 24 | 70 | 66 ||students     || 6144 |   4 % |   -   |   1 % ||   272 |    28 ||   oe2015 |   -   ||    255 |    61 ||     6 |     1 ||   249 |    60 ||
 ==========================================================================================================================================================
@@ -370,21 +370,6 @@ sn3006     9558944   nvidia      students      4     PENDING   nvidia           
 sn3006     9558944   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sn3006     9558944   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9570596   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
