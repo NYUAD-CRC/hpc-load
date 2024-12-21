@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         20       19       51 %     || DALMA    ||          22%          267           75         9132           62          16           8      ||
-||   99         45       54       45 %     || JUBAIL   ||          81%            9           79         5317          134          13           0      ||
+||   39         20       19       51 %     || DALMA    ||          22%          270           72         9140           62          18           7      ||
+||   99         45       54       45 %     || JUBAIL   ||          81%            9           79         5333          134          13           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:17
@@ -39,12 +39,12 @@
 ||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||   116 |     6 ||  gencore |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  15 % |   6 % |   -   ||  1964 |     8 ||   ds7760 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  27 % |  11 % |   -   ||  3200 |    10 ||   cc6881 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  37 % |  32 % |   5 % || 10102 |   118 ||    ah166 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |  37 % |  32 % |   5 % || 10038 |   114 ||    ah166 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   202 |   102 ||  as14864 |   3 % ||    134 |    67 ||     - |     - ||   134 |    67 ||
-||  2 |  - |  - ||scomputer    || 3120 |   2 % |   -   |   -   ||    66 |    10 ||    gi372 |   1 % ||    160 |    20 ||     - |     - ||   160 |    20 ||
+||  2 |  - |  - ||scomputer    || 3120 |   3 % |   -   |   -   ||    98 |    12 ||    gi372 |   1 % ||    152 |    19 ||     - |     - ||   152 |    19 ||
 ||  3 |  - |  - ||site         || 4096 |   -   |   -   |   -   ||    14 |     2 ||   sc8101 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  8 |  1 |  1 ||students     || 6144 |   2 % |   -   |   -   ||   129 |    11 ||   oe2015 |   -   ||      1 |     1 ||     - |     - ||     1 |     1 ||
+||  8 |  1 |  1 ||students     || 6144 |   2 % |   -   |   -   ||   137 |    12 ||   oe2015 |   -   ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |   -   |   -   |   -   ||     1 |     1 ||   cl5503 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 | 100 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
@@ -52,7 +52,7 @@
 ||  1 |  - |  - ||csm          ||  640 |  20 % |   -   |   -   ||   128 |     1 ||   da3205 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gfg          || 1920 |  60 % |   4 % |   -   ||  1152 |     6 ||  laa9597 |  60 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |  26 % |   -   |   -   ||   100 |     1 ||   aa5506 |  26 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 | 20 | 20 ||nlp          ||  208 |  26 % |   -   |   -   ||    56 |     7 ||    gi372 |  26 % ||    160 |    20 ||     - |     - ||   160 |    20 ||
+||  7 | 19 | 19 ||nlp          ||  208 |  26 % |   -   |   -   ||    56 |     7 ||    gi372 |  26 % ||    152 |    19 ||     - |     - ||   152 |    19 ||
 ||  2 |  - |  - ||serdal       ||   80 |  50 % |   -   |   -   ||    40 |     2 ||   wh1165 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||shamout      ||  192 |  66 % |   -   |   -   ||   128 |     4 || sas10092 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -263,13 +263,10 @@ ah166      9635217   compute     chemistry     768   PENDING   large            
 gi372      9615380   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615379   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615378   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9615377   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615391   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615390   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615389   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615388   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9615399   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9615398   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615397   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615396   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615395   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
@@ -280,6 +277,8 @@ gi372      9615403   condo       scomputer     8     PENDING   nlp              
 gi372      9615402   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615401   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9615400   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9615399   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9615398   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
 drn2       9618071   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
 drn2       9618071   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
