@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         23       16       58 %     || DALMA    ||          18%          311           36         9677           58          15           6      ||
-||   99         36       63       36 %     || JUBAIL   ||          59%           55           81        11597           86          17           0      ||
+||   39         24       15       61 %     || DALMA    ||          20%          280           67         9357           58          45           5      ||
+||   99         36       63       36 %     || JUBAIL   ||          58%           55           81        11693           86          17           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:6   GPU:14
+	OOD JOBS:  CPU:6   GPU:15
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -25,17 +25,17 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  2 |  - |  - ||cass         || 4096 |  50 % |   7 % |   -   ||  2072 |     6 ||   snb463 |  50 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 ||  - |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    28 |     1 ||  ab10917 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  8 |273 |  - ||cgsb         || 4096 |  18 % |   1 % |   2 % ||   741 |    22 ||   aa5506 |   8 % ||   6432 |   288 ||  5748 |   279 ||   684 |     9 ||
-||  1 |  - |  - ||chemistry    ||12824 |  54 % |  23 % |   2 % ||  6928 |    62 ||   saa788 |  18 % ||  31324 |   155 ||     - |     - || 22364 |   148 ||
-||  4 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    16 |     4 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  7 |110 |  - ||cgsb         || 4096 |  25 % |   1 % |   5 % ||  1061 |    55 ||   aa5506 |   8 % ||   3312 |   139 ||  2260 |   116 ||  1042 |    22 ||
+||  1 |  - |  - ||chemistry    ||12824 |  53 % |  22 % |   2 % ||  6832 |    61 ||   saa788 |  17 % ||  31324 |   155 ||     - |     - || 22364 |   148 ||
+||  5 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    20 |     5 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||civil        || 3200 |  43 % |   -   |   9 % ||  1378 |    44 ||    sa183 |  35 % ||     28 |     1 ||    28 |     1 ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  47 % |   4 % |   -   ||  1453 |    33 ||   ap6420 |  41 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||     2 |     2 ||     phrc |   -   ||    672 |    28 ||     - |     - ||   672 |    28 ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |   7 % |   -   |   -   ||    60 |     7 ||   bs5331 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |   8 % |   -   |   -   ||    64 |     8 ||   bs5331 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||ecomputer    || 4096 |   5 % |   -   |   -   ||   244 |    13 || sas10092 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     5 |     1 ||   yw3576 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |   7 % |   -   |   2 % ||   320 |    15 ||  gencore |   7 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |   7 % |   -   |   2 % ||   296 |    14 ||  gencore |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  15 % |   6 % |   -   ||  1956 |     6 ||   ds7760 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  26 % |  10 % |   -   ||  3120 |    10 ||   cc6881 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   5 % |   5 % |   -   ||  1590 |    56 ||    ah166 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -56,6 +56,12 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
+aa5506     9627123   bigmem      cgsb          48    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
+aa5506     9627123   bigmem      cgsb          48    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
+aa5506     9627123   bigmem      cgsb          48    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
+aa5506     9627123   bigmem      cgsb          48    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
+aa5506     9627123   bigmem      cgsb          48    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
+aa5506     9627123   bigmem      cgsb          48    PENDING   bigmem           N/A                                AssocGrpMemLimit                        
 snb463     9611838   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     9611852   compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 as14864    9541641   compute     psychology    2     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -260,22 +266,26 @@ ah166      9635217   compute     chemistry     768   PENDING   large            
 ah166      9635217   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      9635217   compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 saa788     9638258   compute     chemistry     512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
-gi372      9638397   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638396   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638395   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638394   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+mv83       9639096   compute     cgsb          10    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9639095   compute     cgsb          10    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9639093   compute     cgsb          10    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9639089   compute     cgsb          10    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9639088   compute     cgsb          10    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9639087   compute     cgsb          10    PENDING   small            N/A                                AssocGrpMemLimit                        
+mv83       9639086   compute     cgsb          10    PENDING   small            N/A                                AssocGrpMemLimit                        
 gi372      9638393   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638392   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638391   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638390   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638389   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638388   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638397   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638396   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638395   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638394   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638411   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638410   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638409   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638428   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638427   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638426   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638425   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638424   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638423   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
@@ -285,6 +295,9 @@ gi372      9638432   condo       scomputer     8     PENDING   nlp              
 gi372      9638431   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638430   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638429   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638428   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638427   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638426   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638440   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638439   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638438   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
@@ -292,9 +305,6 @@ gi372      9638437   condo       scomputer     8     PENDING   nlp              
 gi372      9638436   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638435   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638434   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638453   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638452   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      9638451   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638450   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638449   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638448   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
@@ -304,6 +314,9 @@ gi372      9638457   condo       scomputer     8     PENDING   nlp              
 gi372      9638456   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638455   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638454   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638453   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638452   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      9638451   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638465   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638464   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      9638463   condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
