@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         17       22       43 %     || DALMA    ||          38%          232           21         7168          160          76           5      ||
-||   99         74       25       74 %     || JUBAIL   ||          57%           64           58        11893           99          32           0      ||
+||   39         17       22       43 %     || DALMA    ||          39%          231           21         7140          161          90           5      ||
+||   99         74       25       74 %     || JUBAIL   ||          57%           65           58        12021           98          32           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:7   GPU:4
@@ -25,13 +25,13 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||bio          || 8192 |   6 % |   1 % |   -   ||   512 |     1 ||  hka5519 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  62 % |   8 % |   -   ||  2563 |     8 ||   snb463 |  62 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  3 |  3 ||ccs          || 6144 |  33 % |   -   |  16 % ||  2044 |    73 ||  ab10917 |  33 % ||   6382 |   229 ||     - |     - ||  6382 |   229 ||
+||  - |  3 |  3 ||ccs          || 6144 |  33 % |   -   |  16 % ||  2044 |    73 ||  ab10917 |  33 % ||   3134 |   113 ||     - |     - ||  3134 |   113 ||
 ||  7 |365 |  - ||cgsb         || 4096 |   7 % |   -   |   -   ||   317 |    15 ||     drn2 |   3 % ||   7300 |   365 ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||chemistry    ||12824 |  47 % |  17 % |   8 % ||  6119 |   152 ||  sme9918 |  19 % ||  30776 |   105 ||     - |     - || 10296 |    89 ||
 ||  - |  - |  - ||civil        || 3200 |  28 % |   -   |   7 % ||   906 |    33 ||    sa183 |  28 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |   5 % |   -   |   -   ||   166 |    14 ||   ha3152 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    672 |    28 ||     - |     - ||   672 |    28 ||
-||  - |  - |  - ||cqts         || 2048 |   6 % |   -   |   -   ||   128 |     1 ||   ae2589 |   6 % ||     12 |     2 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  35 % |   -   |   -   ||   272 |     6 ||  as20733 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  - |  - ||ecomputer    || 4096 |   8 % |   1 % |   -   ||   329 |    18 ||   ll5484 |   3 % ||     28 |     1 ||     - |     - ||    28 |     1 ||
 ||  5 |  - |  - ||electrical   || 4096 |   8 % |   -   |   -   ||   355 |     7 ||   vb1121 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -40,7 +40,7 @@
 ||  2 |  - |  - ||physics      ||11824 |  22 % |   9 % |   -   ||  2608 |     5 ||   cc6881 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   8 % |   8 % |   -   ||  2304 |     3 ||    ah166 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   202 |   102 ||  as14864 |   3 % ||    800 |   400 ||     - |     - ||   800 |   400 ||
-|| 12 |  1 |  1 ||scomputer    || 3120 |   9 % |   -   |   1 % ||   304 |    22 ||   ia2280 |   7 % ||    241 |    31 ||     - |     - ||   241 |    31 ||
+|| 12 |  1 |  1 ||scomputer    || 3120 |  10 % |   -   |   2 % ||   332 |    23 ||   ia2280 |   7 % ||    241 |    31 ||     - |     - ||   241 |    31 ||
 ||  3 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    21 |     3 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 22 |  1 |  1 ||students     || 6144 |   3 % |   -   |   -   ||   216 |    20 ||   oe2015 |   1 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ==========================================================================================================================================================
@@ -738,122 +738,6 @@ sme9918    9681990   compute     chemistry     1280  PENDING   large            
 sme9918    9681990   compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 sme9918    9681990   compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 sme9918    9681990   compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 ab10917    9687106   compute     ccs           28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
