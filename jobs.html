@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         21       18       53 %     || DALMA    ||          13%          351           15        10236           49          28           4      ||
-||   99         86       13       86 %     || JUBAIL   ||          80%            5           76         5443          140          27           0      ||
+||   39         21       18       53 %     || DALMA    ||          13%          351           15        10208           50          28           4      ||
+||   99         86       13       86 %     || JUBAIL   ||          80%            5           76         5443          140          25           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:6   GPU:7
@@ -29,7 +29,7 @@
 ||  - |  - |  - ||cass         || 4096 |  62 % |   8 % |   -   ||  2562 |     7 ||   snb463 |  62 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 || 17 |  - |  - ||ccs          || 6144 |   3 % |   -   |   -   ||   192 |    17 ||   baj321 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |363 |  - ||cgsb         || 4096 |   5 % |   -   |   -   ||   229 |    11 ||     drn2 |   3 % ||   7260 |   363 ||     - |     - ||     - |     - ||
-|| 11 |200 |200 ||chemistry    ||12824 |  42 % |  18 % |   1 % ||  5426 |    52 ||  sme9918 |  20 % ||  26316 |   282 ||     - |     - ||  8396 |   268 ||
+|| 11 |198 |198 ||chemistry    ||12824 |  42 % |  18 % |   1 % ||  5426 |    52 ||  sme9918 |  20 % ||  26314 |   280 ||     - |     - ||  8394 |   266 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    12 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 | 13 |  - ||civil        || 3200 |  37 % |   1 % |   7 % ||  1202 |    39 ||    sa183 |  28 % ||    366 |    13 ||   366 |    13 ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  57 % |   6 % |   -   ||  1780 |     8 ||   ap6420 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -38,13 +38,13 @@
 ||  - |  - |  - ||default      ||  768 |  21 % |   -   |   -   ||   168 |     2 ||  as20733 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 || 20 |  - |  - ||ecomputer    || 4096 |   8 % |   1 % |   -   ||   334 |    25 ||   ll5484 |   3 % ||     60 |     2 ||     - |     - ||    60 |     2 ||
 ||  8 |  - |  - ||electrical   || 4096 |   6 % |   1 % |   -   ||   248 |     4 ||   yw3576 |   4 % ||    168 |     1 ||     - |     - ||   168 |     1 ||
-||  - |  - |  - ||gencore      || 4096 |  17 % |   2 % |   -   ||   736 |    21 ||  gencore |  17 % ||  14400 |   400 ||     - |     - || 14400 |   400 ||
+||  - |  - |  - ||gencore      || 4096 |  17 % |   2 % |   -   ||   736 |    21 ||  gencore |  17 % ||  14328 |   398 ||     - |     - || 14328 |   398 ||
 ||  - |  - |  - ||mechanical   ||12288 |  15 % |   6 % |   -   ||  1956 |     8 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  8 |  8 ||nyuny        || 1024 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  2 |  - |  - ||physics      ||11824 |  22 % |   9 % |   -   ||  2608 |     6 ||  laa9597 |  21 % ||   1536 |     2 ||     - |     - ||  1536 |     2 ||
 ||  - |  - |  - ||preempt      ||27000 |  11 % |  11 % |   -   ||  3072 |     4 ||    ah166 |  11 % ||    256 |     2 ||     - |     - ||   256 |     2 ||
 ||  - |  - |  - ||psychology   || 6096 |   3 % |   -   |   1 % ||   201 |   101 ||  as14864 |   3 % ||    264 |   132 ||     - |     - ||   264 |   132 ||
-||  8 |  - |  - ||scomputer    || 3120 |  11 % |   -   |   2 % ||   356 |    17 ||   ia2280 |   7 % ||    392 |    22 ||   224 |     1 ||   168 |    21 ||
+||  8 |  - |  - ||scomputer    || 3120 |  12 % |   -   |   2 % ||   384 |    18 ||   ia2280 |   7 % ||    392 |    22 ||   224 |     1 ||   168 |    21 ||
 ||  1 |  2 |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |     1 ||   mb7099 |   -   ||     10 |     1 ||    10 |     1 ||     - |     - ||
 ||  2 |  2 |  1 ||students     || 6144 |  35 % |   7 % |   -   ||  2160 |    10 ||  ian4134 |  16 % ||     17 |     2 ||    16 |     1 ||     1 |     1 ||
 ==========================================================================================================================================================
@@ -341,7 +341,6 @@ gencore    9642507   compute     gencore       36    PENDING   gencore-medium   
 gencore    9642506   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642510   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642500   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9642502   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642508   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642495   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642494   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
@@ -393,7 +392,6 @@ gencore    9642415   compute     gencore       36    PENDING   gencore-medium   
 gencore    9642413   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642405   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642406   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9642402   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642401   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642404   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9642396   compute     gencore       36    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
@@ -1041,6 +1039,104 @@ drn2       9641970   nvidia      cgsb          20    PENDING   nvidia           
 drn2       9641970   nvidia      cgsb          20    PENDING   nvidia           gpu:1                              JobArrayTaskLimit                       
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
 hem9984    9691209   nvidia      nyuny         10    PENDING   nvidia           gpu:8                              AssocGrpGRES                            
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9691952   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9691952   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9691952   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -1141,106 +1237,6 @@ ad7091     9691952   nvidia      chemistry     1     PENDING   nvidia           
 ad7091     9691952   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9691952   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ad7091     9691952   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ad7091     9691951   nvidia      chemistry     1     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
