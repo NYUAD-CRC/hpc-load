@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          4       35       10 %     || DALMA    ||          31%          262           81         8222           81          84          16      ||
+||   39          4       35       10 %     || DALMA    ||          30%          263           81         8250           80          83          16      ||
 ||   99         59       40       59 %     || JUBAIL   ||          85%            6           76         3780          138          18           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@
 ||  7 |  - |  - ||cass         || 4096 |  63 % |   9 % |   -   ||  2592 |     7 ||   snb463 |  62 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    52 |     7 ||   hj2836 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   7 % |   -   |   1 % ||   320 |     9 ||     gb77 |   3 % ||    100 |     1 ||     - |     - ||   100 |     1 ||
-||  2 |  - |  - ||chemistry    ||12824 |  44 % |  14 % |  11 % ||  5658 |   142 ||  sme9918 |  20 % ||  40161 |    83 ||     - |     - || 40161 |    83 ||
+||  2 |  - |  - ||chemistry    ||12824 |  43 % |  14 % |  10 % ||  5630 |   141 ||  sme9918 |  20 % ||  40161 |    83 ||     - |     - || 40161 |    83 ||
 ||  2 |  - |  - ||civil        || 3200 |  25 % |   1 % |   2 % ||   831 |    34 ||   da3205 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  47 % |   4 % |   -   ||  1464 |    22 ||   ap6420 |  41 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||     1 |     1 ||     phrc |   -   ||   1032 |    43 ||     - |     - ||  1032 |    43 ||
@@ -38,7 +38,7 @@
 ||  - |  - |  - ||default      ||  768 |  82 % |   2 % |   -   ||   636 |    10 ||  mb10325 |  58 % ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||ecomputer    || 4096 |   3 % |   -   |   -   ||   132 |    10 ||   ll5484 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    69 |     3 ||   yw3576 |   1 % ||    168 |     1 ||     - |     - ||   168 |     1 ||
-||  - |  - |  - ||gencore      || 4096 |  35 % |   -   |  11 % ||  1444 |    60 ||  gencore |  35 % ||   6600 |   275 ||     - |     - ||  6600 |   275 ||
+||  - |  - |  - ||gencore      || 4096 |  35 % |   -   |  11 % ||  1444 |    60 ||  gencore |  35 % ||   6480 |   270 ||     - |     - ||  6480 |   270 ||
 ||  - |  - |  - ||mechanical   ||12288 |  13 % |   5 % |   -   ||  1720 |     6 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - | 12 | 12 ||nyuny        || 1024 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     20 |     2 ||     - |     - ||    20 |     2 ||
 ||  2 |  - |  - ||physics      ||11824 |  39 % |  16 % |   -   ||  4656 |    10 ||  laa9597 |  34 % ||   3072 |     5 ||     - |     - ||  3072 |     5 ||
@@ -91,9 +91,9 @@ phrc       9626745   compute     cph           24    PENDING   phrc-medium      
 phrc       9626742   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9626740   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9626709   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
-mm12191    9747691   compute     scomputer     128   PENDING   c2               N/A                                QOSGrpCpuLimit                          
 mm12191    9747690   compute     scomputer     128   PENDING   c2               N/A                                QOSGrpCpuLimit                          
 mm12191    9747689   compute     scomputer     128   PENDING   c2               N/A                                QOSGrpCpuLimit                          
+mm12191    9747691   compute     scomputer     128   PENDING   c2               N/A                                QOSGrpCpuLimit                          
 laa9597    9729019   compute     physics       512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 laa9597    9729027   compute     physics       512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 phrc       9742004   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
@@ -142,11 +142,6 @@ sme9918    9747528   compute     chemistry     1280  PENDING   large            
 sme9918    9747530   compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    9747536   compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    9747537   compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9750066   compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
