@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         26       13       66 %     || DALMA    ||          14%          344           25        10135           53          48           4      ||
-||   99         89       10       89 %     || JUBAIL   ||          92%            1           29         1771          191          23           0      ||
+||   39         26       13       66 %     || DALMA    ||          14%          344           25        10123           53          48           4      ||
+||   99         89       10       89 %     || JUBAIL   ||          93%            1           27         1483          193          26           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:14   GPU:7
@@ -23,11 +23,11 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  10 % |   2 % |   -   ||   633 |     6 ||  tag9888 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  14 % |   3 % |   -   ||   889 |     7 ||   mk7641 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||bio          || 8192 |  12 % |   3 % |   -   ||  1024 |     2 ||  hka5519 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||cass         || 4096 |  67 % |   9 % |   -   ||  2784 |    12 ||   snb463 |  62 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   170 |    15 ||   baj321 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  9 | 28 |  - ||cgsb         || 4096 |  15 % |   1 % |   2 % ||   624 |    26 ||     drn2 |   4 % ||    560 |    28 ||     - |     - ||     - |     - ||
+|| 15 |  1 |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   178 |    16 ||   baj321 |   1 % ||     18 |     1 ||    18 |     1 ||     - |     - ||
+||  9 | 28 |  - ||cgsb         || 4096 |  15 % |   1 % |   2 % ||   628 |    27 ||     drn2 |   4 % ||    560 |    28 ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||chemistry    ||12824 |  51 % |  19 % |   7 % ||  6595 |   131 ||  sme9918 |  23 % ||  25985 |    26 ||     - |     - || 25985 |    26 ||
 ||  2 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     8 |     2 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  1 |  - ||civil        || 3200 |  13 % |   1 % |   -   ||   443 |     8 ||   da3205 |  12 % ||    128 |     1 ||   128 |     1 ||     - |     - ||
@@ -35,7 +35,7 @@
 ||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||     1 |     1 ||     phrc |   -   ||   1032 |    43 ||     - |     - ||  1032 |    43 ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     12 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  25 % |   2 % |   -   ||   796 |     3 ||   rp4207 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  59 % |   1 % |   -   ||   459 |    11 ||  mb10325 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  63 % |   1 % |   -   ||   491 |    12 ||  mb10325 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
 || 16 |  2 |  - ||ecomputer    || 4096 |  11 % |   1 % |   -   ||   478 |    25 || sas10092 |   7 % ||     48 |     2 ||    48 |     2 ||     - |     - ||
 ||  1 |  9 |  - ||electrical   || 4096 |   -   |   -   |   -   ||     1 |     1 ||   zw3464 |   -   ||    648 |     9 ||   480 |     8 ||   168 |     1 ||
 ||  - |  - |  - ||gencore      || 4096 |   3 % |   -   |   1 % ||   144 |     7 ||  gencore |   3 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -44,7 +44,7 @@
 ||  2 |  - |  - ||physics      ||11824 |  78 % |  32 % |   -   ||  9264 |    12 ||    ti602 |  34 % ||   2560 |     5 ||     - |     - ||  2560 |     5 ||
 ||  - |  - |  - ||preempt      ||27000 |   3 % |   3 % |   -   ||   960 |    30 ||   wr2172 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  3 |  - ||scomputer    || 3120 |  21 % |   -   |   3 % ||   656 |    19 ||   ia2280 |  11 % ||     19 |     5 ||     3 |     3 ||    16 |     2 ||
-|| 10 |1292 |1292 ||socialscience|| 4096 |   -   |   -   |   -   ||    33 |     6 ||  ms13502 |   -   ||    655 |   646 ||     - |     - ||   655 |   646 ||
+|| 10 |1286 |1286 ||socialscience|| 4096 |   -   |   -   |   -   ||    33 |     6 ||  ms13502 |   -   ||    652 |   643 ||     - |     - ||   652 |   643 ||
 || 17 |  7 |  7 ||students     || 6144 |  20 % |   3 % |   1 % ||  1247 |    25 ||  ian4134 |  16 % ||     25 |     7 ||     - |     - ||    25 |     7 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||c2           ||  384 |  33 % |   -   |   -   ||   128 |     1 ||  mm12191 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -92,9 +92,9 @@ phrc       9626745   compute     cph           24    PENDING   phrc-medium      
 phrc       9626742   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9626740   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9626709   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
-phrc       9742004   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9742001   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9741990   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
+phrc       9742004   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9742253   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9742433   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
 phrc       9742445   compute     cph           24    PENDING   phrc-medium      N/A                                QOSMinCpuNotSatisfied                   
@@ -146,9 +146,6 @@ jdg8833    9756054   nvidia      students      4     PENDING   nvidia           
 jdg8833    9756054   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    9756054   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    9756054   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-akm477     9761222   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
-akm477     9761222   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
-akm477     9761222   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     9761222   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     9761222   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     9761222   nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
