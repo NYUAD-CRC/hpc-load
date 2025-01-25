@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         35        4       89 %     || DALMA    ||          15%          316           54        10025           50          51           5      ||
-||   96         84       12       87 %     || JUBAIL   ||          65%           47           72         9704          103          27           0      ||
+||   39         35        4       89 %     || DALMA    ||          15%          316           54        10033           50          51           5      ||
+||   96         84       12       87 %     || JUBAIL   ||          65%           47           72         9704          103          26           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:10   GPU:11
@@ -28,7 +28,7 @@
 ||  - |  - |  - ||biology      || 3072 |   2 % |   -   |   -   ||    86 |     3 ||   tb2613 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||cass         || 4096 |  77 % |  10 % |   -   ||  3162 |    16 ||   snb463 |  62 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    14 |     1 ||  azm9155 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 18 |  4 |  4 ||ccs          || 6144 |   8 % |   -   |   2 % ||   512 |    54 ||   vk2599 |   4 % ||     32 |     4 ||     - |     - ||    32 |     4 ||
+|| 18 |  8 |  8 ||ccs          || 6144 |   8 % |   -   |   2 % ||   512 |    54 ||   vk2599 |   4 % ||     64 |     8 ||     - |     - ||    64 |     8 ||
 ||  - |  - |  - ||cgsb         || 4096 |  14 % |   2 % |   -   ||   612 |     8 ||   aa5506 |  10 % ||    100 |     1 ||     - |     - ||   100 |     1 ||
 ||  4 |  - |  - ||chemistry    ||12824 |  51 % |  20 % |   6 % ||  6650 |   114 ||  sme9918 |  26 % ||   7224 |    11 ||     - |     - ||  6712 |    10 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     6 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,13 +41,13 @@
 || 11 |  6 |  - ||ecomputer    || 4096 |   4 % |   -   |   -   ||   182 |    15 ||   hha243 |   1 % ||     64 |     4 ||    64 |     4 ||     - |     - ||
 ||  7 |  - |  - ||electrical   || 4096 |   3 % |   -   |   -   ||   150 |     8 ||   yw3576 |   2 % ||    168 |     1 ||     - |     - ||   168 |     1 ||
 ||  - |  - |  - ||gencore      || 4096 |   3 % |   -   |   -   ||   142 |    56 ||  gencore |   3 % ||   1445 |   332 ||     - |     - ||  1445 |   332 ||
-||  - |  - |  - ||mechanical   ||12288 |   -   |   -   |   -   ||    16 |     2 ||   ds7760 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||mechanical   ||12288 |   -   |   -   |   -   ||     8 |     1 ||   ds7760 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  4 |  4 ||nyuny        || 1024 |   -   |   -   |   -   ||    10 |     1 ||  hem9984 |   -   ||     20 |     2 ||     - |     - ||    20 |     2 ||
 ||  - |  2 |  - ||physics      ||11824 |  38 % |  16 % |   -   ||  4608 |     9 ||  laa9597 |  25 % ||   1072 |     3 ||    48 |     1 ||  1024 |     2 ||
 ||  - |  - |  - ||preempt      ||27000 |   7 % |   7 % |   -   ||  1952 |    61 ||   wr2172 |   7 % ||    112 |     1 ||     - |     - ||   112 |     1 ||
 || 18 |  4 |  - ||scomputer    || 3120 |  13 % |   -   |   3 % ||   433 |    18 ||   ia2280 |  10 % ||     20 |     2 ||    20 |     2 ||     - |     - ||
 || 10 |203 |203 ||socialscience|| 4096 |   -   |   -   |   -   ||    20 |     8 ||   mb7099 |   -   ||    203 |   203 ||     - |     - ||   203 |   203 ||
-|| 27 |  6 |  4 ||students     || 6144 |  19 % |   3 % |   -   ||  1192 |    34 ||  ian4134 |  12 % ||     41 |     5 ||    28 |     1 ||    13 |     4 ||
+|| 27 |  5 |  3 ||students     || 6144 |  19 % |   3 % |   -   ||  1192 |    34 ||  ian4134 |  12 % ||     37 |     4 ||    28 |     1 ||     9 |     3 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||cair         ||  128 |  25 % |   -   |   -   ||    32 |     2 ||   sy2366 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 |  75 % |   5 % |   -   ||  1536 |     3 ||   snb463 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -72,21 +72,21 @@ sme9918    9747383   compute     chemistry     640   PENDING   large            
 aa5506     9838711   compute     cgsb          100   PENDING   mordor           N/A                                QOSGrpCpuLimit                          
 cc6881     9829246   compute     physics       512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 gencore    9778596   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779696   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779188   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779696   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778566   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779161   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779699   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778754   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779161   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779361   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778896   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778754   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778742   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779683   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778941   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779542   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779749   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779099   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779542   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779611   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779099   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779096   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779064   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779647   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -99,16 +99,16 @@ gencore    9779432   compute     gencore       1     PENDING   gencore-small    
 gencore    9778889   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779262   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778967   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779062   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779727   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778995   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779062   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778735   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779607   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778995   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778768   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779607   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779341   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779159   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778634   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779735   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778634   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779754   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779282   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779322   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -117,19 +117,19 @@ gencore    9779556   compute     gencore       1     PENDING   gencore-small    
 gencore    9779061   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779122   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779041   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778623   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778579   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778623   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779711   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779501   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779124   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778783   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779124   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779104   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778607   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779423   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778617   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779190   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778845   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778546   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779190   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779799   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779665   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779691   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -146,8 +146,8 @@ gencore    9779669   compute     gencore       1     PENDING   gencore-small    
 gencore    9778584   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779478   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779203   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779720   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779172   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779720   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779444   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778905   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779402   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -159,8 +159,8 @@ gencore    9779679   compute     gencore       1     PENDING   gencore-small    
 gencore    9779011   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779338   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778803   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779726   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779763   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779726   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779406   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779087   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779168   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -168,13 +168,12 @@ gencore    9779697   compute     gencore       8     PENDING   gencore-small    
 gencore    9779477   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779111   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779039   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778547   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778928   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778547   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
 hem9984    9795848   nvidia      nyuny         10    PENDING   nvidia           gpu:2                              AssocGrpGRES                            
 hem9984    9795849   nvidia      nyuny         10    PENDING   nvidia           gpu:2                              AssocGrpGRES                            
 mb7099     9821102   nvidia      socialscience 1     PENDING   nvidia           gpu:v100:1                         AssocGrpGRES                            
-jdg8833    9837402   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    9837402   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jdg8833    9837402   nvidia      students      4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 atb8710    9840667   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -381,8 +380,12 @@ atb8710    9846953   nvidia      socialscience 1     PENDING   nvidia           
 atb8710    9846953   nvidia      socialscience 1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 hj2836     9847965   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     9847966   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     9848020   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     9848019   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     9848020   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     9848026   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     9848027   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     9848028   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     9848029   nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
