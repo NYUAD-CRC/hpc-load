@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         36        3       92 %     || DALMA    ||          11%          335           38        10523           43          39           5      ||
-||   96         80       16       83 %     || JUBAIL   ||          58%           61           72        11744           89          22           0      ||
+||   39         36        3       92 %     || DALMA    ||          11%          335           38        10531           43          36           5      ||
+||   96         80       16       83 %     || JUBAIL   ||          58%           61           72        11776           89          22           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:7   GPU:13
+	OOD JOBS:  CPU:6   GPU:13
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -23,7 +23,7 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||avengers     ||12800 |   1 % |   -   |   -   ||   136 |     2 ||     wz22 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||avengers     ||12800 |   1 % |   -   |   -   ||   128 |     1 ||     wz22 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   1 % |   -   |   -   ||    32 |     2 ||   tb2613 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||cass         || 4096 |  75 % |  10 % |   -   ||  3090 |    15 ||   snb463 |  62 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    14 |     1 ||  azm9155 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -42,12 +42,12 @@
 ||  1 |  - |  - ||mechanical   ||12288 |   -   |   -   |   -   ||     1 |     1 ||    wj634 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  2 |  2 ||nyuny        || 1024 |   -   |   -   |   -   ||    10 |     1 ||  hem9984 |   -   ||     10 |     1 ||     - |     - ||    10 |     1 ||
 ||  - |  2 |  - ||physics      ||11824 |  38 % |  16 % |   -   ||  4608 |     9 ||  laa9597 |  25 % ||   1200 |     3 ||    48 |     1 ||  1152 |     2 ||
-||  - |  - |  - ||preempt      ||27000 |   6 % |   6 % |   -   ||  1664 |    52 ||   wr2172 |   6 % ||    112 |     1 ||     - |     - ||   112 |     1 ||
+||  - |  - |  - ||preempt      ||27000 |   6 % |   6 % |   -   ||  1632 |    51 ||   wr2172 |   6 % ||    112 |     1 ||     - |     - ||   112 |     1 ||
 || 23 |  5 |  5 ||scomputer    || 3120 |  11 % |   -   |   2 % ||   349 |    21 ||   ia2280 |   7 % ||     20 |     5 ||     - |     - ||    20 |     5 ||
 || 10 |196 |196 ||socialscience|| 4096 |   -   |   -   |   -   ||    20 |     8 ||   mb7099 |   -   ||    196 |   196 ||     - |     - ||   196 |   196 ||
-|| 19 |  8 |  1 ||students     || 6144 |  19 % |   3 % |   -   ||  1220 |    87 ||  ian4134 |  12 % ||    505 |   237 ||    40 |     4 ||   465 |   233 ||
+|| 19 |  8 |  1 ||students     || 6144 |  19 % |   3 % |   -   ||  1220 |    87 ||  ian4134 |  12 % ||    373 |   171 ||    40 |     4 ||   333 |   167 ||
 ==========================================================================================================================================================
-||  - |  - |  - ||bedoor       ||  128 | 100 % |   -   |   -   ||   128 |    64 ||  sas9891 | 100 % ||    464 |   232 ||     - |     - ||   464 |   232 ||
+||  - |  - |  - ||bedoor       ||  128 | 100 % |   -   |   -   ||   128 |    64 ||  sas9891 | 100 % ||    332 |   166 ||     - |     - ||   332 |   166 ||
 ||  2 |  - |  - ||cair         ||  128 |  25 % |   -   |   -   ||    32 |     2 ||   sy2366 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 |  75 % |   5 % |   -   ||  1536 |     3 ||   snb463 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||csm          ||  640 |  18 % |   -   |   -   ||   120 |     1 ||   da3205 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -232,104 +232,38 @@ sas9891    9849070   compute     students      2     PENDING   bedoor           
 sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
 sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
 sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
-sas9891    9849070   compute     students      2     PENDING   bedoor           N/A                                QOSGrpCpuLimit                          
 gencore    9778995   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778768   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779607   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778768   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779341   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779159   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779735   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778634   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779754   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779282   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779322   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779247   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779556   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779322   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779061   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779556   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779122   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779041   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778579   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778623   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778579   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779711   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779501   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778783   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779124   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778783   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779104   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778607   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779423   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778617   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778845   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778546   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779190   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778845   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779799   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779665   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779691   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779042   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779691   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779610   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779276   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779623   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -342,8 +276,8 @@ gencore    9779669   compute     gencore       1     PENDING   gencore-small    
 gencore    9778584   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779478   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779203   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9779172   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779720   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9779172   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779444   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778905   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779402   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -364,8 +298,8 @@ gencore    9779697   compute     gencore       8     PENDING   gencore-small    
 gencore    9779477   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779111   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779039   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    9778928   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9778547   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    9778928   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779672   compute     gencore       8     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779413   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    9779209   compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
