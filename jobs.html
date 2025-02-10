@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         10       29       25 %     || DALMA    ||          23%          285           58         9093           74          56           5      ||
-||   99         86       13       86 %     || JUBAIL   ||          73%           27           83         7441          112          35           0      ||
+||   39         10       29       25 %     || DALMA    ||          22%          286           62         9265           69          50           5      ||
+||   99         89       10       89 %     || JUBAIL   ||          73%           27           83         7330          111          38           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:10   GPU:12
@@ -25,8 +25,8 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  12 % |   2 % |   -   ||   793 |     8 ||  tag9888 |  10 % ||   3712 |    29 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   -   |   -   |   -   ||    24 |     1 ||   rp4185 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  - |  - ||cass         || 4096 |  66 % |   9 % |   -   ||  2740 |    20 ||   snb463 |  50 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
-||  9 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||   110 |    14 ||   baj321 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  5 |  - |  - ||cass         || 4096 |  64 % |   9 % |   -   ||  2660 |    19 ||   snb463 |  50 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
+|| 10 |  1 |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   182 |    18 ||   baj321 |   2 % ||     18 |     1 ||    18 |     1 ||     - |     - ||
 || 10 |  3 |  3 ||cgsb         || 4096 |  33 % |   3 % |   4 % ||  1359 |   129 ||   aa5506 |  15 % ||   1164 |   144 ||     - |     - ||  1164 |   144 ||
 ||  3 |  - |  - ||chemistry    ||12824 |  48 % |  17 % |  10 % ||  6222 |   106 ||   saa788 |  21 % ||  40752 |   114 ||     - |     - || 27952 |    97 ||
 ||  4 |  - |  - ||civil        || 3200 |   -   |   -   |   -   ||    12 |     5 ||  fma9357 |   -   ||    128 |     1 ||   128 |     1 ||     - |     - ||
@@ -42,7 +42,7 @@
 ||  - |  - |  - ||preempt      ||27000 |   7 % |   6 % |   -   ||  1920 |    60 ||   wr2172 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  2 |  - ||scomputer    || 3120 |   9 % |   -   |   2 % ||   300 |     5 ||   ia2280 |   7 % ||     12 |     1 ||    12 |     1 ||     - |     - ||
 || 10 |1944 |1944 ||socialscience|| 4096 |   -   |   -   |   -   ||    33 |     6 ||  ms13502 |   -   ||    993 |   972 ||     - |     - ||   993 |   972 ||
-|| 14 |  2 |  2 ||students     || 6144 |  34 % |   5 % |   3 % ||  2104 |   118 ||  ian4134 |  25 % ||     97 |    22 ||     - |     - ||    97 |    22 ||
+|| 13 |  2 |  2 ||students     || 6144 |  31 % |   5 % |   2 % ||  1931 |    74 ||  ian4134 |  25 % ||     17 |     2 ||     - |     - ||    17 |     2 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  33 % |   -   |   -   ||   129 |     2 ||   db5394 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cair         ||  128 |   3 % |   -   |   -   ||     4 |     1 ||   cw3437 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -51,7 +51,7 @@
 ||  - |  - |  - ||gfg          || 1920 |  80 % |   5 % |   -   ||  1536 |     3 ||  laa9597 |  80 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 ||  - |  - |  - ||mordor       ||  384 |   5 % |   -   |   -   ||    20 |     1 ||   aa5506 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||serdal       ||   80 |  75 % |   -   |   -   ||    60 |     3 ||   wh1165 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||shamout      ||  192 |  28 % |   -   |   -   ||    54 |     3 ||   baj321 |  28 % ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  - |  - ||shamout      ||  192 |  56 % |   -   |   -   ||   108 |     6 ||   baj321 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
@@ -218,26 +218,6 @@ saa788     10013781  compute     chemistry     48    PENDING   small            
 saa788     10013782  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10013783  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10013784  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sas9891    10014980  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
 mb7099     10013218  nvidia      socialscience 10    PENDING   nvidia           gpu:a100:2                         AssocGrpGRES                            
 mb7099     10013222  nvidia      socialscience 4     PENDING   nvidia           gpu:a100:2                         AssocGrpGRES                            
