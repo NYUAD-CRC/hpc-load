@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         26       13       66 %     || DALMA    ||          18%          273           84         9698           61          45           5      ||
-||   99         91        8       91 %     || JUBAIL   ||          84%            2           94         4230          125          27           0      ||
+||   39         26       13       66 %     || DALMA    ||          18%          276           82         9730           60          45           5      ||
+||   99         91        8       91 %     || JUBAIL   ||          84%            3           93         4258          125          26           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:9   GPU:15
+	OOD JOBS:  CPU:9   GPU:16
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -25,9 +25,9 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  18 % |   4 % |   -   ||  1160 |     7 ||  tag9888 |  10 % ||   2688 |    21 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   -   |   -   |   -   ||    24 |     1 ||   rp4185 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |  - |  - ||cass         || 4096 |  67 % |   9 % |   -   ||  2756 |    22 ||   snb463 |  50 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
-|| 11 |  - |  - ||ccs          || 6144 |   3 % |   -   |   1 % ||   193 |    24 ||   vk2599 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||cgsb         || 4096 |  13 % |   1 % |   1 % ||   537 |    56 ||   nb3608 |   4 % ||    275 |    91 ||     - |     - ||   275 |    91 ||
+||  6 |  - |  - ||cass         || 4096 |  67 % |   9 % |   -   ||  2752 |    21 ||   snb463 |  50 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
+|| 11 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   145 |    20 ||   vk2599 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||cgsb         || 4096 |  12 % |   1 % |   1 % ||   525 |    71 ||   nb3608 |   3 % ||    259 |    75 ||     - |     - ||   259 |    75 ||
 ||  6 |  - |  - ||chemistry    ||12824 |  52 % |  18 % |  10 % ||  6742 |   168 ||   saa788 |  21 % ||  32288 |    82 ||     - |     - || 25632 |    73 ||
 ||  1 |  - |  - ||civil        || 3200 |   4 % |   -   |   -   ||   138 |     4 ||   da3205 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  51 % |   5 % |   -   ||  1596 |     8 ||   ap6420 |  41 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,9 +41,9 @@
 ||  - |  - |  - ||mechanical   ||12288 |  19 % |   8 % |   -   ||  2406 |    10 ||   ds7760 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  43 % |  17 % |   -   ||  5168 |    11 ||  laa9597 |  25 % ||   1536 |     3 ||     - |     - ||  1536 |     3 ||
 ||  - |  - |  - ||preempt      ||27000 |  10 % |   9 % |   -   ||  2720 |    62 ||   wr2172 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 14 | 11 |  8 ||scomputer    || 3120 |  17 % |   -   |   3 % ||   550 |    28 ||   ia2280 |   8 % ||    116 |    14 ||    20 |     2 ||    96 |    12 ||
+|| 15 |  8 |  6 ||scomputer    || 3120 |  17 % |   -   |   3 % ||   560 |    29 ||   ia2280 |   8 % ||     90 |    11 ||    10 |     1 ||    80 |    10 ||
 ||  6 |  - |  - ||socialscience|| 4096 |   1 % |   -   |   -   ||    52 |     4 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 22 |  6 |  3 ||students     || 6144 |  51 % |  10 % |   1 % ||  3179 |    36 ||  ian4134 |  22 % ||     55 |     4 ||    30 |     1 ||    25 |     3 ||
+|| 22 |  5 |  2 ||students     || 6144 |  51 % |  10 % |   1 % ||  3179 |    36 ||  ian4134 |  22 % ||     47 |     3 ||    30 |     1 ||    17 |     2 ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 |  16 % |   -   |   -   ||    65 |     2 ||   sy2366 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cair         ||  128 |   3 % |   -   |   -   ||     4 |     1 ||   cw3437 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -165,9 +165,13 @@ saa788     10013781  compute     chemistry     48    PENDING   small            
 saa788     10013782  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10013783  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10013784  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-hhg3       9998551   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998551   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998551   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
+hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
+hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
+hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
+hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
+hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
+hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
+hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998595   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998595   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998595   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
@@ -188,26 +192,6 @@ hhg3       9998584   compute     cgsb          1     PENDING   small            
 hhg3       9998584   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998584   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998584   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998573   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
-hhg3       9998562   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998618   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998618   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
 hhg3       9998618   compute     cgsb          1     PENDING   small            N/A                                AssocGrpMemLimit                        
@@ -235,8 +219,6 @@ gi372      10020611  condo       scomputer     8     PENDING   nlp              
 gi372      10020610  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10020609  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 ak11796    9439745   nvidia      students      1     PENDING   nvidia           gpu:v100:1                         QOSMaxWallDurationPerJobLimit           
-gi372      10020602  nvidia      scomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-gi372      10020601  nvidia      scomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 gi372      10020616  nvidia      scomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 gi372      10020615  nvidia      scomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 gi372      10020614  nvidia      scomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
@@ -250,7 +232,6 @@ ll5484     10022990  nvidia      ecomputer     8     PENDING   nvidia           
 ll5484     10022991  nvidia      ecomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ll5484     10022992  nvidia      ecomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ll5484     10022994  nvidia      ecomputer     8     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-yd2247     10021441  nvidia      students      8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 mm12971    9134433   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 mm12971    9134259   visual      cqts          6     PENDING   normal           N/A                                PartitionTimeLimit                      
 </pre>
