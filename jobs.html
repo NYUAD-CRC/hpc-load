@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         25       14       64 %     || DALMA    ||          21%          274           78         9334           67          51           6      ||
-||   99         93        6       93 %     || JUBAIL   ||          86%            0          102         3768          121          39           0      ||
+||   39         23       16       58 %     || DALMA    ||          21%          273           79         9333           67          52           6      ||
+||   99         93        6       93 %     || JUBAIL   ||          86%            0          102         3832          121          39           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:9   GPU:2
@@ -23,15 +23,15 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  14 % |   3 % |   -   ||   921 |     9 ||  tag9888 |  10 % ||   7552 |    59 ||   128 |     1 ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  14 % |   3 % |   -   ||   921 |     9 ||  tag9888 |  10 % ||   7424 |    58 ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||avengers     ||12800 |   -   |   -   |   -   ||    20 |     1 ||     wz22 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  13 % |   1 % |   -   ||   406 |    28 ||   tb2613 |  13 % ||   5178 |   165 ||     - |     - ||  5178 |   165 ||
-||  6 |  - |  - ||cass         || 4096 |  42 % |   6 % |   -   ||  1761 |    14 ||   snb463 |  37 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
+||  - |  - |  - ||biology      || 3072 |  11 % |   1 % |   -   ||   343 |    28 ||   tb2613 |  11 % ||   5177 |   164 ||     - |     - ||  5177 |   164 ||
+||  4 |  - |  - ||cass         || 4096 |  42 % |   6 % |   -   ||  1745 |    13 ||   snb463 |  37 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 || 18 |  - |  - ||ccs          || 6144 |   4 % |   -   |   -   ||   264 |    22 ||   baj321 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |  10 % |   -   |   2 % ||   425 |    27 ||   sg5533 |   7 % ||     94 |    25 ||     - |     - ||    94 |    25 ||
-||  5 |  2 |  - ||chemistry    ||12824 |  56 % |  19 % |  13 % ||  7239 |   249 ||  sme9918 |  19 % || 114662 |   443 ||   256 |     2 || 92646 |   424 ||
-||  3 |  5 |  - ||civil        || 3200 |  13 % |   1 % |   -   ||   424 |     5 ||   da3205 |  12 % ||    100 |     5 ||   100 |     5 ||     - |     - ||
-||  2 |  - |  - ||collaborator || 3072 |  29 % |   3 % |   -   ||   908 |    15 ||   ap6420 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
+||  5 |  2 |  - ||chemistry    ||12824 |  56 % |  19 % |  13 % ||  7239 |   249 ||  sme9918 |  19 % || 115718 |   465 ||   256 |     2 || 93702 |   446 ||
+||  4 |  4 |  - ||civil        || 3200 |  13 % |   1 % |   -   ||   444 |     6 ||   da3205 |  12 % ||     80 |     4 ||    80 |     4 ||     - |     - ||
+||  2 |  1 |  - ||collaborator || 3072 |  29 % |   3 % |   -   ||   908 |    15 ||   ap6420 |  29 % ||      1 |     1 ||     1 |     1 ||     - |     - ||
 ||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     6 |     1 ||  mm12971 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  12 % |   1 % |   -   ||   384 |     3 ||   rp4207 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  32 % |   -   |   -   ||   252 |     4 ||  mb10325 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -42,18 +42,17 @@
 ||  - |  - |  - ||nyushanghai  || 1024 |   3 % |   -   |   -   ||    32 |     1 ||   wr2172 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  65 % |  26 % |   -   ||  7728 |    16 ||   cc6881 |  34 % ||   1536 |     3 ||     - |     - ||  1536 |     3 ||
 ||  - |  - |  - ||preempt      ||27000 |   6 % |   6 % |   1 % ||  1888 |    59 ||   wr2172 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 | 29 |  - ||scomputer    || 3120 |  15 % |   -   |   3 % ||   479 |    19 ||   ia2280 |   7 % ||    368 |    46 ||   232 |    29 ||   136 |    17 ||
-|| 18 |1104 |1104 ||socialscience|| 4096 |   -   |   -   |   -   ||    30 |     9 ||   mb7099 |   -   ||    552 |   552 ||     - |     - ||   552 |   552 ||
+||  8 | 27 |  - ||scomputer    || 3120 |  15 % |   -   |   3 % ||   471 |    18 ||   ia2280 |   7 % ||    336 |    42 ||   216 |    27 ||   120 |    15 ||
+|| 18 |1100 |1100 ||socialscience|| 4096 |   -   |   -   |   -   ||    30 |     9 ||   mb7099 |   -   ||    550 |   550 ||     - |     - ||   550 |   550 ||
 ||  6 | 11 |  - ||students     || 6144 |  45 % |   9 % |   -   ||  2774 |    18 ||  ian4134 |  18 % ||     48 |     4 ||    48 |     4 ||     - |     - ||
 ==========================================================================================================================================================
 ||  4 |  - |  - ||c2           ||  384 |  16 % |   -   |   -   ||    64 |     1 ||   sy2366 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  1 |  1 ||cair         ||  128 |  50 % |   -   |   -   ||    64 |     1 ||   sy2366 |  50 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 |  75 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 ||  2 |  - |  - ||csm          ||  640 |  40 % |   -   |   -   ||   256 |     2 ||   da3205 |  40 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||ebrainccs    ||   64 |  25 % |   -   |   -   ||    16 |     2 ||   nsa325 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gfg          || 1920 |  80 % |   5 % |   -   ||  1536 |     3 ||  laa9597 |  80 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 ||  - |  - |  - ||mordor       ||  384 |   5 % |   -   |   -   ||    20 |     1 ||   aa5506 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 | 17 | 17 ||nlp          ||  208 |  26 % |   -   |   -   ||    56 |     7 ||    gi372 |  26 % ||    136 |    17 ||     - |     - ||   136 |    17 ||
+||  7 | 15 | 15 ||nlp          ||  208 |  26 % |   -   |   -   ||    56 |     7 ||    gi372 |  26 % ||    120 |    15 ||     - |     - ||   120 |    15 ||
 ||  3 |  - |  - ||serdal       ||   80 |  75 % |   -   |   -   ||    60 |     3 ||   wh1165 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||shamout      ||  192 |  56 % |   -   |   -   ||   108 |     6 ||   baj321 |  56 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -567,8 +566,28 @@ ah166      10041104  compute     chemistry     1     PENDING   small            
 ah166      10041104  compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      10041104  compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      10041104  compute     chemistry     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-gi372      10041274  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10041275  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+saa788     10041540  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041541  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041543  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041545  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041548  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041549  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041550  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041551  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041552  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041554  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041555  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041556  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041557  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041558  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041566  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041565  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041564  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041563  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041562  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041561  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041560  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10041559  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 gi372      10041276  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10041277  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10041278  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
@@ -585,8 +604,6 @@ gi372      10041520  condo       scomputer     8     PENDING   nlp              
 gi372      10041521  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10041522  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 sn3397     10039293  condo       electrical    1     PENDING   cair             gpu:1                              QOSGrpGRES                              
-akm477     10024584  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
-akm477     10024584  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     10024584  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     10024584  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     10024584  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
