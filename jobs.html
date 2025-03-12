@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         32        7       82 %     || DALMA    ||          21%          301           56         9335           66          33           5      ||
-||   99         79       20       79 %     || JUBAIL   ||          83%            5           82         4720          137          16           0      ||
+||   39         32        7       82 %     || DALMA    ||          21%          301           56         9335           66          36           5      ||
+||   99         80       19       80 %     || JUBAIL   ||          83%            5           82         4720          137          13           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:21   GPU:5
+	OOD JOBS:  CPU:21   GPU:6
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -28,8 +28,8 @@
 ||  - |  - |  - ||biology      || 3072 |  12 % |   1 % |   -   ||   396 |     8 ||   tb2613 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  50 % |   7 % |   -   ||  2048 |     4 ||   snb463 |  50 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 || 12 |  - |  - ||cgsb         || 4096 |   8 % |   1 % |   -   ||   365 |    21 ||     drn2 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  6 |  - ||chemistry    ||12824 |  69 % |  30 % |   1 % ||  8939 |   118 ||  sme9918 |  20 % ||  43697 |    75 ||     1 |     1 || 36016 |    68 ||
-||  2 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     4 |     2 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  6 |  - ||chemistry    ||12824 |  69 % |  30 % |   1 % ||  8951 |   120 ||  sme9918 |  20 % ||  43697 |    75 ||     1 |     1 || 36016 |    68 ||
+||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     6 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||civil        || 3200 |  29 % |   1 % |   4 % ||   953 |    26 ||    sa183 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  6 |  6 ||collaborator || 3072 |  58 % |   5 % |   1 % ||  1785 |     9 ||   ap6420 |  50 % ||   5161 |   725 ||     - |     - ||  5161 |   725 ||
 ||  - |  - |  - ||default      ||  768 |  93 % |   2 % |   -   ||   721 |    12 ||   db5394 |  36 % ||    128 |     1 ||     - |     - ||   128 |     1 ||
@@ -40,9 +40,9 @@
 ||  - |  - |  - ||nyushanghai  || 1024 |   3 % |   -   |   -   ||    32 |     1 ||   wr2172 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  64 % |  26 % |   -   ||  7680 |    15 ||   cc6881 |  64 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  11 % |   8 % |   5 % ||  2980 |    80 ||   wr2172 |   8 % ||   1536 |     3 ||  1536 |     3 ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   2 % ||   300 |   100 ||  as14864 |   4 % ||   1497 |   499 ||     - |     - ||  1497 |   499 ||
+||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   2 % ||   297 |    99 ||  as14864 |   4 % ||   1464 |   488 ||     - |     - ||  1464 |   488 ||
 || 20 |  4 |  4 ||scomputer    || 3120 |   3 % |   -   |   -   ||    98 |     8 ||   rk3570 |   1 % ||     10 |     1 ||     - |     - ||    10 |     1 ||
-|| 14 | 72 | 72 ||socialscience|| 4096 |   -   |   -   |   -   ||    17 |     8 ||   mb7099 |   -   ||     36 |    36 ||     - |     - ||    36 |    36 ||
+|| 14 | 70 | 70 ||socialscience|| 4096 |   -   |   -   |   -   ||    17 |     8 ||   mb7099 |   -   ||     35 |    35 ||     - |     - ||    35 |    35 ||
 || 19 | 22 | 18 ||students     || 6144 |  17 % |   1 % |   5 % ||  1080 |    49 ||   xy2949 |   7 % ||    151 |    15 ||     7 |     2 ||   144 |    13 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |  84 % |   -   |   -   ||   325 |     5 ||   db5394 |  73 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -576,20 +576,8 @@ as14864    10262260  compute     psychology    3     PENDING   small            
 as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10262260  compute     psychology    3     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ah166      10257485  compute     chemistry     768   PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 oga2       10256415  compute     default       128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
-akm477     10076388  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     10076388  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     10076388  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 akm477     10076388  nvidia      socialscience 1     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
