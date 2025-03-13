@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         32        7       82 %     || DALMA    ||          22%          282           47         9108           79          31           7      ||
-||   99         85       14       85 %     || JUBAIL   ||          86%            3           78         3930          143          21           0      ||
+||   39         32        7       82 %     || DALMA    ||          22%          282           47         9112           79          34           7      ||
+||   99         85       14       85 %     || JUBAIL   ||          86%            3           78         3962          143          18           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:16   GPU:3
@@ -28,12 +28,12 @@
 ||  - |  - |  - ||biology      || 3072 |  11 % |   1 % |   -   ||   340 |     6 ||   tb2613 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  4 |  - ||cair         || 2048 |   -   |   -   |   -   ||     1 |     1 ||   jz7323 |   -   ||      1 |     1 ||     1 |     1 ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  50 % |   7 % |   -   ||  2048 |     4 ||   snb463 |  50 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
-|| 12 |  1 |  1 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||      8 |     1 ||     - |     - ||     8 |     1 ||
+|| 12 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  2 |  2 ||cgsb         || 4096 |  11 % |   1 % |   -   ||   482 |    23 ||     drn2 |   5 % ||   4488 |   141 ||     - |     - ||  4488 |   141 ||
 ||  3 |  - |  - ||chemistry    ||12824 |  68 % |  29 % |   1 % ||  8733 |    87 ||  sme9918 |  19 % ||  24624 |    60 ||     - |     - || 22064 |    58 ||
 ||  1 |  - |  - ||civil        || 3200 |  29 % |   1 % |   4 % ||   940 |    22 ||    sa183 |  16 % ||     40 |     1 ||     - |     - ||    40 |     1 ||
 ||  2 |  4 |  4 ||collaborator || 3072 |  66 % |   6 % |   1 % ||  2040 |    12 ||   ap6420 |  60 % ||   5105 |   723 ||     - |     - ||  5105 |   723 ||
-||  - |  - |  - ||default      ||  768 |  90 % |   2 % |   -   ||   697 |    16 ||   db5394 |  23 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  86 % |   2 % |   -   ||   661 |    13 ||   db5394 |  23 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    14 |     2 ||   ll5484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 24 |  2 |  2 ||electrical   || 4096 |   3 % |   -   |   -   ||   146 |    23 ||   yw3576 |   1 % ||      4 |     1 ||     - |     - ||     4 |     1 ||
 ||  - |  - |  - ||mechanical   ||12288 |  14 % |   6 % |   -   ||  1792 |    10 ||   ds7760 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -42,7 +42,7 @@
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    60 |     1 ||   gs2750 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 36 |196 |196 ||scomputer    || 3120 |   6 % |   -   |   -   ||   202 |    26 ||     ga73 |   1 % ||    778 |   193 ||     - |     - ||   778 |   193 ||
 ||  6 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    25 |     4 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |216 |216 ||students     || 6144 |  15 % |   -   |   5 % ||   939 |    46 ||   xy2949 |   6 % ||    864 |   212 ||     - |     - ||   864 |   212 ||
+|| 13 |215 |215 ||students     || 6144 |  15 % |   -   |   5 % ||   939 |    46 ||   xy2949 |   6 % ||    860 |   211 ||     - |     - ||   860 |   211 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  48 % |   -   |   -   ||   185 |     4 ||   db5394 |  47 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   snb463 | 100 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
@@ -219,7 +219,6 @@ dl5133     10261106  nvidia      collaborator  28    PENDING   nvidias          
 dl5133     10261107  nvidia      collaborator  28    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 dl5133     10261108  nvidia      collaborator  28    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 dl5133     10261109  nvidia      collaborator  28    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
-hj2836     10264218  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 vb1121     10262599  nvidia      electrical    4     PENDING   nvidia           gpu:2                              QOSMaxGRESPerUser                       
 drn2       10265617  nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 drn2       10265617  nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -416,7 +415,6 @@ ga73       10264419  nvidia      scomputer     4     PENDING   nvidia           
 ga73       10264419  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ga73       10264419  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ga73       10264419  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-sn3006     10264408  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 sn3006     10264408  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 sn3006     10264408  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 sn3006     10264408  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
