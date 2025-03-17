@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         25       14       64 %     || DALMA    ||          41%          165          198         6902           48         118          14      ||
-||   99         78       21       78 %     || JUBAIL   ||          77%           19           84         6369          121          23           0      ||
+||   39         25       14       64 %     || DALMA    ||          35%          184          179         7572           48          89          11      ||
+||   99         78       21       78 %     || JUBAIL   ||          77%           19           84         6377          121          23           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:24   GPU:10
@@ -33,20 +33,20 @@
 ||  7 | 16 |  - ||cgsb         || 4096 |  18 % |   -   |   4 % ||   754 |   126 ||     hhg3 |   7 % ||   3413 |   281 ||    80 |     4 ||  2533 |   177 ||
 ||  5 |  1 |  1 ||chemistry    ||12824 |  51 % |  22 % |   1 % ||  6568 |    39 ||  sme9918 |  19 % ||  14404 |    19 ||     - |     - || 14404 |    19 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     6 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  3 |  - ||civil        || 3200 |  20 % |   -   |   3 % ||   671 |    23 ||    sa183 |  15 % ||     30 |     3 ||    30 |     3 ||     - |     - ||
+||  3 |  2 |  - ||civil        || 3200 |  20 % |   -   |   3 % ||   671 |    23 ||    sa183 |  15 % ||     20 |     2 ||    20 |     2 ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  61 % |   5 % |   2 % ||  1888 |    14 ||   ap6420 |  56 % ||   4993 |   719 ||     - |     - ||  4993 |   719 ||
 ||  - |  - |  - ||cph          || 3072 |   1 % |   -   |   -   ||    56 |     1 ||   im2493 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  92 % |   -   |   4 % ||   713 |    42 ||   sb5272 |  41 % ||   1560 |    65 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  91 % |   -   |   4 % ||   705 |    41 ||   sb5272 |  41 % ||   1560 |    65 ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    22 |     3 ||   ll5484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  - |  - ||electrical   || 4096 |   7 % |   1 % |   -   ||   317 |    11 ||  aat9458 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    28 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |   -   |   -   |   -   ||   114 |     9 ||  afz2018 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  73 % |  30 % |   -   ||  8704 |    17 ||   cc6881 |  69 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 ||  - |  - |  - ||preempt      ||27000 |  15 % |  14 % |   -   ||  4260 |    85 ||   wr2172 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   1 % |   -   |   -   ||    81 |    27 ||  as14864 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||psychology   || 6096 |   1 % |   -   |   -   ||    75 |    25 ||  as14864 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 || 15 | 43 | 43 ||scomputer    || 3120 |   5 % |   -   |   -   ||   171 |    22 ||  sk10691 |   1 % ||    172 |    43 ||     - |     - ||   172 |    43 ||
 || 10 |  2 |  - ||socialscience|| 4096 |   1 % |   -   |   -   ||    45 |     6 ||   mb7099 |   1 % ||     10 |     1 ||    10 |     1 ||     - |     - ||
-|| 19 | 56 | 49 ||students     || 6144 |  39 % |   1 % |  17 % ||  2443 |   145 ||  sk10275 |  26 % ||    508 |    74 ||    64 |     7 ||   444 |    67 ||
+|| 19 | 56 | 49 ||students     || 6144 |  28 % |   1 % |  11 % ||  1779 |   103 ||  sk10275 |  15 % ||    172 |    53 ||    64 |     7 ||   108 |    46 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |  15 % |   -   |   -   ||    58 |     4 ||   db5394 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||   cc6881 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -310,27 +310,6 @@ sb5272     10295948  compute     default       24    PENDING   small            
 sb5272     10295948  compute     default       24    PENDING   small            N/A                                JobArrayTaskLimit                       
 sb5272     10295948  compute     default       24    PENDING   small            N/A                                JobArrayTaskLimit                       
 cc6881     10296815  compute     physics       512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10297820  compute     students      16    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ga73       10264419  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ga73       10264419  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 sn3006     10264408  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
