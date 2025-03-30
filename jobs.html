@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         13       26       33 %     || DALMA    ||          24%          279           47         8964           82          50           4      ||
-||   99         74       25       74 %     || JUBAIL   ||          93%            0           45         1799          179           3           0      ||
+||   39         16       23       41 %     || DALMA    ||          25%          275           51         8875           82          54           4      ||
+||   99         83       16       83 %     || JUBAIL   ||          93%            0           45         1799          179           3           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:14
@@ -23,7 +23,7 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  19 % |   3 % |   -   ||  1219 |     6 ||  skp7753 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  19 % |   3 % |   -   ||  1218 |     5 ||  skp7753 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   3 % |   -   |   -   ||   112 |     4 ||   tb2613 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||cair         || 2048 |   -   |   -   |   -   ||     2 |     2 ||   jz7323 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cass         || 4096 |   -   |   -   |   -   ||     4 |     1 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,9 +41,9 @@
 ||  - |  - |  - ||nyuny        || 1024 |   -   |   -   |   -   ||     4 |     1 ||   xp2042 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||physics      ||11824 |  95 % |  39 % |   -   || 11336 |    24 ||   cc6881 |  86 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  15 % |  14 % |   -   ||  4300 |    43 ||     nn34 |  15 % ||    300 |     3 ||   300 |     3 ||     - |     - ||
-||  1 |  2 |  - ||scomputer    || 3120 |   3 % |   -   |   -   ||   112 |   101 ||    zd662 |   3 % ||     91 |    82 ||    10 |     1 ||    81 |    81 ||
-|| 12 |  4 |  4 ||socialscience|| 4096 |   1 % |   -   |   -   ||    54 |     6 ||   mb7099 |   1 % ||     20 |     2 ||     - |     - ||    20 |     2 ||
-||  4 |  - |  - ||students     || 6144 |  14 % |   2 % |   2 % ||   911 |    67 ||   xy2949 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 13 | 51 | 49 ||scomputer    || 3120 |   5 % |   -   |   -   ||   160 |   113 ||    zd662 |   3 % ||    286 |   130 ||    10 |     1 ||   276 |   129 ||
+|| 12 |  4 |  4 ||socialscience|| 4096 |   3 % |   -   |   -   ||   152 |   104 ||  atb8710 |   2 % ||     20 |     2 ||     - |     - ||    20 |     2 ||
+||  4 |  - |  - ||students     || 6144 |  14 % |   2 % |   2 % ||   903 |    66 ||   xy2949 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |   2 % |   -   |   -   ||     9 |     2 ||   bs5331 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cair         ||  128 | 100 % |   -   |   -   ||   128 |     1 ||  olr7742 | 100 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -243,9 +243,57 @@ zd662      10386423  compute     scomputer     1     PENDING   small            
 zd662      10386423  compute     scomputer     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 zd662      10386423  compute     scomputer     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 zd662      10386423  compute     scomputer     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-zd662      10386423  compute     scomputer     1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mb7099     10386385  nvidia      socialscience 10    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mb7099     10386387  nvidia      socialscience 10    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+ga73       10386582  nvidia      scomputer     4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
