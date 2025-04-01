@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          9       30       23 %     || DALMA    ||          40%          226           40         7109          150          48           4      ||
+||   39         10       29       25 %     || DALMA    ||          40%          222           46         7018          148          55           4      ||
 ||   99         80       19       80 %     || JUBAIL   ||          79%            5           73         4013          121           9           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -29,7 +29,7 @@
 ||  1 |  - |  - ||cass         || 4096 |   -   |   -   |   -   ||     8 |     1 ||  dbd7602 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 26 |  8 |  8 ||ccs          || 6144 |   5 % |   1 % |   -   ||   324 |    32 ||   baj321 |   2 % ||     76 |     8 ||     - |     - ||    76 |     8 ||
 ||  1 |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    76 |     3 ||     gb77 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  1 |  - ||chemistry    ||12824 |  59 % |  25 % |   2 % ||  7569 |    62 ||  sme9918 |  19 % ||  22116 |    79 ||   128 |     1 ||  6628 |    66 ||
+||  2 |  1 |  - ||chemistry    ||12824 |  59 % |  25 % |   2 % ||  7569 |    62 ||  sme9918 |  19 % ||  60516 |   109 ||   128 |     1 || 45028 |    96 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||     6 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||civil        || 3200 |  43 % |   -   |  11 % ||  1393 |    51 ||    sa183 |  43 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  1 |  1 ||collaborator || 3072 |  92 % |   8 % |   3 % ||  2846 |    18 ||   ap6420 |  62 % ||   4994 |   720 ||     - |     - ||  4994 |   720 ||
@@ -37,14 +37,14 @@
 ||  1 |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     1 |     1 ||    tz545 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  13 % |   -   |   -   ||   100 |     8 ||   bs5331 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  6 |  6 ||ecomputer    || 4096 |   5 % |   -   |   -   ||   224 |    12 ||   sy2366 |   3 % ||     24 |     3 ||     - |     - ||    24 |     3 ||
-||  5 |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    71 |    31 ||  rcd9059 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  5 |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    44 |     4 ||   yw3576 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |   8 % |   3 % |   -   ||  1032 |     2 ||   ds7760 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |   1 % |   -   |   -   ||    16 |     1 ||   wr2172 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  90 % |  37 % |   -   || 10752 |    21 ||   cc6881 |  82 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   9 % |   1 % |  16 % ||  2541 |    84 ||   wr2172 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||scomputer    || 3120 |   7 % |   -   |   1 % ||   234 |     2 ||   ia2280 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  4 |  4 ||socialscience|| 4096 |   1 % |   -   |   -   ||    54 |     6 ||   mb7099 |   1 % ||     20 |     2 ||     - |     - ||    20 |     2 ||
-||  6 |  - |  - ||students     || 6144 |  13 % |   1 % |   2 % ||   837 |    38 ||   xy2949 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 12 |  4 |  4 ||socialscience|| 4096 |   3 % |   -   |   -   ||   152 |   104 ||  atb8710 |   2 % ||     20 |     2 ||     - |     - ||    20 |     2 ||
+||  7 |  - |  - ||students     || 6144 |  13 % |   1 % |   2 % ||   858 |    59 ||   xy2949 |   8 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||c2           ||  384 |  33 % |   -   |   -   ||   128 |     2 ||   sy2366 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 |  75 % |   5 % |   -   ||  1536 |     3 ||   cc6881 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -132,6 +132,36 @@ sme9918    10367691  compute     chemistry     1280  PENDING   large            
 sme9918    10367691  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 sme9918    10367691  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 na2416     10390980  compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391056  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391080  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391182  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391182  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391182  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391182  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391182  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391183  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391183  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391183  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391183  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10391183  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 mb7099     10386385  nvidia      socialscience 10    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mb7099     10386387  nvidia      socialscience 10    PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 ll5484     10390137  nvidia      ecomputer     8     PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
@@ -141,11 +171,11 @@ hj2836     10390570  nvidia      ccs           8     PENDING   nvidia           
 hj2836     10390571  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 so2495     10390589  nvidia      collaborator  1     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10390653  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     10390656  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10390655  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10390654  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10390658  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10390657  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     10390656  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
