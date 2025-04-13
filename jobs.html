@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         13       26       33 %     || DALMA    ||          23%          276           44         9105           96          26           4      ||
-||   99         65       34       65 %     || JUBAIL   ||          62%           37           45         7305          115          17           0      ||
+||   39         13       26       33 %     || DALMA    ||          40%          204           44         7088          168          97           4      ||
+||   99         64       35       64 %     || JUBAIL   ||          62%           37           45         7305          115          17           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:16   GPU:10
+	OOD JOBS:  CPU:17   GPU:10
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -23,10 +23,10 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  11 % |   2 % |   -   ||   706 |     9 ||  tag9888 |  10 % ||   4992 |    39 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  44 % |   2 % |  17 % ||  2722 |    81 ||  bak8122 |  33 % ||   6144 |    87 ||     - |     - ||  1152 |    48 ||
 ||  - |  - |  - ||biology      || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   dr2930 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  4 |  4 ||ccs          || 6144 |   2 % |   -   |   -   ||   138 |    13 ||   ma6996 |   1 % ||     40 |     4 ||     - |     - ||    40 |     4 ||
-||  - |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    58 |     3 ||   nb3608 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    78 |     4 ||   nb3608 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||chemistry    ||12824 |  51 % |  21 % |   2 % ||  6569 |    32 ||   na2416 |  27 % ||  43520 |    34 ||     - |     - || 25600 |    20 ||
 ||  3 |  - |  - ||civil        || 3200 |  63 % |   -   |  16 % ||  2037 |    85 ||    sa183 |  63 % ||    224 |     8 ||     - |     - ||   224 |     8 ||
 ||  1 |  - |  - ||collaborator || 3072 |  71 % |   7 % |   -   ||  2204 |     9 ||   ap6420 |  62 % ||   4993 |   719 ||     - |     - ||  4993 |   719 ||
@@ -41,8 +41,8 @@
 ||  - |  - |  - ||preempt      ||27000 |   9 % |   8 % |   -   ||  2520 |    90 ||   wr2172 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||     9 |     3 ||  as14864 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||scomputer    || 3120 |   7 % |   -   |   1 % ||   244 |     5 ||   ia2280 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-||  9 |  - |  - ||socialscience|| 4096 |   1 % |   -   |   -   ||    54 |     9 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 |  9 |  9 ||students     || 6144 |   4 % |   -   |   1 % ||   270 |    79 ||  jdg8833 |   -   ||     84 |    41 ||     - |     - ||    48 |     5 ||
+||  7 |  - |  - ||socialscience|| 4096 |   1 % |   -   |   -   ||    52 |     7 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+|| 17 |  9 |  9 ||students     || 6144 |   4 % |   -   |   1 % ||   271 |    80 ||  jdg8833 |   -   ||     84 |    41 ||     - |     - ||    48 |     5 ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 |  16 % |   -   |   -   ||    65 |     2 ||   sy2366 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cair         ||  128 |  50 % |   -   |   -   ||    64 |     1 ||   sy2366 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -134,14 +134,14 @@ sme9918    10411791  compute     chemistry     1280  PENDING   large            
 sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-sa9248     10417275  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sa9248     10417274  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sa9248     10417273  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sa9248     10417280  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sa9248     10417279  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sa9248     10417278  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sa9248     10417277  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sa9248     10417276  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sa9248     10417275  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sa9248     10417274  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sa9248     10417273  compute     physics       128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 jdg8833    10422610  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
 jdg8833    10422610  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
 jdg8833    10422610  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
@@ -178,13 +178,61 @@ jdg8833    10422610  compute     students      1     PENDING   small            
 jdg8833    10422610  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
 jdg8833    10422610  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
 jdg8833    10422610  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+bak8122    10424858  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424857  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424856  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424855  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424854  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424853  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424852  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424851  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424850  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424881  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424880  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424879  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424878  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424877  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424876  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424875  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424874  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424873  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424872  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424871  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424870  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424869  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424868  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424867  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424866  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424865  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424864  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424863  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424862  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424861  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424860  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424859  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424897  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424896  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424895  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424894  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424893  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424892  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424891  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424890  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424889  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424888  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424887  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424886  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424885  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424884  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424883  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+bak8122    10424882  compute     access        24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 ss14247    10422900  nvidia      students      12    PENDING   nvidias          gpu:a100:2                         QOSMaxGRESPerUser                       
 yd2247     10423029  nvidia      students      8     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 yd2247     10423030  nvidia      students      8     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 yd2247     10423031  nvidia      students      8     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
-ma6996     10423816  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10423818  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10423817  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     10423816  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     10423819  nvidia      ccs           10    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ss14247    10423901  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 </pre>
