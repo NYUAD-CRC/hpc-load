@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         29       10       74 %     || DALMA    ||          34%          201          108         7801          109          77           4      ||
-||   99         84       15       84 %     || JUBAIL   ||          66%           45           60         9191          116          13           0      ||
+||   39         29       10       74 %     || DALMA    ||          34%          201          109         7851          108          74           4      ||
+||   99         84       15       84 %     || JUBAIL   ||          71%           33           60         7711          128          14           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:19   GPU:6
@@ -29,19 +29,19 @@
 ||  - |  - |  - ||cgsb         || 4096 |   1 % |   -   |   -   ||    56 |     2 ||   nb3608 |   1 % ||     20 |     2 ||     - |     - ||    20 |     2 ||
 ||  1 |  - |  - ||chemistry    ||12824 |  54 % |  22 % |   3 % ||  6977 |    41 ||   na2416 |  30 % ||  40960 |    32 ||     - |     - || 25600 |    20 ||
 ||  2 |  - |  - ||civil        || 3200 |  63 % |   -   |  16 % ||  2024 |    79 ||    sa183 |  63 % ||    140 |     5 ||     - |     - ||   140 |     5 ||
-||  6 |  - |  - ||collaborator || 3072 |  48 % |   4 % |   -   ||  1495 |    15 ||   ap6420 |  33 % ||   4993 |   719 ||     - |     - ||  4993 |   719 ||
+||  6 |  - |  - ||collaborator || 3072 |  98 % |  10 % |   -   ||  3031 |    16 ||   ap6420 |  83 % ||   4993 |   719 ||     - |     - ||  4993 |   719 ||
 ||  4 |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     4 |     4 ||    tz545 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  33 % |   3 % |   -   ||  1024 |     4 ||   rp4207 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  64 % |   -   |   2 % ||   498 |    46 ||  ss20440 |  33 % ||     95 |    95 ||    75 |    75 ||    20 |    20 ||
 ||  6 |  - |  - ||ecomputer    || 4096 |   4 % |   -   |   -   ||   188 |     9 ||   hha243 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||electrical   || 4096 |  14 % |   1 % |   -   ||   589 |    20 ||  aat9458 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||   109 |    55 ||  gencore |   2 % ||  20836 |  1693 ||     - |     - || 20836 |  1693 ||
+||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||    82 |    55 ||  gencore |   2 % ||  20746 |  1684 ||     - |     - || 20746 |  1684 ||
 ||  - |  - |  - ||mechanical   ||12288 |  16 % |   6 % |   -   ||  2026 |    13 ||   ds7760 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyuny        || 1024 |   9 % |   -   |   -   ||    96 |     6 ||   xp2042 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||physics      ||11824 |  32 % |  13 % |   -   ||  3788 |    10 ||   cc6881 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   4 % |   3 % |   -   ||  1120 |    40 ||   wr2172 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||psychology   || 6096 |   6 % |   -   |   2 % ||   390 |    79 ||  as14864 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 | 18 | 18 ||scomputer    || 3120 |  24 % |   -   |   5 % ||   750 |   109 ||     ga73 |  12 % ||   3254 |   815 ||     - |     - ||    18 |     6 ||
+||  - |  - |  - ||preempt      ||27000 |   3 % |   3 % |   -   ||  1064 |    38 ||   wr2172 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||psychology   || 6096 |   6 % |   -   |   2 % ||   367 |    74 ||  as14864 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 17 | 18 | 18 ||scomputer    || 3120 |  24 % |   -   |   5 % ||   750 |   109 ||     ga73 |  12 % ||   2946 |   738 ||     - |     - ||    18 |     6 ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    39 |    12 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 20 | 29 | 27 ||students     || 6144 |  17 % |   2 % |   1 % ||  1059 |    48 ||   td2138 |  12 % ||    160 |    17 ||    48 |     2 ||   112 |    15 ||
 ==========================================================================================================================================================
@@ -842,95 +842,9 @@ ga73       10458564  compute     scomputer     4     PENDING   small            
 ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
 ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
 ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ga73       10458564  compute     scomputer     4     PENDING   small            N/A                                JobArrayTaskLimit                       
-gencore    10426936  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10425769  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10427022  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10426512  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10426820  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10425616  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10427730  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10425854  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10427400  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426054  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10426097  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427247  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10426097  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426327  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426864  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426058  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -946,9 +860,9 @@ gencore    10426850  compute     gencore       28    PENDING   gencore-small    
 gencore    10426147  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427529  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426736  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10425558  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10425510  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426700  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10425558  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427540  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427727  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427718  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -980,8 +894,8 @@ gencore    10427363  compute     gencore       1     PENDING   gencore-small    
 gencore    10426793  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427182  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426584  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
-gencore    10425647  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427376  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10425647  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426933  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427141  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10427053  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -995,6 +909,14 @@ gencore    10427039  compute     gencore       1     PENDING   gencore-small    
 gencore    10426589  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10426140  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10425666  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10425637  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10425473  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10426674  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10427299  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10426431  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10427345  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10426404  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    10427021  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 ss14247    10440852  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 bc3194     10454616  nvidia      scomputer     3     PENDING   nvidia-xxl       gpu:a100:3                         QOSMaxGRESPerUser                       
 bc3194     10454703  nvidia      scomputer     3     PENDING   nvidia-xxl       gpu:a100:3                         QOSMaxGRESPerUser                       
