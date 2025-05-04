@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          0       38        0 %     || DALMA    ||           0%          403            0        11828            0           0           6      ||
-||   99          1       98        1 %     || JUBAIL   ||           0%          223            0        28544            0           0           0      ||
+||   38          4       34       10 %     || DALMA    ||           1%          371           32        11638            0           0           6      ||
+||   99         11       88       11 %     || JUBAIL   ||           8%          195            2        25024           26          28           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:0   GPU:1
@@ -23,20 +23,183 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||biology      || 3072 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   5328 |    55 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     2 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||chemistry    ||12824 |   -   |   -   |   -   ||     - |     - ||          |   -   ||  28928 |    23 ||     - |     - ||     - |     - ||
-||  - |  4 |  - ||civil        || 3200 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      2 |     1 ||     - |     - ||     - |     - ||
-||  1 |  3 |  - ||collaborator || 3072 |   -   |   -   |   -   ||    25 |     1 ||   so2495 |   -   ||   5023 |   726 ||     - |     - ||     - |     - ||
-||  - |  3 |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     36 |     3 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |   8 % |   1 % |   -   ||   272 |     4 ||  cmm9990 |   8 % ||   5056 |    51 ||     - |     - ||  5056 |    51 ||
+||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     2 ||     - |     - ||   128 |     2 ||
+||  - |  - |  - ||chemistry    ||12824 |  25 % |   7 % |   -   ||  3328 |     3 ||  sme9918 |  19 % ||  25600 |    20 ||     - |     - || 12800 |    10 ||
+||  4 |  - |  - ||civil        || 3200 |   -   |   -   |   -   ||     2 |     1 ||     krm7 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||collaborator || 3072 |   -   |   -   |   -   ||    28 |     4 ||   so2495 |   -   ||   5020 |   723 ||     - |     - ||  5020 |   723 ||
+||  3 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    36 |     3 ||   ll5484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      2 |     2 ||     - |     - ||     - |     - ||
-||  - |  8 |  - ||students     || 6144 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    292 |   282 ||     - |     - ||     - |     - ||
+||  4 |  4 |  4 ||students     || 6144 |   3 % |   -   |   1 % ||   196 |   191 ||  sk10275 |   3 % ||     95 |    90 ||     - |     - ||     6 |     1 ||
 ==========================================================================================================================================================
-||  - |  4 |  - ||chi          ||  768 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      1 |     1 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||marinemicro  ||  256 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   4992 |    52 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||marinemicro  ||  256 |  75 % |   -   |   -   ||   192 |     2 ||  cmm9990 |  75 % ||   4800 |    50 ||     - |     - ||  4800 |    50 ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
+drn2       10610234  bigmem      cgsb          64    PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
+drn2       10568911  bigmem      cgsb          64    PENDING   bigmem           N/A                                QOSMaxCpuPerJobLimit                    
+cmm9990    10571023  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571022  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571021  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571020  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571019  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571018  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571017  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571016  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571015  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571013  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571012  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571011  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571010  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571009  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571008  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571006  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571005  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571004  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571003  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571002  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571001  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10571000  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570999  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570996  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570995  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570994  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570993  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570991  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570990  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570989  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570988  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570987  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570986  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570985  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570984  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570982  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570981  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570980  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570979  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570977  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570976  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570975  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570974  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570973  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570971  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570970  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570968  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570967  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570966  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+cmm9990    10570965  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
+sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411791  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411674  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411674  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    10411674  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    10589098  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
+fbd2014    10617522  nvidia      students      6     PENDING   nvidias          gpu:4                              QOSMaxGRESPerUser                       
+mt5136     10566453  visual      electrical    1     PENDING   normal           gpu:1                              PartitionTimeLimit                      
+mt5136     10527244  visual      electrical    1     PENDING   normal           gpu:1                              PartitionTimeLimit                      
 </pre>
 </body>
 </html>
