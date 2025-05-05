@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          8       30       21 %     || DALMA    ||           6%          344           54        11040            6          16           6      ||
-||   99         63       36       63 %     || JUBAIL   ||          15%          164            8        21644           51          10           0      ||
+||   38          8       30       21 %     || DALMA    ||           6%          345           53        11043            6          15           6      ||
+||   99         68       31       68 %     || JUBAIL   ||          20%          151           10        19692           62          27           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:9   GPU:6
@@ -23,29 +23,34 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  11 % |   1 % |   -   ||   680 |     6 ||  tag9888 |  11 % ||   5248 |    41 ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||biology      || 3072 |   8 % |   1 % |   -   ||   252 |     4 ||  cmm9990 |   7 % ||   4768 |    48 ||     - |     - ||  4768 |    48 ||
-||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    20 |     1 ||   aa5506 |   -   ||    128 |     2 ||     - |     - ||    64 |     1 ||
-||  4 |  - |  - ||chemistry    ||12824 |  32 % |   9 % |   -   ||  4207 |    22 ||  sme9918 |  21 % ||  25600 |    20 ||     - |     - || 12800 |    10 ||
+||  - |  - |  - ||access       || 6144 |  11 % |   1 % |   -   ||   680 |     6 ||  tag9888 |  11 % ||   3968 |    31 ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||biology      || 3072 |   8 % |   1 % |   -   ||   253 |     5 ||  cmm9990 |   7 % ||   4768 |    48 ||     - |     - ||  4768 |    48 ||
+||  - |  - |  - ||cass         || 4096 |   2 % |   -   |   -   ||    96 |     1 ||   ch3246 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cgsb         || 4096 |   -   |   -   |   -   ||    20 |     1 ||   aa5506 |   -   ||    128 |     2 ||     - |     - ||   128 |     2 ||
+||  4 |  - |  - ||chemistry    ||12824 |  38 % |  11 % |   -   ||  4974 |    22 ||  sme9918 |  21 % ||  25600 |    20 ||     - |     - || 12800 |    10 ||
 ||  8 |  - |  - ||civil        || 3200 |   1 % |   -   |   -   ||    32 |     3 ||   da3205 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |  - |  - ||collaborator || 3072 |  83 % |   5 % |   -   ||  2569 |    18 ||   ap6420 |  72 % ||   5020 |   723 ||     - |     - ||  5020 |   723 ||
-||  - |  - |  - ||default      ||  768 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     2 ||     - |     - ||   128 |     2 ||
-|| 12 |  - |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   284 |    14 ||  ljl5178 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  3 |  - ||csem         || 3072 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     1 ||   128 |     1 ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |   8 % |   -   |   -   ||    64 |     1 ||   rg5184 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 15 |  9 |  - ||ecomputer    || 4096 |   7 % |   -   |   -   ||   320 |    17 ||   ll5484 |   2 % ||    108 |     9 ||   108 |     9 ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      2 |     2 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||mechanical   ||12288 |   8 % |   2 % |   -   ||  1024 |     1 ||   xh3078 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||nyuny        || 1024 |   1 % |   -   |   -   ||    16 |     2 ||   xp2042 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  12 % |   -   |   -   ||   128 |     1 ||   cj1066 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    36 |     3 ||   pw1246 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 19 |  - |  - ||scomputer    || 3120 |   8 % |   -   |   -   ||   266 |    16 ||    zd662 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  8 |  8 ||students     || 6144 |   8 % |   -   |   4 % ||   540 |   240 ||  sk10275 |   3 % ||    355 |   333 ||     - |     - ||    24 |     2 ||
+||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    24 |     2 ||   pw1246 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+|| 21 |  3 |  - ||scomputer    || 3120 |   8 % |   -   |   -   ||   268 |    18 ||    zd662 |   5 % ||      3 |     3 ||     3 |     3 ||     - |     - ||
+|| 12 |  8 |  8 ||students     || 6144 |   8 % |   -   |   4 % ||   548 |   241 ||  sk10275 |   3 % ||    352 |   330 ||     - |     - ||    24 |     2 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   rk3570 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||c2           ||  384 |  16 % |   -   |   -   ||    64 |     1 ||   sy2366 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||marinemicro  ||  256 |  75 % |   -   |   -   ||   192 |     2 ||  cmm9990 |  75 % ||   4512 |    47 ||     - |     - ||  4512 |    47 ||
 ||  - |  - |  - ||mordor       ||  384 |   5 % |   -   |   -   ||    20 |     1 ||   aa5506 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||red          || 1536 |  66 % |   2 % |   -   ||  1024 |     1 ||   xh3078 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 drn2       10610234  bigmem      cgsb          64    PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
+drn2       10568911  bigmem      cgsb          64    PENDING   bigmem           N/A                                QOSMaxCpuPerJobLimit                    
 cmm9990    10571023  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    10571022  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    10571021  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
@@ -93,8 +98,6 @@ cmm9990    10570973  compute     biology       96    PENDING   marinemicro      
 cmm9990    10570971  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    10570970  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
 cmm9990    10570968  compute     biology       96    PENDING   marinemicro      N/A                                QOSGrpCpuLimit                          
-rg5184     10618796  compute     default       64    PENDING   medium           N/A                                QOSMaxWallDurationPerJobLimit           
-rg5184     10618800  compute     default       64    PENDING   medium           N/A                                QOSMaxWallDurationPerJobLimit           
 sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10575087  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
@@ -433,19 +436,6 @@ sk10275    10618461  compute     students      1     PENDING   small            
 sk10275    10618461  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
 sk10275    10618461  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
 sk10275    10618461  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    10618461  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    10618461  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    10618461  compute     students      1     PENDING   small            N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10618741  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
