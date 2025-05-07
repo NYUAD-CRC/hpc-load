@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         26       12       68 %     || DALMA    ||          41%          180          174         6926           55         124           4      ||
-||   99         77       22       77 %     || JUBAIL   ||          62%            1           31         1455          191          49           0      ||
+||   38         26       12       68 %     || DALMA    ||          37%          172          184         7399           53         126           4      ||
+||   99         77       22       77 %     || JUBAIL   ||          62%            1           31         1455          191          44           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:15   GPU:8
@@ -42,11 +42,11 @@
 ||  1 |  - |  - ||nyuny        || 1024 |   1 % |   -   |   -   ||    16 |     2 ||   xp2042 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  25 % |   -   |   -   ||   256 |     5 ||   cj1066 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  77 % |  21 % |   -   ||  9216 |    18 ||   cc6881 |  77 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   6 % |   3 % |   1 % ||  1724 |    26 ||   lz2826 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||psychology   || 6096 |  16 % |   -   |   8 % ||   990 |   198 ||  as14864 |  16 % ||   1210 |   242 ||     - |     - ||  1210 |   242 ||
-|| 20 |  7 |  7 ||scomputer    || 3120 |  10 % |   -   |   -   ||   336 |    30 ||   hz4426 |   4 % ||    280 |    15 ||     - |     - ||   280 |    15 ||
+||  - |  - |  - ||preempt      ||27000 |   6 % |   5 % |   1 % ||  1724 |    26 ||   lz2826 |   5 % ||    768 |     1 ||     - |     - ||   768 |     1 ||
+||  - |  - |  - ||psychology   || 6096 |  16 % |   -   |   8 % ||   990 |   198 ||  as14864 |  16 % ||    845 |   169 ||     - |     - ||   845 |   169 ||
+|| 20 |  6 |  6 ||scomputer    || 3120 |  10 % |   -   |   -   ||   336 |    30 ||   hz4426 |   4 % ||    276 |    11 ||     - |     - ||   276 |    11 ||
 ||  - |  - |  - ||socialscience|| 4096 |   2 % |   -   |   -   ||    84 |     3 ||  ms13502 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 | 12 | 12 ||students     || 6144 |  36 % |   -   |  16 % ||  2256 |   215 ||  skk9144 |  28 % ||   3649 |   388 ||    48 |     4 ||  3601 |   384 ||
+|| 13 | 12 | 12 ||students     || 6144 |  28 % |   -   |  12 % ||  1771 |   224 ||  skk9144 |  21 % ||    897 |   100 ||     - |     - ||   897 |   100 ||
 ==========================================================================================================================================================
 ||  2 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   rk3570 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||c2           ||  384 |  83 % |   -   |   -   ||   320 |     3 ||   db5394 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -55,7 +55,7 @@
 ||  1 |  - |  - ||chi          ||  768 |   3 % |   -   |   -   ||    28 |     1 ||   pb2276 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||marinemicro  ||  256 |  75 % |   -   |   -   ||   192 |     2 ||  cmm9990 |  75 % ||   2688 |    28 ||     - |     - ||  2688 |    28 ||
 ||  - |  - |  - ||mordor       ||  384 |   5 % |   -   |   -   ||    20 |     1 ||   aa5506 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |  8 |  8 ||nlp          ||  208 |   3 % |   -   |   -   ||     7 |     7 ||   km6846 |   3 % ||      6 |     6 ||     - |     - ||     6 |     6 ||
+||  7 |  5 |  5 ||nlp          ||  208 |   3 % |   -   |   -   ||     7 |     7 ||   km6846 |   3 % ||      3 |     3 ||     - |     - ||     3 |     3 ||
 ||  - |  - |  - ||red          || 1536 | 100 % |   3 % |   -   ||  1536 |     2 ||   xh3078 | 100 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -341,83 +341,7 @@ as14864    10647898  compute     psychology    5     PENDING   small            
 as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-as14864    10647898  compute     psychology    5     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 hz4426     10629870  condo       scomputer     128   PENDING   cair             gpu:a100:3                         QOSGrpCpuLimit                          
-km6846     10647813  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10647813  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10647813  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10647813  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10647813  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 mms10094   10648062  condo       scomputer     1     PENDING   nlp              gpu:a100:3                         QOSGrpGRES                              
@@ -428,10 +352,9 @@ so2495     10639182  nvidia      collaborator  1     PENDING   nvidias          
 so2495     10639181  nvidia      collaborator  1     PENDING   nvidias          gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ss14247    10640822  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 hj2836     10647493  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10647495  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10647494  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10647495  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10647497  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-km6846     10647840  nvidia      scomputer     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 km6846     10647841  nvidia      scomputer     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 km6846     10647841  nvidia      scomputer     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 km6846     10647841  nvidia      scomputer     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
