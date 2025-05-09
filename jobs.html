@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         36        3       92 %     || DALMA    ||          22%          221          148         9268           40          84           4      ||
-||   99         74       25       74 %     || JUBAIL   ||          58%            5           62         3152          156          53           0      ||
+||   39         36        3       92 %     || DALMA    ||          21%          226          143         9337           40          80           4      ||
+||   99         74       25       74 %     || JUBAIL   ||          58%            5           62         3152          156          55           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:10   GPU:7
+	OOD JOBS:  CPU:9   GPU:7
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -29,7 +29,7 @@
 ||  - |  - |  - ||cass         || 4096 |  23 % |   2 % |   -   ||   968 |     8 ||   ch3246 |  20 % ||    120 |     1 ||     - |     - ||   120 |     1 ||
 || 12 |  9 |  9 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||     72 |     9 ||     - |     - ||    72 |     9 ||
 ||  - |  - |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||    84 |     3 ||   nb3608 |   2 % ||     20 |     2 ||    10 |     1 ||    10 |     1 ||
-||  1 |  - |  - ||chemistry    ||12824 |  48 % |  13 % |   3 % ||  6279 |    49 ||  sme9918 |  22 % ||   8960 |     7 ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||chemistry    ||12824 |  48 % |  13 % |   3 % ||  6276 |    46 ||  sme9918 |  22 % ||   8960 |     7 ||     - |     - ||     - |     - ||
 ||  - |  4 |  4 ||cities       || 4096 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     40 |     4 ||     - |     - ||    40 |     4 ||
 ||  - |  1 |  1 ||civil        || 3200 |  30 % |   -   |   5 % ||   965 |    36 ||    sa183 |  21 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ||  1 |  - |  - ||collaborator || 3072 |  57 % |   2 % |   6 % ||  1778 |   164 ||   ha3152 |  26 % ||  11579 |  1714 ||     - |     - || 11579 |  1714 ||
@@ -42,10 +42,10 @@
 ||  1 |  - |  - ||nyuny        || 1024 |   -   |   -   |   -   ||     8 |     1 ||   xp2042 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  24 % |   -   |   -   ||   248 |     3 ||   cj1066 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  77 % |  21 % |   -   ||  9216 |    18 ||   cc6881 |  77 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |  15 % |   8 % |   1 % ||  4056 |    44 ||   lz2826 |   9 % ||   3840 |     5 ||  3840 |     5 ||     - |     - ||
-|| 38 | 12 |  2 ||scomputer    || 3120 |   8 % |   -   |   -   ||   275 |    41 ||   ay1620 |   4 % ||    211 |    53 ||    19 |    10 ||   192 |    43 ||
-||  4 |  7 |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     7 |     7 ||  atb8710 |   -   ||      7 |     7 ||     7 |     7 ||     - |     - ||
-|| 12 | 28 | 28 ||students     || 6144 |   3 % |   -   |   -   ||   238 |    38 ||   hs4311 |   2 % ||     54 |     7 ||     - |     - ||    54 |     7 ||
+||  - |  - |  - ||preempt      ||27000 |  14 % |   8 % |   1 % ||  3996 |    43 ||   lz2826 |   9 % ||   3840 |     5 ||  3840 |     5 ||     - |     - ||
+|| 37 | 12 |  2 ||scomputer    || 3120 |   8 % |   -   |   -   ||   271 |    40 ||   ay1620 |   4 % ||    211 |    53 ||    19 |    10 ||   192 |    43 ||
+||  5 |  6 |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     7 |     7 ||  atb8710 |   -   ||      6 |     6 ||     6 |     6 ||     - |     - ||
+|| 12 | 20 | 20 ||students     || 6144 |   3 % |   -   |   -   ||   233 |    37 ||   hs4311 |   2 % ||     42 |     5 ||     - |     - ||    42 |     5 ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 | 100 % |   -   |   -   ||   384 |     4 ||   db5394 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  3 |  3 ||cair         ||  128 | 100 % |   -   |   -   ||   128 |     2 ||   sy2366 | 100 % ||    128 |     1 ||     - |     - ||   128 |     1 ||
@@ -780,44 +780,42 @@ km6846     10672060  condo       scomputer     1     PENDING   nlp              
 km6846     10672060  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672060  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672060  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672061  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672061  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672061  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672061  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672061  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672062  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672064  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672064  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672064  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672064  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672064  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10672065  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672066  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672066  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672066  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672066  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10672066  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 ss14247    10640822  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-fbd2014    10662665  nvidia      students      6     PENDING   nvidias          gpu:4                              QOSMaxGRESPerUser                       
-fbd2014    10662666  nvidia      students      6     PENDING   nvidias          gpu:4                              QOSMaxGRESPerUser                       
 fbd2014    10662669  nvidia      students      6     PENDING   nvidias          gpu:4                              QOSMaxGRESPerUser                       
 fbd2014    10662671  nvidia      students      6     PENDING   nvidias          gpu:4                              QOSMaxGRESPerUser                       
 ss14247    10663392  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 ay1620     10663468  nvidia      scomputer     12    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ay1620     10663469  nvidia      scomputer     12    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 fbd2014    10665810  nvidia      students      6     PENDING   nvidias          gpu:4                              QOSMaxGRESPerUser                       
-hj2836     10670496  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10670498  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10670497  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10670496  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10670499  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10670498  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10670502  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10670500  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10670503  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
