@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         27       12       69 %     || DALMA    ||          19%          207          161         9586           41          83           4      ||
-||   99         67       32       67 %     || JUBAIL   ||          41%           71           46        10547          106          32           0      ||
+||   39         29       10       74 %     || DALMA    ||          19%          208          160         9610           41          83           4      ||
+||   99         67       32       67 %     || JUBAIL   ||          41%           71           46        10547          106          33           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:10
@@ -28,7 +28,7 @@
 ||  - |  - |  - ||cass         || 4096 |   9 % |   -   |   -   ||   376 |     3 ||   jb5784 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 | 16 | 16 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||    128 |    16 ||     - |     - ||   128 |    16 ||
 ||  - |  - |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||   114 |     5 ||   nb3608 |   2 % ||     10 |     1 ||    10 |     1 ||     - |     - ||
-||  - |  - |  - ||chemistry    ||12824 |  48 % |  13 % |   3 % ||  6176 |    72 ||  sme9918 |  22 % ||   7680 |     6 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||chemistry    ||12824 |  47 % |  13 % |   3 % ||  6152 |    71 ||  sme9918 |  22 % ||   7680 |     6 ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||civil        || 3200 |  30 % |   -   |   5 % ||   968 |    36 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  73 % |   3 % |   7 % ||  2243 |   174 ||   ha3152 |  27 % ||  11739 |  1409 ||     - |     - || 11739 |  1409 ||
 ||  3 |  - |  - ||csem         || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   rp4207 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -39,12 +39,12 @@
 ||  - |  - |  - ||nyushanghai  || 1024 |  87 % |   2 % |   -   ||   897 |     8 ||   cj1066 |  87 % ||    384 |     3 ||     - |     - ||   384 |     3 ||
 ||  - |  - |  - ||physics      ||11824 |   4 % |   1 % |   -   ||   512 |     1 ||   cc6881 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  15 % |   9 % |   -   ||  4180 |    12 ||    ah166 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 23 |  4 |  4 ||scomputer    || 3120 |  18 % |   1 % |   -   ||   565 |    47 ||   ay1620 |   4 % ||    310 |     7 ||     - |     - ||   310 |     7 ||
+|| 23 |  4 |  4 ||scomputer    || 3120 |  18 % |   1 % |   -   ||   565 |    47 ||   ay1620 |   4 % ||    182 |     6 ||     - |     - ||   182 |     6 ||
 || 12 |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||     6 |     6 ||   mb7099 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
-||  8 |  8 |  8 ||students     || 6144 |  22 % |   3 % |   -   ||  1405 |    55 ||  mka7870 |  19 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
+|| 10 |  8 |  8 ||students     || 6144 |  22 % |   3 % |   -   ||  1407 |    57 ||  mka7870 |  19 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
 ==========================================================================================================================================================
 ||  4 |  - |  - ||c2           ||  384 |  66 % |   -   |   -   ||   257 |     3 ||   db5394 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  5 |  5 ||cair         ||  128 | 100 % |   -   |   -   ||   128 |     1 ||   hz4426 | 100 % ||    256 |     2 ||     - |     - ||   256 |     2 ||
+||  2 |  3 |  3 ||cair         ||  128 | 100 % |   -   |   -   ||   128 |     1 ||   hz4426 | 100 % ||    128 |     1 ||     - |     - ||   128 |     1 ||
 ||  - |  - |  - ||cass         || 2048 |  25 % |   1 % |   -   ||   512 |     1 ||   cc6881 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||csm          ||  640 |  40 % |   -   |   -   ||   256 |     2 ||   da3205 |  40 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||marinemicro  ||  256 |  75 % |   -   |   -   ||   192 |     2 ||  cmm9990 |  75 % ||     96 |     1 ||     - |     - ||    96 |     1 ||
@@ -433,10 +433,9 @@ cj1066     10679676  compute     nyushanghai   128   PENDING   medium           
 cj1066     10679675  compute     nyushanghai   128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 cj1066     10679674  compute     nyushanghai   128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 hz4426     10629870  condo       scomputer     128   PENDING   cair             gpu:a100:3                         QOSGrpCpuLimit                          
-hz4426     10679803  condo       scomputer     128   PENDING   cair             gpu:a100:2                         QOSGrpCpuLimit                          
 ss14247    10663392  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-ay1620     10663468  nvidia      scomputer     12    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ay1620     10663469  nvidia      scomputer     12    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ay1620     10663468  nvidia      scomputer     12    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mb7099     10674336  nvidia      socialscience 1     PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mb7099     10674338  nvidia      socialscience 1     PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 ss14247    10673252  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
@@ -451,9 +450,9 @@ hj2836     10678167  nvidia      ccs           8     PENDING   nvidia           
 hj2836     10678166  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678170  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678168  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10678172  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678171  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678173  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10678172  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678174  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678175  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 jl10897    10680211  nvidia      scomputer     16    PENDING   nvidia           N/A                                QOSMinGRES                              
