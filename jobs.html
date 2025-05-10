@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         30        9       76 %     || DALMA    ||          20%          201          165         9496           43          90           4      ||
-||   99         70       29       70 %     || JUBAIL   ||          44%           40           69         9315          114          27           0      ||
+||   39         30        9       76 %     || DALMA    ||          19%          204          163         9526           42          87           4      ||
+||   99         72       27       72 %     || JUBAIL   ||          44%           40           69         9315          114          21           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:8
@@ -30,19 +30,19 @@
 ||  - |  - |  - ||cgsb         || 4096 |   2 % |   -   |   -   ||   115 |     6 ||   nb3608 |   2 % ||     10 |     1 ||    10 |     1 ||     - |     - ||
 ||  - |  - |  - ||chemistry    ||12824 |  47 % |  13 % |   3 % ||  6152 |    71 ||  sme9918 |  22 % ||   8960 |     7 ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||civil        || 3200 |  30 % |   -   |   5 % ||   968 |    36 ||    sa183 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||collaborator || 3072 |  71 % |   3 % |   6 % ||  2196 |   167 ||   ha3152 |  26 % ||  11904 |  1424 ||     - |     - || 11904 |  1424 ||
+||  - |  - |  - ||collaborator || 3072 |  73 % |   3 % |   7 % ||  2247 |   173 ||   ha3152 |  27 % ||  11784 |  1418 ||     - |     - || 11784 |  1418 ||
 ||  3 |  - |  - ||csem         || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   rp4207 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  98 % |   1 % |   1 % ||   754 |    20 ||   db5394 |  34 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 |  - |  - ||ecomputer    || 4096 |   5 % |   -   |   -   ||   209 |    17 ||  ljl5178 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    46 |     5 ||   sn3397 |   -   ||      2 |     2 ||     - |     - ||     - |     - ||
+|| 17 |  - |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   249 |    19 ||  ljl5178 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    18 |     4 ||   zw3464 |   -   ||      2 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  17 % |   5 % |   -   ||  2206 |     5 ||   xh3078 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  87 % |   2 % |   -   ||   896 |     7 ||   cj1066 |  87 % ||    384 |     3 ||     - |     - ||   384 |     3 ||
 ||  - |  - |  - ||physics      ||11824 |  17 % |   4 % |   -   ||  2048 |     4 ||   cc6881 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  15 % |   9 % |   -   ||  4180 |    12 ||    ah166 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 25 |  2 |  2 ||scomputer    || 3120 |  19 % |   1 % |   1 % ||   600 |    55 ||   ay1620 |   4 % ||    280 |     4 ||     - |     - ||   280 |     4 ||
+|| 25 |  2 |  2 ||scomputer    || 3120 |  19 % |   1 % |   1 % ||   598 |    53 ||   ay1620 |   4 % ||    280 |     4 ||     - |     - ||   280 |     4 ||
 || 12 |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||     6 |     6 ||   mb7099 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
-||  9 | 16 | 16 ||students     || 6144 |  17 % |   2 % |   -   ||  1091 |    23 ||   ag7008 |  14 % ||   6176 |    58 ||     - |     - ||  6176 |    58 ||
+||  9 | 14 | 14 ||students     || 6144 |  17 % |   2 % |   -   ||  1091 |    23 ||   ag7008 |  14 % ||   5406 |    50 ||     - |     - ||  5406 |    50 ||
 ==========================================================================================================================================================
 ||  4 |  - |  - ||c2           ||  384 |  66 % |   -   |   -   ||   257 |     3 ||   db5394 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  5 |  5 ||cair         ||  128 | 100 % |   -   |   -   ||   128 |     1 ||   hz4426 | 100 % ||    256 |     2 ||     - |     - ||   256 |     2 ||
@@ -439,21 +439,9 @@ gm3583     10667136  compute     collaborator  5     PENDING   small            
 ap6420     10672255  compute     collaborator  1536  PENDING   large            N/A                                AssocGrpCpuLimit                        
 ha3152     10672754  compute     collaborator  96    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ha3152     10672756  compute     collaborator  96    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-gm3583     10676078  compute     collaborator  20    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-gm3583     10676089  compute     collaborator  20    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-gm3583     10676091  compute     collaborator  20    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-gm3583     10676090  compute     collaborator  20    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-gm3583     10676093  compute     collaborator  20    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-gm3583     10676092  compute     collaborator  20    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 cj1066     10679676  compute     nyushanghai   128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 cj1066     10679675  compute     nyushanghai   128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 cj1066     10679674  compute     nyushanghai   128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10679680  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -504,26 +492,24 @@ ay1620     10663469  nvidia      scomputer     12    PENDING   nvidia           
 mb7099     10674336  nvidia      socialscience 1     PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 mb7099     10674338  nvidia      socialscience 1     PENDING   nvidia           gpu:a100:2                         QOSMaxGRESPerUser                       
 ss14247    10673252  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-hj2836     10676437  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10676441  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10676440  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10676437  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10676442  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10676441  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10676445  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10676443  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10676447  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10676446  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10676447  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678165  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10678167  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678166  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10678170  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678168  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10678172  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10678167  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678171  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10678170  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678173  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10678172  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678174  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10678175  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-mka7870    10679600  nvidia      students      1     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
-mka7870    10679599  nvidia      students      1     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 mka7870    10679606  nvidia      students      1     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 mka7870    10679605  nvidia      students      1     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 mka7870    10679604  nvidia      students      1     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
