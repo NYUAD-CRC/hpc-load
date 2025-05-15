@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         35        4       89 %     || DALMA    ||          15%          289           76        10114           51          26           4      ||
-||   95         77       18       81 %     || JUBAIL   ||          51%           18           68         6138          137          29           0      ||
+||   39         35        4       89 %     || DALMA    ||          15%          288           76        10116           51          22           4      ||
+||   95         77       18       81 %     || JUBAIL   ||          53%           11           68         5262          144          36           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:8   GPU:19
@@ -28,13 +28,13 @@
 ||  - |  - |  - ||cass         || 4096 |   6 % |   -   |   -   ||   248 |     2 ||   jb5784 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  1 |  1 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||      8 |     1 ||     - |     - ||     8 |     1 ||
 ||  - |  - |  - ||cgsb         || 4096 |   6 % |   -   |   1 % ||   254 |    10 ||   nb3608 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||chemistry    ||12824 |  48 % |  14 % |   -   ||  6234 |    33 ||  sme9918 |  19 % ||  20480 |    16 ||     - |     - ||  5120 |     4 ||
+||  - |  - |  - ||chemistry    ||12824 |  48 % |  14 % |   -   ||  6232 |    32 ||  sme9918 |  19 % ||  20480 |    16 ||     - |     - ||  5120 |     4 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    30 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  4 |  4 ||civil        || 3200 |   5 % |   -   |   -   ||   163 |     6 ||   da3205 |   4 % ||      2 |     1 ||     - |     - ||     2 |     1 ||
 ||  4 |  - |  - ||collaborator || 3072 |  84 % |   5 % |   2 % ||  2611 |    48 ||   ap6420 |  29 % ||  10071 |  1100 ||     - |     - || 10071 |  1100 ||
 ||  - |  - |  - ||cqts         || 2048 |   6 % |   -   |   -   ||   128 |     1 ||   ae2589 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  46 % |   -   |   -   ||   356 |     7 ||   db5394 |  27 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 16 |  1 |  1 ||ecomputer    || 4096 |   4 % |   -   |   -   ||   188 |    17 ||   ll5484 |   2 % ||     12 |     1 ||     - |     - ||    12 |     1 ||
+|| 16 |  1 |  1 ||ecomputer    || 4096 |   4 % |   -   |   -   ||   168 |    16 ||   ll5484 |   2 % ||     12 |     1 ||     - |     - ||    12 |     1 ||
 ||  7 |  - |  - ||electrical   || 4096 |  10 % |   -   |   -   ||   425 |    11 ||  aat9458 |   9 % ||      2 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    21 |    21 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||nyuny        || 1024 |   -   |   -   |   -   ||     8 |     1 ||   xp2042 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -43,7 +43,7 @@
 ||  - |  - |  - ||preempt      ||27000 |  30 % |  16 % |   6 % ||  8209 |    74 ||    ah166 |  22 % ||      - |     - ||     - |     - ||     - |     - ||
 || 17 |  - |  - ||scomputer    || 3120 |  14 % |   -   |   2 % ||   458 |    23 ||   ia2280 |   8 % ||    161 |    16 ||     - |     - ||   161 |    16 ||
 || 18 |  4 |  4 ||socialscience|| 4096 |   -   |   -   |   -   ||    14 |    14 ||  atb8710 |   -   ||      2 |     2 ||     - |     - ||     2 |     2 ||
-|| 10 | 10 | 10 ||students     || 6144 |   6 % |   -   |   1 % ||   397 |    23 ||   at5130 |   4 % ||     36 |     4 ||     - |     - ||    36 |     4 ||
+|| 10 | 10 | 10 ||students     || 6144 |  21 % |   2 % |   1 % ||  1293 |    30 ||   ag7008 |  14 % ||   6436 |    54 ||     - |     - ||  6436 |    54 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  65 % |   -   |   1 % ||   252 |     5 ||   db5394 |  55 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  3 |  3 ||cair         ||  128 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     1 ||     - |     - ||   128 |     1 ||
@@ -225,6 +225,56 @@ ap6420     10709962  compute     collaborator  1536  PENDING   large            
 sme9918    10709717  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10709719  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 tag9888    10710241  compute     access        128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ag7008     10711326  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 hz4426     10629870  condo       scomputer     128   PENDING   cair             gpu:a100:3                         QOSGrpGRES                              
 km6846     10711033  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711033  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
