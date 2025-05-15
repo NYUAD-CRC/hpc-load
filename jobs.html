@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         29       10       74 %     || DALMA    ||          16%          282           82         9943           52          24           4      ||
+||   39         29       10       74 %     || DALMA    ||          16%          281           83         9941           52          34           4      ||
 ||   95         71       24       74 %     || JUBAIL   ||          46%           18           79         8190          126          29           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -34,14 +34,14 @@
 ||  5 |  - |  - ||collaborator || 3072 |  86 % |   5 % |   2 % ||  2670 |    50 ||   ap6420 |  31 % ||  10071 |  1100 ||     - |     - || 10071 |  1100 ||
 ||  - |  - |  - ||cqts         || 2048 |   6 % |   -   |   -   ||   128 |     1 ||   ae2589 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  48 % |   -   |   -   ||   376 |    10 ||   db5394 |  27 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 16 |  - |  - ||ecomputer    || 4096 |   4 % |   -   |   -   ||   168 |    16 ||   ll5484 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 16 |  1 |  1 ||ecomputer    || 4096 |   4 % |   -   |   -   ||   168 |    16 ||   ll5484 |   2 % ||     12 |     1 ||     - |     - ||    12 |     1 ||
 ||  4 |  4 |  4 ||electrical   || 4096 |  10 % |   -   |   -   ||   424 |    10 ||  aat9458 |   9 % ||     10 |     4 ||     - |     - ||     8 |     2 ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    21 |    21 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||nyuny        || 1024 |   1 % |   -   |   -   ||    16 |     2 ||   xp2042 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  25 % |   -   |   -   ||   260 |     3 ||   cj1066 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  17 % |   4 % |   -   ||  2048 |     4 ||   cc6881 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  30 % |  16 % |   6 % ||  8209 |    74 ||    ah166 |  22 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 20 |  - |  - ||scomputer    || 3120 |  15 % |   -   |   2 % ||   477 |    26 ||   ia2280 |   8 % ||    167 |    22 ||     - |     - ||   167 |    22 ||
+|| 20 |  - |  - ||scomputer    || 3120 |  15 % |   -   |   2 % ||   479 |    28 ||   ia2280 |   8 % ||    166 |    21 ||     - |     - ||   166 |    21 ||
 ||  4 |  8 |  8 ||socialscience|| 4096 |   2 % |   -   |   -   ||   100 |   100 ||  atb8710 |   2 % ||      4 |     4 ||     - |     - ||     4 |     4 ||
 || 10 | 10 | 10 ||students     || 6144 |   6 % |   -   |   1 % ||   397 |    23 ||   at5130 |   4 % ||     36 |     4 ||     - |     - ||    36 |     4 ||
 ==========================================================================================================================================================
@@ -49,7 +49,7 @@
 ||  - |  3 |  3 ||cair         ||  128 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     1 ||     - |     - ||   128 |     1 ||
 ||  1 |  - |  - ||csm          ||  640 |  20 % |   -   |   -   ||   128 |     1 ||   da3205 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |   5 % |   -   |   -   ||    20 |     1 ||   aa5506 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 | 19 | 19 ||nlp          ||  208 |  13 % |   -   |   -   ||    28 |     5 || mms10094 |  11 % ||     19 |    19 ||     - |     - ||    19 |    19 ||
+||  7 | 18 | 18 ||nlp          ||  208 |  13 % |   -   |   -   ||    28 |     5 || mms10094 |  11 % ||     18 |    18 ||     - |     - ||    18 |    18 ||
 ||  1 |  - |  - ||serdal       ||   80 |  25 % |   -   |   -   ||    20 |     1 ||   wh1165 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -230,22 +230,21 @@ hz4426     10629870  condo       scomputer     128   PENDING   cair             
 km6846     10711032  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711032  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711032  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10711032  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711033  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711033  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711033  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711033  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711033  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711105  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711105  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711105  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711105  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 km6846     10711105  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+km6846     10711104  condo       scomputer     1     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 jl10897    10680211  nvidia      scomputer     16    PENDING   nvidia           N/A                                QOSMinGRES                              
 jl10897    10680370  nvidia      scomputer     4     PENDING   nvidia           N/A                                QOSMinGRES                              
 ss14247    10689920  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
@@ -258,6 +257,7 @@ hj2836     10710858  nvidia      ccs           8     PENDING   nvidia           
 hj2836     10710857  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 fbd2014    10710521  nvidia      students      6     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 fbd2014    10710521  nvidia      students      6     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
+ll5484     10711289  nvidia      ecomputer     12    PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mt5136     10566453  visual      electrical    1     PENDING   normal           gpu:1                              PartitionTimeLimit                      
 mt5136     10527244  visual      electrical    1     PENDING   normal           gpu:1                              PartitionTimeLimit                      
 </pre>
