@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         32        7       82 %     || DALMA    ||          44%          124          190         6618          106         197           7      ||
-||   95         51       44       53 %     || JUBAIL   ||          50%           12           87         6480          124          44           0      ||
+||   39         32        7       82 %     || DALMA    ||          44%          124          189         6598          107         192           7      ||
+||   95         51       44       53 %     || JUBAIL   ||          46%           26           85         8144          112          41           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:10   GPU:9
@@ -31,12 +31,12 @@
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||      4 |     1 ||     - |     - ||     4 |     1 ||
 || 12 | 10 | 10 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||     80 |    10 ||     - |     - ||    80 |    10 ||
 ||  - |  - |  - ||cgsb         || 4096 |  30 % |   -   |   9 % ||  1232 |   206 ||   gm3583 |  24 % ||   1235 |   247 ||     - |     - ||  1235 |   247 ||
-||  - |  - |  - ||chemistry    ||12824 |  48 % |  13 % |   2 % ||  6180 |    34 ||  sme9918 |  19 % ||  16640 |    13 ||     - |     - ||  5120 |     4 ||
+||  - |  - |  - ||chemistry    ||12824 |  36 % |   9 % |   2 % ||  4644 |    32 ||  sme9918 |  19 % ||  16640 |    13 ||     - |     - ||  5120 |     4 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    30 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  - |  - ||civil        || 3200 |   5 % |   -   |   -   ||   170 |     6 ||   da3205 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  89 % |   3 % |   9 % ||  2759 |    78 ||   ha3152 |  33 % ||  11245 |  1389 ||     - |     - || 11245 |  1389 ||
 ||  3 |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   rp4207 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  97 % |   -   |   4 % ||   747 |    31 ||   dw2712 |  54 % ||   2184 |    78 ||     - |     - ||  2184 |    78 ||
+||  - |  - |  - ||default      ||  768 |  99 % |   -   |   4 % ||   767 |    31 ||   dw2712 |  58 % ||   1960 |    70 ||     - |     - ||  1960 |    70 ||
 || 17 |  - |  - ||ecomputer    || 4096 |   7 % |   -   |   -   ||   305 |    24 ||   lm4344 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    24 |     6 ||   zw3464 |   -   ||      2 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   4 % |   -   |   -   ||   179 |    62 ||  gencore |   4 % ||   2250 |   171 ||     - |     - ||  2250 |   171 ||
@@ -46,7 +46,7 @@
 ||  - |  - |  - ||preempt      ||27000 |  34 % |  20 % |   4 % ||  9282 |   102 ||    ah166 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||scomputer    || 3120 |  13 % |   -   |   3 % ||   432 |    17 ||   ia2280 |   7 % ||    148 |     3 ||     - |     - ||   148 |     3 ||
 ||  6 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     3 |     3 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  8 |  8 ||students     || 6144 |  24 % |   -   |  10 % ||  1486 |    55 ||  sk10275 |  17 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
+||  4 |  8 |  8 ||students     || 6144 |  22 % |   -   |  10 % ||  1358 |    53 ||  sk10275 |  17 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   rk3570 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  21 % |   -   |   -   ||    84 |     3 ||   db5394 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -551,14 +551,6 @@ dw2712     10725947  compute     default       28    PENDING   small            
 dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-dw2712     10725947  compute     default       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 gencore    10714083  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10713683  compute     gencore       28    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 gencore    10714379  compute     gencore       1     PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
@@ -570,14 +562,20 @@ asa8168    10719604  nvidia      cbs           4     PENDING   nvidia           
 ss14247    10721362  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 hj2836     10722022  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10722023  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10722025  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10722024  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10722025  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10722026  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10722028  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10722027  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10722030  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10722029  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10722028  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10722031  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10722030  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+lz2826     10721572  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721571  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721570  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721569  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721568  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721567  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721579  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721578  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721577  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -585,12 +583,17 @@ lz2826     10721576  nvidia,versanyushanghai   8     PENDING   nvidia           
 lz2826     10721575  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721574  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721573  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721572  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721571  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721570  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721569  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721568  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721567  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721590  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721589  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721588  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721587  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721586  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721585  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721584  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721583  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721582  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721581  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+lz2826     10721580  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721611  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721610  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721609  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -598,7 +601,6 @@ lz2826     10721608  nvidia,versanyushanghai   8     PENDING   nvidia           
 lz2826     10721607  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721606  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721605  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721580  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721604  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721603  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721602  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -613,16 +615,6 @@ lz2826     10721594  nvidia,versanyushanghai   8     PENDING   nvidia           
 lz2826     10721593  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721592  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 lz2826     10721591  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721590  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721589  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721588  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721587  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721586  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721585  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721584  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721583  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721582  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-lz2826     10721581  nvidia,versanyushanghai   8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 mt5136     10566453  visual      electrical    1     PENDING   normal           gpu:1                              PartitionTimeLimit                      
 mt5136     10527244  visual      electrical    1     PENDING   normal           gpu:1                              PartitionTimeLimit                      
 </pre>
