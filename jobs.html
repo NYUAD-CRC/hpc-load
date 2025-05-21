@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         26       13       66 %     || DALMA    ||          29%          185          165         8354           60         150           8      ||
-||   95         77       18       81 %     || JUBAIL   ||          70%           36           70         8376          117          27           0      ||
+||   39         26       13       66 %     || DALMA    ||          29%          186          164         8378           60         142           8      ||
+||   95         76       19       80 %     || JUBAIL   ||          70%           36           70         8376          117          26           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:12   GPU:19
@@ -27,12 +27,12 @@
 ||  - |  - |  - ||avengers     ||12800 |   -   |   -   |   -   ||    20 |     1 ||     wz22 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |  11 % |   -   |   1 % ||   354 |    32 ||   dr2930 |   6 % ||     40 |     1 ||     - |     - ||    40 |     1 ||
 ||  4 |  - |  - ||cair         || 2048 |   -   |   -   |   -   ||     4 |     4 ||   jz7323 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||   108 |    17 ||   hj2836 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |  31 % |   -   |  10 % ||  1280 |   205 ||   gm3583 |  23 % ||   1710 |   342 ||     - |     - ||     - |     - ||
+|| 16 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||   100 |    16 ||   hj2836 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cgsb         || 4096 |  31 % |   -   |  10 % ||  1280 |   205 ||   gm3583 |  23 % ||   1705 |   341 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||chemistry    ||12824 |  35 % |  13 % |   6 % ||  4588 |    67 ||  sme9918 |  21 % ||   7680 |     6 ||     - |     - ||  7680 |     6 ||
 ||  2 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    20 |     2 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  7 |  6 ||civil        || 3200 |   9 % |   -   |   -   ||   307 |     8 ||   da3205 |   8 % ||    132 |     3 ||   128 |     1 ||     4 |     2 ||
-||  - |  - |  - ||collaborator || 3072 |  79 % |   7 % |   2 % ||  2444 |    42 ||   ha3152 |  32 % ||  10547 |  1386 ||     - |     - || 10547 |  1386 ||
+||  - |  - |  - ||collaborator || 3072 |  78 % |   7 % |   1 % ||  2420 |    41 ||   ha3152 |  32 % ||  10547 |  1386 ||     - |     - || 10547 |  1386 ||
 ||  - |  - |  - ||cqts         || 2048 |   6 % |   -   |   -   ||   128 |     1 ||  mm12971 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||csem         || 3072 |  16 % |   1 % |   -   ||   512 |     4 ||   rp4207 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  39 % |   -   |   1 % ||   302 |    15 ||   db5394 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -44,7 +44,7 @@
 ||  - |  - |  - ||preempt      ||27000 |  18 % |  17 % |   -   ||  5046 |    22 ||    ah166 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||scomputer    || 3120 |  14 % |   -   |   3 % ||   457 |    27 ||   na3758 |   9 % ||    148 |     3 ||     - |     - ||   148 |     3 ||
 ||  1 |  - |  - ||socialscience|| 4096 |   2 % |   -   |   -   ||   105 |   102 ||  atb8710 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  6 |  4 ||students     || 6144 |  23 % |   3 % |   4 % ||  1443 |    32 ||   ag7008 |  14 % ||   2348 |    21 ||    32 |     2 ||  2316 |    19 ||
+||  5 |  6 |  4 ||students     || 6144 |  23 % |   3 % |   4 % ||  1443 |    32 ||   ag7008 |  14 % ||   1964 |    18 ||    32 |     2 ||  1932 |    16 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  65 % |   -   |   -   ||   168 |     2 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||c2           ||  384 |  36 % |   -   |   1 % ||   141 |     6 ||   db5394 |  36 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -479,16 +479,12 @@ gm3583     10731714  compute     cgsb          5     PENDING   small            
 gm3583     10731714  compute     cgsb          5     PENDING   small            N/A                                JobArrayTaskLimit                       
 gm3583     10731714  compute     cgsb          5     PENDING   small            N/A                                JobArrayTaskLimit                       
 gm3583     10731714  compute     cgsb          5     PENDING   small            N/A                                JobArrayTaskLimit                       
-gm3583     10731714  compute     cgsb          5     PENDING   small            N/A                                JobArrayTaskLimit                       
 sme9918    10733078  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 lm4344     10734426  compute     ecomputer     20    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10737324  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10737326  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10737331  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10737332  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10748341  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10748341  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10748341  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10748341  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10748341  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10748341  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
