@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         35        4       89 %     || DALMA    ||          26%          209          142         8687           59         129           9      ||
-||   95         80       15       84 %     || JUBAIL   ||          66%           45           70         9582          108          28           0      ||
+||   39         35        4       89 %     || DALMA    ||          38%          123          228         7307           59         138           9      ||
+||   95         80       15       84 %     || JUBAIL   ||          66%           45           70         9523          108          29           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:17   GPU:20
+	OOD JOBS:  CPU:18   GPU:20
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -25,7 +25,7 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  33 % |   7 % |   -   ||  2088 |    10 ||  tag9888 |  17 % ||   9088 |    71 ||     - |     - ||  5888 |    46 ||
 ||  - |  - |  - ||avengers     ||12800 |   -   |   -   |   -   ||    20 |     1 ||     wz22 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  11 % |   -   |   -   ||   343 |    21 ||   dr2930 |   6 % ||     40 |     1 ||     - |     - ||    40 |     1 ||
+||  - |  - |  - ||biology      || 3072 |  11 % |   -   |   1 % ||   363 |    22 ||   dr2930 |   6 % ||     40 |     1 ||     - |     - ||    40 |     1 ||
 ||  3 |  - |  - ||cair         || 2048 |   -   |   -   |   -   ||     3 |     3 ||   jz7323 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 16 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||   100 |    16 ||   hj2836 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |  30 % |   -   |  10 % ||  1255 |   200 ||   gm3583 |  22 % ||   1635 |   327 ||     - |     - ||     - |     - ||
@@ -37,14 +37,14 @@
 ||  3 |  - |  - ||csem         || 3072 |  16 % |   1 % |   -   ||   512 |     4 ||   rp4207 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  97 % |   1 % |   1 % ||   750 |    22 ||   an5240 |  66 % ||    128 |     2 ||     - |     - ||   128 |     2 ||
 || 22 |  - |  - ||ecomputer    || 4096 |  31 % |   4 % |   -   ||  1308 |    32 ||  sc11670 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |  3 |  - ||electrical   || 4096 |  11 % |   1 % |   -   ||   486 |    19 ||  aat9458 |   9 % ||     32 |     5 ||    30 |     3 ||     - |     - ||
+|| 13 |  3 |  - ||electrical   || 4096 |  11 % |   1 % |   -   ||   481 |    18 ||  aat9458 |   9 % ||     32 |     5 ||    30 |     3 ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  12 % |   -   |   -   ||   128 |     1 ||   cj1066 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  30 % |  12 % |   -   ||  3632 |     8 ||   cc6881 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |  15 % |  14 % |   -   ||  4278 |    21 ||    ah166 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||scomputer    || 3120 |  14 % |   -   |   3 % ||   465 |    28 ||   na3758 |   9 % ||    148 |     3 ||     - |     - ||   148 |     3 ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    14 |    11 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  4 |  4 ||students     || 6144 |   8 % |   -   |   4 % ||   503 |    23 ||  sk10275 |   5 % ||     12 |     1 ||     - |     - ||    12 |     1 ||
+||  5 |  4 |  4 ||students     || 6144 |  31 % |   -   |  15 % ||  1927 |   109 ||   ag7008 |  22 % ||    252 |    16 ||     - |     - ||   252 |    16 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  65 % |   -   |   -   ||   168 |     2 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||c2           ||  384 |  36 % |   -   |   1 % ||   141 |     6 ||   db5394 |  36 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -470,6 +470,21 @@ sme9918    10737331  compute     chemistry     1280  PENDING   large            
 sme9918    10737332  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 an5240     10748897  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 an5240     10748898  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ag7008     10748924  compute     students      16    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 hz4426     10629870  condo       scomputer     128   PENDING   cair             gpu:a100:3                         QOSGrpGRES                              
 jl10897    10680370  nvidia      scomputer     4     PENDING   nvidia           N/A                                QOSMinGRES                              
 jl10897    10680211  nvidia      scomputer     16    PENDING   nvidia           N/A                                QOSMinGRES                              
