@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         20       19       51 %     || DALMA    ||          19%          312           55         9585           52          69           4      ||
-||   95         80       15       84 %     || JUBAIL   ||          64%           54           64        10082          105          32           0      ||
+||   39         20       19       51 %     || DALMA    ||          19%          312           55         9585           52          68           4      ||
+||   95         75       20       78 %     || JUBAIL   ||          63%           56           65        10466          102          27           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:4   GPU:10
@@ -26,7 +26,7 @@
 ||  - |  - |  - ||access       || 6144 |   6 % |   1 % |   -   ||   424 |     4 ||  tag9888 |   6 % ||  12160 |    95 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   1 % |   -   |   -   ||    56 |     1 ||   dr2930 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||    78 |    16 ||   hj2836 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  - |  - ||cgsb         || 4096 |  62 % |   8 % |   1 % ||  2558 |    82 ||   aa5506 |  59 % ||  18432 |   576 ||     - |     - || 18432 |   576 ||
+||  7 |  - |  - ||cgsb         || 4096 |  58 % |   7 % |   1 % ||  2398 |    77 ||   aa5506 |  55 % ||  18368 |   574 ||     - |     - || 18368 |   574 ||
 ||  - |  - |  - ||chemistry    ||12824 |  49 % |  20 % |   4 % ||  6288 |    38 ||  sme9918 |  21 % ||  39680 |    31 ||     - |     - || 28160 |    22 ||
 ||  6 |  1 |  - ||civil        || 3200 |  19 % |   -   |   3 % ||   625 |    18 ||    sa183 |  10 % ||    128 |     1 ||   128 |     1 ||     - |     - ||
 ||  1 |  - |  - ||collaborator || 3072 |  93 % |   7 % |   4 % ||  2857 |    43 ||   ap6420 |  37 % ||  10121 |  1401 ||     - |     - || 10121 |  1401 ||
@@ -35,13 +35,13 @@
 || 16 |  2 |  2 ||electrical   || 4096 |   3 % |   -   |   -   ||   123 |    22 ||   zw3464 |   2 % ||      6 |     3 ||     - |     - ||     4 |     1 ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||    11 |     2 ||   gas361 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  12 % |   5 % |   -   ||  1552 |     4 ||   ds7760 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||nyuny        || 1024 |  65 % |   2 % |   -   ||   672 |     7 ||   xp2042 |  65 % ||   4064 |    42 ||     - |     - ||  4064 |    42 ||
+||  - |  - |  - ||nyuny        || 1024 |  65 % |   2 % |   -   ||   672 |     7 ||   xp2042 |  65 % ||   3968 |    41 ||     - |     - ||  3968 |    41 ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  12 % |   -   |   -   ||   128 |     1 ||   cj1066 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  39 % |  16 % |   -   ||  4656 |    10 ||   cc6881 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   188 |     8 ||   lm4344 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  - |  - ||scomputer    || 3120 |  19 % |   -   |   4 % ||   598 |    23 ||   ia2280 |  10 % ||    148 |     3 ||     - |     - ||   148 |     3 ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    14 |    11 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||students     || 6144 |  13 % |   2 % |   -   ||   804 |    33 ||   ag7008 |  10 % ||   2216 |   554 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||students     || 6144 |   6 % |   1 % |   -   ||   420 |    30 ||   ag7008 |   4 % ||   2184 |   546 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  50 % |   -   |   -   ||   128 |     1 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||c2           ||  384 |  14 % |   -   |   -   ||    57 |     3 ||   db5394 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -195,7 +195,6 @@ xp2042     10757115  compute     nyuny         96    PENDING   medium           
 xp2042     10757115  compute     nyuny         96    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     10757115  compute     nyuny         96    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     10757115  compute     nyuny         96    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-xp2042     10757115  compute     nyuny         96    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     10760689  compute     nyuny         128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10769823  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 sme9918    10769823  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
@@ -304,8 +303,6 @@ aa5506     10774735  compute     cgsb          32    PENDING   small            
 aa5506     10774735  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     10774735  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     10774735  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     10774735  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     10774735  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     10774947  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     10774947  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     10774947  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -806,14 +803,6 @@ aa5506     10774947  compute     cgsb          32    PENDING   small            
 aa5506     10774947  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     10774947  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     10774947  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
-ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
 ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
 ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
 ap6444     10773699  compute     students      4     PENDING   small            N/A                                JobArrayTaskLimit                       
