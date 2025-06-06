@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          7       32       17 %     || DALMA    ||          48%           81          130         5939          117         158           4      ||
-||   99         84       15       84 %     || JUBAIL   ||          46%          102           43        15212           78          12           0      ||
+||   39          7       32       17 %     || DALMA    ||          48%           84          129         5995          115         176           4      ||
+||   99         78       21       78 %     || JUBAIL   ||          46%          102           43        15212           78          14           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:9   GPU:22
@@ -30,8 +30,8 @@
 ||  - |  - |  - ||cgsb         || 4096 |   7 % |   -   |   1 % ||   296 |     9 ||   nb3608 |   3 % ||     81 |     5 ||     - |     - ||    81 |     5 ||
 ||  - |  - |  - ||chemistry    ||12824 |  37 % |  12 % |  10 % ||  4777 |    58 ||  sme9918 |  29 % ||  35840 |    28 ||     - |     - || 12800 |    10 ||
 ||  5 |  - |  - ||cities       || 4096 |   1 % |   -   |   -   ||    50 |     5 ||   pc3377 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |  - |  - ||civil        || 3200 |  15 % |   -   |   2 % ||   485 |    25 ||   cc6307 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  - |  - ||collaborator || 3072 |  99 % |   9 % |   2 % ||  3065 |    37 ||   ap6420 |  50 % ||   6209 |   347 ||     - |     - ||  6209 |   347 ||
+|| 13 |  - |  - ||civil        || 3200 |  13 % |   -   |   1 % ||   429 |    23 ||   cc6307 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
+||  5 |  - |  - ||collaborator || 3072 |  99 % |   9 % |   2 % ||  3065 |    37 ||   ap6420 |  50 % ||   1729 |   277 ||     - |     - ||  1729 |   277 ||
 ||  3 |  - |  - ||csem         || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   rp4207 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  38 % |   -   |   1 % ||   296 |    12 ||   db5394 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||ecomputer    || 4096 |   2 % |   -   |   -   ||    96 |    11 ||   ll5484 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -40,9 +40,9 @@
 ||  - |  - |  - ||mechanical   ||12288 |  12 % |   5 % |   -   ||  1552 |     4 ||   ds7760 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||nyuny        || 1024 |   1 % |   -   |   -   ||    16 |     2 ||   xp2042 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  30 % |  12 % |   -   ||  3584 |     7 ||   cc6881 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 10 |  - |  - ||scomputer    || 3120 |  18 % |   -   |   3 % ||   577 |    21 ||   ia2280 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||scomputer    || 3120 |  17 % |   -   |   3 % ||   553 |    15 ||   ia2280 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     8 |     4 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 10 |  8 |  8 ||students     || 6144 |  54 % |   3 % |  19 % ||  3338 |   251 ||  sk10275 |  32 % ||  11428 |   281 ||     - |     - || 11428 |   281 ||
+|| 10 |  8 |  8 ||students     || 6144 |  54 % |   3 % |  19 % ||  3338 |   251 ||  sk10275 |  32 % ||  10394 |   272 ||     - |     - || 10394 |   272 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  50 % |   -   |   -   ||   128 |     1 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  57 % |   -   |   1 % ||   220 |    10 ||   db5394 |  36 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -100,80 +100,12 @@ sme9918    10861082  compute     chemistry     1280  PENDING   large            
 sme9918    10861082  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10861082  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10861082  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10876605  compute     collaborator  64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ss20440    10876613  compute     collaborator  128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 sk10275    10877185  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877185  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877185  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877185  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877185  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877185  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -374,17 +306,6 @@ sk10275    10877186  compute     students      10    PENDING   small            
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-an5240     10877612  compute     collaborator  64    PENDING   medium           N/A                                AssocGrpCpuLimit                        
-an5240     10878903  compute     collaborator  64    PENDING   medium           N/A                                AssocGrpCpuLimit                        
-an5240     10880422  compute     collaborator  64    PENDING   medium           N/A                                AssocGrpCpuLimit                        
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ag7008     10880452  compute     students      128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
