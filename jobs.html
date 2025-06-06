@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          8       31       20 %     || DALMA    ||          49%           76          134         5908          118         167           4      ||
-||   99         88       11       88 %     || JUBAIL   ||          36%          121           50        18123           52          13           0      ||
+||   39         15       24       38 %     || DALMA    ||          49%           78          132         5908          118         174           4      ||
+||   99         88       11       88 %     || JUBAIL   ||          34%          127           44        18637           52          13           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:21
@@ -36,21 +36,20 @@
 ||  - |  - |  - ||default      ||  768 |  30 % |   -   |   1 % ||   232 |    10 ||   db5394 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||ecomputer    || 4096 |   2 % |   -   |   -   ||    96 |    11 ||   ll5484 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    18 |     3 ||   yw3576 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     7 |     2 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  20 % |   8 % |   -   ||  2576 |     7 ||   ds7760 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||nyuny        || 1024 |   -   |   -   |   -   ||     8 |     1 ||   xp2042 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - | 10 |  - ||nyushanghai  || 1024 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     10 |    10 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||physics      ||11824 |   4 % |   1 % |   -   ||   512 |     1 ||   cc6881 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   161 |     9 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |  - |  - ||scomputer    || 3120 |  14 % |   -   |   3 % ||   462 |    18 ||   ia2280 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
+||  7 |  - |  - ||scomputer    || 3120 |  16 % |   -   |   3 % ||   518 |    25 ||   ia2280 |   9 % ||    320 |    40 ||     - |     - ||   320 |    40 ||
 || 18 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    18 |    14 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 10 |  8 |  8 ||students     || 6144 |  40 % |   -   |  18 % ||  2474 |   243 ||  sk10275 |  32 % ||   1574 |   157 ||     - |     - ||  1574 |   157 ||
+|| 10 |  8 |  8 ||students     || 6144 |  40 % |   -   |  18 % ||  2474 |   243 ||  sk10275 |  32 % ||   1394 |   139 ||     - |     - ||  1394 |   139 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  50 % |   -   |   -   ||   128 |     1 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  53 % |   -   |   1 % ||   204 |     9 ||   db5394 |  36 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||chi          ||  768 |  10 % |   -   |   -   ||    84 |     3 ||  maa9511 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||marinemicro  ||  256 | 100 % |   -   |   -   ||   256 |     2 ||  tag9888 | 100 % ||   1408 |    11 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |  30 % |   -   |   -   ||   116 |     2 ||   aa5506 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
+||  7 | 40 | 40 ||nlp          ||  208 |  26 % |   -   |   -   ||    56 |     7 ||    gi372 |  26 % ||    320 |    40 ||     - |     - ||   320 |    40 ||
 ||  5 |  3 |  3 ||shamout      ||  192 |  46 % |   -   |   -   ||    90 |     5 ||   baj321 |  46 % ||     54 |     3 ||     - |     - ||    54 |     3 ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     2 |     2 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -236,27 +235,49 @@ sk10275    10877186  compute     students      10    PENDING   small            
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10877186  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 baj321     10876352  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
 baj321     10876353  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
 baj321     10876354  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
+gi372      10884309  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884308  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884307  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884306  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884305  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884304  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884303  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884302  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884301  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884300  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884322  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884321  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884320  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884319  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884318  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884317  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884316  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884315  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884313  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884312  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884311  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884310  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884338  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884337  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884336  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884335  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884334  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884333  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884332  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884331  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884330  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884329  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884328  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884327  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884326  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884325  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884324  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884323  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884340  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
+gi372      10884339  condo       scomputer     8     PENDING   nlp              gpu:1                              QOSGrpGRES                              
 ss14247    10864860  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 ss14247    10876567  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 </pre>
