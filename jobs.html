@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          6       33       15 %     || DALMA    ||          49%           65          129         5871          121         189           4      ||
-||   99         85       14       85 %     || JUBAIL   ||          41%          115           45        16559           63          14           0      ||
+||   39          6       33       15 %     || DALMA    ||          49%           65          129         5871          121         188           4      ||
+||   99         85       14       85 %     || JUBAIL   ||          36%          127           45        18095           51          14           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:9   GPU:12
@@ -29,7 +29,7 @@
 ||  - |  - |  - ||cgsb         || 4096 |   6 % |   -   |   1 % ||   280 |     8 ||   nb3608 |   3 % ||     61 |     4 ||     - |     - ||    61 |     4 ||
 ||  - |  - |  - ||chemistry    ||12824 |  36 % |  11 % |  12 % ||  4687 |    64 ||  sme9918 |  29 % ||  34560 |    27 ||     - |     - || 12800 |    10 ||
 || 12 |  - |  - ||civil        || 3200 |   5 % |   -   |   -   ||   189 |    15 ||   zl2307 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  - |  - ||collaborator || 3072 |  88 % |   8 % |   2 % ||  2712 |    29 ||   ap6420 |  50 % ||   1601 |   276 ||     - |     - ||  1601 |   276 ||
+||  4 |  - |  - ||collaborator || 3072 |  38 % |   3 % |   2 % ||  1176 |    28 ||   ha3152 |  19 % ||   1601 |   276 ||     - |     - ||  1601 |   276 ||
 ||  3 |  - |  - ||csem         || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   rp4207 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  38 % |   -   |   1 % ||   296 |    14 ||   db5394 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    73 |     9 ||   cw3437 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -38,7 +38,7 @@
 ||  4 | 30 | 30 ||nyushanghai  || 1024 |   -   |   -   |   -   ||     4 |     4 ||   zg2470 |   -   ||     30 |    30 ||     - |     - ||    30 |    30 ||
 ||  - |  - |  - ||physics      ||11824 |  25 % |  10 % |   -   ||  3072 |     6 ||   cc6881 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   160 |     8 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 18 |  3 |  3 ||scomputer    || 3120 |  25 % |   -   |   5 % ||   811 |    53 ||   na3758 |  17 % ||    123 |    18 ||     - |     - ||   123 |    18 ||
+|| 18 |  3 |  3 ||scomputer    || 3120 |  25 % |   -   |   5 % ||   811 |    53 ||   na3758 |  17 % ||     67 |    11 ||     - |     - ||    67 |    11 ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     2 |     2 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  4 |  4 ||students     || 6144 |  40 % |   -   |  18 % ||  2498 |   236 ||  sk10275 |  32 % ||     12 |     1 ||     - |     - ||    12 |     1 ||
 ==========================================================================================================================================================
@@ -47,7 +47,7 @@
 ||  9 |  - |  - ||chi          ||  768 |  10 % |   -   |   -   ||    84 |     3 ||  maa9511 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||marinemicro  ||  256 | 100 % |   -   |   -   ||   256 |     2 ||  tag9888 | 100 % ||    896 |     7 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |  26 % |   -   |   -   ||   100 |     1 ||   aa5506 |  26 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 | 15 | 15 ||nlp          ||  208 |  26 % |   -   |   -   ||    56 |     7 ||    gi372 |  26 % ||    120 |    15 ||     - |     - ||   120 |    15 ||
+||  7 |  8 |  8 ||nlp          ||  208 |  26 % |   -   |   -   ||    56 |     7 ||    gi372 |  26 % ||     64 |     8 ||     - |     - ||    64 |     8 ||
 ||  5 |  3 |  3 ||shamout      ||  192 |  46 % |   -   |   -   ||    90 |     5 ||   baj321 |  46 % ||     54 |     3 ||     - |     - ||    54 |     3 ||
 ||  - |  - |  - ||tr72         ||  256 |   3 % |   -   |   -   ||     8 |     1 ||   fl1092 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -93,32 +93,25 @@ sme9918    10861082  compute     chemistry     1280  PENDING   large            
 baj321     10876352  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
 baj321     10876353  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
 baj321     10876354  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
-gi372      10885106  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885105  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885104  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885103  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885102  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885113  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885112  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10885111  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10885110  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10885109  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885108  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
-gi372      10885107  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10885116  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10885115  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 gi372      10885114  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      10885113  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
+gi372      10885112  condo       scomputer     8     PENDING   nlp              gpu:a100:1                         QOSGrpGRES                              
 ss14247    10876567  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
+zg2470     10884818  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10884817  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10884816  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10884815  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884814  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884813  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884812  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884811  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884810  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884809  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10884818  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10884817  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10884816  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10884815  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884828  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884827  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884826  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -129,8 +122,6 @@ zg2470     10884822  nvidia      nyushanghai   1     PENDING   nvidia           
 zg2470     10884821  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884820  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884819  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10884837  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10884836  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884845  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884844  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884843  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -139,10 +130,12 @@ zg2470     10884841  nvidia      nyushanghai   1     PENDING   nvidia           
 zg2470     10884840  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884839  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10884838  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10884837  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10884836  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 hj2836     10884389  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10884391  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10884390  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10884392  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10884391  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10884394  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10884393  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ss13750    10885161  nvidia      scomputer     1     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
