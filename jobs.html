@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          6       33       15 %     || DALMA    ||          37%           89          118         7251          104         121           4      ||
-||   99         70       29       70 %     || JUBAIL   ||          45%          111           34        15420           78          13           0      ||
+||   39          6       33       15 %     || DALMA    ||          38%           92          115         7182          104         123           4      ||
+||   99         73       26       73 %     || JUBAIL   ||          43%          116           34        16012           73          14           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:8   GPU:13
+	OOD JOBS:  CPU:8   GPU:16
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -27,10 +27,10 @@
 ||  - |  - |  - ||cass         || 4096 |  18 % |   2 % |   -   ||   768 |     6 ||   jb5784 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  5 |  5 ||ccs          || 6144 |  18 % |   -   |   8 % ||  1148 |    51 ||  ab10917 |  15 % ||     76 |     7 ||     - |     - ||    76 |     7 ||
 ||  - |  - |  - ||cgsb         || 4096 |   7 % |   -   |   1 % ||   296 |     9 ||   nb3608 |   3 % ||     41 |     3 ||     - |     - ||    41 |     3 ||
-||  - |  - |  - ||chemistry    ||12824 |  35 % |  11 % |  11 % ||  4585 |    59 ||  sme9918 |  29 % ||  33280 |    26 ||     - |     - || 12800 |    10 ||
-||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    10 |     1 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||chemistry    ||12824 |  31 % |   9 % |  11 % ||  3993 |    55 ||  sme9918 |  29 % ||  33280 |    26 ||     - |     - || 12800 |    10 ||
+||  4 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    40 |     4 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  - |  - ||civil        || 3200 |   6 % |   -   |   -   ||   199 |    18 ||   zl2307 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||collaborator || 3072 |  99 % |   8 % |   4 % ||  3049 |    49 ||   ap6420 |  50 % ||   2418 |   334 ||     - |     - ||  2418 |   334 ||
+||  - |  - |  - ||collaborator || 3072 | 100 % |   8 % |   5 % ||  3072 |    49 ||   ap6420 |  50 % ||   2392 |   331 ||     - |     - ||  2392 |   331 ||
 ||  - |  - |  - ||default      ||  768 |  32 % |   -   |   1 % ||   253 |    13 ||   db5394 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    72 |     8 ||   cw3437 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     5 |     1 ||   yw3576 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,7 +41,7 @@
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   160 |     8 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 21 |  - |  - ||scomputer    || 3120 |  20 % |   -   |   2 % ||   638 |    38 ||   na3758 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   2 % |   -   |   -   ||    98 |    98 ||  atb8710 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-||  9 |  8 |  8 ||students     || 6144 |  18 % |   -   |   7 % ||  1147 |   100 ||  sk10275 |  13 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
+||  9 |  8 |  8 ||students     || 6144 |  19 % |   -   |   8 % ||  1193 |   108 ||  sk10275 |  12 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  50 % |   -   |   -   ||   128 |     1 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  65 % |   -   |   1 % ||   252 |    12 ||   db5394 |  36 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -86,7 +86,6 @@ sme9918    10861082  compute     chemistry     1280  PENDING   large            
 sme9918    10861082  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10861082  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    10861082  compute     chemistry     1280  PENDING   large            N/A                                QOSMaxJobsPerUserLimit                  
-am15503    10885675  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
 am15503    10885500  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
 am15503    10885394  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
 am15503    10885681  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
@@ -110,14 +109,14 @@ am15503    10885666  compute     collaborator  24    PENDING   small            
 am15503    10885738  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
 am15503    10885724  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
 am15503    10885581  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
+am15503    10885437  compute     collaborator  1     PENDING   small            N/A                                AssocGrpCpuLimit                        
+am15503    10885672  compute     collaborator  1     PENDING   small            N/A                                AssocGrpCpuLimit                        
 baj321     10876352  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
 baj321     10876354  condo       ccs           18    PENDING   shamout          gpu:a100:1                         QOSGrpMemLimit                          
 ss14247    10876567  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 zg2470     10886376  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886375  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886374  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10886397  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10886396  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886395  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886394  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886393  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -126,6 +125,8 @@ zg2470     10886391  nvidia      nyushanghai   1     PENDING   nvidia           
 zg2470     10886390  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886389  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886388  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10886397  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10886396  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 ss14247    10885800  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 zg2470     10886408  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10886407  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
