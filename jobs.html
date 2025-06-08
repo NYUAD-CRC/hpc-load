@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          1       38        2 %     || DALMA    ||          39%           63          157         7013           91         111           4      ||
-||   99         45       54       45 %     || JUBAIL   ||          42%          113           38        16484           72           7           0      ||
+||   39          1       38        2 %     || DALMA    ||          39%           63          157         7021           91         118           4      ||
+||   99         46       53       46 %     || JUBAIL   ||          41%          114           38        16612           71           8           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:8   GPU:8
+	OOD JOBS:  CPU:8   GPU:11
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -28,18 +28,18 @@
 ||  7 |  - |  - ||ccs          || 6144 |  17 % |   -   |   8 % ||  1046 |    42 ||  ab10917 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   7 % |   -   |   1 % ||   296 |     9 ||   nb3608 |   3 % ||     21 |     2 ||     - |     - ||    21 |     2 ||
 ||  - |  - |  - ||chemistry    ||12824 |  34 % |  11 % |  10 % ||  4425 |    54 ||  sme9918 |  29 % ||  32000 |    25 ||     - |     - || 12800 |    10 ||
-||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    10 |     1 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    40 |     4 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||civil        || 3200 |  27 % |   -   |   6 % ||   873 |    96 ||   zl2307 |  23 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||collaborator || 3072 |  98 % |   6 % |  10 % ||  3019 |    56 ||   ap6420 |  50 % ||  33989 |   879 ||     - |     - || 33989 |   879 ||
 ||  - |  - |  - ||default      ||  768 |  28 % |   -   |   1 % ||   220 |    10 ||   db5394 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||    33 |     5 ||   ll5484 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    30 |     2 ||   zw3464 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||12288 |  22 % |   9 % |   -   ||  2704 |     7 ||   ds7760 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 | 22 | 22 ||nyushanghai  || 1024 |  12 % |   -   |   -   ||   132 |     5 ||   cj1066 |  12 % ||     22 |    22 ||     - |     - ||    22 |    22 ||
+||  4 | 20 | 20 ||nyushanghai  || 1024 |  12 % |   -   |   -   ||   132 |     5 ||   cj1066 |  12 % ||     20 |    20 ||     - |     - ||    20 |    20 ||
 ||  - |  - |  - ||physics      ||11824 |  21 % |   8 % |   -   ||  2560 |     5 ||   cc6881 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||preempt      ||27000 |   1 % |   1 % |   -   ||   288 |     9 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 |  - |  - ||scomputer    || 3120 |  10 % |   -   |   1 % ||   321 |    24 ||   hz4426 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |  8 |  8 ||students     || 6144 |   7 % |   -   |   1 % ||   446 |    35 ||  mka7870 |   2 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
+||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   160 |     8 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+|| 14 |  - |  - ||scomputer    || 3120 |  10 % |   -   |   1 % ||   320 |    23 ||   hz4426 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 12 |  8 |  8 ||students     || 6144 |   6 % |   -   |   1 % ||   428 |    33 ||  mka7870 |   2 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  50 % |   -   |   -   ||   128 |     1 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  57 % |   -   |   1 % ||   220 |    10 ||   db5394 |  36 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -79,8 +79,6 @@ jb5784     10887102  compute     cass          128   PENDING   medium           
 ha3152     10889307  compute     collaborator  96    PENDING   medium           N/A                                AssocGrpCpuLimit                        
 ykv210     10889882  compute     collaborator  128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 ss14247    10885800  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-zg2470     10887662  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10887661  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887672  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887671  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887670  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
@@ -91,16 +89,16 @@ zg2470     10887666  nvidia      nyushanghai   1     PENDING   nvidia           
 zg2470     10887665  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887664  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887663  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10887676  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10887675  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10887674  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
+zg2470     10887673  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887682  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887681  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887680  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887679  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887678  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 zg2470     10887677  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10887676  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10887675  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10887674  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-zg2470     10887673  nvidia      nyushanghai   1     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 ss14247    10889906  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 </pre>
 </body>
