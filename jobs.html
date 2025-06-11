@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         29       10       74 %     || DALMA    ||          41%           62          176         6868           49         131          47      ||
-||   95         95        0      100 %     || JUBAIL   ||          66%           32           53         6313          113          20           0      ||
+||   39         28       11       71 %     || DALMA    ||          40%           63          177         6979           47         128          49      ||
+||   95         95        0      100 %     || JUBAIL   ||          66%           33           52         6337          113          20           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:19   GPU:17
@@ -23,11 +23,11 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  15 % |   3 % |   -   ||   941 |    12 ||  tag9888 |  15 % ||  19072 |   149 ||     - |     - || 16640 |   130 ||
-||  - |  - |  - ||biology      || 3072 |   7 % |   -   |   1 % ||   224 |    10 ||  abz2011 |   4 % ||    777 |    65 ||     - |     - ||   777 |    65 ||
+||  - |  - |  - ||access       || 6144 |  15 % |   3 % |   -   ||   939 |    11 ||  tag9888 |  15 % ||  19072 |   149 ||     - |     - || 16640 |   130 ||
+||  - |  - |  - ||biology      || 3072 |   6 % |   -   |   1 % ||   200 |     9 ||  abz2011 |   4 % ||    777 |    65 ||     - |     - ||   777 |    65 ||
 ||  - |  - |  - ||cass         || 4096 |  18 % |   2 % |   -   ||   768 |     6 ||   jb5784 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 | 12 | 12 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||     96 |    12 ||     - |     - ||    96 |    12 ||
-||  - |  - |  - ||cgsb         || 4096 |  12 % |   -   |   2 % ||   522 |   116 ||   rg5184 |   4 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
+||  - |  - |  - ||cgsb         || 4096 |  10 % |   -   |   2 % ||   424 |    18 ||   aa5506 |   4 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ||  - |  - |  - ||chemistry    ||12824 |  29 % |  12 % |   2 % ||  3756 |    23 ||  sme9918 |  21 % ||  17920 |    14 ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    30 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  - |  - ||civil        || 3200 |   8 % |   -   |   -   ||   275 |    17 ||   da3205 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -44,16 +44,17 @@
 ||  - |  - |  - ||nyuny        || 1024 |   -   |   -   |   -   ||     8 |     1 ||   xp2042 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  52 % |  21 % |   -   ||  6192 |    13 ||  laa9597 |  30 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   160 |     8 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |  1 |  - ||scomputer    || 3120 |  24 % |   -   |   5 % ||   756 |    42 ||   na3758 |   9 % ||     32 |     2 ||     4 |     1 ||    28 |     1 ||
+|| 13 |  4 |  - ||scomputer    || 3120 |  23 % |   -   |   5 % ||   748 |    42 ||   na3758 |   9 % ||     80 |     4 ||    52 |     3 ||    28 |     1 ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |    10 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 19 | 16 |  4 ||students     || 6144 |  61 % |   4 % |  20 % ||  3801 |   252 ||  sk10275 |  32 % ||    142 |    12 ||    40 |     2 ||   102 |    10 ||
+|| 18 | 19 |  4 ||students     || 6144 |  61 % |   4 % |  20 % ||  3797 |   251 ||  sk10275 |  32 % ||    142 |    12 ||    60 |     4 ||    82 |     8 ||
 ==========================================================================================================================================================
 ||  3 |  1 |  1 ||c2           ||  384 |  56 % |   -   |   -   ||   218 |    11 ||   bs5331 |  25 % ||     28 |     1 ||     - |     - ||    28 |     1 ||
 ||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||  laa9597 | 100 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||chi          ||  768 |  10 % |   -   |   -   ||    84 |     3 ||  maa9511 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||csm          ||  640 |  20 % |   -   |   -   ||   128 |     1 ||   da3205 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |  42 % |   -   |   -   ||   164 |     2 ||   aa5506 |  42 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||red          || 1536 |  66 % |   3 % |   -   ||  1024 |     2 ||   xh3078 |  33 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  3 |  - ||nlp          ||  208 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     24 |     1 ||    24 |     1 ||     - |     - ||
+||  - |  - |  - ||red          || 1536 |  66 % |   3 % |   -   ||  1024 |     2 ||   xh3078 |  33 % ||     12 |     1 ||     - |     - ||    12 |     1 ||
 ||  - |  - |  - ||tr72         ||  256 |   3 % |   -   |   -   ||     9 |     2 ||   fl1092 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
@@ -228,22 +229,19 @@ sk10275    10904917  compute     students      10    PENDING   small            
 sk10275    10904917  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10904917  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 sk10275    10904917  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10904917  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-sk10275    10904917  compute     students      10    PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ia2280     10905287  condo       scomputer     28    PENDING   c2               gpu:v100:1                         QOSGrpGRES                              
-ss14247    10897907  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-hj2836     10902714  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902713  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902712  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902715  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10902714  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902717  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902716  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10902903  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902902  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902904  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10902903  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10902908  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902906  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902909  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10902908  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 </pre>
 </body>
 </html>
