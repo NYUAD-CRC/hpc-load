@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         22       17       56 %     || DALMA    ||          39%           81          168         7168           46         166          12      ||
-||   95         90        5       94 %     || JUBAIL   ||          56%           47           67         9132           84          21           0      ||
+||   39         22       17       56 %     || DALMA    ||          39%           79          169         7070           48         176          12      ||
+||   95         90        5       94 %     || JUBAIL   ||          56%           47           67         9132           84          20           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:18   GPU:15
+	OOD JOBS:  CPU:19   GPU:15
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -25,9 +25,9 @@
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  15 % |   3 % |   -   ||   940 |    12 ||  tag9888 |  15 % ||  18688 |   146 ||     - |     - || 16256 |   127 ||
 ||  - |  - |  - ||avengers     ||12800 |   1 % |   -   |   -   ||   134 |     2 ||     wz22 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  61 % |   -   |  15 % ||  1894 |    95 ||  abz2011 |  59 % ||    927 |    83 ||     - |     - ||   927 |    83 ||
+||  - |  - |  - ||biology      || 3072 |  61 % |   -   |  15 % ||  1892 |    81 ||  abz2011 |  60 % ||   1271 |   119 ||     - |     - ||  1271 |   119 ||
 ||  - |  - |  - ||cass         || 4096 |   9 % |   1 % |   -   ||   392 |     4 ||   jb5784 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 | 10 | 10 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||     80 |    10 ||     - |     - ||    80 |    10 ||
+|| 12 |  9 |  9 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||     72 |     9 ||     - |     - ||    72 |     9 ||
 ||  - |  - |  - ||cgsb         || 4096 |  10 % |   -   |   2 % ||   424 |    18 ||   aa5506 |   4 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ||  - |  - |  - ||chemistry    ||12824 |  30 % |  12 % |   2 % ||  3875 |    24 ||  sme9918 |  21 % ||  17920 |    14 ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    10 |     1 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -43,9 +43,9 @@
 ||  - |  - |  - ||mechanical   ||12288 |  32 % |  13 % |   -   ||  3989 |    11 ||  sk10712 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  39 % |  16 % |   -   ||  4656 |    10 ||  laa9597 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   160 |     8 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||scomputer    || 3120 |  23 % |   -   |   5 % ||   746 |    28 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 11 |  - |  - ||scomputer    || 3120 |  24 % |   -   |   5 % ||   766 |    28 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |    10 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 | 16 | 16 ||students     || 6144 |  28 % |   4 % |   3 % ||  1748 |    45 ||  ian4134 |  16 % ||     52 |     3 ||     - |     - ||    52 |     3 ||
+|| 15 | 17 | 16 ||students     || 6144 |  29 % |   4 % |   4 % ||  1840 |    53 ||  ian4134 |  16 % ||     56 |     4 ||     4 |     1 ||    52 |     3 ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   rk3570 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||c2           ||  384 |  68 % |   -   |   -   ||   264 |    12 ||   bs5331 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -219,16 +219,15 @@ tag9888    10897663  compute     access        128   PENDING   medium           
 tag9888    10897663  compute     access        128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ap6420     10909841  compute     collaborator  1536  PENDING   large            N/A                                AssocGrpCpuLimit                        
 ss14247    10897907  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-hj2836     10902715  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10902714  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902716  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10902715  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902717  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902903  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902902  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902904  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902906  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10902909  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10902908  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10902909  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ss14247    10903197  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 mki4895    10904283  nvidia      students      28    PENDING   nvidias          gpu:8                              QOSMaxGRESPerJob                        
 tz545      10908943  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
