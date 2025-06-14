@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         18       21       46 %     || DALMA    ||          47%          121          118         6212          106         180           6      ||
-||   95         71       24       74 %     || JUBAIL   ||          72%           32           77         7579          113          27           0      ||
+||   39         18       21       46 %     || DALMA    ||          47%          121          118         6212          106         178           6      ||
+||   95         70       25       73 %     || JUBAIL   ||          72%           32           77         7579          113          29           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:17   GPU:8
@@ -26,11 +26,11 @@
 ||  - |  - |  - ||access       || 6144 |  21 % |   4 % |   -   ||  1324 |    14 ||  tag9888 |  21 % ||  15232 |   119 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |  29 % |   -   |   7 % ||   912 |    38 ||  abz2011 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  15 % |   2 % |   -   ||   640 |     5 ||   jb5784 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 | 68 | 68 ||cbs          || 2048 |   4 % |   -   |   -   ||    96 |    12 ||  azm9155 |   4 % ||    544 |    68 ||     - |     - ||   544 |    68 ||
+|| 12 | 64 | 64 ||cbs          || 2048 |   4 % |   -   |   -   ||    96 |    12 ||  azm9155 |   4 % ||    512 |    64 ||     - |     - ||   512 |    64 ||
 || 12 |  5 |  5 ||ccs          || 6144 |   2 % |   -   |   -   ||   150 |    15 ||   hj2836 |   1 % ||     40 |     5 ||     - |     - ||    40 |     5 ||
 ||  - |  - |  - ||cgsb         || 4096 |  26 % |   3 % |   -   ||  1076 |    16 ||   rg5184 |  19 % ||  11200 |   140 ||     - |     - || 11200 |   140 ||
 ||  - |  - |  - ||chemistry    ||12824 |  38 % |  16 % |   2 % ||  4983 |    63 ||   saa788 |  15 % ||  18240 |   226 ||     - |     - || 10560 |   220 ||
-||  3 |  - |  - ||civil        || 3200 |   5 % |   -   |   -   ||   167 |     7 ||   yc7893 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||civil        || 3200 |   5 % |   -   |   -   ||   166 |     6 ||   yc7893 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 |  - |  - ||collaborator || 3072 |  91 % |   7 % |   6 % ||  2813 |    44 ||   ap6420 |  50 % ||     53 |    17 ||     - |     - ||    53 |    17 ||
 ||  - |  - |  - ||cqts         || 2048 |   6 % |   -   |   -   ||   128 |     1 ||  mm12971 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     1 ||  mag9531 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -44,7 +44,7 @@
 ||  2 |  - |  - ||physics      ||11824 |  30 % |  12 % |   -   ||  3632 |     8 ||  laa9597 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   1 % |   1 % |   -   ||   512 |     1 ||   mk7641 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  - |  - ||scomputer    || 3120 |   9 % |   -   |   -   ||   288 |    23 ||   hz4426 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     3 |     3 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+||  3 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     3 |     3 ||  atb8710 |   -   ||     98 |    98 ||     - |     - ||     - |     - ||
 ||  9 | 16 | 16 ||students     || 6144 |  33 % |   4 % |   7 % ||  2074 |    50 ||  ian4134 |  16 % ||     52 |     3 ||     - |     - ||    52 |     3 ||
 ||  - |  - |  - ||xpress       ||27008 |   6 % |   -   |  14 % ||  1792 |     1 ||   ia2280 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
@@ -185,10 +185,6 @@ tag9888    10897663  compute     access        128   PENDING   medium           
 tag9888    10897663  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10897663  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10897663  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-saa788     10912535  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912555  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912554  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912553  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912552  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912551  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912550  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -206,9 +202,7 @@ saa788     10912539  compute     chemistry     48    PENDING   small            
 saa788     10912538  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912537  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912536  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912575  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912574  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912573  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912535  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912572  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912571  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912570  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -226,9 +220,9 @@ saa788     10912559  compute     chemistry     48    PENDING   small            
 saa788     10912558  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912557  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912556  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912595  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912594  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912593  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912555  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912554  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912553  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912592  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912591  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912590  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -246,10 +240,9 @@ saa788     10912579  compute     chemistry     48    PENDING   small            
 saa788     10912578  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912577  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912576  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912616  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912615  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912614  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912613  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912575  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912574  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912573  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912612  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912611  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912610  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -267,9 +260,9 @@ saa788     10912599  compute     chemistry     48    PENDING   small            
 saa788     10912598  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912597  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912596  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912636  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912635  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912634  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912595  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912594  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912593  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912633  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912632  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912631  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -287,9 +280,10 @@ saa788     10912620  compute     chemistry     48    PENDING   small            
 saa788     10912619  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912618  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912617  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912656  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912655  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912654  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912616  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912615  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912614  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912613  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912653  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912652  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912651  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -307,9 +301,9 @@ saa788     10912640  compute     chemistry     48    PENDING   small            
 saa788     10912639  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912638  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912637  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912676  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912675  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912674  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912636  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912635  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912634  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912673  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912672  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912671  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -327,9 +321,9 @@ saa788     10912660  compute     chemistry     48    PENDING   small            
 saa788     10912659  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912658  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912657  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912696  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912695  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912694  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912656  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912655  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912654  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912693  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912692  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912691  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -347,9 +341,9 @@ saa788     10912680  compute     chemistry     48    PENDING   small            
 saa788     10912679  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912678  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912677  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912716  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912715  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912714  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912676  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912675  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912674  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912713  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912712  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912711  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -367,10 +361,9 @@ saa788     10912700  compute     chemistry     48    PENDING   small            
 saa788     10912699  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912698  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912697  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912737  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912736  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912735  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912734  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912696  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912695  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912694  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912733  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912732  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912731  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -388,7 +381,9 @@ saa788     10912720  compute     chemistry     48    PENDING   small            
 saa788     10912719  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912718  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912717  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     10912753  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912716  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912715  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912714  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912752  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912751  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912750  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -404,7 +399,12 @@ saa788     10912741  compute     chemistry     48    PENDING   small            
 saa788     10912740  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912739  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912738  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912737  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912736  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912735  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912734  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     10912754  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     10912753  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 xp2042     10919806  compute     nyuny         6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 xp2042     10919806  compute     nyuny         6     PENDING   small            N/A                                AssocGrpCpuLimit                        
 xp2042     10919806  compute     nyuny         6     PENDING   small            N/A                                AssocGrpCpuLimit                        
@@ -1278,15 +1278,11 @@ rg5184     10920425  compute     cgsb          80    PENDING   medium           
 rg5184     10920425  compute     cgsb          80    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mki4895    10904283  nvidia      students      28    PENDING   nvidias          gpu:8                              QOSMaxGRESPerJob                        
 hj2836     10910734  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10910737  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10910738  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     10910740  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10910737  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     10910739  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     10910740  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 ss14247    10912908  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-azm9155    10915782  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915783  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915784  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915785  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915787  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915786  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915788  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -1295,8 +1291,8 @@ azm9155    10915789  nvidia      cbs           8     PENDING   nvidia           
 azm9155    10915792  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915791  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915793  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915795  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915796  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+azm9155    10915795  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915798  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915797  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915799  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -1310,13 +1306,13 @@ azm9155    10915806  nvidia      cbs           8     PENDING   nvidia           
 azm9155    10915808  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915807  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915809  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915810  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915811  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+azm9155    10915810  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915814  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915813  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915816  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915817  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915818  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+azm9155    10915817  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915820  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915819  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915822  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -1329,12 +1325,12 @@ azm9155    10915828  nvidia      cbs           8     PENDING   nvidia           
 azm9155    10915829  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915830  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915831  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915832  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915833  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+azm9155    10915832  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915834  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915835  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-azm9155    10915836  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915837  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+azm9155    10915836  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915838  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915839  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 azm9155    10915840  nvidia      cbs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
