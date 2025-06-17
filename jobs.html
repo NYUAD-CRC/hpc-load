@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          0       39        0 %     || DALMA    ||          61%          102           95         4454          210         221           9      ||
-||   99         72       27       72 %     || JUBAIL   ||          80%           24           54         5402          144          54           0      ||
+||   39          0       39        0 %     || DALMA    ||          61%          102           95         4462          210         231          11      ||
+||   99         72       27       72 %     || JUBAIL   ||          80%           25           53         5422          144          54           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:26   GPU:8
@@ -23,21 +23,21 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  32 % |   6 % |   -   ||  1972 |    24 ||  tag9888 |  23 % ||   9732 |   207 ||     - |     - ||   132 |   132 ||
-||  - |  - |  - ||biology      || 3072 |  50 % |   4 % |   2 % ||  1548 |    39 ||   tb2613 |  37 % ||      5 |     5 ||     - |     - ||     5 |     5 ||
+||  - |  - |  - ||access       || 6144 |  32 % |   6 % |   -   ||  1970 |    23 ||  tag9888 |  23 % ||   9723 |   198 ||     - |     - ||   123 |   123 ||
+||  - |  - |  - ||biology      || 3072 |  50 % |   4 % |   2 % ||  1540 |    38 ||   tb2613 |  37 % ||      5 |     5 ||     - |     - ||     5 |     5 ||
 ||  1 |  - |  - ||cass         || 4096 |  15 % |   2 % |   -   ||   644 |     6 ||   jb5784 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   128 |     1 ||   sds710 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |  27 % |   3 % |   1 % ||  1112 |    34 ||   rg5184 |  19 % ||   9760 |   122 ||     - |     - ||  9760 |   122 ||
 ||  - |  - |  - ||chemistry    ||12824 |  46 % |  17 % |   8 % ||  5950 |    51 ||   ae2589 |  15 % ||  15680 |   224 ||     - |     - || 10560 |   220 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    30 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||civil        || 3200 |   5 % |   -   |   -   ||   186 |    13 ||   yc7893 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||collaborator || 3072 |  99 % |   8 % |   5 % ||  3057 |    47 ||   ap6420 |  54 % ||     61 |    15 ||     - |     - ||    61 |    15 ||
+||  3 |  - |  - ||collaborator || 3072 |  99 % |   8 % |   5 % ||  3057 |    47 ||   ap6420 |  54 % ||     77 |    16 ||     - |     - ||    77 |    16 ||
 ||  - |  - |  - ||cph          || 3072 |   4 % |   -   |   -   ||   140 |     2 ||   im2493 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cqts         || 2048 |   6 % |   -   |   -   ||   132 |     2 ||  mm12971 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     1 ||  mag9531 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  76 % |   -   |   3 % ||   586 |    28 ||   db5394 |  41 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ecomputer    || 4096 |   -   |   -   |   -   ||     1 |     1 ||  ljl5178 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||electrical   || 4096 |   1 % |   -   |   -   ||    55 |     7 ||   yw3576 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    35 |     6 ||   yw3576 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     5 |     5 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||humanities   || 1024 |   2 % |   -   |   -   ||    30 |     1 ||   sl9712 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||     4 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -268,20 +268,8 @@ rg5184     10920425  compute     cgsb          80    PENDING   medium           
 rg5184     10920425  compute     cgsb          80    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 am15503    10933759  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
 am15503    10933743  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
-sh7868     10944895  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944894  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944893  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944892  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944904  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944903  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944902  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944901  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944900  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944899  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944898  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944897  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944896  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944912  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944911  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944910  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944909  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -289,8 +277,8 @@ sh7868     10944908  compute     access        1     PENDING   medium           
 sh7868     10944907  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944906  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944905  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944921  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944920  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944904  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944903  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944919  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944918  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944917  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -298,9 +286,7 @@ sh7868     10944916  compute     access        1     PENDING   medium           
 sh7868     10944915  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944914  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944913  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944931  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944930  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944929  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944912  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944928  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944927  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944926  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -308,24 +294,25 @@ sh7868     10944925  compute     access        1     PENDING   medium           
 sh7868     10944924  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944923  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944922  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944939  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944938  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944937  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944921  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944920  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944936  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944935  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944934  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944933  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944932  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944948  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944947  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944946  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944931  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944930  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944929  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944945  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944944  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944943  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944942  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944941  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944940  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944956  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944939  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944938  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944937  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944955  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944954  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944953  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -333,8 +320,9 @@ sh7868     10944952  compute     access        1     PENDING   medium           
 sh7868     10944951  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944950  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944949  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944965  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944964  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944948  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944947  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944946  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944963  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944962  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944961  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -342,15 +330,15 @@ sh7868     10944960  compute     access        1     PENDING   medium           
 sh7868     10944959  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944958  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944957  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944974  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944973  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944956  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944971  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944970  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944969  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944968  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944967  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944966  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944982  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944965  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944964  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944981  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944980  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944979  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -358,8 +346,8 @@ sh7868     10944978  compute     access        1     PENDING   medium           
 sh7868     10944977  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944976  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944975  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944991  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944990  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944974  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944973  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944989  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944988  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944987  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -367,7 +355,7 @@ sh7868     10944986  compute     access        1     PENDING   medium           
 sh7868     10944985  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944984  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944983  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10944999  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944982  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944998  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944997  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944996  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -375,7 +363,8 @@ sh7868     10944995  compute     access        1     PENDING   medium           
 sh7868     10944994  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944993  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10944992  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10945007  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944991  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944990  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945006  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945005  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945004  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -383,23 +372,26 @@ sh7868     10945003  compute     access        1     PENDING   medium           
 sh7868     10945002  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945001  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945000  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10944999  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945009  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945008  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10945035  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10945034  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10945044  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10945043  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10945042  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10945007  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945041  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945040  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945039  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945038  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945037  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945036  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10945035  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10945034  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945048  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945047  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945046  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10945045  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10945044  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10945043  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10945042  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ss20440    10945054  compute     collaborator  16    PENDING   small            N/A                                AssocGrpCpuLimit                        
 mki4895    10904283  nvidia      students      28    PENDING   nvidias          gpu:8                              QOSMaxGRESPerJob                        
 da2863     10925629  nvidia      students      1     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 da2863     10925629  nvidia      students      1     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
