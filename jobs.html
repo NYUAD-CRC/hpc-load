@@ -11,7 +11,7 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         10       29       25 %     || DALMA    ||          65%           90           89         4025          221         216          13      ||
+||   39         10       29       25 %     || DALMA    ||          63%           90          104         4293          206         236          14      ||
 ||   99         58       41       58 %     || JUBAIL   ||          75%           24           75         6652          123          47           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -23,8 +23,8 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  19 % |   4 % |   -   ||  1204 |    22 ||  tag9888 |  19 % ||   6294 |    71 ||     - |     - ||    22 |    22 ||
-||  - |  - |  - ||biology      || 3072 |  53 % |   2 % |   6 % ||  1632 |    64 ||  abz2011 |  19 % ||      3 |     3 ||     - |     - ||     3 |     3 ||
+||  - |  - |  - ||access       || 6144 |  19 % |   4 % |   -   ||  1204 |    22 ||  tag9888 |  19 % ||   6287 |    64 ||     - |     - ||    15 |    15 ||
+||  - |  - |  - ||biology      || 3072 |  52 % |   2 % |   6 % ||  1608 |    60 ||  abz2011 |  19 % ||      3 |     3 ||     - |     - ||     3 |     3 ||
 ||  1 |  - |  - ||cass         || 4096 |  15 % |   2 % |   -   ||   648 |     6 ||   jb5784 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   4 % |   -   |   1 % ||   260 |    12 ||   vk2599 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |  25 % |   3 % |   1 % ||  1032 |    18 ||   rg5184 |  19 % ||   8480 |   106 ||     - |     - ||  8480 |   106 ||
@@ -35,7 +35,7 @@
 ||  - |  - |  - ||cph          || 3072 |   3 % |   -   |   -   ||   112 |     1 ||   im2493 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  1 |  1 ||cqts         || 2048 |  21 % |   1 % |   -   ||   432 |    15 ||  mm12971 |  18 % ||      4 |     1 ||     - |     - ||     4 |     1 ||
 ||  - |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     1 ||  mag9531 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||default      ||  768 |  88 % |   -   |   5 % ||   682 |    72 ||   lh4187 |  44 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  85 % |   -   |   5 % ||   658 |    68 ||   lh4187 |  41 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    15 |     2 ||   yw3576 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     1 ||  gencore |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||20000 |  15 % |  10 % |   -   ||  3080 |     5 ||   ds7760 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -44,7 +44,7 @@
 ||  - |  - |  - ||preempt      ||27000 |   3 % |   3 % |   -   ||  1030 |    44 ||   lz2826 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||scomputer    || 3120 |   6 % |   -   |   -   ||   210 |    12 || mms10094 |   3 % ||     24 |     1 ||     - |     - ||    24 |     1 ||
 ||  5 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     5 |     5 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 14 | 16 | 16 ||students     || 6144 |  20 % |   -   |   8 % ||  1244 |   224 ||  mka7870 |  12 % ||     52 |     3 ||     - |     - ||    52 |     3 ||
+|| 14 | 16 | 16 ||students     || 6144 |  16 % |   -   |   7 % ||  1024 |   169 ||  mka7870 |   8 % ||     52 |     3 ||     - |     - ||    52 |     3 ||
 ||  - |  - |  - ||xpress       ||27008 |  12 % |   -   |  27 % ||  3360 |     1 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  86 % |   -   |   2 % ||   333 |    15 ||   db5394 |  80 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -214,15 +214,6 @@ rg5184     10920425  compute     cgsb          80    PENDING   medium           
 rg5184     10920425  compute     cgsb          80    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rg5184     10920425  compute     cgsb          80    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 rg5184     10920425  compute     cgsb          80    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964698  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964697  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964696  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964695  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964694  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964712  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964710  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964709  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964708  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964707  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964706  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964705  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -230,12 +221,14 @@ sh7868     10964704  compute     access        1     PENDING   medium           
 sh7868     10964703  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964702  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964701  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964700  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sh7868     10964699  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964716  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964715  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964714  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sh7868     10964713  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10964712  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10964710  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10964709  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sh7868     10964708  compute     access        1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mms10094   10965629  condo       scomputer     24    PENDING   nlp              gpu:a100:3                         QOSGrpGRES                              
 mki4895    10904283  nvidia      students      28    PENDING   nvidias          gpu:8                              QOSMaxGRESPerJob                        
 ss14247    10945468  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
