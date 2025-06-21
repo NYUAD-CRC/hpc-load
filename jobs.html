@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          2       37        5 %     || DALMA    ||          87%            0          104         1407          302         190         113      ||
-||   99         68       31       68 %     || JUBAIL   ||          94%            2           29         1472          192          21           0      ||
+||   39          2       37        5 %     || DALMA    ||          87%            0          102         1407          304         183         112      ||
+||   99         68       31       68 %     || JUBAIL   ||          94%            2           28         1440          193          20           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:17   GPU:12
@@ -23,15 +23,16 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  31 % |   6 % |   -   ||  1962 |    11 ||  ak11283 |  16 % ||   3200 |    25 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  32 % |   -   |   6 % ||   984 |    69 ||   rp4185 |  13 % ||   2520 |   315 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  31 % |   6 % |   -   ||  1962 |    11 ||  ak11283 |  16 % ||   3072 |    24 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |  32 % |   -   |   6 % ||   984 |    69 ||   rp4185 |  13 % ||   2480 |   310 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  15 % |   2 % |   -   ||   640 |     5 ||   jb5784 |  15 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cbs          || 2048 |   1 % |   -   |   -   ||    32 |     1 ||   sj4406 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   162 |    15 ||   ma6996 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |   5 % |   -   |   -   ||   212 |     5 ||   nb3608 |   2 % ||     20 |     1 ||     - |     - ||    20 |     1 ||
 ||  - |  - |  - ||chemistry    ||12824 |  47 % |  13 % |  17 % ||  6100 |   100 ||   ae2589 |  15 % ||   3752 |   134 ||     - |     - ||  3752 |   134 ||
 ||  7 |  - |  - ||cities       || 4096 |   1 % |   -   |   -   ||    80 |     8 ||   pc3377 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  4 |  - ||civil        || 3200 |   4 % |   -   |   -   ||   156 |     3 ||   yc7893 |   4 % ||      2 |     1 ||     2 |     1 ||     - |     - ||
-||  3 |  2 |  2 ||collaborator || 3072 |  99 % |   7 % |   7 % ||  3071 |   151 ||   ap6420 |  54 % ||   1827 |   414 ||     - |     - ||  1827 |   414 ||
+||  3 |  2 |  2 ||collaborator || 3072 |  99 % |   7 % |   7 % ||  3071 |   156 ||   ap6420 |  54 % ||   1803 |   408 ||     - |     - ||  1803 |   408 ||
 ||  - |  - |  - ||cph          || 3072 |  18 % |   -   |   3 % ||   563 |    47 ||     phrc |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 | 18 | 18 ||cqts         || 2048 |   8 % |   -   |   -   ||   176 |    13 ||  mm12971 |   6 % ||     72 |    18 ||     - |     - ||    72 |    18 ||
 ||  - |  - |  - ||csem         || 3072 |   8 % |   -   |   -   ||   256 |     1 ||  mag9531 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -61,7 +62,6 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 am15503    10967029  bigmem      collaborator  10    PENDING   bigmem           N/A                                QOSMinMemory                            
 am15503    10967799  bigmem      collaborator  10    PENDING   bigmem           N/A                                QOSMinMemory                            
 am15503    10969309  bigmem      collaborator  10    PENDING   bigmem           N/A                                QOSMinMemory                            
-tag9888    10897663  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10897663  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10897663  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    10897663  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
@@ -433,17 +433,6 @@ rp4185     10975047  compute     biology       8     PENDING   small            
 rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     10975047  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
-ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
 ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
 ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
 ykv210     10974986  compute     collaborator  4     PENDING   small            N/A                                AssocGrpCpuLimit                        
