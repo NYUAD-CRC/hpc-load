@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         14       25       35 %     || DALMA    ||          86%            0          185         1528          228         301           4      ||
-||   99         68       31       68 %     || JUBAIL   ||          73%           22          113         7457           88          53           0      ||
+||   39         14       25       35 %     || DALMA    ||          86%            0          185         1536          228         296           4      ||
+||   99         68       31       68 %     || JUBAIL   ||          73%           22          113         7457           88          52           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:13   GPU:4
@@ -23,11 +23,11 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  12 % |   2 % |   -   ||   768 |     6 ||  tag9888 |  12 % ||    384 |     3 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  12 % |   2 % |   -   ||   768 |     6 ||  tag9888 |  12 % ||    256 |     2 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |  83 % |   1 % |  17 % ||  2578 |    95 ||  abz2011 |  66 % ||   1588 |    70 ||     - |     - ||  1588 |    70 ||
 ||  - |  - |  - ||cass         || 4096 |  37 % |   5 % |   -   ||  1536 |     3 ||   snb463 |  37 % ||   3072 |     6 ||     - |     - ||  3072 |     6 ||
 || 12 | 12 | 12 ||ccs          || 6144 |   1 % |   -   |   -   ||    96 |    12 ||   hj2836 |   1 % ||     96 |    12 ||     - |     - ||    96 |    12 ||
-||  - |  - |  - ||cgsb         || 4096 |  30 % |   3 % |   1 % ||  1267 |    42 ||   aa5506 |  19 % ||  10708 |   338 ||   756 |    27 ||     - |     - ||
+||  - |  - |  - ||cgsb         || 4096 |  30 % |   3 % |   1 % ||  1267 |    42 ||   aa5506 |  19 % ||  10676 |   337 ||   756 |    27 ||     - |     - ||
 ||  - |  - |  - ||chemistry    ||12824 |  19 % |   2 % |  15 % ||  2462 |    81 ||   saa788 |  13 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  77 % |   8 % |   -   ||  2390 |   212 ||   ap6420 |  50 % ||     37 |    14 ||     - |     - ||    37 |    14 ||
 ||  - |  - |  - ||cph          || 3072 |   4 % |   -   |   -   ||   128 |     2 ||   im2493 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -42,7 +42,7 @@
 ||  2 |  1 |  1 ||nyuny        || 1024 |  55 % |   1 % |   -   ||   564 |     7 ||   xp2042 |  55 % ||      8 |     1 ||     - |     - ||     8 |     1 ||
 ||  - |  - |  - ||physics      ||11824 |  30 % |  12 % |   -   ||  3584 |     6 ||   cc6881 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   2 % |   2 % |   -   ||   792 |    33 ||   lz2826 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 24 |  - |  - ||scomputer    || 3120 |  14 % |   -   |   2 % ||   467 |    37 ||   mt5383 |   7 % ||     56 |     2 ||    56 |     2 ||     - |     - ||
+|| 24 |  - |  - ||scomputer    || 3120 |  14 % |   -   |   2 % ||   459 |    36 ||   mt5383 |   7 % ||     84 |     3 ||    84 |     3 ||     - |     - ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |    10 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 | 12 | 12 ||students     || 6144 |   5 % |   -   |   1 % ||   365 |    22 ||  peo4482 |   2 % ||     96 |     4 ||     - |     - ||    96 |     4 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3556 |     3 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -60,13 +60,12 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 am15503    10968279  compute     collaborator  24    PENDING   small            N/A                                QOSMaxWallDurationPerJobLimit           
 tag9888    11011912  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    11011912  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    11011912  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 snb463     11024214  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 snb463     11024215  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
-snb463     11024218  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 snb463     11024219  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
-snb463     11024221  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
+snb463     11024218  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 snb463     11024220  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
+snb463     11024221  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 xy2949     11024395  compute     students      8     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 abz2011    11026428  compute     biology       24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 abz2011    11026428  compute     biology       24    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -484,7 +483,6 @@ aa5506     11031482  compute     cgsb          32    PENDING   small            
 aa5506     11031482  compute     cgsb          32    PENDING   small            N/A                                JobArrayTaskLimit                       
 aa5506     11031482  compute     cgsb          32    PENDING   small            N/A                                JobArrayTaskLimit                       
 aa5506     11031482  compute     cgsb          32    PENDING   small            N/A                                JobArrayTaskLimit                       
-aa5506     11031482  compute     cgsb          32    PENDING   small            N/A                                JobArrayTaskLimit                       
 xp2042     11015805  nvidia      nyuny         8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 ss14247    11016306  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 ss14247    11027383  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
@@ -494,9 +492,9 @@ hj2836     11030759  nvidia      ccs           8     PENDING   nvidia           
 hj2836     11031352  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11031353  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11031375  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     11031377  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11031376  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11031378  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     11031377  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11031379  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11031383  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11031384  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
