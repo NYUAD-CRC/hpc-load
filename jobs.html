@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         12       27       30 %     || DALMA    ||          92%            0          146          720          267         322           4      ||
-||   99         61       38       61 %     || JUBAIL   ||          64%           26          125         9950           72          33           0      ||
+||   39         12       27       30 %     || DALMA    ||          93%            0          146          692          268         319           4      ||
+||   99         61       38       61 %     || JUBAIL   ||          64%           26          125         9950           72          31           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:13   GPU:1
@@ -23,7 +23,7 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  12 % |   2 % |   -   ||   770 |     7 ||  tag9888 |  12 % ||   5120 |    40 ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  12 % |   2 % |   -   ||   770 |     7 ||  tag9888 |  12 % ||   4736 |    37 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |  79 % |   1 % |  17 % ||  2450 |    93 ||  abz2011 |  66 % ||   1588 |    70 ||     - |     - ||  1588 |    70 ||
 ||  - |  - |  - ||cass         || 4096 |  37 % |   5 % |   -   ||  1536 |     3 ||   snb463 |  37 % ||   3072 |     6 ||     - |     - ||  3072 |     6 ||
 ||  - |  - |  - ||cbs          || 2048 |   1 % |   -   |   -   ||    32 |     1 ||   sj4406 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -43,9 +43,9 @@
 ||  2 |  1 |  1 ||nyuny        || 1024 |  55 % |   1 % |   -   ||   564 |     7 ||   xp2042 |  55 % ||      8 |     1 ||     - |     - ||     8 |     1 ||
 ||  - |  - |  - ||physics      ||11824 |  30 % |  12 % |   -   ||  3584 |     6 ||   cc6881 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   2 % |   2 % |   -   ||   760 |    32 ||   lz2826 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 24 |  - |  - ||scomputer    || 3120 |  15 % |   -   |   2 % ||   486 |    36 ||   mt5383 |   7 % ||     56 |     2 ||    56 |     2 ||     - |     - ||
+|| 24 |  - |  - ||scomputer    || 3120 |  16 % |   -   |   2 % ||   514 |    37 ||   mt5383 |   8 % ||     56 |     2 ||    56 |     2 ||     - |     - ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |    10 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  8 |  8 ||students     || 6144 |  17 % |   -   |   7 % ||  1101 |   221 ||  mka7870 |  13 % ||   2112 |   523 ||     - |     - ||  2112 |   523 ||
+||  4 |  8 |  8 ||students     || 6144 |  17 % |   -   |   7 % ||  1101 |   221 ||  mka7870 |  13 % ||   2120 |   524 ||     - |     - ||  2120 |   524 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3556 |     3 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||c2           ||  384 |  41 % |   -   |   1 % ||   161 |    11 ||   db5394 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -60,8 +60,8 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 am15503    10968279  compute     collaborator  24    PENDING   small            N/A                                QOSMaxWallDurationPerJobLimit           
 snb463     11024214  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 snb463     11024215  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
-snb463     11024219  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 snb463     11024218  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
+snb463     11024219  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 snb463     11024220  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 snb463     11024221  compute     cass          512   PENDING   medium           N/A                                QOSMaxMemoryPerUser                     
 xy2949     11024395  compute     students      8     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -198,9 +198,6 @@ tag9888    11033045  compute     access        128   PENDING   medium           
 tag9888    11033045  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    11033045  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    11033045  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    11033045  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    11033045  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-tag9888    11033045  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 mka7870    11033340  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11033340  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11033340  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -721,6 +718,7 @@ mka7870    11033374  compute     students      4     PENDING   small            
 mka7870    11033374  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11033374  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11033374  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+mka7870    11033391  compute     students      8     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     11015805  nvidia      nyuny         8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 ss14247    11016306  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 ss14247    11027383  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
