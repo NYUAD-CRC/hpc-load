@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         15       24       38 %     || DALMA    ||          89%            1          133         1109          286         363           4      ||
-||   99         74       25       74 %     || JUBAIL   ||          46%           65          117        15120           41          28           0      ||
+||   39         15       24       38 %     || DALMA    ||          89%            1          134         1113          285         354           4      ||
+||   99         74       25       74 %     || JUBAIL   ||          46%           66          117        15248           40          25           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:26   GPU:6
@@ -23,8 +23,8 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  10 % |   2 % |   -   ||   640 |     5 ||  tag9888 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  99 % |   3 % |  17 % ||  3058 |   104 ||  abz2011 |  66 % ||   1397 |    39 ||     - |     - ||  1397 |    39 ||
+||  - |  - |  - ||access       || 6144 |   8 % |   1 % |   -   ||   512 |     4 ||  tag9888 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |  99 % |   3 % |  17 % ||  3058 |   104 ||  abz2011 |  66 % ||   1277 |    36 ||     - |     - ||  1277 |    36 ||
 ||  7 |  - |  - ||cass         || 4096 |  51 % |   7 % |   -   ||  2092 |     8 ||   snb463 |  50 % ||   2048 |     4 ||     - |     - ||  2048 |     4 ||
 || 22 | 11 | 11 ||ccs          || 6144 |   3 % |   -   |   -   ||   196 |    22 ||   ma6996 |   1 % ||     88 |    11 ||     - |     - ||    88 |    11 ||
 ||  - |  - |  - ||cgsb         || 4096 |  59 % |   8 % |   -   ||  2448 |    75 ||   aa5506 |  50 % ||  10112 |   316 ||     - |     - || 10112 |   316 ||
@@ -38,12 +38,12 @@
 ||  3 |  - |  - ||ecomputer    || 4096 |   4 % |   -   |   -   ||   204 |     5 ||  sc11670 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   3 % |   -   |   1 % ||   125 |    16 ||   lh4187 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||humanities   || 1024 |  23 % |   -   |   -   ||   240 |     8 ||   sl9712 |  23 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  2 |  2 ||nyuny        || 1024 |  27 % |   -   |   -   ||   280 |     5 ||   xp2042 |  27 % ||     16 |     2 ||     - |     - ||    16 |     2 ||
+||  2 |  1 |  1 ||nyuny        || 1024 |  27 % |   -   |   -   ||   280 |     5 ||   xp2042 |  27 % ||      8 |     1 ||     - |     - ||     8 |     1 ||
 ||  - |  - |  - ||physics      ||11824 |  38 % |  16 % |   -   ||  4608 |     8 ||   cc6881 |  30 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||    40 |     2 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |  4 |  - ||scomputer    || 3120 |  19 % |   -   |   4 % ||   612 |    32 ||   mt5383 |  11 % ||    213 |     5 ||    21 |     3 ||   192 |     2 ||
+||  7 |  4 |  - ||scomputer    || 3120 |  19 % |   -   |   4 % ||   608 |    32 ||   mt5383 |  11 % ||    213 |     5 ||    21 |     3 ||   192 |     2 ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |    10 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  8 | 18 | 18 ||students     || 6144 |  46 % |   3 % |  16 % ||  2873 |   449 ||   rk4097 |  13 % ||   8002 |  1974 ||     - |     - ||  8002 |  1974 ||
+||  8 | 18 | 18 ||students     || 6144 |  46 % |   3 % |  16 % ||  2873 |   449 ||   rk4097 |  13 % ||   7954 |  1962 ||     - |     - ||  7954 |  1962 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3556 |     3 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||access       ||  256 |  50 % |   -   |   -   ||   128 |     1 ||  tag9888 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -395,18 +395,6 @@ aa5506     11057577  compute     cgsb          32    PENDING   small            
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-tb2613     11045715  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 rk4097     11060419  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -1113,15 +1101,14 @@ tb2613     11045847  compute     biology       64    PENDING   small            
 tb2613     11045696  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045725  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045803  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-tb2613     11045721  compute     biology       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045841  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045731  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-tb2613     11045733  compute     biology       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045854  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045730  compute     biology       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045699  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11045766  compute     biology       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
-mka7870    11060779  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+tb2613     11045840  compute     biology       28    PENDING   small            N/A                                AssocGrpCpuLimit                        
+tb2613     11045782  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 mka7870    11060779  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11060779  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11060779  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -2389,13 +2376,12 @@ hj2836     11057060  nvidia      ccs           8     PENDING   nvidia           
 hj2836     11057063  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11057064  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11057065  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     11057067  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11057066  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     11057067  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11057093  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11057111  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11057132  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11057122  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-xp2042     11060677  nvidia      nyuny         8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 xp2042     11060679  nvidia      nyuny         8     PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 </pre>
 </body>
