@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         13       26       33 %     || DALMA    ||          89%            5          110         1151          305         338           4      ||
-||   99         64       35       64 %     || JUBAIL   ||          67%           39           86         9202           98          15           0      ||
+||   39         13       26       33 %     || DALMA    ||          86%            5          142         1436          273         329           4      ||
+||   99         61       38       61 %     || JUBAIL   ||          67%           39           87         9202           97          15           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:20   GPU:3
@@ -24,10 +24,10 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  10 % |   2 % |   -   ||   642 |     7 ||  tag9888 |  10 % ||  15232 |   119 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  98 % |   3 % |  17 % ||  3034 |   151 ||  abz2011 |  53 % ||   5111 |   340 ||     - |     - ||  2919 |    66 ||
+||  - |  - |  - ||biology      || 3072 |  98 % |   3 % |  17 % ||  3033 |   150 ||  abz2011 |  53 % ||   5079 |   336 ||     - |     - ||  2919 |    66 ||
 ||  7 |  - |  - ||cass         || 4096 |  38 % |   5 % |   -   ||  1584 |     6 ||   snb463 |  37 % ||      - |     - ||     - |     - ||     - |     - ||
 || 17 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   154 |    17 ||   ma6996 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |  61 % |   8 % |   1 % ||  2501 |    80 ||   aa5506 |  50 % ||   6240 |   195 ||     - |     - ||  6240 |   195 ||
+||  - |  - |  - ||cgsb         || 4096 |  61 % |   8 % |   1 % ||  2501 |    80 ||   aa5506 |  50 % ||   6208 |   194 ||     - |     - ||  6208 |   194 ||
 ||  - |  - |  - ||chemistry    ||12824 |  23 % |   3 % |  17 % ||  2980 |    88 ||   saa788 |  15 % ||   3724 |   133 ||     - |     - ||  3724 |   133 ||
 ||  - |  - |  - ||civil        || 3200 |   -   |   -   |   -   ||    29 |     2 ||   da3205 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  3 |  - |  - ||collaborator || 3072 |  75 % |   7 % |   1 % ||  2314 |    82 ||   ap6420 |  50 % ||     37 |    14 ||     - |     - ||    37 |    14 ||
@@ -43,9 +43,9 @@
 ||  - |  - |  - ||nyuny        || 1024 |  25 % |   -   |   -   ||   264 |     3 ||   xp2042 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  60 % |  25 % |   -   ||  7168 |    13 ||   cc6881 |  43 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||    20 |     1 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  9 |  6 |  - ||scomputer    || 3120 |  18 % |   -   |   4 % ||   592 |    30 ||   mt5383 |  11 % ||    212 |     4 ||    20 |     2 ||   192 |     2 ||
+|| 10 |  9 |  - ||scomputer    || 3120 |  19 % |   -   |   4 % ||   596 |    31 ||   mt5383 |  11 % ||    236 |     5 ||    44 |     3 ||   192 |     2 ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |    10 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 10 | 26 | 16 ||students     || 6144 |  41 % |   6 % |   6 % ||  2542 |   176 ||  peo4482 |  14 % ||    160 |    14 ||     - |     - ||   100 |     4 ||
+||  6 | 16 | 16 ||students     || 6144 |  36 % |   6 % |   4 % ||  2234 |    93 ||  peo4482 |  14 % ||    100 |     4 ||     - |     - ||   100 |     4 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3556 |     3 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   rk3570 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -257,11 +257,6 @@ aa5506     11057577  compute     cgsb          32    PENDING   small            
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-rp4185     11063714  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     11063714  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     11063714  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     11063714  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11063714  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11063714  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11063714  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
@@ -656,18 +651,9 @@ tb2613     11070820  compute     biology       64    PENDING   small            
 tb2613     11070890  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11070842  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 tb2613     11063409  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+tb2613     11063444  compute     biology       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 hz4426     11041559  condo       scomputer     128   PENDING   cair             gpu:a100:2                         QOSGrpCpuLimit                          
 hz4426     11041560  condo       scomputer     64    PENDING   cair             gpu:1                              QOSGrpCpuLimit                          
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
-ms14012    11074997  nvidia      students      6     PENDING   nvidias          gpu:1                              JobArrayTaskLimit                       
 </pre>
 </body>
 </html>
