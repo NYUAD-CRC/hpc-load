@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         19       20       48 %     || DALMA    ||          64%           96           97         4069          225         211           4      ||
-||   99         57       42       57 %     || JUBAIL   ||          83%           14           77         4653          132          33           0      ||
+||   39         15       24       38 %     || DALMA    ||          64%           97           97         4100          224         211           4      ||
+||   99         54       45       54 %     || JUBAIL   ||          79%           22           78         5647          123          34           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:26   GPU:9
@@ -24,11 +24,11 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  12 % |   2 % |   -   ||   772 |     9 ||  tag9888 |  12 % ||  10752 |    84 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  80 % |   6 % |   3 % ||  2461 |    94 ||   tb2613 |  65 % ||   6527 |   426 ||     - |     - ||  4039 |   115 ||
+||  - |  - |  - ||biology      || 3072 |  79 % |   6 % |   3 % ||  2431 |    91 ||   tb2613 |  64 % ||   6330 |   415 ||     - |     - ||  3858 |   106 ||
 ||  6 |  - |  - ||cass         || 4096 |  25 % |   3 % |   -   ||  1056 |     4 ||   snb463 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 || 15 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   134 |    15 ||   ma6996 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |  60 % |   8 % |   -   ||  2458 |    79 ||   aa5506 |  50 % ||   3456 |   108 ||     - |     - ||  3456 |   108 ||
-||  - |  - |  - ||chemistry    ||12824 |  36 % |   9 % |  16 % ||  4695 |    86 ||  sme9918 |  15 % ||   3668 |   131 ||     - |     - ||  3668 |   131 ||
+||  - |  - |  - ||cgsb         || 4096 |  60 % |   8 % |   -   ||  2458 |    79 ||   aa5506 |  50 % ||   3328 |   104 ||     - |     - ||  3328 |   104 ||
+||  - |  - |  - ||chemistry    ||12824 |  28 % |   5 % |  16 % ||  3670 |    84 ||   saa788 |  14 % ||   3668 |   131 ||     - |     - ||  3668 |   131 ||
 ||  3 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    30 |     3 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||civil        || 3200 |   -   |   -   |   -   ||    30 |     3 ||   da3205 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||collaborator || 3072 |  99 % |   7 % |   7 % ||  3060 |    97 ||   ap6420 |  50 % ||    285 |    20 ||     - |     - ||   285 |    20 ||
@@ -36,23 +36,22 @@
 ||  - |  - |  - ||cqts         || 2048 |   6 % |   -   |   -   ||   128 |     1 ||  mm12971 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |   9 % |   -   |   -   ||   284 |     2 ||  mag9531 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  16 % |   -   |   -   ||   129 |     3 ||  mb10325 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  - |  - ||ecomputer    || 4096 |   3 % |   -   |   -   ||   142 |     9 ||   hh1811 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  4 |  - |  - ||ecomputer    || 4096 |   4 % |   -   |   -   ||   172 |    10 ||   hh1811 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   4 % |   -   |   -   ||   165 |     7 ||  aat9458 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||general      || 6144 |   -   |   -   |   -   ||     1 |     1 ||   ak7550 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||20000 |  16 % |  11 % |   -   ||  3344 |     7 ||   ds7760 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyuny        || 1024 |  25 % |   -   |   -   ||   264 |     3 ||   xp2042 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  56 % |  23 % |   -   ||  6656 |    12 ||   cc6881 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
-||  6 |  6 |  - ||scomputer    || 3120 |  17 % |   -   |   3 % ||   561 |    33 ||   mt5383 |   8 % ||    212 |     4 ||    20 |     2 ||   192 |     2 ||
-||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    30 |    30 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 | 17 | 16 ||students     || 6144 |  45 % |   8 % |   3 % ||  2798 |    67 ||  peo4482 |  14 % ||    112 |     6 ||     4 |     1 ||   108 |     5 ||
+||  6 |  6 |  - ||scomputer    || 3120 |  15 % |   -   |   3 % ||   497 |    29 ||   mt5383 |   8 % ||    212 |     4 ||    20 |     2 ||   192 |     2 ||
+||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    29 |    29 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+|| 13 | 17 | 16 ||students     || 6144 |  45 % |   8 % |   3 % ||  2797 |    66 ||  peo4482 |  14 % ||    112 |     6 ||     4 |     1 ||   108 |     5 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  29 % ||  3584 |     4 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
-||  2 |  - |  - ||c2           ||  384 |  39 % |   -   |   1 % ||   153 |     6 ||   mt5383 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
+||  1 |  - |  - ||c2           ||  384 |  29 % |   -   |   -   ||   113 |     5 ||   mt5383 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  3 |  3 ||cair         ||  128 | 100 % |   -   |   -   ||   128 |     1 ||  olr7742 | 100 % ||    192 |     2 ||     - |     - ||   192 |     2 ||
 ||  - |  - |  - ||cass         || 2048 |  50 % |   3 % |   -   ||  1024 |     2 ||   snb463 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  7 |  - |  - ||chi          ||  768 |   7 % |   -   |   -   ||    58 |     4 ||  maa9511 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |   4 % |   -   |   -   ||    16 |     1 ||   aa5506 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||nlp          ||  208 |  11 % |   -   |   -   ||    24 |     3 ||    gi372 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||red          || 1536 | 100 % |   5 % |   -   ||  1536 |     3 ||  sk10712 | 100 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||serdal       ||   80 |  50 % |   -   |   -   ||    40 |     2 ||   wh1165 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
@@ -163,10 +162,6 @@ aa5506     11057577  compute     cgsb          32    PENDING   small            
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     11057577  compute     cgsb          32    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 tag9888    11073190  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    11073190  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    11073190  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
@@ -251,8 +246,6 @@ tag9888    11073190  compute     access        128   PENDING   medium           
 tag9888    11073190  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    11073190  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
 tag9888    11073190  compute     access        128   PENDING   medium           N/A                                JobArrayTaskLimit                       
-rp4185     11082988  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
-rp4185     11082988  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11082988  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11082988  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11082988  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
@@ -569,8 +562,6 @@ am15503    11081849  compute     collaborator  24    PENDING   small            
 am15503    11081874  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ss20440    11090721  compute     collaborator  128   PENDING   medium           N/A                                AssocGrpCpuLimit                        
 am15503    11081870  compute     collaborator  24    PENDING   small            N/A                                AssocGrpCpuLimit                        
-tb2613     11083399  compute     biology       64    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-tb2613     11083061  compute     biology       64    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 tb2613     11083039  compute     biology       64    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 tb2613     11083404  compute     biology       64    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 tb2613     11083058  compute     biology       64    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
