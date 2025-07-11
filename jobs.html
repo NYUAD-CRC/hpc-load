@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         12       27       30 %     || DALMA    ||          73%           22          167         2980          219         238          86      ||
-||   99         85       14       85 %     || JUBAIL   ||          79%            2          111         5708          110          60           0      ||
+||   39         12       27       30 %     || DALMA    ||          73%           20          169         3025          219         239          84      ||
+||   99         85       14       85 %     || JUBAIL   ||          79%            2          111         5708          110          61           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:14   GPU:10
@@ -23,12 +23,12 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  8 |  - |  - ||biology      || 3072 |  60 % |   -   |  15 % ||  1873 |    90 ||  abz2011 |  59 % ||   2643 |   274 ||     - |     - ||  2642 |   273 ||
+||  8 |  - |  - ||biology      || 3072 |  61 % |   -   |  15 % ||  1874 |    91 ||  abz2011 |  59 % ||   2632 |   263 ||     - |     - ||  2632 |   263 ||
 ||  1 |  - |  - ||cass         || 4096 |   -   |   -   |   -   ||     8 |     1 ||  dbd7602 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    12 |     1 ||   sj4406 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 17 | 12 |  2 ||ccs          || 6144 |   2 % |   -   |   -   ||   146 |    17 ||   hj2836 |   1 % ||    116 |    12 ||   100 |    10 ||    16 |     2 ||
 || 12 | 22 | 22 ||cgsb         || 4096 |  18 % |   1 % |   2 % ||   757 |    55 ||     mv83 |   9 % ||    536 |    29 ||     - |     - ||   536 |    29 ||
-||  - |  - |  - ||chemistry    ||12824 |  41 % |  11 % |  17 % ||  5348 |    82 ||   saa788 |  15 % ||   7152 |   250 ||     - |     - ||  7152 |   250 ||
+||  - |  - |  - ||chemistry    ||12824 |  41 % |  11 % |  17 % ||  5348 |    82 ||   saa788 |  15 % ||   8076 |   283 ||     - |     - ||  8076 |   283 ||
 ||  2 |  1 |  - ||cities       || 4096 |   1 % |   -   |   -   ||    52 |     4 ||  yl11109 |   -   ||     10 |     1 ||    10 |     1 ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  89 % |   9 % |   -   ||  2750 |    21 ||   ap6420 |  50 % ||     13 |    13 ||     - |     - ||    13 |    13 ||
 ||  - |  - |  - ||cph          || 3072 |   2 % |   -   |   -   ||    64 |     1 ||   im2493 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,8 +41,8 @@
 ||  - |  - |  - ||nyushanghai  || 1024 |  12 % |   -   |   -   ||   128 |     1 ||   cj1066 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  30 % |  12 % |   -   ||  3584 |     6 ||   cc6881 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   4 % |   4 % |   -   ||  1200 |    20 ||   lz2826 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||scomputer    || 3120 |   8 % |   -   |   1 % ||   280 |    19 ||   ia2280 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 |  4 |  - ||students     || 6144 |  17 % |   2 % |   2 % ||  1097 |   143 ||   xy2949 |   8 % ||     16 |     1 ||    16 |     1 ||     - |     - ||
+|| 11 |  1 |  - ||scomputer    || 3120 |   8 % |   -   |   1 % ||   280 |    19 ||   ia2280 |   3 % ||      4 |     1 ||     4 |     1 ||     - |     - ||
+|| 15 |  4 |  - ||students     || 6144 |  17 % |   2 % |   1 % ||  1051 |    83 ||   xy2949 |   8 % ||     16 |     1 ||    16 |     1 ||     - |     - ||
 ||  - |  - |  - ||xpress       ||27008 |  16 % |   3 % |  29 % ||  4452 |     4 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||    dd115 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -55,16 +55,12 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-saa788     11166246  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166245  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166244  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166243  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166238  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166237  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166236  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166235  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166259  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166258  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166257  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166256  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166255  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -76,17 +72,17 @@ saa788     11166250  compute     chemistry     28    PENDING   small            
 saa788     11166249  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166248  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166247  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166246  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166245  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166264  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166263  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166262  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166261  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166260  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166276  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166275  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166259  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166258  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166274  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166273  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166289  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166288  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166287  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166286  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166285  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -98,8 +94,8 @@ saa788     11166280  compute     chemistry     28    PENDING   small            
 saa788     11166279  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166278  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166277  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166302  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166301  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166276  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166275  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166300  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166299  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166298  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -111,8 +107,8 @@ saa788     11166293  compute     chemistry     28    PENDING   small            
 saa788     11166292  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166291  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166290  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166364  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166363  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166289  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166288  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166362  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166361  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166311  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -123,8 +119,8 @@ saa788     11166306  compute     chemistry     28    PENDING   small            
 saa788     11166305  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166304  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166303  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166376  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166375  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166302  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166301  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166374  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166373  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166372  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -135,8 +131,8 @@ saa788     11166368  compute     chemistry     28    PENDING   small            
 saa788     11166367  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166366  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166365  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166389  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166388  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166364  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166363  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166387  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166386  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166385  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -148,11 +144,8 @@ saa788     11166380  compute     chemistry     28    PENDING   small            
 saa788     11166379  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166378  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166377  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166405  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166404  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166403  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166402  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166401  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166376  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166375  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166400  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166399  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166398  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -164,9 +157,8 @@ saa788     11166393  compute     chemistry     28    PENDING   small            
 saa788     11166392  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166391  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166390  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166416  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166415  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11166414  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166389  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166388  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166413  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166412  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166411  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -175,10 +167,18 @@ saa788     11166409  compute     chemistry     28    PENDING   small            
 saa788     11166408  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166407  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166406  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166405  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166404  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166403  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166402  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166401  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166470  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166469  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166468  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11166467  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166416  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166415  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11166414  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 mv83       11176463  compute     cgsb          12    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11176462  compute     cgsb          12    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11176461  compute     cgsb          12    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -186,19 +186,8 @@ mv83       11176460  compute     cgsb          12    PENDING   medium           
 mv83       11176459  compute     cgsb          12    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11176458  compute     cgsb          12    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11179961  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-abz2011    11135608  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135598  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134892  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134393  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134733  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134468  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134744  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134811  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134531  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135680  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135659  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135704  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135609  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135704  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135736  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135676  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134707  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
@@ -260,9 +249,9 @@ abz2011    11135771  compute     biology       1     PENDING   small            
 abz2011    11134249  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134827  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134604  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134413  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134140  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134717  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134413  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134352  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134503  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134387  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
@@ -287,13 +276,13 @@ abz2011    11135606  compute     biology       1     PENDING   small            
 abz2011    11134458  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134367  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134740  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134128  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134614  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134192  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134128  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134507  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134762  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134515  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134444  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134515  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134622  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134506  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134142  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
@@ -301,32 +290,76 @@ abz2011    11134242  compute     biology       24    PENDING   small            
 abz2011    11134732  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134129  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134931  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134191  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134236  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134925  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134191  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11134852  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134793  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134517  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134411  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134321  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134168  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135518  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135854  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134456  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135847  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135819  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134321  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135781  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135596  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134411  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135854  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135667  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135518  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135758  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135757  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134793  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135725  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135710  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135700  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135667  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135628  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135596  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11135580  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134517  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135573  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135757  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135580  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134168  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135819  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135700  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135628  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134925  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 abz2011    11135563  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-abz2011    11134456  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135823  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135751  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11135699  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134275  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134214  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134907  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134537  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134895  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134304  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+abz2011    11134550  compute     biology       24    PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11183551  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+abz2011    11135679  compute     biology       1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 ad7091     11147814  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 xp2042     11158965  nvidia      nyuny         20    PENDING   nvidia           gpu:1                              AssocGrpGRES                            
 drn2       11166492  nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
