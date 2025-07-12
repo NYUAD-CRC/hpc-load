@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          4       35       10 %     || DALMA    ||          64%           63          167         4043          174         291          22      ||
-||   99         72       27       72 %     || JUBAIL   ||          76%           17           93         6751          113          56           0      ||
+||   39          4       35       10 %     || DALMA    ||          72%            1          229         3167          174         367          22      ||
+||   99         72       27       72 %     || JUBAIL   ||          76%           17           93         6751          113          53           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:9
@@ -23,11 +23,11 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||biology      || 3072 |  69 % |   -   |  17 % ||  2122 |   118 ||  abz2011 |  57 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |  67 % |   -   |  17 % ||  2082 |   113 ||  abz2011 |  57 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    12 |     1 ||   sj4406 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  - |  - ||ccs          || 6144 |   2 % |   -   |   -   ||   128 |    14 ||   ma6996 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 | 11 | 11 ||cgsb         || 4096 |  18 % |   1 % |   2 % ||   776 |    53 ||     mv83 |   9 % ||    316 |    18 ||     - |     - ||   316 |    18 ||
-||  - |  - |  - ||chemistry    ||12824 |  26 % |   7 % |   9 % ||  3428 |    49 ||   ad7091 |  14 % ||   7152 |   250 ||     - |     - ||  7152 |   250 ||
+|| 12 | 10 | 10 ||cgsb         || 4096 |  18 % |   1 % |   2 % ||   776 |    53 ||     mv83 |   9 % ||    296 |    17 ||     - |     - ||   296 |    17 ||
+||  - |  - |  - ||chemistry    ||12824 |  26 % |   7 % |   9 % ||  3400 |    48 ||   ad7091 |  14 % ||   7152 |   250 ||     - |     - ||  7152 |   250 ||
 ||  3 |  - |  - ||cities       || 4096 |   1 % |   -   |   -   ||    46 |     4 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  83 % |   8 % |   -   ||  2564 |    17 ||   ap6420 |  50 % ||     13 |    13 ||     - |     - ||    13 |    13 ||
 ||  - |  - |  - ||cph          || 3072 |   2 % |   -   |   -   ||    64 |     1 ||   im2493 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -42,7 +42,7 @@
 ||  - |  - |  - ||physics      ||11824 |  25 % |  10 % |   -   ||  3072 |     5 ||  laa9597 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   4 % |   4 % |   -   ||  1200 |    20 ||   lz2826 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  1 |  1 ||scomputer    || 3120 |   3 % |   -   |   -   ||   100 |    10 ||    dd115 |   2 % ||      8 |     1 ||     - |     - ||     8 |     1 ||
-||  8 |  4 |  - ||students     || 6144 |  14 % |   2 % |   1 % ||   900 |    37 ||   xy2949 |   7 % ||     16 |     1 ||    16 |     1 ||     - |     - ||
+||  8 |  4 |  - ||students     || 6144 |  30 % |   2 % |   9 % ||  1844 |   155 ||  sk10275 |  16 % ||   2272 |   283 ||    16 |     1 ||  2256 |   282 ||
 ||  - |  - |  - ||xpress       ||27008 |  16 % |   3 % |  29 % ||  4452 |     4 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||    dd115 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -64,9 +64,290 @@ mv83       11176459  compute     cgsb          12    PENDING   medium           
 mv83       11176458  compute     cgsb          12    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 as20733    11184767  compute     default       240   PENDING   medium           N/A                                QOSMaxWallDurationPerJobLimit           
 mv83       11179961  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189198  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189196  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+sk10275    11189150  compute     students      8     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 ad7091     11147814  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 xp2042     11158965  nvidia      nyuny         20    PENDING   nvidia           gpu:1                              AssocGrpGRES                            
-drn2       11166492  nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 drn2       11166492  nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 drn2       11166492  nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 drn2       11166492  nvidia      cgsb          20    PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
