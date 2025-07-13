@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         14       25       35 %     || DALMA    ||          87%            0          148         1326          256         312          18      ||
-||   99         49       50       49 %     || JUBAIL   ||          71%           35           98         8123           90          47           0      ||
+||   39         14       25       35 %     || DALMA    ||          81%            2          193         2001          209         270          23      ||
+||   99         49       50       49 %     || JUBAIL   ||          71%           35           98         8123           90          45           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:11
@@ -26,7 +26,7 @@
 ||  - |  - |  - ||biology      || 3072 |  57 % |   -   |  14 % ||  1754 |    73 ||  abz2011 |  55 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    12 |     1 ||   sj4406 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 14 |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||   116 |    14 ||   hj2836 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |  12 % |   -   |   2 % ||   512 |    39 ||     mv83 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cgsb         || 4096 |  12 % |   -   |   2 % ||   517 |    40 ||     mv83 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||chemistry    ||12824 |  12 % |   -   |  13 % ||  1664 |    63 ||   saa788 |  12 % ||   5976 |   208 ||     - |     - ||  5976 |   208 ||
 ||  3 |  - |  - ||cities       || 4096 |   1 % |   -   |   -   ||    46 |     4 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||collaborator || 3072 |  86 % |   9 % |   -   ||  2662 |    20 ||   ap6420 |  50 % ||     13 |    13 ||     - |     - ||    13 |    13 ||
@@ -36,14 +36,14 @@
 ||  - |  - |  - ||default      ||  768 |  89 % |   2 % |   -   ||   684 |    18 ||  mb10325 |  66 % ||    240 |     1 ||     - |     - ||   240 |     1 ||
 ||  1 |  - |  - ||ecomputer    || 4096 |   1 % |   -   |   -   ||    44 |     4 || sas10092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||electrical   || 4096 |   8 % |   -   |   2 % ||   351 |    39 ||   lh4187 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||general      || 6144 |  10 % |   -   |   5 % ||   644 |    23 ||   ak7550 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||general      || 6144 |   9 % |   -   |   4 % ||   588 |    21 ||   ak7550 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||20000 |  40 % |  28 % |   -   ||  8135 |    13 ||   xh3078 |  23 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  1 |  1 ||nyuny        || 1024 |  28 % |   1 % |   -   ||   296 |     4 ||   xp2042 |  28 % ||     20 |     1 ||     - |     - ||    20 |     1 ||
 ||  - |  - |  - ||nyushanghai  || 1024 |  12 % |   -   |   -   ||   128 |     1 ||   cj1066 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  30 % |  12 % |   -   ||  3584 |     7 ||   cc6881 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   4 % |   4 % |   -   ||  1200 |    20 ||   lz2826 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||scomputer    || 3120 |   3 % |   -   |   -   ||   104 |    10 ||    dd115 |   2 % ||     32 |     1 ||     - |     - ||    32 |     1 ||
-||  7 |  - |  - ||students     || 6144 |  84 % |   9 % |  20 % ||  5184 |   379 ||   at5130 |  33 % ||   1100 |   116 ||  1000 |   100 ||    40 |    10 ||
+||  7 |  - |  - ||students     || 6144 |  74 % |   9 % |  15 % ||  4560 |   214 ||   at5130 |  33 % ||    900 |    90 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||xpress       ||27008 |  16 % |   3 % |  29 % ||  4452 |     4 ||   ia2280 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||    dd115 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -57,21 +57,96 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 as20733    11184767  compute     default       240   PENDING   medium           N/A                                QOSMaxWallDurationPerJobLimit           
-sk10275    11193852  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    11193852  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    11193852  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    11193852  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    11193852  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
-sk10275    11193852  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11198170  compute     students      4     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
+sk10275    11198656  compute     students      10    PENDING   small            N/A                                JobArrayTaskLimit                       
 hz4426     11193594  condo       scomputer     32    PENDING   cair             gpu:2                              QOSGrpGRES                              
 ad7091     11147814  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 xp2042     11158965  nvidia      nyuny         20    PENDING   nvidia           gpu:1                              AssocGrpGRES                            
