@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         19       20       48 %     || DALMA    ||          71%           59           91         3223          252         263           4      ||
-||   99         89       10       89 %     || JUBAIL   ||          39%           91           95        17122           36          34           0      ||
+||   39         18       21       46 %     || DALMA    ||          71%           59           91         3231          252         271           4      ||
+||   99         86       13       86 %     || JUBAIL   ||          39%           92           94        17230           36          35           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:15   GPU:10
@@ -24,11 +24,11 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  16 % |   3 % |   -   ||  1038 |     4 ||  ak11283 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  37 % |   -   |   9 % ||  1146 |    82 ||  abz2011 |  23 % ||   2584 |   323 ||     - |     - ||     - |     - ||
-||  4 |  - |  - ||cass         || 4096 |  13 % |   1 % |   -   ||   540 |     5 ||   snb463 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||biology      || 3072 |  37 % |   -   |   9 % ||  1146 |    82 ||  abz2011 |  23 % ||   2576 |   322 ||     - |     - ||     - |     - ||
+||  3 |  - |  - ||cass         || 4096 |  12 % |   1 % |   -   ||   532 |     4 ||   snb463 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cbs          || 2048 |   -   |   -   |   -   ||    12 |     1 ||   sj4406 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 24 |330 |330 ||ccs          || 6144 |   2 % |   -   |   -   ||   144 |    24 ||   hj2836 |   1 % ||   1369 |   330 ||     - |     - ||  1369 |   330 ||
-||  - |  - |  - ||cgsb         || 4096 |   8 % |   -   |   -   ||   364 |     9 ||   aa5506 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 24 |327 |327 ||ccs          || 6144 |   2 % |   -   |   -   ||   144 |    24 ||   hj2836 |   1 % ||   1357 |   327 ||     - |     - ||  1357 |   327 ||
+||  - |  - |  - ||cgsb         || 4096 |   8 % |   -   |   -   ||   356 |     8 ||   aa5506 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||chemistry    ||12824 |  17 % |   2 % |  13 % ||  2288 |    72 ||   saa788 |  12 % ||   3700 |   119 ||     - |     - ||  3700 |   119 ||
 ||  1 |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    10 |     1 ||   pc3377 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||civil        || 3200 |   8 % |   -   |   -   ||   284 |     3 ||   da3205 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -43,8 +43,8 @@
 ||  - |  - |  - ||physics      ||11824 |  12 % |   5 % |   -   ||  1536 |     2 ||  laa9597 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||    60 |     1 ||   lz2826 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    12 |     1 ||  dna8993 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   169 |    19 ||   hz4426 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||students     || 6144 |  13 % |   1 % |   2 % ||   824 |   233 ||   xy2949 |   6 % ||    170 |    44 ||     - |     - ||   170 |    44 ||
+|| 10 |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   168 |    18 ||   hz4426 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  9 |  - |  - ||students     || 6144 |  11 % |   1 % |   2 % ||   711 |   228 ||   xy2949 |   4 % ||    138 |    12 ||     - |     - ||   138 |    12 ||
 ||  - |  - |  - ||xpress       ||27008 |  13 % |   -   |  30 % ||  3696 |     8 ||   ia2280 |  11 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  4 |  - |  - ||c2           ||  384 |  27 % |   -   |   -   ||   104 |    14 ||   bs5331 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -110,37 +110,6 @@ lh4187     11295530  compute     electrical    33    PENDING   small            
 lh4187     11295530  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295530  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295530  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295533  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295533  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295533  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -172,6 +141,37 @@ lh4187     11295533  compute     electrical    33    PENDING   small            
 lh4187     11295533  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295533  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295533  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295532  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295534  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295534  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295534  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -265,13 +265,6 @@ lh4187     11295535  compute     electrical    33    PENDING   small            
 lh4187     11295535  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295535  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295535  compute     electrical    33    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295555  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295555  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295555  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -286,6 +279,13 @@ lh4187     11295567  compute     electrical    9     PENDING   small            
 lh4187     11295567  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295567  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295567  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+lh4187     11295556  compute     electrical    9     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295673  compute     electrical    12    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295673  compute     electrical    12    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295673  compute     electrical    12    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -319,41 +319,8 @@ lh4187     11295674  compute     electrical    12    PENDING   small            
 lh4187     11295674  compute     electrical    12    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295674  compute     electrical    12    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 lh4187     11295674  compute     electrical    12    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-mka7870    11296496  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296495  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296494  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296493  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296492  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296491  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296490  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296489  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296488  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296487  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296486  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296485  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296484  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296483  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296482  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296481  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296480  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296479  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296478  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296477  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296476  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296475  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296474  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296473  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296472  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11296505  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11296504  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296503  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296502  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296501  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296500  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296499  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296498  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11296497  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-rp4185     11296192  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11296192  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11296192  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
 rp4185     11296192  compute     biology       8     PENDING   small            N/A                                JobArrayTaskLimit                       
@@ -682,22 +649,19 @@ hj2836     11268111  nvidia      ccs           8     PENDING   nvidia           
 hj2836     11268112  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268113  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268117  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     11268119  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268118  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268120  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     11268122  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     11268119  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268121  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-hj2836     11268124  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268123  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     11268122  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268125  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
+hj2836     11268124  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 hj2836     11268126  nvidia      ccs           8     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 tz545      11291181  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 tz545      11291184  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 tz545      11291186  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 tz545      11291187  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ma6996     11296523  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     11296523  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     11296523  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11296523  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11296523  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11296523  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
