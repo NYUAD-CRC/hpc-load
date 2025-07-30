@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39         13       26       33 %     || DALMA    ||          31%          204           54         8054          111         111           4      ||
-||   99         72       27       72 %     || JUBAIL   ||          77%           21           92         6311          109          96           0      ||
+||   39         16       23       41 %     || DALMA    ||          31%          204           54         8049          111         115           4      ||
+||   99         71       28       71 %     || JUBAIL   ||          77%           22           90         6311          110          96           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:18   GPU:1
@@ -24,11 +24,11 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  18 % |   3 % |   -   ||  1146 |     3 ||  ak11283 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||avengers     ||12800 |   1 % |   -   |   -   ||   128 |     1 ||  ms13779 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||avengers     ||12800 |   1 % |   -   |   -   ||   136 |     2 ||  ms13779 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  25 % |   3 % |   -   ||  1024 |     2 ||   snb463 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    40 |     5 ||   hj2836 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |  19 % |   2 % |   1 % ||   784 |    15 ||   aa5506 |  17 % ||  11584 |   181 ||     - |     - || 11584 |   181 ||
-||  - |  - |  - ||chemistry    ||12824 |  28 % |  12 % |   2 % ||  3705 |    68 ||   saa788 |  15 % ||  15300 |   361 ||     - |     - || 15300 |   361 ||
+||  - |  - |  - ||cgsb         || 4096 |  19 % |   2 % |   1 % ||   784 |    15 ||   aa5506 |  17 % ||  11520 |   180 ||     - |     - || 11520 |   180 ||
+||  - |  - |  - ||chemistry    ||12824 |  28 % |  12 % |   2 % ||  3705 |    68 ||   saa788 |  15 % ||  14836 |   353 ||     - |     - || 14836 |   353 ||
 || 12 |  4 |  4 ||civil        || 3200 |  16 % |   1 % |   -   ||   524 |    15 ||   da3205 |   8 % ||     80 |     4 ||     - |     - ||    80 |     4 ||
 ||  5 |  - |  - ||collaborator || 3072 |  76 % |   7 % |   1 % ||  2360 |    93 ||   ap6420 |  50 % ||   2394 |   140 ||     - |     - ||  2394 |   140 ||
 || 12 |  5 |  5 ||cqts         || 2048 |   8 % |   -   |   -   ||   176 |    13 ||  mm12971 |   6 % ||     20 |     5 ||     - |     - ||    20 |     5 ||
@@ -43,9 +43,9 @@
 ||  - |  - |  - ||physics      ||11824 |  34 % |  14 % |   -   ||  4096 |     7 ||   cc6881 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||preempt      ||27000 |   4 % |   4 % |   -   ||  1232 |    21 ||   lz2826 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||psychology   || 6096 |   1 % |   -   |   -   ||    64 |     2 ||   pw1246 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 |  - |  - ||scomputer    || 3120 |   4 % |   -   |   -   ||   153 |    22 ||   hz4426 |   1 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
+|| 16 |  - |  - ||scomputer    || 3120 |   4 % |   -   |   -   ||   152 |    21 ||   hz4426 |   1 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||     5 |     1 ||   mb7099 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  9 | 12 |  - ||students     || 6144 |  84 % |  16 % |   4 % ||  5190 |   266 ||   at5130 |  66 % ||   6883 |   584 ||    36 |     3 ||  6847 |   581 ||
+|| 12 | 12 |  - ||students     || 6144 |  84 % |  16 % |   4 % ||  5188 |   264 ||   at5130 |  66 % ||   6706 |   407 ||    36 |     3 ||  6670 |   404 ||
 ||  - |  - |  - ||xpress       ||27008 |   9 % |   -   |  21 % ||  2604 |     8 ||   ia2280 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||bedoor       ||  128 |  71 % |   -   |   -   ||    92 |     2 ||  sas9891 |  71 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -59,7 +59,6 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-aa5506     11306986  compute     cgsb          64    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11306986  compute     cgsb          64    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11306986  compute     cgsb          64    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11306986  compute     cgsb          64    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -246,26 +245,15 @@ at5130     11336405  compute     students      2048  PENDING   large            
 at5130     11336407  compute     students      2048  PENDING   large            N/A                                AssocGrpCpuLimit                        
 at5130     11336410  compute     students      2048  PENDING   large            N/A                                AssocGrpCpuLimit                        
 ap6420     11349518  compute     collaborator  2048  PENDING   large            N/A                                AssocGrpCpuLimit                        
-saa788     11349484  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349483  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349482  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11349481  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11349480  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11349479  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11349478  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11349477  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11349476  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349475  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349474  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349473  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349472  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349471  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349470  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11349469  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351776  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351775  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351774  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351773  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11349484  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11349483  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11349482  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351772  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351771  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351770  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -276,11 +264,6 @@ saa788     11351766  compute     chemistry     48    PENDING   small            
 saa788     11351765  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351764  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351763  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351801  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351800  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351799  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351798  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351797  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351796  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351795  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351793  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -300,10 +283,10 @@ saa788     11351780  compute     chemistry     48    PENDING   small            
 saa788     11351779  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351778  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351777  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351823  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351822  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351821  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351820  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351776  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351775  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351774  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351773  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351819  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351818  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351817  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -322,10 +305,11 @@ saa788     11351805  compute     chemistry     48    PENDING   small            
 saa788     11351804  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351803  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351802  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351847  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351846  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351845  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351844  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351801  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351800  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351799  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351798  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351797  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351843  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351842  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351841  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -346,11 +330,10 @@ saa788     11351827  compute     chemistry     48    PENDING   small            
 saa788     11351826  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351825  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351824  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351872  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351871  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351870  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351869  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351868  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351823  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351822  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351821  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351820  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351867  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351866  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351865  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -371,10 +354,10 @@ saa788     11351851  compute     chemistry     48    PENDING   small            
 saa788     11351850  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351849  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351848  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351896  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351895  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351894  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351893  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351847  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351846  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351845  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351844  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351892  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351891  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351890  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -395,9 +378,11 @@ saa788     11351876  compute     chemistry     48    PENDING   small            
 saa788     11351875  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351874  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351873  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351920  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351919  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351918  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351872  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351871  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351870  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351869  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351868  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351917  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351916  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351915  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -419,9 +404,10 @@ saa788     11351900  compute     chemistry     48    PENDING   small            
 saa788     11351899  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351898  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351897  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351943  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351942  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351941  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351896  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351895  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351894  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351893  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351940  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351939  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351938  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -441,9 +427,9 @@ saa788     11351925  compute     chemistry     48    PENDING   small            
 saa788     11351924  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351923  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351921  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351967  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351966  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351965  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351920  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351919  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351918  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351964  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351963  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351962  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -465,10 +451,9 @@ saa788     11351947  compute     chemistry     48    PENDING   small            
 saa788     11351946  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351945  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351944  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351991  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351990  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351989  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11351988  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351943  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351942  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351941  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351987  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351986  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351985  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -489,190 +474,19 @@ saa788     11351971  compute     chemistry     48    PENDING   small            
 saa788     11351970  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351969  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351968  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351967  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351966  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351965  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351995  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351994  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351993  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11351992  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-sme9918    11361872  compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oms7891    11364134  compute     students      32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+saa788     11351991  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351990  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351989  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11351988  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 oms7891    11364133  compute     students      32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364355  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364360  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+oms7891    11364134  compute     students      32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11364365  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
