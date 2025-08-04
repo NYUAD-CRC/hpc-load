@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   39          5       34       12 %     || DALMA    ||          50%          140          120         5788          133         145           4      ||
-||   99         63       36       63 %     || JUBAIL   ||          79%            7           88         5727          126          49           0      ||
+||   39          5       34       12 %     || DALMA    ||          49%          140          119         5852          132         148           4      ||
+||   99         61       38       61 %     || JUBAIL   ||          79%            8           87         5759          126          51           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:16   GPU:2
@@ -28,7 +28,7 @@
 ||  1 |  - |  - ||cass         || 4096 |  12 % |   1 % |   -   ||   520 |     2 ||   snb463 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   -   |   -   |   -   ||    12 |     1 ||   vk2599 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |  48 % |   2 % |  10 % ||  1970 |    76 ||   gm3583 |  31 % ||   3200 |    50 ||     - |     - ||  3200 |    50 ||
-||  - |  - |  - ||chemistry    ||12824 |  17 % |   4 % |   7 % ||  2208 |    95 ||  sme9918 |   9 % ||   3700 |   116 ||     - |     - ||  3700 |   116 ||
+||  - |  - |  - ||chemistry    ||12824 |  17 % |   4 % |   7 % ||  2200 |    94 ||  sme9918 |   9 % ||   3700 |   116 ||     - |     - ||  3700 |   116 ||
 ||  - |  - |  - ||civil        || 3200 |   4 % |   -   |   -   ||   128 |     1 ||   da3205 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||collaborator || 3072 |  52 % |   5 % |   -   ||  1627 |    13 ||   ap6420 |  50 % ||     69 |    69 ||     - |     - ||    69 |    69 ||
 ||  - |  - |  - ||cph          || 3072 |   2 % |   -   |   -   ||    64 |     1 ||   im2493 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -36,13 +36,13 @@
 ||  - |  - |  - ||csem         || 3072 |   -   |   -   |   -   ||    28 |     1 ||   rp4207 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||default      ||  768 |  98 % |   2 % |   -   ||   756 |    20 ||  am11613 |  83 % ||   2048 |     2 ||     - |     - ||  2048 |     2 ||
 ||  3 |  - |  - ||ecomputer    || 4096 |   3 % |   -   |   1 % ||   140 |     7 ||   hh1811 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    11 |     7 ||   yw3576 |   -   ||     28 |     1 ||     - |     - ||     - |     - ||
+||  6 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    12 |     8 ||   yw3576 |   -   ||     28 |     1 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||20000 |  33 % |  23 % |   -   ||  6664 |     8 ||   xh3078 |  23 % ||    256 |     1 ||     - |     - ||   256 |     1 ||
 ||  4 |  - |  - ||nyushanghai  || 1024 |   1 % |   -   |   -   ||    16 |     4 ||   fz2113 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  56 % |  23 % |   -   ||  6656 |    12 ||   cc6881 |  47 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||scomputer    || 3120 |   7 % |   -   |   -   ||   230 |    19 ||   ia2280 |   2 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
+|| 10 |  - |  - ||scomputer    || 3120 |   5 % |   -   |   -   ||   173 |    16 ||   hh3443 |   1 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  sas9891 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |  8 |  8 ||students     || 6144 |  79 % |  15 % |   2 % ||  4855 |   227 ||   at5130 |  66 % ||    602 |   517 ||     - |     - ||   602 |   517 ||
+|| 11 |  8 |  8 ||students     || 6144 |  76 % |  15 % |   2 % ||  4695 |   225 ||   at5130 |  66 % ||    564 |   479 ||     - |     - ||   564 |   479 ||
 ||  - |  - |  - ||xpress       ||27008 |  11 % |   -   |  26 % ||  3220 |     4 ||   ia2280 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 |  13 % |   -   |   -   ||    52 |     7 ||   ad7786 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -111,43 +111,6 @@ aa5506     11306997  compute     cgsb          64    PENDING   medium           
 sme9918    11418268  compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    11418270  compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 sme9918    11418269  compute     chemistry     128   PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11434180  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
