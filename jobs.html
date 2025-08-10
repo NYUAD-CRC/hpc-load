@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          2       36        5 %     || DALMA    ||          39%          211           31         7037          156         126           4      ||
-||   99         74       25       74 %     || JUBAIL   ||          92%            0           60         1732          160          65           0      ||
+||   38          2       36        5 %     || DALMA    ||          39%          211           31         7037          156         128           4      ||
+||   99         74       25       74 %     || JUBAIL   ||          92%            0           61         1844          159          67           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:7   GPU:7
@@ -24,10 +24,10 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |  16 % |   3 % |   -   ||  1024 |     1 ||  ak11283 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||bio          || 8192 |   3 % |   -   |   -   ||   256 |     2 ||  hka5519 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||bio          || 8192 |   1 % |   -   |   -   ||   128 |     1 ||  hka5519 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   2 % |   -   |   -   ||    64 |     1 ||   tb2613 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  4 |  4 ||ccs          || 6144 |   -   |   -   |   -   ||    48 |    12 ||   ma6996 |   -   ||     16 |     4 ||     - |     - ||    16 |     4 ||
-||  - |  - |  - ||cgsb         || 4096 |  35 % |   3 % |   2 % ||  1435 |    47 ||   aa5506 |  27 % ||    168 |    14 ||     - |     - ||   168 |    14 ||
+|| 12 |  3 |  3 ||ccs          || 6144 |   -   |   -   |   -   ||    48 |    12 ||   ma6996 |   -   ||     12 |     3 ||     - |     - ||    12 |     3 ||
+||  - |  - |  - ||cgsb         || 4096 |  35 % |   3 % |   2 % ||  1451 |    47 ||   aa5506 |  27 % ||    168 |    14 ||     - |     - ||   168 |    14 ||
 ||  - |  - |  - ||chemistry    ||12824 |  48 % |  19 % |   4 % ||  6272 |    11 ||  sme9918 |  39 % ||   3316 |   113 ||     - |     - ||  3316 |   113 ||
 ||  - |  - |  - ||civil        || 3200 |   4 % |   -   |   -   ||   128 |     1 ||   da3205 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||collaborator || 3072 |  81 % |   8 % |   -   ||  2491 |    24 ||   ap6420 |  50 % ||    429 |    84 ||     - |     - ||   429 |    84 ||
@@ -42,7 +42,7 @@
 ||  - |  - |  - ||preempt      ||27000 |   5 % |   5 % |   -   ||  1560 |    25 ||   lz2826 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 || 16 |  - |  - ||scomputer    || 3120 |   7 % |   -   |   -   ||   222 |    28 ||   hh3443 |   2 % ||    107 |   107 ||     - |     - ||   107 |   107 ||
 ||  - |  - |  - ||socialscience|| 4096 |   1 % |   -   |   -   ||    60 |     2 ||  sas9891 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 | 16 | 16 ||students     || 6144 |  74 % |  14 % |   2 % ||  4559 |   223 ||   at5130 |  66 % ||   2460 |   337 ||     - |     - ||  2460 |   337 ||
+|| 17 | 16 | 16 ||students     || 6144 |  74 % |  14 % |   2 % ||  4559 |   223 ||   at5130 |  66 % ||   2457 |   334 ||     - |     - ||  2457 |   334 ||
 ||  - |  - |  - ||xpress       ||27008 |  12 % |   -   |  28 % ||  3416 |     5 ||   ia2280 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 |  17 % |   -   |   -   ||    69 |    13 ||   bs5331 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -87,27 +87,6 @@ mv83       11570192  bigmem      cgsb          12    PENDING   bigmem           
 sb7778     11316946  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 sb7778     11316891  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 at5130     11562999  compute     students      2048  PENDING   large            N/A                                AssocGrpCpuLimit                        
-oge208     11570291  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570290  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570289  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570288  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570287  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570286  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570285  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570284  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570367  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570366  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570365  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570364  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570363  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570362  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570361  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570360  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570359  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570358  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570357  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570356  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-oge208     11570355  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570354  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570353  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570352  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -171,6 +150,14 @@ oge208     11570295  compute     scomputer     1     PENDING   medium           
 oge208     11570294  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570293  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570292  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570291  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570290  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570289  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570288  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570287  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570286  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570285  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570284  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570390  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570389  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570388  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -194,9 +181,19 @@ oge208     11570371  compute     scomputer     1     PENDING   medium           
 oge208     11570370  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570369  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 oge208     11570368  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11570198  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11570198  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11570198  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570367  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570366  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570365  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570364  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570363  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570362  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570361  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570360  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570359  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570358  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570357  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570356  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+oge208     11570355  compute     scomputer     1     PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11570198  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11570198  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11570198  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -532,7 +529,6 @@ ba2422     11441817  nvidia      students      28    PENDING   nvidias          
 tz545      11519296  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 tz545      11519297  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
 tz545      11519298  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
-ma6996     11569199  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11569199  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11569199  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11569199  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
