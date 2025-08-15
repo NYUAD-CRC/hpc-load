@@ -12,7 +12,7 @@
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
 ||   38         15       23       39 %     || DALMA    ||          30%          179           60         8205          100          99           4      ||
-||   100        68       32       68 %     || JUBAIL   ||          58%           57           93        11680           71          32           0      ||
+||   100        68       32       68 %     || JUBAIL   ||          58%           57           93        11680           71          34           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:12   GPU:10
@@ -32,8 +32,8 @@
 ||  8 |  - |  - ||collaborator || 3072 |  58 % |   5 % |   -   ||  1803 |    29 ||   ap6420 |  50 % ||     81 |    75 ||     - |     - ||    81 |    75 ||
 ||  - |  - |  - ||cph          || 3072 |   2 % |   -   |   -   ||    64 |     1 ||   im2493 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 | 48 | 48 ||cqts         || 2048 |   2 % |   -   |   -   ||    48 |    12 ||    tz545 |   2 % ||    192 |    48 ||     - |     - ||   192 |    48 ||
-||  - |  - |  - ||default      ||  768 |  93 % |   2 % |   -   ||   716 |    25 ||   ml8071 |  75 % ||   5568 |    57 ||     - |     - ||  5568 |    57 ||
-|| 14 |875 |  - ||ecomputer    || 4096 |  17 % |   1 % |   1 % ||   700 |    20 ||  sc11670 |  11 % ||  17500 |   875 || 17500 |   875 ||     - |     - ||
+||  - |  - |  - ||default      ||  768 |  93 % |   2 % |   -   ||   716 |    25 ||   ml8071 |  75 % ||   5376 |    54 ||     - |     - ||  5376 |    54 ||
+|| 14 |865 |  - ||ecomputer    || 4096 |  17 % |   1 % |   1 % ||   700 |    20 ||  sc11670 |  11 % ||  17300 |   865 || 17300 |   865 ||     - |     - ||
 ||  2 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     4 |     2 ||   yw3576 |   -   ||     28 |     1 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||20000 |  12 % |   8 % |   -   ||  2560 |     5 ||   xh3078 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyuny        || 1024 |  12 % |   -   |   -   ||   128 |     1 ||   xp2042 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -41,8 +41,8 @@
 ||  - |  - |  - ||preempt      ||27000 |   4 % |   4 % |   -   ||  1200 |    20 ||   lz2826 |   4 % ||      2 |     1 ||     - |     - ||     2 |     1 ||
 || 18 |  - |  - ||scomputer    || 3120 |   9 % |   -   |   -   ||   281 |    21 ||   bc3194 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 19 |  5 |  5 ||students     || 8192 |   6 % |   -   |   2 % ||   562 |   223 ||  mka7870 |   2 % ||   1319 |   552 ||     - |     - ||  1319 |   552 ||
-||  - |  - |  - ||xpress       ||27008 |   9 % |   -   |  20 % ||  2496 |   287 ||   mk8958 |   3 % ||   2007 |  2007 ||     - |     - ||     - |     - ||
+|| 19 |  5 |  5 ||students     || 8192 |   6 % |   -   |   2 % ||   562 |   223 ||  mka7870 |   2 % ||   1301 |   534 ||     - |     - ||  1301 |   534 ||
+||  - |  - |  - ||xpress       ||27008 |   9 % |   -   |  20 % ||  2496 |   287 ||   mk8958 |   3 % ||   1998 |  1998 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 |  22 % |   -   |   -   ||    85 |    15 ||   bs5331 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cair         ||  128 |  25 % |   -   |   -   ||    32 |     1 ||   hz4426 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -52,8 +52,8 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-oms7891    11627796  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 oms7891    11627798  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
+oms7891    11627796  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 sb7778     11316946  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 sb7778     11316891  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 aa5506     11606081  compute     cgsb          40    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -70,40 +70,22 @@ ml8071     11631766  compute     default       64    PENDING   small            
 ml8071     11631766  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631766  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631766  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ml8071     11631766  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ml8071     11631766  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
-ml8071     11631766  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631790  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631806  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631780  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631803  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631797  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
 ml8071     11631775  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+ml8071     11631805  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+ml8071     11631773  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+ml8071     11631781  compute     default       64    PENDING   small            N/A                                AssocGrpCpuLimit                        
+mv83       11629598  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11629604  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11629603  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11629602  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mv83       11629598  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11629609  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11629607  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11629606  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11629890  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -1198,15 +1180,6 @@ na2416     11630616  xxl         xpress        1     PENDING   normal           
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
