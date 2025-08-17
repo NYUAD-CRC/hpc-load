@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         15       23       39 %     || DALMA    ||          53%          129           49         5409          202         131           4      ||
-||   100        56       44       56 %     || JUBAIL   ||          61%           54           70        10882           97           7           0      ||
+||   38         15       23       39 %     || DALMA    ||          53%          129           49         5409          202         121           4      ||
+||   100        56       44       56 %     || JUBAIL   ||          61%           54           70        10882           97           8           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:5
@@ -34,7 +34,7 @@
 || 10 |  - |  - ||collaborator || 3072 |  57 % |   6 % |   -   ||  1764 |    14 ||   ap6420 |  50 % ||     87 |    78 ||     - |     - ||    87 |    78 ||
 || 12 | 37 | 37 ||cqts         || 2048 |   2 % |   -   |   -   ||    48 |    12 ||    tz545 |   2 % ||    148 |    37 ||     - |     - ||   148 |    37 ||
 ||  - |  - |  - ||default      ||  768 |  25 % |   -   |   -   ||   192 |    17 ||   bs5331 |  14 % ||   2048 |     2 ||     - |     - ||  2048 |     2 ||
-|| 14 |283 |  - ||ecomputer    || 4096 |  16 % |   1 % |   1 % ||   688 |    18 ||  sc11670 |  11 % ||   5660 |   283 ||  5660 |   283 ||     - |     - ||
+|| 14 |279 |  - ||ecomputer    || 4096 |  16 % |   1 % |   1 % ||   688 |    18 ||  sc11670 |  11 % ||   5580 |   279 ||  5580 |   279 ||     - |     - ||
 ||  1 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||     2 |     1 ||   yw3576 |   -   ||     28 |     1 ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||20000 |  17 % |  12 % |   -   ||  3584 |     8 ||  sk10712 |  10 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyuny        || 1024 | 100 % |   3 % |   -   ||  1024 |     8 ||   xp2042 | 100 % ||    256 |     2 ||     - |     - ||   256 |     2 ||
@@ -42,8 +42,8 @@
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   120 |     2 ||   lz2826 |   -   ||      2 |     1 ||     - |     - ||     2 |     1 ||
 || 14 |  - |  - ||scomputer    || 3120 |   7 % |   -   |   -   ||   220 |    14 ||   bc3194 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  4 |  4 ||students     || 8192 |   5 % |   -   |   3 % ||   466 |   218 ||  mka7870 |   2 % ||    722 |   441 ||     - |     - ||   722 |   441 ||
-||  - |  - |  - ||xpress       ||27008 |  12 % |   -   |  29 % ||  3504 |   306 ||   cl5503 |   4 % ||    955 |   955 ||     - |     - ||     - |     - ||
+|| 12 |  4 |  4 ||students     || 8192 |   5 % |   -   |   3 % ||   466 |   218 ||  mka7870 |   2 % ||    713 |   432 ||     - |     - ||   713 |   432 ||
+||  - |  - |  - ||xpress       ||27008 |  12 % |   -   |  29 % ||  3504 |   306 ||   cl5503 |   4 % ||    947 |   947 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  5 |  - |  - ||c2           ||  384 |  13 % |   -   |   -   ||    53 |    11 ||   bs5331 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||csm          ||  640 |  20 % |   -   |   -   ||   128 |     1 ||   da3205 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -53,8 +53,8 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-oms7891    11627796  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 oms7891    11627798  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
+oms7891    11627796  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 sb7778     11316946  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 sb7778     11316891  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 mv83       11629604  compute     cgsb          24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -493,56 +493,47 @@ mka7870    11659826  compute     students      1     PENDING   small            
 mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11659826  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11666997  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11666997  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11666997  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667070  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11667163  compute     chemistry     1     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11667162  compute     chemistry     1     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
@@ -1097,14 +1088,6 @@ na2416     11630616  xxl         xpress        1     PENDING   normal           
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
