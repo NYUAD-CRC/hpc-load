@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          6       32       15 %     || DALMA    ||          51%           14          163         5654          189         180           4      ||
-||   100        58       42       58 %     || JUBAIL   ||          60%           67           62        11210           92          34           0      ||
+||   38          5       33       13 %     || DALMA    ||          49%           25          153         5874          187         184           4      ||
+||   100        58       42       58 %     || JUBAIL   ||          60%           67           62        11210           92          29           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:17   GPU:10
@@ -29,10 +29,10 @@
 ||  1 |  - |  - ||cair         || 2048 |   -   |   -   |   -   ||     8 |     1 ||     yf23 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||cass         || 4096 |   -   |   -   |   -   ||    12 |     2 ||  dbd7602 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  8 |  8 ||ccs          || 6144 |   -   |   -   |   -   ||     - |     - ||          |   -   ||     32 |     8 ||     - |     - ||    32 |     8 ||
-||  - |  - |  - ||cgsb         || 4096 |  18 % |   1 % |   1 % ||   777 |    34 ||   aa5506 |   8 % ||   1832 |    61 ||     - |     - ||  1832 |    61 ||
-||  2 |  - |  - ||chemistry    ||12824 |  64 % |  21 % |  17 % ||  8212 |    94 ||  sme9918 |  39 % ||   4438 |   155 ||     - |     - ||  4438 |   155 ||
+||  - |  - |  - ||cgsb         || 4096 |  18 % |   1 % |   1 % ||   777 |    34 ||   aa5506 |   8 % ||   1672 |    56 ||     - |     - ||  1672 |    56 ||
+||  2 |  - |  - ||chemistry    ||12824 |  63 % |  21 % |  17 % ||  8207 |    93 ||  sme9918 |  39 % ||   4438 |   155 ||     - |     - ||  4438 |   155 ||
 ||  - |  - |  - ||civil        || 3200 |  12 % |   1 % |   -   ||   412 |     4 ||   da3205 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 10 |  2 |  2 ||collaborator || 3072 |  79 % |   7 % |   2 % ||  2427 |   158 ||   ap6420 |  50 % ||   2945 |   844 ||     - |     - ||  2945 |   844 ||
+|| 10 |  2 |  2 ||collaborator || 3072 |  74 % |   7 % |   1 % ||  2275 |   149 ||   ap6420 |  50 % ||   2584 |   483 ||     - |     - ||  2584 |   483 ||
 ||  - |  - |  - ||cph          || 3072 |   -   |   -   |   -   ||    24 |     2 ||     phrc |   -   ||     72 |     6 ||     - |     - ||    72 |     6 ||
 || 12 | 35 | 35 ||cqts         || 2048 |   2 % |   -   |   -   ||    48 |    12 ||    tz545 |   2 % ||    140 |    35 ||     - |     - ||   140 |    35 ||
 ||  - |  - |  - ||default      ||  768 |  23 % |   -   |   -   ||   184 |    16 ||   bs5331 |  12 % ||   2048 |     2 ||     - |     - ||  2048 |     2 ||
@@ -44,8 +44,8 @@
 ||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||   120 |     2 ||   lz2826 |   -   ||      2 |     1 ||     - |     - ||     2 |     1 ||
 || 10 |  - |  - ||scomputer    || 3120 |   2 % |   -   |   -   ||    77 |    11 ||   hh3443 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 |  4 |  4 ||students     || 8192 |   5 % |   -   |   2 % ||   438 |   185 ||  mka7870 |   1 % ||    404 |    63 ||     - |     - ||   404 |    63 ||
-||  - |  - |  - ||xpress       ||27008 |  10 % |   -   |  24 % ||  2944 |   287 ||   cl5503 |   4 % ||    698 |   698 ||     - |     - ||     - |     - ||
+|| 17 |  4 |  4 ||students     || 8192 |   4 % |   -   |   2 % ||   398 |   145 ||  mka7870 |   1 % ||    404 |    63 ||     - |     - ||   404 |    63 ||
+||  - |  - |  - ||xpress       ||27008 |  11 % |   -   |  24 % ||  2972 |   288 ||   cl5503 |   4 % ||    695 |   695 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  4 |  - |  - ||c2           ||  384 |  13 % |   -   |   -   ||    52 |    10 ||   bs5331 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||csm          ||  640 |  20 % |   -   |   -   ||   128 |     1 ||   da3205 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -56,14 +56,14 @@
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
-oms7891    11627796  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 oms7891    11627798  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
-phrc       11675880  bigmem      cph           12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+oms7891    11627796  bigmem      students      128   PENDING   bigmem           N/A                                QOSMaxWallDurationPerJobLimit           
 phrc       11675879  bigmem      cph           12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 phrc       11675878  bigmem      cph           12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 phrc       11675877  bigmem      cph           12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 phrc       11675876  bigmem      cph           12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 phrc       11675875  bigmem      cph           12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+phrc       11675880  bigmem      cph           12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11675859  bigmem      cgsb          12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11675858  bigmem      cgsb          12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 mv83       11675857  bigmem      cgsb          12    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
@@ -116,23 +116,19 @@ saa788     11667068  compute     chemistry     28    PENDING   small            
 saa788     11667068  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11667163  compute     chemistry     1     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11667162  compute     chemistry     1     PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-aa5506     11673809  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-aa5506     11673682  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-aa5506     11673815  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-aa5506     11673704  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11674134  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673467  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11674082  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-aa5506     11674084  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673993  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673787  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+aa5506     11674084  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673806  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11674046  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11674120  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-aa5506     11673506  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-aa5506     11674060  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11674026  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673996  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+aa5506     11673506  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+aa5506     11674060  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673749  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673688  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11674132  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -144,8 +140,8 @@ aa5506     11673622  compute     cgsb          32    PENDING   medium           
 aa5506     11673497  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673695  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673464  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-aa5506     11673982  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673707  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+aa5506     11673982  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673553  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673627  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11673638  compute     cgsb          32    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
@@ -254,93 +250,91 @@ ol2287     11687831  compute     collaborator  24    PENDING   medium           
 ol2287     11687899  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ol2287     11687994  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ol2287     11688036  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ol2287     11688088  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ol2287     11687845  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
+ol2287     11688088  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ol2287     11687958  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ol2287     11687970  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 ol2287     11687911  compute     collaborator  24    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-ol2287     11691866  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691417  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691161  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691061  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691380  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690910  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691861  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691639  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691518  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691338  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691327  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691121  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691965  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691842  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691567  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690878  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691512  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691273  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691962  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690921  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690860  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691967  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691881  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691207  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691418  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690909  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691925  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691336  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691242  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690972  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690971  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691684  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691604  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691915  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691615  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691430  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691372  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691258  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690952  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691848  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11692034  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11692008  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691997  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691951  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691944  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691939  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691957  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691919  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691900  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691825  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691820  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691803  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691773  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691763  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691746  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691727  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691702  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691656  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691660  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691600  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691432  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691407  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691401  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691369  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691343  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691326  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691313  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691282  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691245  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691234  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691240  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691162  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691147  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691123  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691046  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11691025  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690998  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690980  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690951  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690929  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690920  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
-ol2287     11690853  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691594  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691345  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690942  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691443  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690985  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691768  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691075  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691855  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690858  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691591  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691413  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691231  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691582  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691337  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691248  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691260  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691865  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691695  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691205  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691428  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691878  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690911  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691253  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691423  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691100  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691400  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690993  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690857  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691290  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691200  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691635  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691505  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690845  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11692012  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691993  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691955  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691937  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691890  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691867  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691823  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691824  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691802  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691784  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691734  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691722  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691705  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691689  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691688  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691682  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691584  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691566  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691554  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691528  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691514  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691502  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691480  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691451  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691449  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691435  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691385  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691381  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691359  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691311  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691297  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691299  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691286  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691278  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691216  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691208  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691112  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691105  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691104  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691002  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691000  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11691008  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690969  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690928  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690880  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690873  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
+ol2287     11690865  compute     collaborator  1     PENDING   small            N/A                                QOSMaxMemoryPerUser                     
 ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 ba2422     11441817  nvidia      students      28    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 tz545      11627864  nvidia      cqts          4     PENDING   nvidia           gpu:1                              QOSMaxJobsPerUserLimit                  
@@ -893,9 +887,6 @@ na2416     11630616  xxl         xpress        1     PENDING   normal           
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
-na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630756  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
