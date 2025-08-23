@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         27       11       71 %     || DALMA    ||          28%          240           73         8391          107          91           7      ||
-||   100        71       29       71 %     || JUBAIL   ||          58%           57           77        11505           87           9           0      ||
+||   38         27       11       71 %     || DALMA    ||          28%          241           73         8419          106          90          10      ||
+||   100        71       29       71 %     || JUBAIL   ||          55%           65           77        12529           79           9           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:13   GPU:9
@@ -23,13 +23,13 @@
 ||    |    |    ||             | quota | quota | Jubail| Dalma || N-CPUs|N-jobs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  18 % |   3 % |   -   ||  1153 |     4 ||  ak11283 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |   2 % |   -   |   -   ||   129 |     3 ||  ak11283 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||     1 |     1 ||  cmm9990 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   9 % |   1 % |   -   ||   288 |    10 ||  cmm9990 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  8 |  - |  - ||cass         || 4096 |   7 % |   1 % |   -   ||   300 |     9 ||   jb5784 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||ccs          || 6144 |   1 % |   -   |   -   ||    64 |     1 ||   ma6996 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |  18 % |   1 % |   3 % ||   776 |    38 ||   nb3608 |   8 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
-||  1 |  - |  - ||chemistry    ||12824 |  38 % |  10 % |  17 % ||  4956 |    82 ||   wh1165 |  20 % ||   2506 |    86 ||     - |     - ||  2506 |    86 ||
+||  1 |  - |  - ||chemistry    ||12824 |  38 % |  10 % |  16 % ||  4928 |    81 ||   wh1165 |  20 % ||   2506 |    86 ||     - |     - ||  2506 |    86 ||
 ||  - |  - |  - ||civil        || 3200 |   4 % |   -   |   -   ||   156 |     2 ||   da3205 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||collaborator || 3072 |  77 % |   8 % |   -   ||  2379 |    31 ||   ap6420 |  50 % ||    619 |   102 ||     - |     - ||   619 |   102 ||
 ||  - |  - |  - ||cph          || 3072 |   4 % |   -   |   -   ||   136 |     3 ||   im2493 |   3 % ||     24 |     2 ||     - |     - ||    24 |     2 ||
@@ -41,7 +41,7 @@
 ||  - |  - |  - ||mechanical   ||20000 |  12 % |   8 % |   -   ||  2560 |     8 ||  sk10712 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyuny        || 1024 |  19 % |   -   |   1 % ||   200 |   200 ||   xp2042 |  19 % ||    639 |   639 ||     - |     - ||   639 |   639 ||
 ||  - |  - |  - ||physics      ||11824 |  56 % |  23 % |   -   ||  6656 |    13 ||  laa9597 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 13 |  - |  - ||scomputer    || 3120 |  23 % |   -   |   4 % ||   745 |    56 ||   mt5383 |  16 % ||     16 |    16 ||     - |     - ||     - |     - ||
+|| 13 |  - |  - ||scomputer    || 3120 |  23 % |   -   |   4 % ||   745 |    56 ||   mt5383 |  16 % ||      8 |     8 ||     - |     - ||     - |     - ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    38 |    11 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 19 |  8 |  8 ||students     || 8192 |   3 % |   -   |   -   ||   316 |    20 ||  olr7742 |   1 % ||     60 |    19 ||     - |     - ||    60 |    19 ||
 ||  - |  - |  - ||xpress       ||27008 |   -   |   -   |   1 % ||   150 |   150 ||   na2416 |   -   ||    366 |   366 ||     - |     - ||     - |     - ||
@@ -724,14 +724,6 @@ xp2042     11707708  compute     nyuny         1     PENDING   small            
 xp2042     11707708  compute     nyuny         1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     11707708  compute     nyuny         1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 xp2042     11707708  compute     nyuny         1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
-ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
 ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
 ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
 ea2525     11859007  compute     scomputer     1     PENDING   small            N/A                                JobArrayTaskLimit                       
