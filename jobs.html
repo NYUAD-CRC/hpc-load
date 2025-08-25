@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         13       25       34 %     || DALMA    ||          21%          291           60         9304           61          56          10      ||
-||   100        71       29       71 %     || JUBAIL   ||          58%           60           73        11760           88          17           0      ||
+||   38         13       25       34 %     || DALMA    ||          21%          291           61         9314           60          53          11      ||
+||   100        74       26       74 %     || JUBAIL   ||          59%           61           67        11388           93          17           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:23   GPU:8
+	OOD JOBS:  CPU:24   GPU:8
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -24,11 +24,12 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |   4 % |   -   |   -   ||   252 |     3 ||  ak11283 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||biology      || 3072 |  14 % |   1 % |   -   ||   434 |    10 ||   lb4489 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
-||  8 |  - |  - ||cass         || 4096 |   -   |   -   |   -   ||    38 |     8 ||   na2247 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |212 |212 ||ccs          || 6144 |   1 % |   -   |   -   ||    80 |    16 ||   ma6996 |   -   ||    848 |   212 ||     - |     - ||   848 |   212 ||
+||  - |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||     1 |     1 ||   lb4489 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||biology      || 3072 |  12 % |   1 % |   -   ||   389 |     9 ||   lb4489 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
+||  8 |  - |  - ||cass         || 4096 |  13 % |   1 % |   -   ||   550 |     9 ||   snb463 |  12 % ||   2328 |     5 ||     - |     - ||  2328 |     5 ||
+|| 12 |210 |210 ||ccs          || 6144 |   1 % |   -   |   -   ||    72 |    15 ||   ma6996 |   -   ||    840 |   210 ||     - |     - ||   840 |   210 ||
 ||  - |  - |  - ||cgsb         || 4096 |  14 % |   1 % |   1 % ||   600 |    26 ||   nb3608 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  1 |  - |  - ||chemistry    ||12824 |  38 % |  13 % |   8 % ||  4964 |    50 ||   wh1165 |  30 % ||   2506 |    86 ||     - |     - ||  2506 |    86 ||
+||  1 |  - |  - ||chemistry    ||12824 |  38 % |  13 % |   8 % ||  4989 |    51 ||   wh1165 |  30 % ||   2506 |    86 ||     - |     - ||  2506 |    86 ||
 ||  - |  - |  - ||cities       || 4096 |   -   |   -   |   -   ||    16 |     1 ||  yl11109 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||civil        || 3200 |   5 % |   -   |   -   ||   164 |     3 ||   da3205 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  9 |  - |  - ||collaborator || 3072 |  78 % |   8 % |   -   ||  2417 |    26 ||   ap6420 |  50 % ||     91 |    80 ||     - |     - ||    91 |    80 ||
@@ -42,24 +43,30 @@
 ||  - |  - |  - ||mechanical   ||20000 |   9 % |   6 % |   -   ||  1820 |     6 ||  sk10712 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyuny        || 1024 |  19 % |   -   |   1 % ||   200 |   200 ||   xp2042 |  19 % ||    652 |   652 ||     - |     - ||   652 |   652 ||
 ||  - |  - |  - ||physics      ||11824 |  60 % |  25 % |   -   ||  7168 |    13 ||  laa9597 |  38 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||preempt      ||27000 |   -   |   -   |   -   ||     8 |     1 ||  ss20440 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 11 |  - |  - ||scomputer    || 3120 |  14 % |   -   |   2 % ||   461 |    27 ||   mt5383 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    35 |     8 ||  sas9891 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 17 |  8 |  8 ||students     || 8192 |   7 % |   -   |   3 % ||   600 |   219 ||  mka7870 |   2 % ||     87 |    65 ||     - |     - ||    87 |    65 ||
+||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    32 |     5 ||  sas9891 |   -   ||      - |     - ||     - |     - ||     - |     - ||
+|| 20 |  8 |  8 ||students     || 8192 |   5 % |   -   |   3 % ||   487 |   221 ||  mka7870 |   2 % ||     54 |    32 ||     - |     - ||    54 |    32 ||
 ||  - |  - |  - ||xpress       ||27008 |   -   |   -   |   1 % ||   134 |   134 ||   na2416 |   -   ||    366 |   366 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   oge208 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||c2           ||  384 |  14 % |   -   |   -   ||    56 |     2 ||   db5394 |  14 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||cair         ||  128 |  25 % |   -   |   -   ||    32 |     1 ||   hz4426 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cass         || 2048 |  75 % |   5 % |   -   ||  1536 |     3 ||  laa9597 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||cass         || 2048 | 100 % |   7 % |   -   ||  2048 |     4 ||  laa9597 |  75 % ||   2328 |     5 ||     - |     - ||  2328 |     5 ||
 ||  1 |  - |  - ||csm          ||  640 |  20 % |   -   |   -   ||   128 |     1 ||   da3205 |  20 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||gfg          || 1920 |  53 % |   3 % |   -   ||  1024 |     2 ||  laa9597 |  53 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |   2 % |   -   |   -   ||     8 |     1 ||   aa5506 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||red          || 1536 |  66 % |   3 % |   -   ||  1024 |     2 ||  sk10712 |  66 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||serdal       ||   80 |  50 % |   -   |   -   ||    40 |     2 ||   wh1165 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||serdal       ||   80 |  81 % |   -   |   -   ||    65 |     3 ||   wh1165 |  81 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     1 ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
+snb463     11938109  compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
+snb463     11938117  compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
+snb463     11938129  compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
+snb463     11938138  compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
+snb463     11938135  compute     cass          280   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 sb7778     11316946  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 sb7778     11316891  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 xp2042     11707708  compute     nyuny         1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
@@ -744,44 +751,9 @@ mka7870    11913222  compute     students      1     PENDING   small            
 mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
-mka7870    11913222  compute     students      1     PENDING   small            N/A                                QOSMaxJobsPerUserLimit                  
 ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 ss14247    11893009  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
 ss14247    11902813  nvidia      students      12    PENDING   nvidias          gpu:a100:4                         QOSMaxGRESPerUser                       
-ma6996     11917183  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     11917183  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11917183  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11917183  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     11917183  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
