@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          8       30       21 %     || DALMA    ||          46%           79          161         6275          133          53          50      ||
-||   100        81       19       81 %     || JUBAIL   ||          71%           18           80         7875          123          12           0      ||
+||   38          8       30       21 %     || DALMA    ||          45%           79          161         6327          133          54          43      ||
+||   100        81       19       81 %     || JUBAIL   ||          71%           18           80         7875          123          11           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:12   GPU:5
@@ -27,9 +27,9 @@
 ||  9 |  - |  - ||bio          || 8192 |   1 % |   -   |   -   ||   144 |     9 ||   dr2930 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||biology      || 3072 |   6 % |   -   |   -   ||   198 |     4 ||   dr2930 |   5 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  71 % |  10 % |   -   ||  2944 |    11 ||   snb463 |  50 % ||    792 |     2 ||     - |     - ||   792 |     2 ||
-||  7 |233 |  - ||ccs          || 6144 |   -   |   -   |   -   ||    44 |    11 ||   ma6996 |   -   ||    932 |   233 ||   932 |   233 ||     - |     - ||
+||  7 |232 |  - ||ccs          || 6144 |   -   |   -   |   -   ||    36 |     9 ||   ma6996 |   -   ||    928 |   232 ||   928 |   232 ||     - |     - ||
 ||  1 |  - |  - ||cgsb         || 4096 |  19 % |   2 % |   1 % ||   804 |    24 ||   aa5506 |  11 % ||   9748 |   206 ||     - |     - ||  9748 |   206 ||
-||  6 |  - |  - ||chemistry    ||12824 |  95 % |  30 % |  27 % || 12239 |    94 ||  sme9918 |  59 % ||  72374 |   166 ||     - |     - ||  3254 |   112 ||
+||  6 |  - |  - ||chemistry    ||12824 |  95 % |  30 % |  27 % || 12239 |    94 ||  sme9918 |  59 % ||  72066 |   155 ||     - |     - ||  2946 |   101 ||
 ||  1 |  - |  - ||civil        || 3200 |  12 % |   1 % |   -   ||   412 |     4 ||   da3205 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  4 |  - |  - ||collaborator || 3072 |  77 % |   6 % |   4 % ||  2396 |   128 ||   ap6420 |  54 % ||     91 |    80 ||     - |     - ||    91 |    80 ||
 ||  6 |  - |  - ||cqts         || 2048 |   9 % |   -   |   -   ||   192 |     6 ||    tz545 |   9 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -42,7 +42,7 @@
 ||  2 |  - |  - ||physics      ||11824 |  17 % |   7 % |   -   ||  2096 |     4 ||  laa9597 |  12 % ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  2 |  - ||scomputer    || 3120 |   6 % |   -   |   -   ||   198 |    17 ||   cl5503 |   1 % ||     36 |     2 ||     4 |     1 ||    32 |     1 ||
 || 10 |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    10 |    10 ||  atb8710 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||students     || 8192 |   8 % |   1 % |   2 % ||   662 |   203 ||   xy2949 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+|| 11 |  - |  - ||students     || 8192 |   7 % |   1 % |   1 % ||   618 |   159 ||   xy2949 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||xpress       ||27008 |   -   |   -   |   1 % ||   128 |   128 ||   na2416 |   -   ||    227 |   227 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  1 |  - |  - ||bosco        ||  128 |   7 % |   -   |   -   ||    10 |     1 ||   oge208 |   7 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -58,8 +58,8 @@ USER       JOBID   Partition     Account      NCPUs    STATE       QoS          
 ==========================================================================================================================================================
 gm3583     11967558  bigmem      cgsb          20    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 gm3583     11967560  bigmem      cgsb          20    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
-gm3583     11967566  bigmem      cgsb          20    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 gm3583     11967568  bigmem      cgsb          20    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gm3583     11967566  bigmem      cgsb          20    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 gm3583     11967571  bigmem      cgsb          20    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 snb463     11938138  compute     cass          512   PENDING   cass             N/A                                QOSGrpCpuLimit                          
 snb463     11938135  compute     cass          280   PENDING   cass             N/A                                QOSGrpCpuLimit                          
@@ -657,66 +657,7 @@ aa5506     11967272  compute     cgsb          48    PENDING   medium           
 aa5506     11967272  compute     cgsb          48    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11967272  compute     cgsb          48    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
 aa5506     11967272  compute     cgsb          48    PENDING   medium           N/A                                QOSMaxJobsPerUserLimit                  
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
-sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 saa788     11986763  compute     chemistry     48    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986779  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986778  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986777  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986776  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986775  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11986774  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11986773  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11986772  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
@@ -726,17 +667,65 @@ saa788     11986769  compute     chemistry     28    PENDING   small            
 saa788     11986768  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11986767  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 saa788     11986766  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986765  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986764  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986762  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986761  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986760  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986759  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986758  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986757  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986756  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986753  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
-saa788     11986752  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11986779  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11986778  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11986777  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11986776  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+saa788     11986775  compute     chemistry     28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983232  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983229  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983225  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
+sme9918    11983201  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 hz4426     11984271  condo       scomputer     32    PENDING   cair             gpu:a100:2                         QOSGrpGRES                              
 ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 mt5136     11302822  visual      electrical    28    PENDING   normal           gpu:1                              PartitionTimeLimit                      
