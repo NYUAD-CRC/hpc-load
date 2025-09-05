@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          5       33       13 %     || DALMA    ||          62%           81          131         4262          190          83           4      ||
+||   38          5       33       13 %     || DALMA    ||          73%           32          180         2937          190          95           4      ||
 ||   100        60       40       60 %     || JUBAIL   ||          89%            0           54         2707          167          30           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:14   GPU:2
+	OOD JOBS:  CPU:15   GPU:2
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -24,7 +24,7 @@
 || R  | P  | L  ||             |       | usage | usage | usage ||       |       ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||     8 |     1 ||  bak8122 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||avengers     ||12800 |   1 % |   -   |   -   ||   196 |    13 ||     wz22 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||avengers     ||12800 |   1 % |   -   |   -   ||   204 |    14 ||     wz22 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||     2 |     2 ||   dr2930 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   1 % |   -   |   -   ||    46 |     8 ||   dr2930 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  47 % |   6 % |   1 % ||  1944 |     8 ||   snb463 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -37,12 +37,12 @@
 ||  - |  - |  - ||default      ||  768 |  14 % |   -   |   -   ||   114 |     5 ||   ma9232 |  10 % ||   2112 |     3 ||     - |     - ||  2112 |     3 ||
 ||  7 |  - |  - ||ecomputer    || 4096 |   3 % |   -   |   -   ||   156 |    12 ||   ag9141 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||electrical   || 4096 |  20 % |   -   |   6 % ||   835 |    44 ||   dw2712 |  15 % ||     28 |     1 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |   2 % |   -   |   -   ||   108 |     3 ||  gencore |   2 % ||    792 |    22 ||   792 |    22 ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |  34 % |   -   |  11 % ||  1428 |    58 ||  gencore |  34 % ||   4224 |   165 ||   792 |    22 ||  3432 |   143 ||
 ||  - |  - |  - ||mechanical   ||20000 |  55 % |  27 % |  25 % || 11008 |    10 ||   xh3078 |  46 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||nyuny        || 1024 |  18 % |   -   |   1 % ||   192 |   192 ||   xp2042 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
+||  - |  - |  - ||nyuny        || 1024 |  18 % |   -   |   1 % ||   190 |   190 ||   xp2042 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||physics      ||11824 |  35 % |  14 % |   -   ||  4144 |     8 ||   cc6881 |  25 % ||    512 |     1 ||     - |     - ||   512 |     1 ||
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||     8 |     2 ||   ar9000 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 15 |  4 |  - ||scomputer    || 3120 |  61 % |   3 % |   7 % ||  1916 |    45 ||   sus221 |  29 % ||      4 |     1 ||     4 |     1 ||     - |     - ||
+|| 15 |  4 |  - ||scomputer    || 3120 |  61 % |   3 % |   7 % ||  1915 |    44 ||   sus221 |  29 % ||      4 |     1 ||     4 |     1 ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    36 |     2 ||  sas9891 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 13 |  - |  - ||students     || 8192 |   4 % |   -   |   1 % ||   389 |    20 ||  olr7742 |   1 % ||     75 |    38 ||     - |     - ||    75 |    38 ||
 ||  - |  - |  - ||xpress       ||27008 |   -   |   -   |   1 % ||   128 |   128 ||   na2416 |   -   ||    223 |   223 ||     - |     - ||     - |     - ||
@@ -291,6 +291,149 @@ sme9918    11983207  compute     chemistry     1280  PENDING   large            
 sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 sme9918    11983207  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
 cc6881     12013330  compute     physics       512   PENDING   medium-xxl       N/A                                QOSMaxCpuPerJobLimit                    
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12015433  compute     gencore       24    PENDING   gencore-small    N/A                                QOSMaxJobsPerUserLimit                  
 ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 ykv210     12014398  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 ykv210     12014399  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
