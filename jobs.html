@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         14       24       36 %     || DALMA    ||          60%           80          143         4487          179          69           4      ||
-||   100        74       26       74 %     || JUBAIL   ||          88%            2           64         3147          156          26           0      ||
+||   38         14       24       36 %     || DALMA    ||          60%           82          141         4499          179          71           4      ||
+||   100        74       26       74 %     || JUBAIL   ||          88%            2           64         3147          156          25           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:11   GPU:2
@@ -27,11 +27,11 @@
 || 11 |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||    11 |    11 ||   xl4333 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   -   |   -   |   -   ||     6 |     6 ||   dr2930 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  37 % |   5 % |   -   ||  1536 |     6 ||   snb463 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 |  7 |  7 ||ccs          || 6144 |   9 % |   -   |   4 % ||   564 |    55 ||   vk2599 |   8 % ||     28 |     7 ||     - |     - ||    28 |     7 ||
+|| 12 |  - |  - ||ccs          || 6144 |   8 % |   -   |   4 % ||   552 |    54 ||   vk2599 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cgsb         || 4096 |  15 % |   1 % |   1 % ||   624 |    31 ||   aa5506 |   9 % ||   4524 |   184 ||     - |     - ||  4524 |   184 ||
 ||  1 |  - |  - ||chemistry    ||12824 |  71 % |  25 % |  15 % ||  9182 |    41 ||  sme9918 |  49 % ||  34504 |   109 ||     - |     - ||  2504 |    84 ||
 ||  4 |  - |  - ||civil        || 3200 |  15 % |   -   |   1 % ||   484 |    12 ||   da3205 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  9 |  5 |  5 ||collaborator || 3072 |  35 % |   2 % |   1 % ||  1086 |    35 ||  am15503 |  17 % ||   1791 |    86 ||  1536 |     1 ||   255 |    85 ||
+||  9 |  3 |  3 ||collaborator || 3072 |  35 % |   2 % |   1 % ||  1086 |    35 ||  am15503 |  17 % ||   1767 |    84 ||  1536 |     1 ||   231 |    83 ||
 ||  - |  - |  - ||cph          || 3072 |   8 % |   -   |   -   ||   256 |     2 ||   im2493 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  45 % |   4 % |   -   ||  1408 |     4 ||   rp4207 |  45 % ||    512 |     2 ||     - |     - ||   512 |     2 ||
 ||  - |  - |  - ||default      ||  768 |  12 % |   -   |   -   ||    96 |     4 ||   ma9232 |  10 % ||   2112 |     3 ||     - |     - ||  2112 |     3 ||
@@ -44,7 +44,7 @@
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||     4 |     1 ||   ar9000 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 16 |  - |  - ||scomputer    || 3120 |  61 % |   3 % |   7 % ||  1923 |    44 ||   sus221 |  29 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   1 % |   -   |   -   ||    56 |     2 ||  sas9891 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  9 |  3 |  3 ||students     || 8192 |   3 % |   -   |   -   ||   252 |    15 ||  dbb6467 |   1 % ||     53 |    24 ||     - |     - ||    53 |    24 ||
+||  9 |  3 |  3 ||students     || 8192 |   3 % |   -   |   -   ||   252 |    15 ||  dbb6467 |   1 % ||     51 |    23 ||     - |     - ||    51 |    23 ||
 ||  - |  - |  - ||xpress       ||27008 |   -   |   -   |   1 % ||   128 |   128 ||   na2416 |   -   ||     83 |    83 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||cass         || 2048 |  50 % |   3 % |   -   ||  1024 |     2 ||   snb463 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -474,18 +474,9 @@ cc6881     12017292  compute     physics       512   PENDING   medium           
 ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 ykv210     12014398  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 ykv210     12014399  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ms14012    12019510  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 ms14012    12019520  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 ms14012    12019521  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
-so2495     12021619  nvidia      collaborator  12    PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
-so2495     12021619  nvidia      collaborator  12    PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 so2495     12021619  nvidia      collaborator  12    PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 mt5136     11302822  visual      electrical    28    PENDING   normal           gpu:1                              PartitionTimeLimit                      
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
