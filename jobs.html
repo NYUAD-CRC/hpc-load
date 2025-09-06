@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          3       35        7 %     || DALMA    ||          65%           68          141         3853          192          87           4      ||
-||   100        70       30       70 %     || JUBAIL   ||          89%            0           62         2795          160          28           0      ||
+||   38          2       36        5 %     || DALMA    ||          66%           64          143         3755          194          87           4      ||
+||   100        70       30       70 %     || JUBAIL   ||          89%            0           62         2819          160          29           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:12   GPU:2
+	OOD JOBS:  CPU:11   GPU:2
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -28,16 +28,16 @@
 || 11 |  - |  - ||bio          || 8192 |   -   |   -   |   -   ||    11 |    11 ||   xl4333 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   -   |   -   |   -   ||     6 |     6 ||   dr2930 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  40 % |   5 % |   1 % ||  1664 |     7 ||   snb463 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
-|| 12 | 59 | 59 ||ccs          || 6144 |  14 % |   -   |   7 % ||   900 |    83 ||   vk2599 |  13 % ||    236 |    59 ||     - |     - ||   236 |    59 ||
+|| 12 | 58 | 58 ||ccs          || 6144 |  16 % |   -   |   7 % ||  1008 |    92 ||   vk2599 |  15 % ||    232 |    58 ||     - |     - ||   232 |    58 ||
 ||  - |  - |  - ||cgsb         || 4096 |  15 % |   1 % |   1 % ||   616 |    30 ||   aa5506 |   9 % ||   4660 |   188 ||    64 |     1 ||  4596 |   187 ||
-||  1 |  - |  - ||chemistry    ||12824 |  74 % |  26 % |  16 % ||  9597 |    45 ||  sme9918 |  49 % ||  34504 |   109 ||     - |     - ||  2504 |    84 ||
+||  1 |  - |  - ||chemistry    ||12824 |  74 % |  26 % |  16 % ||  9587 |    44 ||  sme9918 |  49 % ||  34504 |   109 ||     - |     - ||  2504 |    84 ||
 ||  4 |  - |  - ||civil        || 3200 |  15 % |   -   |   1 % ||   484 |    12 ||   da3205 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  4 |  2 |  2 ||collaborator || 3072 |  35 % |   2 % |   2 % ||  1099 |    34 ||  am15503 |  17 % ||   1755 |    83 ||  1536 |     1 ||   219 |    82 ||
+||  4 |  2 |  2 ||collaborator || 3072 |  34 % |   2 % |   2 % ||  1051 |    32 ||  am15503 |  17 % ||   1755 |    83 ||  1536 |     1 ||   219 |    82 ||
 ||  - |  - |  - ||csem         || 3072 |  45 % |   4 % |   -   ||  1408 |     4 ||   rp4207 |  45 % ||    512 |     2 ||     - |     - ||   512 |     2 ||
 ||  - |  - |  - ||default      ||  768 |  10 % |   -   |   -   ||    80 |     2 ||   ma9232 |  10 % ||   2112 |     3 ||     - |     - ||  2112 |     3 ||
-||  7 |  - |  - ||ecomputer    || 4096 |   4 % |   -   |   -   ||   200 |    11 ||  sc11670 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
+||  6 |  - |  - ||ecomputer    || 4096 |   4 % |   -   |   -   ||   196 |    10 ||  sc11670 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  5 |  - |  - ||electrical   || 4096 |   -   |   -   |   -   ||    38 |     6 ||   sn3397 |   -   ||     28 |     1 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||gencore      || 4096 |   4 % |   -   |   -   ||   180 |     6 ||  gencore |   4 % ||   3840 |   152 ||  3840 |   152 ||     - |     - ||
+||  - |  - |  - ||gencore      || 4096 |   5 % |   -   |   -   ||   236 |     9 ||  gencore |   5 % ||   6856 |   343 ||  3720 |   147 ||  3136 |   196 ||
 ||  - |  - |  - ||mechanical   ||20000 |  55 % |  27 % |  25 % || 11008 |    10 ||   xh3078 |  46 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||nyuny        || 1024 |   2 % |   -   |   -   ||    28 |    28 ||   xp2042 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||physics      ||11824 |  38 % |  16 % |   -   ||  4608 |     8 ||   cc6881 |  30 % ||   1537 |     4 ||     - |     - ||  1537 |     4 ||
@@ -58,6 +58,202 @@
 USER       JOBID   Partition     Account      NCPUs    STATE       QoS            GRES           Nodes               REASON
 ==========================================================================================================================================================
 gm3583     11999854  bigmem      cgsb          20    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
+gencore    12019591  bigmem      gencore       16    PENDING   bigmem           N/A                                QOSMaxJobsPerUserLimit                  
 sb7778     11316946  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 sb7778     11316891  compute     default       1024  PENDING   large            N/A                                AssocGrpCpuLimit                        
 sme9918    11983222  compute     chemistry     1280  PENDING   large            N/A                                JobArrayTaskLimit                       
@@ -281,7 +477,6 @@ ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           
 ykv210     12014398  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 ykv210     12014399  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 ff2415     12018663  nvidia      physics       1     PENDING   nvidia           N/A                                QOSMinGRES                              
-ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     12019476  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
