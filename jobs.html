@@ -11,11 +11,11 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38          6       32       15 %     || DALMA    ||          70%           66          121         3331          231          80           4      ||
-||   100        39       61       39 %     || JUBAIL   ||          87%            0           76         3340          144          24           0      ||
+||   38          6       32       15 %     || DALMA    ||          70%           65          122         3325          231          83           4      ||
+||   100        55       45       55 %     || JUBAIL   ||          87%            0           76         3340          144          25           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:13   GPU:3
+	OOD JOBS:  CPU:13   GPU:2
 
 ==========================================================================================================================================================
 ||     GPU          ACCOUNT                      USAGE               RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -26,11 +26,11 @@
 ||  - |  - |  - ||avengers     ||12800 |   2 % |   -   |   -   ||   272 |    10 ||     wz22 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   1 % |   -   |   -   ||    56 |     1 ||   dr2930 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  34 % |   4 % |   -   ||  1408 |     5 ||   snb463 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||ccs          || 6144 |   6 % |   -   |   3 % ||   384 |    32 ||   vk2599 |   6 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cgsb         || 4096 |  13 % |   1 % |   -   ||   554 |    25 ||   aa5506 |   9 % ||   4256 |   173 ||     - |     - ||  4256 |   173 ||
+|| 12 | 68 | 68 ||ccs          || 6144 |   6 % |   -   |   3 % ||   420 |    43 ||   vk2599 |   6 % ||    272 |    68 ||     - |     - ||   272 |    68 ||
+||  - |  - |  - ||cgsb         || 4096 |  13 % |   1 % |   1 % ||   572 |    27 ||   aa5506 |   9 % ||   4256 |   173 ||     - |     - ||  4256 |   173 ||
 ||  - |  - |  - ||chemistry    ||12824 |  70 % |  25 % |  15 % ||  9034 |    33 ||  sme9918 |  49 % ||  36552 |   111 ||  2048 |     2 ||  2504 |    84 ||
 ||  4 |  - |  - ||civil        || 3200 |  15 % |   -   |   1 % ||   484 |    12 ||   da3205 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  5 |  2 |  2 ||collaborator || 3072 |  24 % |   2 % |   1 % ||   742 |    28 ||   ap6420 |   7 % ||   1755 |    83 ||  1536 |     1 ||   219 |    82 ||
+||  9 |  2 |  2 ||collaborator || 3072 |  24 % |   2 % |   1 % ||   746 |    32 ||   ap6420 |   7 % ||   1755 |    83 ||  1536 |     1 ||   219 |    82 ||
 ||  - |  - |  - ||cph          || 3072 |   4 % |   -   |   -   ||   128 |     1 ||   im2493 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  45 % |   4 % |   -   ||  1408 |     4 ||   rp4207 |  45 % ||    512 |     2 ||     - |     - ||   512 |     2 ||
 ||  - |  - |  - ||default      ||  768 |   5 % |   -   |   -   ||    40 |     2 ||   ma9232 |   4 % ||   2112 |     3 ||     - |     - ||  2112 |     3 ||
@@ -43,7 +43,7 @@
 ||  - |  - |  - ||psychology   || 6096 |   -   |   -   |   -   ||    12 |     3 ||   ar9000 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 || 12 |  - |  - ||scomputer    || 3120 |  75 % |   3 % |  11 % ||  2345 |    58 ||   mt5383 |  44 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||socialscience|| 4096 |   -   |   -   |   -   ||    28 |     1 ||  ms13502 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-|| 11 |  - |  - ||students     || 8192 |   3 % |   -   |   -   ||   302 |    16 ||  dbb6467 |   1 % ||     21 |    11 ||     - |     - ||    21 |    11 ||
+|| 11 |  - |  - ||students     || 8192 |   3 % |   -   |   -   ||   286 |    17 ||  dbb6467 |   1 % ||     21 |    11 ||     - |     - ||    21 |    11 ||
 ||  - |  - |  - ||xpress       ||27008 |   -   |   -   |   1 % ||   128 |   128 ||   na2416 |   -   ||     83 |    83 ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
 ||  - |  - |  - ||cass         || 2048 |  75 % |   3 % |   4 % ||  1556 |     3 ||   snb463 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -456,6 +456,74 @@ rp4207     12016112  compute     csem          256   PENDING   medium           
 ad7091     11302950  nvidia      chemistry     180   PENDING   nvidia           N/A                                QOSMaxGRESPerJob                        
 ykv210     12014398  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 ykv210     12014399  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
+ma6996     12025923  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 mt5136     11302822  visual      electrical    28    PENDING   normal           gpu:1                              PartitionTimeLimit                      
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
 na2416     11630616  xxl         xpress        1     PENDING   normal           N/A                                JobArrayTaskLimit                       
