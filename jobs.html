@@ -11,8 +11,8 @@
 ==========================================================================================================================================================
 ||  T-GPU     R-GPU     I-GPU    Load      ||          ||      CPU LOAD       N-IDLE        N-MIX       C-IDLE      N-ALLOC       N-U/L       N-O/L     ||
 ==========================================================================================================================================================
-||   38         14       24       36 %     || DALMA    ||          64%           93          117         4035          208          58           4      ||
-||   100        51       49       51 %     || JUBAIL   ||          72%           19          100         7459          101          25           0      ||
+||   38         14       24       36 %     || DALMA    ||          81%           19          117         1963          282          77           4      ||
+||   100        51       49       51 %     || JUBAIL   ||          72%           19          100         7515          101          24           0      ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 	OOD JOBS:  CPU:10   GPU:1
@@ -26,16 +26,16 @@
 ||  - |  - |  - ||avengers     ||12800 |   3 % |   -   |   -   ||   417 |    11 ||     wz22 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||biology      || 3072 |   1 % |   -   |   -   ||    56 |     1 ||   dr2930 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 4096 |  34 % |   4 % |   -   ||  1408 |     5 ||   snb463 |  25 % ||   1024 |     2 ||     - |     - ||  1024 |     2 ||
-|| 12 | 26 | 26 ||ccs          || 6144 |   1 % |   -   |   -   ||   120 |    18 ||   vk2599 |   1 % ||    104 |    26 ||     - |     - ||   104 |    26 ||
+|| 12 | 24 | 24 ||ccs          || 6144 |   1 % |   -   |   -   ||   120 |    18 ||   vk2599 |   1 % ||     96 |    24 ||     - |     - ||    96 |    24 ||
 ||  8 |  8 |  8 ||cgsb         || 4096 |  16 % |   2 % |   -   ||   671 |    29 ||   aa5506 |   9 % ||   3857 |   158 ||     - |     - ||  3857 |   158 ||
 ||  1 |  - |  - ||chemistry    ||12824 |  41 % |  13 % |  12 % ||  5382 |    35 ||  sme9918 |  17 % ||   7444 |    87 ||     - |     - ||  2324 |    83 ||
 ||  4 |  - |  - ||civil        || 3200 |   9 % |   -   |   -   ||   316 |     6 ||   da3205 |   8 % ||      - |     - ||     - |     - ||     - |     - ||
-||  9 |  2 |  2 ||collaborator || 3072 |  69 % |   6 % |   1 % ||  2142 |    28 ||   ap6420 |  57 % ||    579 |    97 ||     - |     - ||   579 |    97 ||
+||  9 |  2 |  2 ||collaborator || 3072 |  67 % |   6 % |   1 % ||  2086 |    26 ||   ap6420 |  57 % ||    579 |    97 ||     - |     - ||   579 |    97 ||
 ||  - |  - |  - ||cph          || 3072 |   1 % |   -   |   -   ||    56 |     1 ||   im2493 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||csem         || 3072 |  45 % |   4 % |   -   ||  1408 |     4 ||   rp4207 |  45 % ||    256 |     1 ||     - |     - ||   256 |     1 ||
-||  - |  - |  - ||default      ||  768 |  18 % |   -   |   -   ||   140 |    13 ||   ma9232 |   6 % ||   2048 |     2 ||     - |     - ||  2048 |     2 ||
+||  - |  - |  - ||default      ||  768 |  21 % |   -   |   -   ||   168 |    14 ||   ml8071 |   7 % ||   2048 |     2 ||     - |     - ||  2048 |     2 ||
 ||  - |  - |  - ||ecomputer    || 4096 |   6 % |   -   |   -   ||   260 |    17 ||  sc11670 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  - |  - ||electrical   || 4096 |   3 % |   -   |   -   ||   137 |     5 ||   yw3576 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
+||  2 |  - |  - ||electrical   || 4096 |  53 % |   -   |  17 % ||  2181 |    78 ||   dw2712 |  49 % ||   2464 |    88 ||     - |     - ||  2464 |    88 ||
 ||  - |  - |  - ||gencore      || 4096 |  12 % |   1 % |   -   ||   500 |    25 ||  gencore |  12 % ||   4640 |   191 ||   216 |     6 ||  4424 |   185 ||
 ||  - |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||    10 |     1 ||   nb3854 |   -   ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mechanical   ||20000 |  55 % |  27 % |  25 % || 11016 |    11 ||   xh3078 |  46 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -421,12 +421,98 @@ gencore    12026905  compute     gencore       24    PENDING   gencore-medium   
 gencore    12026905  compute     gencore       24    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    12026905  compute     gencore       24    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
 gencore    12026905  compute     gencore       24    PENDING   gencore-medium   N/A                                QOSMaxJobsPerUserLimit                  
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
+dw2712     12029830  compute     electrical    28    PENDING   small            N/A                                QOSMaxCpuPerUserLimit                   
 ykv210     12014398  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 ykv210     12014399  nvidia      collaborator  64    PENDING   nvidias          gpu:1                              QOSMaxCpuPerUserLimit                   
 ms14012    12025972  nvidia      students      4     PENDING   nvidias          gpu:1                              QOSMaxJobsPerUserLimit                  
 sg5533     12028371  nvidia      cgsb          1     PENDING   nvidia           gpu:8                              QOSMaxGRESPerUser                       
-ma6996     12028379  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
-ma6996     12028379  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     12028379  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     12028379  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
 ma6996     12028379  nvidia      ccs           4     PENDING   nvidia           gpu:a100:1                         QOSMaxJobsPerUserLimit                  
