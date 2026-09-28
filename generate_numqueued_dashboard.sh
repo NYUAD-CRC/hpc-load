@@ -1,3 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Usage: generate_numqueued_dashboard.sh [output_file] [numqueued_command] [email_address]
+OUTPUT_PATH="${1:-$PWD/numqueued_dashboard.html}"
+NUMQUEUED_COMMAND="${2:-${NUMQUEUED_COMMAND:-numqueued.sh}}"
+EMAIL_ADDRESS="${3:-}"
+OUTPUT_DIR="$(dirname -- "$OUTPUT_PATH")"
+
+if ! command -v "$NUMQUEUED_COMMAND" >/dev/null 2>&1; then
+  echo "Error: $NUMQUEUED_COMMAND was not found in PATH." >&2
+  exit 1
+fi
+
+if [[ ! -d "$OUTPUT_DIR" ]]; then
+  echo "Error: output directory does not exist: $OUTPUT_DIR" >&2
+  exit 1
+fi
+
+if [[ -n "$EMAIL_ADDRESS" ]]; then
+  if [[ ! "$EMAIL_ADDRESS" =~ ^[[:alnum:]][[:alnum:]_.+%-]*@[[:alnum:]][[:alnum:].-]*\.[[:alpha:]]{2,}$ ]]; then
+    echo "Error: invalid email address: $EMAIL_ADDRESS" >&2
+    exit 1
+  fi
+  if ! command -v mailx >/dev/null 2>&1; then
+    echo "Error: mailx is required when an email address is provided." >&2
+    exit 1
+  fi
+fi
+
+RAW_SNAPSHOT="$(mktemp)"
+HTML_TEMP="$(mktemp "${OUTPUT_PATH}.tmp.XXXXXX")"
+cleanup() {
+  rm -f -- "$RAW_SNAPSHOT" "$HTML_TEMP"
+}
+trap cleanup EXIT
+
+COMMAND_STATUS=0
+"$NUMQUEUED_COMMAND" > "$RAW_SNAPSHOT" || COMMAND_STATUS=$?
+if [[ ! -s "$RAW_SNAPSHOT" ]]; then
+  echo "Error: $NUMQUEUED_COMMAND produced no output (exit status $COMMAND_STATUS)." >&2
+  exit 1
+fi
+if (( COMMAND_STATUS != 0 )); then
+  echo "Warning: $NUMQUEUED_COMMAND exited with status $COMMAND_STATUS; generating the dashboard from the output it produced." >&2
+fi
+SNAPSHOT_TIME="$(date '+%Y-%m-%d %H:%M:%S %Z')"
+
+cat > "$HTML_TEMP" <<'HTML_HEAD'
 <!doctype html>
 <html lang="en">
 <head>
@@ -64,7 +113,12 @@
 <main>
   <h1>Jubail Queue Dashboard</h1>
   <div class="subtitle">Static snapshot from <code>numqueued.sh</code> · 
-2026-09-28 10:53:20 +04  </div>
+HTML_HEAD
+
+printf '%s' "$SNAPSHOT_TIME" >> "$HTML_TEMP"
+
+cat >> "$HTML_TEMP" <<'HTML_MIDDLE'
+  </div>
 
   <section class="grid summary" id="summary"></section>
   <section class="card section"><h2>GPU fleet utilization</h2><div class="gpu-grid" id="gpus"></div></section>
@@ -85,64 +139,11 @@
   <footer>Generated from one command snapshot. Values do not auto-refresh.</footer>
 </main>
 <pre id="rawData" hidden>
-==========================================================================================================================================================
-|| Total     Used    Idle    Load     |  GPU  ||    CPU  |  CPU LOAD    N-IDLE    C-TOTAL     C-IDLE       L-JOBS       S-JOBS       N-U/L     N-O/L    ||
-==========================================================================================================================================================
-||   34        5      29      14 %    | V100  ||  JUBAIL |    76%         5         28K        6022       25-12158     616-9613        58         0     ||
-||   100      84      16      84 %    | A100  || BERGAMO |    69%         0         14K        4183        18-8704     128-1469        10         0     ||
-||   13        4       9      30 %    | H100  ||         |                                                                                              ||
-||   24       20       4      83 %    | H200  ||         |                                                                                              ||
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+HTML_MIDDLE
 
-	OOD JOBS:  CPU:14   GPU:2	| Use the command || jobload -j &lt;JOBID&gt; || to analyze CPU Usage
+sed -e 's/&/\&amp;/g' -e 's/</\&lt;/g' -e 's/>/\&gt;/g' "$RAW_SNAPSHOT" >> "$HTML_TEMP"
 
-==========================================================================================================================================================
-||     GPU  ACCOUNT                          USAGE                   RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
-==========================================================================================================================================================
-||    |    |    ||             | quota | quota | Jubail|Bergamo|| N-CPUs|N-CPUs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
-|| R  | P  | L  ||             |       | usage | usage | usage || small | large ||	    | prcnt ||        |       ||       |       ||       |       ||
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |   -   |   -   |   -   ||     1 |     - ||     zl28 |   -   ||   2048 |     1 ||  2048 |     1 ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |  10 % |   1 % |   -   ||   314 |     - ||  bcm9945 |   7 % ||   1234 |   617 ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cass         ||12824 |  23 % |  10 % |   -   ||    28 |  2928 ||  laa9597 |  21 % ||    790 |    62 ||     - |     - ||   790 |    62 ||
-||  2 | 22 | 22 ||ccs          || 6144 |   1 % |   -   |   -   ||    72 |     - ||   baj321 |   -   ||    176 |    22 ||     - |     - ||   176 |    22 ||
-||  - |  - |  - ||cgsb         || 6144 |   1 % |   -   |   -   ||    81 |     - ||     drn2 |   -   ||   2581 |    96 ||     - |     - ||  2549 |    92 ||
-||  3 |  - |  - ||chemistry    ||12824 |  40 % |   9 % |  16 % ||  2439 |  2816 ||  mma9216 |  16 % ||  17696 |   336 ||     - |     - ||  5152 |   322 ||
-||  2 |  - |  - ||cities       || 4096 |  49 % |   6 % |   -   ||  2010 |     - ||  yl11109 |  48 % ||   7872 |   123 ||     - |     - ||  7872 |   123 ||
-|| 12 | 99 | 99 ||civil        || 3200 |   9 % |   1 % |   -   ||   295 |     - ||   gs4133 |   6 % ||    904 |   113 ||     - |     - ||   904 |   113 ||
-||  1 |  - |  - ||collaborator || 3072 |  89 % |   9 % |   -   ||  1605 |  1152 ||   ykv210 |  52 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cph          || 3072 |  20 % |   2 % |   -   ||   510 |   128 ||   im2493 |  20 % ||    504 |     9 ||     - |     - ||     - |     - ||
-||  - |  3 |  - ||csem         || 3072 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     1 ||   128 |     1 ||     - |     - ||
-||  - |  - |  - ||default      || 2048 |  54 % |   -   |   5 % ||  1108 |     - ||  mb10856 |  41 % ||    949 |   118 ||     - |     - ||   949 |   118 ||
-||  - |  1 |  1 ||ecomputer    || 4096 |   -   |   -   |   -   ||     2 |     - || sas10092 |   -   ||      6 |     2 ||     - |     - ||     6 |     2 ||
-|| 13 | 99 |  - ||electrical   || 4096 |   6 % |   -   |   -   ||   248 |     - ||   vb1121 |   2 % ||    290 |    65 ||    16 |     1 ||   224 |    14 ||
-||  - |  - |  - ||gencore      || 4096 |  44 % |   5 % |   -   ||  1829 |     - ||  gencore |  44 % ||   4778 |   184 ||   378 |    27 ||  4400 |   157 ||
-||  - |  - |  - ||mechanical   ||16384 |  55 % |  13 % |  34 % ||   110 |  8974 ||   xh3078 |  46 % ||     18 |     3 ||     - |     - ||     2 |     2 ||
-||  2 | 99 | 99 ||nyuny        || 1024 |  64 % |   2 % |   -   ||   660 |     - ||   zz5283 |  62 % ||   1566 |   266 ||     - |     - ||  1566 |   266 ||
-||  4 |  2 |  2 ||nyushanghai  || 1024 |  11 % |   -   |   -   ||   120 |     - ||   cj1066 |   8 % ||     16 |     2 ||     - |     - ||    16 |     2 ||
-||  2 |  - |  - ||physics      || 8192 |  38 % |  10 % |   -   ||    48 |  3072 ||   zs1503 |  25 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
-||  - |  - |  - ||preempt      ||27000 |   1 % |   -   |   -   ||   275 |     - ||   zz5283 |   -   ||    152 |    16 ||   112 |     4 ||    40 |    12 ||
-||  5 |  4 |  - ||psychology   || 6096 |   -   |   -   |   -   ||    40 |     - ||   lz3901 |   -   ||     32 |     4 ||     - |     - ||     - |     - ||
-|| 12 | 17 |  5 ||scomputer    || 4096 |  30 % |   1 % |   2 % ||  1252 |     - ||   rb4792 |  23 % ||   2216 |   559 ||   112 |    14 ||  2022 |   539 ||
-||  - |  - |  - ||socialscience|| 4096 |   3 % |   -   |   -   ||     2 |   128 ||  ler6972 |   3 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 | 17 | 13 ||students     || 4096 |  44 % |   2 % |   7 % ||   151 |  1664 ||   yd2812 |  31 % ||    791 |    45 ||    32 |     1 ||   757 |    42 ||
-||  - |  - |  - ||xpress       ||50000 |   -   |   -   |   -   ||     - |   256 ||   na2416 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-==========================================================================================================================================================
-   CONDOS 
-==========================================================================================================================================================
-||  - |  - |  - ||c2           ||  384 |  68 % |   -   |   2 % ||   264 |     - ||  rs10691 |  65 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||cass         || 2048 | 156 % |  11 % |   -   ||    28 |  3184 ||  laa9597 | 137 % ||    790 |    62 ||     - |     - ||   790 |    62 ||
-||  2 |  - |  - ||chi          ||  896 |   2 % |   -   |   -   ||    20 |     - ||   pz2394 |   1 % ||      2 |     1 ||     - |     - ||     2 |     1 ||
-||  - |  - |  - ||gfg          || 1920 |  93 % |   6 % |   -   ||     - |  1792 ||  laa9597 |  93 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||mordor       ||  384 |   1 % |   -   |   -   ||     6 |     - ||   aa5506 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  7 |154 |154 ||nlp          ||  208 |   7 % |   -   |   -   ||    15 |     - ||     ba63 |   7 % ||    156 |   155 ||     - |     - ||   156 |   155 ||
-||  - |  - |  - ||red          || 1536 | 100 % |   -   |   -   ||     - |  1536 ||   xh3078 | 100 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||serdal       ||   80 |  93 % |   -   |   -   ||    75 |     - ||   wh1165 |  93 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||shamout      ||  192 |  28 % |   -   |   -   ||    54 |     - ||   baj321 |  28 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  - |  - ||cs_ross      ||  128 |  17 % |   -   |   -   ||    22 |     - ||  as16386 |  17 % ||      - |     - ||     - |     - ||     - |     - ||
-==========================================================================================================================================================
-USER       JOBID   Partition     Account      NCPUs    STATE    QoS             GRES            Nodes               REASON
-==========================================================================================================================================================
+cat >> "$HTML_TEMP" <<'HTML_TAIL'
 </pre>
 <script>
 const raw=document.querySelector('#rawData').textContent.replace(/\r/g,'');
@@ -210,3 +211,18 @@ renderTable();
 </script>
 </body>
 </html>
+HTML_TAIL
+
+mv -f -- "$HTML_TEMP" "$OUTPUT_PATH"
+trap - EXIT
+rm -f -- "$RAW_SNAPSHOT"
+printf 'Created %s\n' "$OUTPUT_PATH"
+
+if [[ -n "$EMAIL_ADDRESS" ]]; then
+  if ! printf 'Attached is the Jubail queue dashboard generated at %s.\n' "$SNAPSHOT_TIME" \
+    | mailx -s "Jubail Queue Dashboard - $SNAPSHOT_TIME" -a "$OUTPUT_PATH" "$EMAIL_ADDRESS"; then
+    echo "Error: mailx could not email $OUTPUT_PATH to $EMAIL_ADDRESS." >&2
+    exit 1
+  fi
+  printf 'Emailed %s to %s\n' "$OUTPUT_PATH" "$EMAIL_ADDRESS"
+fi
