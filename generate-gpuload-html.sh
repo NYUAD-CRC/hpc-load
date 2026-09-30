@@ -30,7 +30,9 @@ if [[ "$(grep -o '__GPULOAD_SNAPSHOT_BASE64__' "${template}" | wc -l)" -ne 1 ]];
   exit 1
 fi
 
-sed "s|__GPULOAD_SNAPSHOT_BASE64__|${snapshot_b64}|" "${template}" > "${output_tmp}"
+generated_at="$(date '+%Y-%m-%d %H:%M:%S %z')"
+sed -e "s|__GPULOAD_SNAPSHOT_BASE64__|${snapshot_b64}|" \
+    -e "s|__GPULOAD_GENERATED_AT__|${generated_at}|" "${template}" > "${output_tmp}"
 chmod 0644 "${output_tmp}"
 mv -f -- "${output_tmp}" "${output}"
 printf 'Generated %s\n' "${output}"
