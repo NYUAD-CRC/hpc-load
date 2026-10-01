@@ -68,8 +68,15 @@
     .pie-reset { margin-top:8px; padding:4px 8px; border:1px solid var(--line); border-radius:5px; background:var(--inner-bg); color:var(--blue); font:inherit; font-size:11px; cursor:pointer; }
     .pie-reset:hover,.pie-reset:focus-visible { background:var(--row-hover); }
     .section { margin-top:16px; }
-    .gpu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr)); gap:14px; }
-    .gpu { display:flex; align-items:center; gap:16px; }
+    .gpu-overview { container-type:inline-size; }
+    .gpu-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; }
+    .gpu { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:10px 6px; text-align:center; }
+    .gpu .donut { width:64px; height:64px; flex:0 0 64px; }
+    .gpu .donut:after { inset:7px; }
+    .gpu .donut b { font-size:14px; }
+    .gpu .metric-label { font-size:11px; }
+    .gpu .metric { font-size:20px; line-height:1.15; margin-top:2px; }
+    .gpu .metric small { display:block; font-size:10px; line-height:1.3; }
     .donut { --p:0; --c:var(--blue); width:84px; height:84px; flex:0 0 84px; border-radius:50%; display:grid; place-items:center; background:conic-gradient(var(--c) calc(var(--p)*1%),var(--track) 0); position:relative; }
     .donut:after { content:""; position:absolute; inset:9px; border-radius:50%; background:var(--donut-center); }
     .donut b { z-index:1; font-size:18px; }
@@ -120,6 +127,7 @@
     html.embedded h2 { font-size:17px; margin-bottom:12px; }
     html.embedded .scroll { max-height:70vh; border-radius:6px; }
     html.embedded footer { display:none; }
+    @container(max-width:550px){ .gpu-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
     @media(min-width:980px){ .two{grid-template-columns:repeat(2,minmax(0,1fr));} }
     @media(max-width:760px){ .cluster-usage-grid{grid-template-columns:1fr}.cluster-usage-layout{grid-template-columns:150px minmax(0,1fr)}.cluster-pie{width:150px} }
     @media(max-width:760px){ .cluster-usage-grid{grid-template-columns:1fr}.cluster-usage-layout{grid-template-columns:150px minmax(0,1fr)}.cluster-pie{width:150px} }
@@ -132,11 +140,11 @@
   <header class="dashboard-header">
     <h1>Jubail Queue Dashboard</h1>
     <div class="subtitle">Static snapshot from <code>numqueued.sh</code> · 
-2026-10-01 12:15:14 +04    </div>
+2026-10-01 12:30:19 +04    </div>
   </header>
 
   <section class="grid two">
-    <div class="card"><h2>GPU utilization</h2><div class="grid summary gpu-summary" id="gpuSummary"></div><div class="gpu-grid" id="gpus"></div><div class="gpu-account-chart"><h3>GPU jobs by account</h3><label class="pending-mode-label" for="gpuMode">Show and sort by </label><select id="gpuMode" class="pending-mode"><option value="running">Running GPUs</option><option value="priority">Pending on Priority</option><option value="quota">Pending due to quota limit</option><option value="combined">Combined</option></select><div class="legend"><span style="--swatch:var(--green)">R · Running GPUs</span><span style="--swatch:var(--blue)">P · Pending on Priority</span><span style="--swatch:var(--amber)">L · Pending due to quota limit</span></div><div class="bar-chart-scroll"><div id="gpuJobsChart"></div></div></div></div>
+    <div class="card gpu-overview"><h2>GPU utilization</h2><div class="grid summary gpu-summary" id="gpuSummary"></div><div class="gpu-grid" id="gpus"></div><div class="gpu-account-chart"><h3>GPU jobs by account</h3><label class="pending-mode-label" for="gpuMode">Show and sort by </label><select id="gpuMode" class="pending-mode"><option value="running">Running GPUs</option><option value="priority">Pending on Priority</option><option value="quota">Pending due to quota limit</option><option value="combined">Combined</option></select><div class="legend"><span style="--swatch:var(--green)">R · Running GPUs</span><span style="--swatch:var(--blue)">P · Pending on Priority</span><span style="--swatch:var(--amber)">L · Pending due to quota limit</span></div><div class="bar-chart-scroll"><div id="gpuJobsChart"></div></div></div></div>
     <div class="card"><h2>CPU utilization</h2><div class="ood-summary" id="oodSummary"></div><div id="clusters"></div></div>
   </section>
   <section class="grid two">
@@ -156,9 +164,9 @@
 ==========================================================================================================================================================
 || Total     Used    Idle    Load     |  GPU  ||    CPU  |  CPU LOAD    N-IDLE    C-TOTAL     C-IDLE       L-JOBS       S-JOBS       N-U/L     N-O/L    ||
 ==========================================================================================================================================================
-||   32        6      26      18 %    | V100  ||  JUBAIL |    89%         0         27K        2936       26-16508     388-7892        57         0     ||
-||   100      68      32      68 %    | A100  || BERGAMO |    86%         0         14K        2022        25-8040     144-4014        31         1     ||
-||   13        7       6      53 %    | H100  ||         |                                                                                              ||
+||   32        6      26      18 %    | V100  ||  JUBAIL |    90%         0         27K        2619       26-16508     521-8205        60         0     ||
+||   100      82      18      82 %    | A100  || BERGAMO |    91%         0         14K        1254        25-8040     168-4782        34         1     ||
+||   13        8       5      61 %    | H100  ||         |                                                                                              ||
 ||   24       24       0     100 %    | H200  ||         |                                                                                              ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -174,33 +182,33 @@
 ||  - |  - |  - ||biology      || 3072 |   6 % |   -   |   -   ||   211 |     - ||   tb2613 |   4 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         ||12824 |  20 % |   7 % |   3 % ||     - |  2672 ||  laa9597 |  19 % ||     63 |    63 ||     - |     - ||    63 |    63 ||
 || 16 | 25 | 25 ||ccs          || 6144 |   3 % |   -   |   -   ||   188 |     - ||   hj2836 |   1 % ||    236 |    25 ||     - |     - ||   236 |    25 ||
-||  - |  - |  - ||cgsb         || 6144 |   2 % |   -   |   -   ||   123 |     - ||   gm3583 |   1 % ||   4212 |  1053 ||  4000 |  1000 ||   212 |    53 ||
+||  - |  - |  - ||cgsb         || 6144 |   4 % |   -   |   -   ||   295 |     - ||   gm3583 |   3 % ||   2698 |   675 ||     2 |     1 ||  2696 |   674 ||
 ||  3 |  - |  - ||chemistry    ||12824 |  35 % |   8 % |  14 % ||  2365 |  2176 ||  mma9216 |  15 % ||   7296 |   174 ||     - |     - ||  7296 |   174 ||
-||  2 |  2 |  - ||cities       || 4096 |  45 % |   5 % |   2 % ||  1878 |     - ||  yl11109 |  45 % ||   5706 |    90 ||    10 |     1 ||  5696 |    89 ||
+||  2 |  2 |  - ||cities       || 4096 |  48 % |   5 % |   2 % ||  2006 |     - ||  yl11109 |  48 % ||   5578 |    88 ||    10 |     1 ||  5568 |    87 ||
 || 12 | 99 | 99 ||civil        || 3200 |  17 % |   1 % |   -   ||   425 |   128 ||   gs4133 |  11 % ||   6409 |   268 ||     1 |     1 ||  6408 |   267 ||
 ||  1 |  - |  - ||collaborator || 3072 |  27 % |   3 % |   -   ||   348 |   512 ||   ap6420 |  16 % ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  1 |  - ||cph          || 3072 |   4 % |   -   |   -   ||   134 |     - ||   im2493 |   3 % ||    972 |    84 ||   804 |    81 ||   168 |     3 ||
+||  - |  - |  - ||cph          || 3072 |   4 % |   -   |   -   ||   134 |     - ||   im2493 |   3 % ||    968 |    83 ||   790 |    79 ||   168 |     3 ||
 ||  - |  - |  - ||csem         || 3072 |  91 % |   -   |  19 % ||  2048 |   768 ||  aa15986 |  87 % ||  53760 |   551 ||     - |     - || 53760 |   551 ||
 ||  - |  - |  - ||default      || 2048 |  49 % |   -   |   3 % ||  1004 |     - ||  mb10856 |  26 % ||     28 |     1 ||     - |     - ||    28 |     1 ||
-|| 18 | 17 | 17 ||ecomputer    || 4096 |   4 % |   -   |   -   ||   174 |     - ||    fs999 |   1 % ||    141 |    26 ||     - |     - ||   141 |    26 ||
-||  6 | 99 | 99 ||electrical   || 4096 |   -   |   -   |   -   ||    35 |     - ||   um2038 |   -   ||    367 |    67 ||    96 |     6 ||   271 |    61 ||
-||  1 |  - |  - ||gencore      || 4096 |  90 % |  10 % |   5 % ||  3725 |     - ||  gencore |  90 % ||    364 |    13 ||     - |     - ||   364 |    13 ||
+|| 18 | 17 | 17 ||ecomputer    || 4096 |   4 % |   -   |   -   ||   174 |     - ||    fs999 |   1 % ||    144 |    29 ||     2 |     2 ||   142 |    27 ||
+|| 12 | 99 | 99 ||electrical   || 4096 |   3 % |   -   |   -   ||   131 |     - ||   vb1121 |   2 % ||    271 |    61 ||     - |     - ||   271 |    61 ||
+||  1 |  - |  - ||gencore      || 4096 |  88 % |   9 % |   5 % ||  3641 |     - ||  gencore |  88 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||     1 |     - ||  rup9745 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||mechanical   ||16384 |  61 % |  23 % |  25 % ||   401 |  9716 ||   xh3078 |  46 % ||    356 |    26 ||     1 |     1 ||   355 |    25 ||
+||  1 |  - |  - ||mechanical   ||16384 |  61 % |  23 % |  25 % ||   409 |  9716 ||   xh3078 |  46 % ||    356 |    26 ||     1 |     1 ||   355 |    25 ||
 ||  2 | 99 | 99 ||nyuny        || 1024 |   1 % |   -   |   -   ||    16 |     - ||   xl5874 |   1 % ||   1414 |   224 ||     - |     - ||  1414 |   224 ||
-||  4 |  8 |  8 ||nyushanghai  || 1024 |  15 % |   -   |   -   ||   160 |     - ||   cj1066 |  12 % ||    272 |    21 ||     - |     - ||   272 |    21 ||
+||  4 |  7 |  7 ||nyushanghai  || 1024 |  15 % |   -   |   -   ||   160 |     - ||   cj1066 |  12 % ||    248 |    19 ||     - |     - ||   248 |    19 ||
 ||  - |  - |  - ||physics      || 8192 |  90 % |  26 % |   -   ||     - |  7424 ||   zs1503 |  50 % ||   4097 |     9 ||     - |     - ||  4097 |     9 ||
-|| 15 | 13 | 11 ||preempt      ||27000 |   -   |   -   |   -   ||   100 |     - ||   zz5283 |   -   ||    138 |    23 ||    54 |    10 ||    84 |    13 ||
-||  3 | 30 | 30 ||psychology   || 6096 |   -   |   -   |   -   ||    48 |     - ||      mri |   -   ||   6385 |   223 ||  6144 |   192 ||   241 |    31 ||
-|| 17 | 17 | 17 ||scomputer    || 4096 |  14 % |   -   |   -   ||   607 |     - ||   rb4792 |   7 % ||   2427 |   608 ||   614 |   244 ||  1811 |   363 ||
-||  4 | 11 | 10 ||students     || 4096 |  31 % |   -   |   7 % ||   146 |  1152 ||   yd2812 |  25 % ||    251 |    28 ||     4 |     1 ||   245 |    25 ||
+|| 15 | 14 | 10 ||preempt      ||27000 |   -   |   -   |   -   ||   100 |     - ||   zz5283 |   -   ||    136 |    19 ||    58 |     7 ||    78 |    12 ||
+||  6 | 25 | 25 ||psychology   || 6096 |  13 % |   -   |   5 % ||   840 |     - ||   yz5725 |  12 % ||   5481 |   191 ||  5280 |   165 ||   201 |    26 ||
+|| 21 | 15 | 13 ||scomputer    || 4096 |  16 % |   1 % |   -   ||   691 |     - ||   rb4792 |   7 % ||   2081 |   397 ||   280 |    33 ||  1799 |   363 ||
+||  4 | 11 | 10 ||students     || 4096 |  31 % |   -   |   7 % ||   144 |  1152 ||   yd2812 |  25 % ||    251 |    28 ||     4 |     1 ||   245 |    25 ||
 ||  - |  - |  - ||xpress       ||50000 |   1 % |   2 % |   1 % ||    32 |   896 ||   na2416 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
 ==========================================================================================================================================================
    CONDOS 
 ==========================================================================================================================================================
 ||  - |  - |  - ||c2           ||  384 |  19 % |   -   |   3 % ||    74 |     - ||  rs10691 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 |  87 % |   6 % |   -   ||     - |  1792 ||  laa9597 | 125 % ||      - |     - ||     - |     - ||     - |     - ||
-||  2 |  6 |  6 ||chi          ||  896 |   2 % |   -   |   -   ||    20 |     - ||   pz2394 |   1 % ||     44 |    16 ||     4 |     2 ||    40 |    14 ||
+||  6 |  2 |  2 ||chi          ||  896 |   4 % |   -   |   -   ||    36 |     - ||   pz2394 |   1 % ||     24 |    10 ||     - |     - ||    24 |    10 ||
 ||  - |  - |  - ||gfg          || 1920 |  26 % |   1 % |   -   ||     - |   512 ||  laa9597 |  26 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||mordor       ||  384 |   2 % |   -   |   -   ||    10 |     - ||   aa5506 |   2 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  1 |  - |  - ||nlp          ||  208 |   -   |   -   |   -   ||     1 |     - ||     ba63 |   -   ||      2 |     1 ||     - |     - ||     2 |     1 ||
@@ -208,7 +216,7 @@
 ||  1 |  - |  - ||serdal       ||   80 |  31 % |   -   |   1 % ||    25 |     - ||   wh1165 |  31 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  6 | 16 | 16 ||shamout      ||  192 |  39 % |   -   |   -   ||    76 |     - ||   ur2068 |  25 % ||    128 |    16 ||     - |     - ||   128 |    16 ||
 ||  - |  - |  - ||tr72         ||  256 |   -   |   -   |   -   ||     1 |     - ||   fl1092 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  2 |  - ||cs_ross      ||  128 |  10 % |   -   |   -   ||    14 |     - ||   mwk300 |   6 % ||     32 |     2 ||    32 |     2 ||     - |     - ||
+||  4 |  3 |  - ||cs_ross      ||  128 |  32 % |   -   |   -   ||    42 |     - ||   ba2422 |  21 % ||     20 |     2 ||    20 |     2 ||     - |     - ||
 ==========================================================================================================================================================
 USER       JOBID   Partition     Account      NCPUs    STATE    QoS             GRES            Nodes               REASON
 ==========================================================================================================================================================
