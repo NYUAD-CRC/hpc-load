@@ -57,7 +57,8 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const sum=k=>fleet.reduce((t,f)=>t+f[k],0);
 const metrics=[['Total GPUs',sum('total')],['Used GPUs',sum('used')],['Idle GPUs',sum('idle')],['Running jobs',running],['Pending jobs',pending],['GPU nodes',nodes.length]];
 document.querySelector('#summary').innerHTML=metrics.map(([label,value])=>`<div class="card"><div class="metric-label">${label}</div><div class="metric">${value??'—'}</div></div>`).join('');
-document.querySelector('#fleet').innerHTML=fleet.map(f=>`<div class="fleet-card"><div class="donut" style="--pct:${Math.min(100,f.load)};--fill:${f.load>=90?'var(--amber)':'var(--green)'}"><b>${f.load}%</b></div><div><h3>${f.type}</h3><p>${f.used} used · ${f.idle} idle</p><p>${f.total} total</p></div></div>`).join('');
+const loadColor=load=>`hsl(${Math.round(145-1.45*Math.max(0,Math.min(100,load)))} 75% 45%)`;
+document.querySelector('#fleet').innerHTML=fleet.map(f=>`<div class="fleet-card"><div class="donut" style="--pct:${Math.min(100,f.load)};--fill:${loadColor(f.load)}"><b>${f.load}%</b></div><div><h3>${f.type}</h3><p>${f.used} used · ${f.idle} idle</p><p>${f.total} total</p></div></div>`).join('');
 document.querySelector('#monitor').innerHTML=['Total jobs processed','Skipped jobs','Warnings sent','Terminated (killed)'].map(label=>`<div class="monitor"><span>${label}</span><b>${monitor[label]??'—'}</b></div>`).join('');
 for(const [id,key] of [['type','type']]){
   const sel=document.getElementById(id);
