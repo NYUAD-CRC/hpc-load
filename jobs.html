@@ -32,27 +32,30 @@
       --pre-bg:#f6f7f8; --pre-text:#394550; --card-shadow:0 1px 3px rgba(0,0,0,.08);
     }
     * { box-sizing:border-box; }
-    body { margin:0; min-width:0; background:var(--page-bg); color:var(--text); font:14px/1.45 Lato,proxima-nova,"Helvetica Neue",Arial,sans-serif; }
+    body { margin:0; min-width:0; background:var(--page-bg); color:var(--text); font:13px/1.45 Lato,proxima-nova,"Helvetica Neue",Arial,sans-serif; }
     main { width:100%; max-width:1500px; margin:auto; padding:28px; }
     .dashboard-header { margin-bottom:24px; }
-    h1 { margin:0; font-size:30px; letter-spacing:-.7px; }
-    h2 { margin:0 0 16px; font-size:19px; }
+    h1 { margin:0; font-size:27px; letter-spacing:-.7px; }
+    h2 { margin:0 0 16px; font-size:17px; }
     .subtitle { color:var(--muted); margin-top:5px; }
     .grid { display:grid; gap:16px; }
     .summary { grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr)); }
     .two { grid-template-columns:1fr; margin-top:16px; }
+    .overview { grid-template-columns:1fr; margin-top:16px; }
     .card { min-width:0; background:var(--card-bg); border:1px solid var(--line); border-radius:16px; padding:18px; box-shadow:var(--card-shadow); }
-    .metric-label { color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.9px; }
-    .metric { font-size:30px; font-weight:760; margin-top:5px; }
-    .metric small { font-size:13px; color:var(--muted); font-weight:500; }
+    .metric-label { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.9px; }
+    .metric { font-size:27px; font-weight:760; margin-top:5px; }
+    .metric small { font-size:12px; color:var(--muted); font-weight:500; }
     .gpu-summary { grid-template-columns:repeat(2,minmax(0,1fr)); margin-bottom:14px; }
     .gpu-account-chart { margin-top:18px; padding-top:14px; border-top:1px solid var(--line); }
-    .gpu-account-chart h3 { margin:0 0 8px; font-size:15px; }
+    .gpu-account-chart h3 { margin:0 0 8px; font-size:14px; }
     .ood-summary { margin:0 0 12px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:var(--inner-bg); }
-    .ood-summary .metric { font-size:24px; }
+    .ood-summary .metric { font-size:21px; }
+    #clusters { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    #clusters > .empty { grid-column:1/-1; }
     .cluster-usage-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
     .cluster-usage-card { min-width:0; padding:14px; border:1px solid var(--line); border-radius:10px; background:var(--inner-bg); }
-    .cluster-usage-card h3 { margin:0 0 4px; font-size:16px; }
+    .cluster-usage-card h3 { margin:0 0 4px; font-size:14px; }
     .cluster-usage-total { margin-bottom:10px; color:var(--muted); font-size:12px; }
     .cluster-usage-layout { display:grid; grid-template-columns:180px minmax(0,1fr); align-items:center; gap:14px; }
     .cluster-pie { width:180px; aspect-ratio:1; overflow:visible; }
@@ -73,17 +76,17 @@
     .gpu { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; padding:10px 6px; text-align:center; }
     .gpu .donut { width:64px; height:64px; flex:0 0 64px; }
     .gpu .donut:after { inset:7px; }
-    .gpu .donut b { font-size:14px; }
+    .gpu .donut b { font-size:13px; }
     .gpu .metric-label { font-size:11px; }
-    .gpu .metric { font-size:20px; line-height:1.15; margin-top:2px; }
+    .gpu .metric { font-size:18px; line-height:1.15; margin-top:2px; }
     .gpu .metric small { display:block; font-size:10px; line-height:1.3; }
     .donut { --p:0; --c:var(--blue); width:84px; height:84px; flex:0 0 84px; border-radius:50%; display:grid; place-items:center; background:conic-gradient(var(--c) calc(var(--p)*1%),var(--track) 0); position:relative; }
     .donut:after { content:""; position:absolute; inset:9px; border-radius:50%; background:var(--donut-center); }
-    .donut b { z-index:1; font-size:18px; }
+    .donut b { z-index:1; font-size:16px; }
     .bar-row { display:grid; grid-template-columns:minmax(110px,175px) 1fr 76px; gap:10px; align-items:center; margin:5px 0; padding:2px 4px; border-radius:5px; }
     .bar-chart-scroll { max-height:180px; overflow-y:auto; padding-right:4px; scrollbar-gutter:stable; }
-    .pending-mode-label { color:var(--muted); font-size:12px; }
-    .pending-mode { margin:0 0 10px 4px; padding:5px 8px; border:1px solid var(--line); border-radius:6px; background:var(--inner-bg); color:var(--text); font:inherit; font-size:12px; }
+    .pending-mode-label { color:var(--muted); font-size:11px; }
+    .pending-mode { margin:0 0 10px 4px; padding:5px 8px; border:1px solid var(--line); border-radius:6px; background:var(--inner-bg); color:var(--text); font:inherit; font-size:11px; }
     .bar { height:18px; background:var(--track); border-radius:7px; overflow:hidden; display:flex; }
     .bar > i { display:block; height:100%; min-width:1px; }
     .quota { background:linear-gradient(90deg,var(--cyan),var(--blue)); }
@@ -96,7 +99,7 @@
     .prio { background:var(--amber); }
     .other { background:var(--red); }
     .unclassified { background:#73859b; }
-    .legend { display:flex; flex-wrap:wrap; gap:12px; color:var(--muted); margin:0 0 10px; font-size:12px; }
+    .legend { display:flex; flex-wrap:wrap; gap:12px; color:var(--muted); margin:0 0 10px; font-size:11px; }
     .legend span:before { content:""; display:inline-block; width:10px; height:10px; border-radius:3px; background:var(--swatch); margin-right:5px; }
     .scroll { overflow:auto; border:1px solid var(--line); border-radius:12px; }
     table { width:100%; border-collapse:collapse; white-space:nowrap; font-size:12px; }
@@ -108,10 +111,10 @@
     .hot { color:var(--hot-text); background:var(--hot-bg); }
     input { width:100%; max-width:360px; background:var(--inner-bg); border:1px solid var(--line); color:var(--text); padding:10px 12px; border-radius:9px; margin-bottom:12px; }
     .cpu-card { display:grid; grid-template-columns:1fr auto; gap:12px; }
-    .cpu-card .big { font-size:36px; font-weight:800; }
+    .cpu-card .big { font-size:32px; font-weight:800; }
     .cpu-details { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:12px; }
     .cpu-details div { background:var(--inner-bg); padding:9px; border-radius:9px; color:var(--muted); }
-    .cpu-details b { color:var(--text); display:block; font-size:15px; }
+    .cpu-details b { color:var(--text); display:block; font-size:14px; }
     details { margin-top:16px; }
     summary { cursor:pointer; color:var(--blue); font-weight:650; }
     pre { overflow:auto; max-height:520px; padding:14px; background:var(--pre-bg); border:1px solid var(--line); border-radius:10px; color:var(--pre-text); font:11px/1.35 ui-monospace,SFMono-Regular,Consolas,monospace; }
@@ -123,8 +126,8 @@
     html.embedded .subtitle { margin:0; font-size:12px; }
     html.embedded .card { border-radius:7px; padding:14px; }
     html.embedded .grid { gap:12px; }
-    html.embedded .section,html.embedded .two { margin-top:12px; }
-    html.embedded h2 { font-size:17px; margin-bottom:12px; }
+    html.embedded .section,html.embedded .two,html.embedded .overview { margin-top:12px; }
+    html.embedded h2 { font-size:16px; margin-bottom:12px; }
     html.embedded .scroll { max-height:70vh; border-radius:6px; }
     html.embedded footer { display:none; }
     @container(max-width:550px){ .gpu-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
@@ -139,6 +142,7 @@
     }
     @media(max-width:760px){ .cluster-usage-grid{grid-template-columns:1fr}.cluster-usage-layout{grid-template-columns:150px minmax(0,1fr)}.cluster-pie{width:150px} }
     @media(max-width:760px){ .cluster-usage-grid{grid-template-columns:1fr}.cluster-usage-layout{grid-template-columns:150px minmax(0,1fr)}.cluster-pie{width:150px} }
+    @media(max-width:699px){ #clusters{grid-template-columns:1fr} }
     @media(max-width:650px){ main{padding:16px}.bar-row{grid-template-columns:105px 1fr 58px}.cpu-details{grid-template-columns:1fr 1fr}.donut{width:72px;height:72px;flex-basis:72px} }
     @media print { body{background:white;color:#111}.card{box-shadow:none;background:white;border-color:#bbb}.subtitle,.metric-label,.legend,footer{color:#555}th{position:static;background:#eee;color:#111}.scroll{overflow:visible}.donut:after{background:white} }
   </style>
@@ -148,10 +152,10 @@
   <header class="dashboard-header">
     <h1>Jubail Queue Dashboard</h1>
     <div class="subtitle">Static snapshot from <code>numqueued.sh</code> · 
-2026-10-08 19:15:14 +04    </div>
+2026-10-08 19:30:15 +04    </div>
   </header>
 
-  <section class="grid two">
+  <section class="grid overview">
     <div class="card"><h2>CPU utilization</h2><div class="ood-summary" id="oodSummary"></div><div id="clusters"></div></div>
     <div class="card gpu-overview"><h2>GPU utilization</h2><div class="grid summary gpu-summary" id="gpuSummary"></div><div class="gpu-grid" id="gpus"></div><div class="gpu-account-chart"><h3>GPU jobs by account</h3><label class="pending-mode-label" for="gpuMode">Show and sort by </label><select id="gpuMode" class="pending-mode"><option value="running">Running GPUs</option><option value="priority">Pending on Priority</option><option value="quota">Pending due to quota limit</option><option value="combined">Combined</option></select><div class="legend"><span style="--swatch:var(--green)">R · Running GPUs</span><span style="--swatch:var(--blue)">P · Pending on Priority</span><span style="--swatch:var(--amber)">L · Pending due to quota limit</span></div><div class="bar-chart-scroll"><div id="gpuJobsChart"></div></div></div></div>
   </section>
@@ -172,13 +176,13 @@
 ==========================================================================================================================================================
 || Total     Used    Idle    Load     |  GPU  ||    CPU  |  CPU LOAD    N-IDLE    C-TOTAL     C-IDLE       L-JOBS       S-JOBS       N-U/L     N-O/L    ||
 ==========================================================================================================================================================
-||   34        5      29      14 %    | V100  ||  JUBAIL |    93%         0         27K        1841       30-21892     343-4202        12         1     ||
-||   100      95       5      95 %    | A100  || BERGAMO |    88%         0         14K        1662       21-10112     204-3074        19         0     ||
+||   34       11      23      32 %    | V100  ||  JUBAIL |    93%         0         27K        1845       30-21892     339-4196        12         1     ||
+||   100      93       7      93 %    | A100  || BERGAMO |    89%         0         14K        1546       21-10112     202-3190        20         0     ||
 ||   13       13       0     100 %    | H100  ||         |                                                                                              ||
 ||   24       18       6      75 %    | H200  ||         |                                                                                              ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-	OOD JOBS:  CPU:18   GPU:0	| Use the command || jobload -j &lt;JOBID&gt; || to analyze CPU Usage
+	OOD JOBS:  CPU:17   GPU:0	| Use the command || jobload -j &lt;JOBID&gt; || to analyze CPU Usage
 
 ==========================================================================================================================================================
 ||     GPU  ACCOUNT                          USAGE                   RUNNING            TOP USER          PENDING          PRIO/RES           OTHERS    ||   
@@ -186,40 +190,41 @@
 ||    |    |    ||             | quota | quota | Jubail|Bergamo|| N-CPUs|N-CPUs ||   user   | quota ||  N-CPUs|N-jobs || N-CPUs|N-jobs || N-CPUs|N-jobs || 
 || R  | P  | L  ||             |       | usage | usage | usage || small | large ||	    | prcnt ||        |       ||       |       ||       |       ||
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-||  - |  - |  - ||access       || 6144 |  33 % |   7 % |   -   ||     3 |  2048 ||  bak8122 |  33 % ||   2048 |     1 ||  2048 |     1 ||     - |     - ||
+||  - |  - |  - ||access       || 6144 |  33 % |   7 % |   -   ||     1 |  2048 ||  bak8122 |  33 % ||   2048 |     1 ||  2048 |     1 ||     - |     - ||
 ||  - |  - |  - ||avengers     ||12800 |   -   |   -   |   -   ||     1 |     - ||   dj2615 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  - |  - |  - ||biology      || 3072 |   3 % |   -   |   -   ||   106 |     - ||   tb2613 |   1 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 | 11 |  - ||cair         || 2048 |   1 % |   -   |   -   ||    40 |     - ||     yf23 |   1 % ||    176 |    11 ||   176 |    11 ||     - |     - ||
-||  - |  - |  - ||cass         ||12824 |  51 % |  16 % |  13 % ||     8 |  6632 ||  laa9597 |  27 % ||      2 |     2 ||     - |     - ||     2 |     2 ||
-|| 12 | 34 | 22 ||ccs          || 6144 |   1 % |   -   |   -   ||    64 |     - ||   ma6996 |   -   ||    224 |    34 ||    48 |    12 ||   176 |    22 ||
-||  - |  4 |  - ||cgsb         || 6144 |   9 % |   1 % |   -   ||   569 |     - ||   gm3583 |   7 % ||    122 |    53 ||    32 |     1 ||    90 |    52 ||
+||  1 | 29 |  - ||biology      || 3072 |   3 % |   -   |   -   ||   120 |     - ||   tb2613 |   1 % ||    232 |    29 ||   232 |    29 ||     - |     - ||
+||  7 |  7 |  - ||cair         || 2048 |   5 % |   -   |   -   ||   104 |     - ||     yf23 |   4 % ||    112 |     7 ||   112 |     7 ||     - |     - ||
+||  - |  - |  - ||cass         ||12824 |  51 % |  16 % |  13 % ||     - |  6632 ||  laa9597 |  27 % ||      2 |     2 ||     - |     - ||     2 |     2 ||
+|| 16 | 30 | 30 ||ccs          || 6144 |   1 % |   -   |   -   ||    80 |     - ||   ma6996 |   -   ||    208 |    30 ||     - |     - ||   208 |    30 ||
+||  - |  4 |  - ||cgsb         || 6144 |   7 % |   1 % |   -   ||   489 |     - ||   gm3583 |   6 % ||    122 |    53 ||    32 |     1 ||    90 |    52 ||
 ||  8 |  - |  - ||chemistry    ||12824 |  55 % |  12 % |  23 % ||  2489 |  4608 ||  sme9918 |  15 % ||    768 |    48 ||     - |     - ||   768 |    48 ||
 ||  4 |  2 |  - ||cities       || 4096 |  28 % |   -   |   5 % ||  1180 |     - ||  yl11109 |  28 % ||     20 |     2 ||    20 |     2 ||     - |     - ||
-|| 12 | 99 | 99 ||civil        || 3200 |  11 % |   1 % |   -   ||   378 |     - ||   gs4133 |   8 % ||   2776 |   119 ||     - |     - ||  2776 |   119 ||
-||  - |  1 |  - ||collaborator || 3072 |   8 % |   -   |   -   ||   270 |     - ||   ykv210 |   8 % ||   1028 |     2 ||  1028 |     2 ||     - |     - ||
+||  3 |  5 |  - ||civil        || 3200 |   6 % |   -   |   -   ||   194 |     - ||   pm4167 |   2 % ||     40 |     5 ||    40 |     5 ||     - |     - ||
+||  - |  1 |  - ||collaborator || 3072 |   9 % |   -   |   -   ||   278 |     - ||   ykv210 |   8 % ||   1028 |     2 ||  1028 |     2 ||     - |     - ||
 ||  - |  5 |  - ||cph          || 3072 |   2 % |   -   |   -   ||    71 |     - ||     phrc |   2 % ||     40 |     5 ||    40 |     5 ||     - |     - ||
-||  - |  - |  - ||csem         || 3072 |  43 % |   -   |   8 % ||  1344 |     - ||  aa15986 |  41 % ||  16000 |   247 || 16000 |   247 ||     - |     - ||
-||  3 |  5 |  5 ||default      || 2048 |  49 % |   -   |   2 % ||  1012 |     - ||  mb10856 |  19 % ||    250 |    15 ||     - |     - ||   250 |    15 ||
+||  - |  - |  - ||cqts         || 2048 |   -   |   -   |   -   ||     - |     - ||          |   -   ||    128 |     1 ||   128 |     1 ||     - |     - ||
+||  - |  - |  - ||csem         || 3072 |  50 % |   -   |   9 % ||  1536 |     - ||  aa15986 |  47 % ||  14848 |   229 || 14848 |   229 ||     - |     - ||
+||  2 |  5 |  5 ||default      || 2048 |  49 % |   -   |   2 % ||  1004 |     - ||  mb10856 |  19 % ||    250 |    15 ||     - |     - ||   250 |    15 ||
 ||  7 |  2 |  1 ||ecomputer    || 4096 |   1 % |   -   |   -   ||    64 |     - ||   ur2068 |   -   ||     60 |    12 ||    16 |     1 ||    44 |    11 ||
-|| 10 | 99 | 99 ||electrical   || 4096 |   1 % |   -   |   -   ||    58 |     - ||   zw3464 |   -   ||    363 |    69 ||     - |     - ||   363 |    69 ||
+|| 10 | 99 | 99 ||electrical   || 4096 |   1 % |   -   |   -   ||    62 |     - ||   zw3464 |   -   ||    363 |    69 ||     - |     - ||   363 |    69 ||
 ||  1 |  - |  - ||gencore      || 4096 |   -   |   -   |   -   ||     1 |     - ||  gencore |   -   ||    128 |     9 ||     - |     - ||   128 |     9 ||
 ||  - |  - |  - ||mathematics  || 3072 |   -   |   -   |   -   ||     1 |     - ||  rup9745 |   -   ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  4 |  - ||mechanical   ||16384 |  67 % |  27 % |  23 % ||   414 | 10652 ||   xh3078 |  37 % ||   2453 |    11 ||  1808 |     6 ||   645 |     5 ||
+||  - |  4 |  - ||mechanical   ||16384 |  67 % |  27 % |  23 % ||   378 | 10652 ||   xh3078 |  37 % ||   2453 |    11 ||  1808 |     6 ||   669 |     7 ||
 ||  - | 99 | 99 ||nyuny        || 1024 |   -   |   -   |   -   ||     - |     - ||          |   -   ||   1086 |   183 ||     - |     - ||  1086 |   183 ||
 ||  4 | 12 | 12 ||nyushanghai  || 1024 |   3 % |   -   |   -   ||    36 |     - ||   yw6570 |   3 % ||     96 |    12 ||     - |     - ||    96 |    12 ||
 ||  8 |  4 |  - ||physics      || 8192 |  85 % |  25 % |   -   ||    76 |  6912 ||   zs1503 |  50 % ||   1617 |    19 ||    24 |     1 ||  1593 |    18 ||
-||  6 | 79 | 13 ||preempt      ||27000 |   -   |   -   |   -   ||    48 |     - ||  as16386 |   -   ||    598 |    80 ||   500 |    64 ||    98 |    16 ||
+||  6 | 68 | 13 ||preempt      ||27000 |   -   |   -   |   -   ||    48 |     - ||  as16386 |   -   ||    566 |    76 ||   432 |    54 ||   134 |    22 ||
 ||  - |  - |  - ||psychology   || 6096 |   4 % |   -   |   1 % ||   296 |     - ||   yz5725 |   4 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
-|| 32 | 99 | 91 ||scomputer    || 4096 |  36 % |   1 % |   -   ||  1478 |     - ||   rb4792 |  26 % ||   3268 |   435 ||   288 |    23 ||  2978 |   411 ||
-||  - |  - |  - ||socialscience|| 4096 |   3 % |   -   |   1 % ||    28 |   128 ||  ler6972 |   3 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
-|| 14 | 99 | 93 ||students     || 4096 |  31 % |   -   |   7 % ||   282 |  1024 ||  bna4457 |  15 % ||   1911 |   387 ||   120 |    25 ||  1789 |   360 ||
+|| 39 | 99 | 91 ||scomputer    || 4096 |  37 % |   1 % |   -   ||  1550 |     - ||   rb4792 |  26 % ||   3268 |   435 ||   288 |    23 ||  2978 |   411 ||
+||  - |  - |  - ||socialscience|| 4096 |   3 % |   -   |   1 % ||    30 |   128 ||  ler6972 |   3 % ||      1 |     1 ||     - |     - ||     1 |     1 ||
+|| 15 | 99 | 91 ||students     || 4096 |  31 % |   -   |   6 % ||   282 |  1024 ||  bna4457 |  15 % ||   1887 |   383 ||   120 |    25 ||  1765 |   356 ||
 ==========================================================================================================================================================
    CONDOS 
 ==========================================================================================================================================================
 ||  - |  - |  - ||bedoor       ||  128 |  21 % |   -   |   -   ||    28 |     - ||  sas9891 |  21 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  2 |  - |  - ||bosco        ||  128 |  50 % |   -   |   -   ||    64 |     - ||   sl9030 |  50 % ||      - |     - ||     - |     - ||     - |     - ||
-||  3 |  5 |  5 ||c2           ||  384 |  54 % |   -   |   7 % ||   208 |     - ||   kb5213 |  45 % ||     40 |     5 ||     - |     - ||    40 |     5 ||
-||  1 |  - |  - ||cair         ||  128 |  12 % |   -   |   -   ||    16 |     - ||     yf23 |  25 % ||      - |     - ||     - |     - ||     - |     - ||
+||  3 |  5 |  5 ||c2           ||  384 |  53 % |   -   |   7 % ||   204 |     - ||   kb5213 |  45 % ||     40 |     5 ||     - |     - ||    40 |     5 ||
+||  1 |  - |  - ||cair         ||  128 |  12 % |   -   |   -   ||    16 |     - ||     yf23 |  75 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  - |  - ||cass         || 2048 |  87 % |   4 % |   -   ||     - |  1792 ||  laa9597 | 175 % ||      - |     - ||     - |     - ||     - |     - ||
 ||  - |  1 |  - ||chi          ||  896 |   -   |   -   |   -   ||     4 |     - ||   pb2276 |   -   ||      8 |     1 ||     8 |     1 ||     - |     - ||
 ||  1 |  - |  - ||ebrainccs    ||   64 |  18 % |   -   |   -   ||    12 |     - ||   bc3194 |  18 % ||      - |     - ||     - |     - ||     - |     - ||
@@ -280,7 +285,7 @@ document.querySelector('#oodSummary').innerHTML=`<div class="metric-label">OOD j
 
 document.querySelector('#gpus').innerHTML=gpuFleet.length?gpuFleet.map(g=>`<div class="card gpu"><div class="donut" style="--p:${g.load};--c:${color(g.load)}"><b>${g.load}%</b></div><div><div class="metric-label">${g.name}</div><div class="metric">${g.used}<small> / ${g.total} used</small></div><div style="color:var(--muted)">${g.idle} idle</div></div></div>`).join(''):'<div class="empty">No GPU summary rows detected.</div>';
 
-document.querySelector('#clusters').innerHTML=clusters.length?clusters.map(c=>`<div class="card" style="margin-bottom:12px"><div class="cpu-card"><div><div class="metric-label">${c.name}</div><div class="big">${c.load}%</div></div><div class="donut" style="--p:${c.load};--c:${color(c.load)}"><b>${c.load}%</b></div></div><div class="cpu-details"><div><b>${c.cpuTotal}</b>Total CPUs</div><div><b>${fmt(c.cpuIdle)}</b>Idle CPUs</div><div><b>${c.largeJobs} / ${fmt(c.largeCpus)}</b>Large jobs / CPUs</div><div><b>${c.smallJobs} / ${fmt(c.smallCpus)}</b>Small jobs / CPUs</div><div><b>${c.nodeIdle}</b>Idle nodes</div><div><b>${c.nodeUnder}</b>Underloaded nodes</div><div><b>${c.nodeOver}</b>Overloaded nodes</div></div></div>`).join(''):'<div class="empty">No CPU cluster rows detected.</div>';
+document.querySelector('#clusters').innerHTML=clusters.length?clusters.map(c=>`<div class="card"><div class="cpu-card"><div><div class="metric-label">${c.name}</div><div class="big">${c.load}%</div></div><div class="donut" style="--p:${c.load};--c:${color(c.load)}"><b>${c.load}%</b></div></div><div class="cpu-details"><div><b>${c.cpuTotal}</b>Total CPUs</div><div><b>${fmt(c.cpuIdle)}</b>Idle CPUs</div><div><b>${c.largeJobs} / ${fmt(c.largeCpus)}</b>Large jobs / CPUs</div><div><b>${c.smallJobs} / ${fmt(c.smallCpus)}</b>Small jobs / CPUs</div><div><b>${c.nodeIdle}</b>Idle nodes</div><div><b>${c.nodeUnder}</b>Underloaded nodes</div><div><b>${c.nodeOver}</b>Overloaded nodes</div></div></div>`).join(''):'<div class="empty">No CPU cluster rows detected.</div>';
 
 const pieColor=i=>`hsl(${(i*137.508)%360} 68% 48%)`;
 const pieColors=['#2868bc','#198165','#ad6714','#8b5cf6','#b6424b','#0891b2','#7c3aed','#4d7c0f','#be185d','#0369a1','#a16207','#0f766e','#9333ea','#c2410c','#2563eb','#15803d','#b91c1c','#6d28d9','#0e7490','#a21caf','#4d7c0f','#c026d3','#0f766e','#b45309'];
