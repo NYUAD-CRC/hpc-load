@@ -28,7 +28,7 @@ def read_nodes(scontrol):
         if re.fullmatch(r'(?:bn|cn)\d+', name):
             nodes[name] = dict(name=name, total=int(v['CPUTot']), allocated=int(v['CPUAlloc']),
                                state=v['State'], memoryTotal=int(v['RealMemory']),
-                               memoryAllocated=int(v['AllocMem']), jobs=[])
+                               memoryAllocated=int(v['AllocMem']), partitions=v.get('Partitions', ''), gres=v.get('Gres', ''), threadsPerCore=int(v.get('ThreadsPerCore', '1')), jobs=[])
     if not nodes:
         raise ValueError('Slurm returned no bn/cn nodes; existing output was not changed.')
     return nodes
@@ -71,12 +71,12 @@ def collect(scontrol):
                         for part in cpus.split(','))
             for host in host_cache[hosts]:
                 if host in nodes:
-                    nodes[host]['jobs'].append([v['JobId'], count, int(v['NumNodes']), int(mem)])
-                    placements.append(dict(node=host, cpus=count, memory=int(mem)))
+                    nodes[host]['jobs'].append([v['JobId'], count, int(v['NumNodes']), int(mem), cpus])
+                    placements.append(dict(node=host, cpus=count, memory=int(mem), ids=cpus))
         if placements:
             jobs.append(dict(id=v['JobId'], name=v.get('JobName', ''),
                              owner=v.get('UserId', '').split('(')[0], state=v['JobState'],
-                             nodes=int(v['NumNodes']), cpus=int(v['NumCPUs']), placements=placements))
+                             nodes=int(v['NumNodes']), cpus=int(v['NumCPUs']), partition=v.get('Partition',''), placements=placements))
     # Node and job queries are not atomic. Detect changes rather than publish inconsistent bars.
     latest = read_nodes(scontrol)
     mismatches = []
@@ -98,8 +98,46 @@ def collect(scontrol):
         mismatches.append('node list changed')
     jobs = [job for job in jobs if job['placements']]
     stamp = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=4)))
-    return dict(time=stamp.strftime('%d %b %Y, %H:%M Dubai'),
+    return dict(timestamp=stamp.isoformat(), time=stamp.strftime('%d %b %Y, %H:%M Dubai'),
                 nodes=sorted(nodes.values(), key=lambda n: n['name']), jobs=jobs), mismatches
+
+
+def reference_data(data):
+    """Adapt the verified Slurm snapshot to the supplied dashboard's schema."""
+    jobs = []
+    lookup = {n['name']: n for n in data['nodes']}
+    indices = {j['id']: i for i, j in enumerate(data['jobs'])}
+    for index, j in enumerate(data['jobs']):
+        placements = [dict(node=p['node'], cpus=p['cpus'], total=lookup[p['node']]['total'],
+                           mem=p['memory'], ids=p['ids']) for p in j['placements']]
+        jobs.append(dict(id=j['id'], internalId=j['id'], index=index, user=j['owner'],
+                         name=j['name'], state=j['state'], nodes=j['nodes'], cpus=j['cpus'],
+                         partition=j['partition'], placements=placements,
+                         placementNodes=len(placements), placementCPUs=sum(p['cpus'] for p in placements)))
+    nodes = []
+    for n in data['nodes']:
+        placements = [dict(job=indices[j[0]], cpus=j[1], mem=j[3], ids=j[4]) for j in n['jobs']]
+        nodes.append(dict(name=n['name'], group=re.match(r'[a-z]+',n['name']).group(),
+                          total=n['total'], allocated=n['allocated'], mem=n['memoryTotal'],
+                          memAllocated=n['memoryAllocated'], state=n['state'],
+                          partitions=n['partitions'], gres=n['gres'], threadsPerCore=n['threadsPerCore'],
+                          jobs=placements, free=n['total']-n['allocated'],
+                          memFree=n['memoryTotal']-n['memoryAllocated'],
+                          blocked=bool(re.search(r'RESERV|DRAIN|DOWN|FAIL|MAINT',n['state'])),
+                          partial=0<n['allocated']<n['total'],
+                          single=sum(j[1] for j in n['jobs'] if j[2]==1),
+                          multi=sum(j[1] for j in n['jobs'] if j[2]>1), allocationDelta=0))
+    running = [j for j in jobs if j['state']=='RUNNING']
+    summary = dict(running=len(running), single=sum(j['nodes']==1 for j in running),
+                   multi=sum(j['nodes']>1 for j in running), configuredNodes=len(nodes),
+                   totalCPUs=sum(n['total'] for n in nodes), allocatedCPUs=sum(n['allocated'] for n in nodes),
+                   partialNodes=sum(n['partial'] for n in nodes), sharedNodes=sum(len(n['jobs'])>1 for n in nodes),
+                   mixedTypeNodes=sum(n['single']>0 and n['multi']>0 for n in nodes),
+                   idleNodes=sum(n['allocated']==0 for n in nodes), restrictedNodes=sum(n['blocked'] for n in nodes),
+                   memoryBlocked=sum(n['free']>0 and n['memFree']<=0 for n in nodes), mismatches=[])
+    warnings = ['Only BN and CN nodes are shown; job totals can include nodes outside this view.']
+    return dict(started=data['timestamp'], ended=data['timestamp'], summary=summary,
+                nodes=nodes, jobs=jobs, warnings=warnings)
 
 
 def atomic_write(path, content):
@@ -138,7 +176,7 @@ def main():
             print('Scheduler changed during snapshot; retrying: ' + ', '.join(mismatches), file=sys.stderr)
         else:
             raise ValueError('Could not obtain consistent node/job totals; existing output was not changed. Run again.')
-        payload = json.dumps(data, ensure_ascii=True).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
+        payload = json.dumps(reference_data(data), ensure_ascii=True).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
         atomic_write(args.output, template.replace('__DATA__', payload))
         print('{}: {} nodes, {} active jobs ({})'.format(args.output, len(data['nodes']), len(data['jobs']), data['time']))
     except (OSError, ValueError, subprocess.SubprocessError) as exc:
