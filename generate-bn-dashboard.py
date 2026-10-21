@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the standalone bn-node Slurm dashboard (Python 3.6+, no packages)."""
+"""Generate the standalone bn/cn-node Slurm dashboard (Python 3.6+, no packages)."""
 import argparse
 import datetime
 import json
@@ -25,13 +25,32 @@ def read_nodes(scontrol):
     for line in command(scontrol, 'show', 'nodes', '--oneliner').splitlines():
         v = fields(line)
         name = v.get('NodeName', '')
-        if re.fullmatch(r'bn\d+', name):
+        if re.fullmatch(r'(?:bn|cn)\d+', name):
             nodes[name] = dict(name=name, total=int(v['CPUTot']), allocated=int(v['CPUAlloc']),
                                state=v['State'], memoryTotal=int(v['RealMemory']),
                                memoryAllocated=int(v['AllocMem']), jobs=[])
     if not nodes:
-        raise ValueError('Slurm returned no bn nodes; existing output was not changed.')
+        raise ValueError('Slurm returned no bn/cn nodes; existing output was not changed.')
     return nodes
+
+
+def expand_hosts(expression):
+    """Expand Slurm numeric host lists locally, avoiding one process per placement."""
+    result = []
+    for part in re.split(r',(?=[^\]]*(?:\[|$))', expression):
+        match = re.search(r'\[([^]]+)\]', part)
+        if not match:
+            result.append(part)
+            continue
+        for entry in match.group(1).split(','):
+            if '-' in entry:
+                start, end = entry.split('-')
+                values = [str(i).zfill(len(start)) for i in range(int(start), int(end) + 1)]
+            else:
+                values = [entry]
+            for value in values:
+                result.extend(expand_hosts(part[:match.start()] + value + part[match.end():]))
+    return result
 
 
 def collect(scontrol):
@@ -44,10 +63,10 @@ def collect(scontrol):
             continue
         placements = []
         for hosts, cpus, mem in re.findall(r'\bNodes=(\S+) CPU_IDs=(\S+) Mem=(\d+)', line):
-            if 'bn' not in hosts:
+            if not any(prefix in hosts for prefix in ('bn', 'cn')):
                 continue
             if hosts not in host_cache:
-                host_cache[hosts] = command(scontrol, 'show', 'hostnames', hosts).split()
+                host_cache[hosts] = expand_hosts(hosts)
             count = sum(int(part.split('-')[-1]) - int(part.split('-')[0]) + 1
                         for part in cpus.split(','))
             for host in host_cache[hosts]:
@@ -61,14 +80,23 @@ def collect(scontrol):
     # Node and job queries are not atomic. Detect changes rather than publish inconsistent bars.
     latest = read_nodes(scontrol)
     mismatches = []
+    completing = {job['id'] for job in jobs if job['state'] == 'COMPLETING'}
     for name, node in nodes.items():
         fresh = latest.get(name)
+        # Slurm can retain placement details during cleanup after resources are released.
+        retained = [j for j in node['jobs'] if j[0] not in completing]
+        if fresh and len(retained) != len(node['jobs']) and fresh['allocated'] == sum(j[1] for j in retained) and fresh['memoryAllocated'] == sum(j[3] for j in retained):
+            node['jobs'] = retained
+            for job in jobs:
+                if job['id'] in completing:
+                    job['placements'] = [p for p in job['placements'] if p['node'] != name]
         if fresh is None or fresh['allocated'] != sum(j[1] for j in node['jobs']) or fresh['memoryAllocated'] != sum(j[3] for j in node['jobs']):
             mismatches.append(name)
         elif fresh:
             node.update({k: val for k, val in fresh.items() if k != 'jobs'})
     if set(latest) != set(nodes):
         mismatches.append('node list changed')
+    jobs = [job for job in jobs if job['placements']]
     stamp = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=4)))
     return dict(time=stamp.strftime('%d %b %Y, %H:%M Dubai'),
                 nodes=sorted(nodes.values(), key=lambda n: n['name']), jobs=jobs), mismatches
